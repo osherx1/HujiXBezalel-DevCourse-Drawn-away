@@ -47,6 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f430475d4e2c14f8a53633d528b3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Line
+  lineRenderer: {fileID: 4193962718934532835}
+  edgeCollider: {fileID: 8541051740542230168}
+  polygonCollider: {fileID: 0}
+  rigidBody: {fileID: 2180012859660155668}
+  addCircleColliderPerPoint: 0
+  usePolygonCollider: 1
+  points: []
+  pointsCount: 0
 --- !u!120 &4193962718934532835
 LineRenderer:
   serializedVersion: 2

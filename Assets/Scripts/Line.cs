@@ -73,10 +73,9 @@ public class Line : MonoBehaviour
             circle.radius = circleColliderRadius;
         }
 
-    // LineRenderer update (LOCAL positions)
-    if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
-    lineRenderer.positionCount = pointsCount;
-    lineRenderer.SetPosition(pointsCount - 1, new Vector3(newPoint.x, newPoint.y, 0f));
+        // LineRenderer update (LOCAL positions)
+        lineRenderer.positionCount = pointsCount;
+        lineRenderer.SetPosition(pointsCount - 1, new Vector3(newPoint.x, newPoint.y, 0f));
 
         // EdgeCollider needs at least 2 points
         if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
