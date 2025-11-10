@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 47fb9e2bb70444310b9394bbb1d1b534
+guid: c102ab0e3ac7549299feb32077c61667
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5604796196903453309
-    second: giraffe_0
+      213: -3955769435116070457
+    second: giraffffff_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: giraffe_0
+      name: giraffffff_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 240
+        y: 260
+        width: 1553
+        height: 1572
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7204e2127c38cd40800000000000000
-      internalID: 5604796196903453309
+      spriteID: 7c91f8648a84a19c0800000000000000
+      internalID: -3955769435116070457
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      giraffe_0: 5604796196903453309
+      giraffffff_0: -3955769435116070457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
