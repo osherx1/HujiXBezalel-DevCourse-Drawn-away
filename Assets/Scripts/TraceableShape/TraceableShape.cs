@@ -38,17 +38,18 @@ namespace TraceableShape
             foreach (var point in _tracePoints)
             {
                 point.OnTraced += OnPointTraced;
+                Debug.Log($"TracePoint subscribed: {point.gameObject.name}", this);
             }
             // Ensure physics are disabled initially
-            if (physicsBody != null)
+            /*if (physicsBody != null)
             {
                 physicsBody.simulated = false;
-            }
+            }*/
         }
-        private void OnEnable()
+        /*private void OnEnable()
         {
             InitializeTracePoints();
-        }
+        }*/
 
         private void OnDisable()
         {

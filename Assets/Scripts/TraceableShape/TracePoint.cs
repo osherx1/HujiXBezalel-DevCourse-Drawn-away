@@ -10,7 +10,7 @@
 
         [Tooltip("The tag of the object that should trigger this point (e.g., 'DrawingTool').")]
         [SerializeField] private string drawingToolTag = "DrawingTool";
-
+        [SerializeField] Color traceColor = Color.green;
         private Collider2D _collider;
         private bool _isTraced;
 
@@ -34,6 +34,11 @@
 
             _isTraced = true;
             _collider.enabled = false;
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {   
+                spriteRenderer.color = traceColor;
+            }
             OnTraced?.Invoke();
         }
     }
