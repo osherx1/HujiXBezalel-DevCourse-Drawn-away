@@ -111,7 +111,7 @@ public class Line : MonoBehaviour
     public void UsePhysics(bool usePhysics)
     {
         if (!rigidBody) rigidBody = GetComponent<Rigidbody2D>();
-        rigidBody.isKinematic = !usePhysics; // false => physics active
+        //rigidBody.isKinematic = !usePhysics; // false => physics active
         rigidBody.bodyType = usePhysics ? RigidbodyType2D.Dynamic : RigidbodyType2D.Kinematic;
     }
 
