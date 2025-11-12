@@ -249,7 +249,7 @@ namespace TraceableShape
                 if (_revealedPhysics != null)
                 {
                     _revealedPhysics.simulated = false;
-                    _revealedPhysics.velocity = Vector2.zero;
+                    _revealedPhysics.linearVelocity = Vector2.zero;
                     _revealedPhysics.angularVelocity = 0f;
                 }
                 revealedObject.transform.position = _revealedOriginalPosition;
