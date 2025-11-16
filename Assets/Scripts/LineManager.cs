@@ -12,13 +12,19 @@ using UnityEngine.InputSystem;
 public class LineManager : MonoBehaviour
 {
     [Header("Appearance")]
-    public Material lineMaterial;
     public float lineWidth = 0.2f;
     public float minDistance = 0.05f;
 
     [Header("Physics")]
     public PhysicsMaterial2D physicsMaterial2D;
     public bool usePolygonCollider = true;
+    [Tooltip("If true, maintain an EdgeCollider2D while drawing (more expensive). If false, create collider only at finalize.")]
+    public bool collideWhileDrawing = false;
+    [Header("Optimization")]
+    [Tooltip("Simplification tolerance (world units) used before baking colliders. Higher = fewer points, faster physics.")]
+    public float colliderSimplifyTolerance = 0.03f;
+    [Tooltip("Clamp the number of points used to bake the collider. Lower = faster. 128 is a good default.")]
+    public int maxColliderPoints = 128;
 
     [Header("Optional Prefab")]
     public GameObject linePrefab; // optional prefab with Line component already
@@ -94,8 +100,8 @@ public class LineManager : MonoBehaviour
         Line ln = go.GetComponent<Line>();
         if (ln == null) ln = go.AddComponent<Line>();
 
-        // Initialize so Awake-created components get proper settings
-    ln.Initialize(lineMaterial, lineWidth, minDistance, physicsMaterial2D, usePolygonCollider);
+    // Initialize so Awake-created components get proper settings
+    ln.Initialize(lineWidth, minDistance, physicsMaterial2D, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints);
 
         currentLine = ln;
         currentLine.AddWorldPoint(worldPos);
