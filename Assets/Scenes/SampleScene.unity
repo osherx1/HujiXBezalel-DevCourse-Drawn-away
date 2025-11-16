@@ -631,6 +631,14 @@ PrefabInstance:
       propertyPath: linePrefab
       value: 
       objectReference: {fileID: 4958629671782194545}
+    - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
+      propertyPath: usePolygonCollider
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
+      propertyPath: collideWhileDrawing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2320167678442860604, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: m_Name
       value: DrawingManager
