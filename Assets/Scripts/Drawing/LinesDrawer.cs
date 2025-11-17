@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+namespace Drawing
+{
+    
 // Manages drawing of multiple Line instances using the New Input System via EventSystem pointer callbacks.
 public class LinesDrawer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
@@ -100,4 +103,6 @@ public class LinesDrawer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         currentLine = null;
     }
+}
+
 }

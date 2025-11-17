@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Utilities.Camera;
+
 namespace TraceableShape
 {
     public class TraceableShape : MonoBehaviour

@@ -1,19 +1,19 @@
-﻿namespace TraceableShape
-{
-    using System.Collections;
-    using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
+namespace Utilities.Camera
+{
     public class CameraShaker : MonoBehaviour
     {
         public static CameraShaker Instance { get; private set; }
-        Camera mainCamera;
+        UnityEngine.Camera mainCamera;
         private Vector3 _originalPos;
         private Coroutine _shakeCoroutine;
 
         private void Awake()
         {
             Instance = this;
-            mainCamera = Camera.main;
+            mainCamera = UnityEngine.Camera.main;
             if (mainCamera != null) _originalPos = mainCamera.transform.localPosition;
         }
 
