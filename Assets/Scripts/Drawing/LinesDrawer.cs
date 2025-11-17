@@ -83,6 +83,8 @@ public class LinesDrawer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void EndDraw()
     {
+        //TODO check with Osher and maybe need to change 
+        var conf = DrawingConfigController.Instance.GetCurrentSettings();
         if (currentLine == null) return;
 
         if (currentLine.pointsCount < 2)
@@ -98,7 +100,9 @@ public class LinesDrawer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 currentLine.gameObject.layer = cantDrawOverLayerIndex;
             }
             // Build polygon + enable physics so line can interact / fall
-            currentLine.FinalizeLine(true);
+            //was true before
+            //currentLine.FinalizeLine(true);
+            currentLine.FinalizeLine(conf);
         }
 
         currentLine = null;

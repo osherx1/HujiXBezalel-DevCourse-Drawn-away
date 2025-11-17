@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Drawing
@@ -11,33 +10,10 @@ namespace Drawing
     [RequireComponent(typeof(Button))]
     public class DrawingConfigButton : MonoBehaviour
     {
-        /*
-        [Header("Drawing Settings")]
-        [Tooltip("Line width to apply when button is clicked. Leave at 0 to not change width.")]
-        //[SerializeField] private float lineWidth = 0f;
-        */
+  
 
-        /*
-        [Tooltip("Whether to enable physics on drawn lines. Leave unchecked to not change physics setting.")]
-        [SerializeField] private bool overrideUsePhysics = false;
-        */
-
-       // [SerializeField] private bool usePhysics = true;
-       // [SerializeField] private bool changeGravityScale = false;
-        
-
-        /*
-        [Tooltip("Physics material to apply. Leave null to not change material.")]
-        [SerializeField] private PhysicsMaterial2D physicsMaterial = null;
-        */
-
-        //[Tooltip("Gravity scale override. Leave at 0 to not change gravity.")]
-       // [SerializeField] private float gravityScaleOverride = 0f;
-
-        [Header("Optional: Apply All Settings")]
         [Tooltip("If true, applies all configured settings. If false, only applies non-zero/null values.")]
         [SerializeField] private bool applyAllSettings = false;
-
         [SerializeField] private Button button;
         [SerializeField] private LineSettings lineSettings;
 
@@ -148,18 +124,19 @@ namespace Drawing
    
         }
 
+        
         /*
         /// <summary>
         /// Public method to programmatically set the line width and apply it immediately.
         /// </summary>
         public void SetLineWidth(float width)
         {
-            lineWidth = width;
+            lineSettings.lineWidth = width;
             if (DrawingConfigController.Instance != null)
             {
-                DrawingConfigController.Instance.SetWidth(lineWidth);
+                DrawingConfigController.Instance.SetWidth(lineSettings.lineWidth);
             }
-        }*/
+        }
 
         /// <summary>
         /// Public method to programmatically set the use physics flag and apply it immediately.
@@ -172,7 +149,7 @@ namespace Drawing
             {
                 DrawingConfigController.Instance.SetUsePhysics(lineSettings.usePhysics);
             }
-        }
+        }*/
     }
 }
 

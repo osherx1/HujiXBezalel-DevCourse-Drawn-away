@@ -1,5 +1,4 @@
 using UnityEngine;
-
 namespace Drawing
 {
     public class DrawingConfigController : MonoBehaviour
@@ -19,7 +18,7 @@ namespace Drawing
         */
         
         public void SetGravity(float g) => currentSettings.gravityScaleOverride = g;
-        public void SetGravityActivate(bool b) => currentSettings.changeGravityActivate = b;
+        public void SetGravityActivate(bool b) => currentSettings.changeGravityScale= b;
         
         public LineSettings GetCurrentSettings() => currentSettings;
         
@@ -29,7 +28,7 @@ namespace Drawing
     [System.Serializable]
     public class LineSettings
     {
-        //public Gradient lineColor;
+        public Gradient lineColor;
 
         public float lineWidth = 0.2f;
         /*
@@ -40,10 +39,8 @@ namespace Drawing
         public PhysicsMaterial2D physicsMaterial;
 
         public float gravityScaleOverride;
+        
 
-        public bool changeGravityActivate;
-
-        public Gradient lineColor;
 
         public bool changeColor;
 

@@ -102,7 +102,8 @@ namespace Drawing
             if (ln == null) ln = go.AddComponent<Line>();
 
             // Initialize so Awake-created components get proper settings
-            ln.Initialize(lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints, conf.lineColor);
+            ln.Initialize(lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints, 
+                conf.lineColor);
 
             currentLine = ln;
             currentLine.AddWorldPoint(worldPos);
@@ -121,7 +122,7 @@ namespace Drawing
             else
             {
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
-                currentLine.FinalizeLine(conf.usePhysics);
+                currentLine.FinalizeLine(conf);
             }
             currentLine = null;
         }

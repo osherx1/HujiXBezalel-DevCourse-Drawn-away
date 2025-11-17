@@ -165,9 +165,10 @@ namespace Drawing
         /// <summary>
         /// Build a solid polygon from the drawn points and switch to a PolygonCollider2D so the line has mass and can fall.
         /// </summary>
-        public void FinalizeLine(bool makeDynamic)
+        public void FinalizeLine(LineSettings lineSetting = null)
         {
-            var config = DrawingConfigController.Instance.GetCurrentSettings();
+            var config = lineSetting;
+            if(config == null) config= DrawingConfigController.Instance.GetCurrentSettings();
             // Ensure width is set (safety if Initialize skipped)
             if (lineRenderer && lineRenderer.positionCount == 0 && pointsCount > 0)
             {
@@ -227,7 +228,7 @@ namespace Drawing
             if (rigidBody)
             {
                 rigidBody.useAutoMass = false;
-                rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
+                rigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
                 rigidBody.sleepMode = RigidbodySleepMode2D.StartAsleep;
                 // Approximate mass from length * width
                 float width = lineRenderer ? lineRenderer.startWidth : (circleColliderRadius * 2f);
@@ -235,13 +236,18 @@ namespace Drawing
                 for (int i = 1; i < physicsPts.Count; i++) length += Vector2.Distance(physicsPts[i - 1], physicsPts[i]);
                 float area = Mathf.Max(0.0001f, length * width);
                 rigidBody.mass = Mathf.Clamp(area, 0.1f, 5f);
-                if (config.changeGravityActivate)
-                {
-                    rigidBody.gravityScale = config.gravityScaleOverride;
-                }
+                SetGravity(config);
             }
 
-            UsePhysics(makeDynamic);
+            UsePhysics(config.usePhysics);
+        }
+
+        private void SetGravity(LineSettings config)
+        {
+            if (config.changeGravityScale)
+            {
+                rigidBody.gravityScale = config.gravityScaleOverride;
+            }
         }
 
         // Create a polygon “ribbon” around the polyline in local space
