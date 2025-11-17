@@ -37,12 +37,15 @@ namespace Drawing
         /// Initialize visual/physics parameters when a new line is spawned.
         /// Material is expected to be set on the prefab/LineRenderer; we don't reassign it here.
         /// </summary>
-        public void Initialize(float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon, bool collideWhileDrawing = false, float simplifyTolerance = -1f, int maxPoints = -1)
+        public void Initialize(float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon, bool collideWhileDrawing = false, float simplifyTolerance = -1f, int maxPoints = -1,Gradient colorGradient = null)
         {
             // Ensure required components
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
             if (!rigidBody) rigidBody = GetComponent<Rigidbody2D>();
-
+            if (colorGradient != null)
+            {
+                lineRenderer.colorGradient = colorGradient;
+            }
             // We will work in LOCAL space so colliders and renderer match exactly.
             lineRenderer.useWorldSpace = false;
 
@@ -55,11 +58,13 @@ namespace Drawing
 
             // Physics material for edge collider if provided (only if we are colliding while drawing)
             _physicsMat = physicsMat;
+
             if (collideWhileDrawing)
             {
                 if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
-                if (_physicsMat != null && edgeCollider != null) edgeCollider.sharedMaterial = _physicsMat;
+                if (_physicsMat != null && edgeCollider != null) edgeCollider.sharedMaterial = physicsMat;
                 if (edgeCollider != null) edgeCollider.enabled = true;
+                
             }
             else
             {
@@ -69,6 +74,7 @@ namespace Drawing
 
             // Start without physics while drawing
             UsePhysics(false);
+   
 
             usePolygonCollider = usePolygon;
         }
@@ -161,6 +167,7 @@ namespace Drawing
         /// </summary>
         public void FinalizeLine(bool makeDynamic)
         {
+            var config = DrawingConfigController.Instance.GetCurrentSettings();
             // Ensure width is set (safety if Initialize skipped)
             if (lineRenderer && lineRenderer.positionCount == 0 && pointsCount > 0)
             {
@@ -228,6 +235,10 @@ namespace Drawing
                 for (int i = 1; i < physicsPts.Count; i++) length += Vector2.Distance(physicsPts[i - 1], physicsPts[i]);
                 float area = Mathf.Max(0.0001f, length * width);
                 rigidBody.mass = Mathf.Clamp(area, 0.1f, 5f);
+                if (config.changeGravityActivate)
+                {
+                    rigidBody.gravityScale = config.gravityScaleOverride;
+                }
             }
 
             UsePhysics(makeDynamic);
