@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Drawing
+namespace Drawing.LineControl
 {
     [RequireComponent(typeof(AudioSource))]
     public class CursorController : MonoBehaviour

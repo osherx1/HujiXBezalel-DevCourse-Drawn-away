@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Drawing
+namespace Drawing.LineControl
 {
     /// <summary>
     /// Simple input manager to draw physics-enabled lines using the Line component.

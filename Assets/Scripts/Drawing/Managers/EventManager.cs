@@ -1,6 +1,6 @@
 using System;
 
-namespace Drawing
+namespace Drawing.Managers
 {
     public sealed class EventManager
     {

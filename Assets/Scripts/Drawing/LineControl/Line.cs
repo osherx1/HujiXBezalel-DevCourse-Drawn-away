@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Drawing
+namespace Drawing.LineControl
 {
     public class Line : MonoBehaviour
     {

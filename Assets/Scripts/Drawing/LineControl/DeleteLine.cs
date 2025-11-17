@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Drawing
+namespace Drawing.LineControl
 {
     public class DeleteLine : MonoBehaviour
     {

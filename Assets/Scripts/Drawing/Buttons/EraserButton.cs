@@ -1,7 +1,9 @@
+using Drawing.LineControl;
+using Drawing.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Drawing
+namespace Drawing.Buttons
 {
     public class EraserButton : MonoBehaviour
     {

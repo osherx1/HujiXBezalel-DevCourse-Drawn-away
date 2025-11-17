@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Drawing
+namespace Drawing.LineControl
 {
     
 // Manages drawing of multiple Line instances using the New Input System via EventSystem pointer callbacks.
