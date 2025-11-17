@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2180012859660155668}
   m_Layer: 0
   m_Name: Line
-  m_TagString: Untagged
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,9 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f430475d4e2c14f8a53633d528b3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Line
+  lineRenderer: {fileID: 0}
+  edgeCollider: {fileID: 0}
   polygonCollider: {fileID: 0}
+  rigidBody: {fileID: 0}
   addCircleColliderPerPoint: 0
   usePolygonCollider: 1
+  colliderSimplifyTolerance: 0.03
+  maxColliderPoints: 128
+  destroyUnusedCollidersOnFinalize: 1
   points: []
   pointsCount: 0
 --- !u!120 &4193962718934532835
