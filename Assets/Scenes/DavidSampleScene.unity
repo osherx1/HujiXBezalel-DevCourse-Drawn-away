@@ -859,13 +859,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cursor
       objectReference: {fileID: 0}
+    - target: {fileID: 1089663032085332557, guid: 4b4f9359d64f6964c9b984454969f66b, type: 3}
+      propertyPath: MinDistance
+      value: 0.10966253
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464432789374296480, guid: 4b4f9359d64f6964c9b984454969f66b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4324551146690183948, guid: 4b4f9359d64f6964c9b984454969f66b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 4324551146690183948, guid: 4b4f9359d64f6964c9b984454969f66b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.54
       objectReference: {fileID: 0}
     - target: {fileID: 4324551146690183948, guid: 4b4f9359d64f6964c9b984454969f66b, type: 3}
       propertyPath: m_LocalPosition.z
