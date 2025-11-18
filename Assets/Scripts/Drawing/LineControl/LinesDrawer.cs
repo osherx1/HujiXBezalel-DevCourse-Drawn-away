@@ -75,7 +75,8 @@ public class LinesDrawer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (currentLine == null) return;
         Vector2 world = cam.ScreenToWorldPoint(screenPos);
-        RaycastHit2D hit = Physics2D.CircleCast(world, lineWidth / 3f, Vector2.zero, 0f, cantDrawOverLayer);
+        // Use half the line width for a closer match to the visual thickness
+        RaycastHit2D hit = Physics2D.CircleCast(world, lineWidth / 2f, Vector2.zero, 0f, cantDrawOverLayer);
         if (hit) EndDraw();
         else currentLine.AddWorldPoint(world);
     }
