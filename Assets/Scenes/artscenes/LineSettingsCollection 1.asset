@@ -1,0 +1,243 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02d93faa86642f5aefb34f9820f474b, type: 3}
+  m_Name: LineSettingsCollection 1
+  m_EditorClassIdentifier: Assembly-CSharp::Drawing.Data.LineSettingsCollection
+  settingsList:
+  - id: Default
+    settings:
+      lineColor:
+        serializedVersion: 2
+        key0: {r: 0, g: 0, b: 0, a: 1}
+        key1: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65535
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: -1
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      lineWidth: 0.2
+      usePhysics: 1
+      physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
+      gravityScaleOverride: 1
+      massMult: 1
+      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - id: Spring
+    settings:
+      lineColor:
+        serializedVersion: 2
+        key0: {r: 0.008660436, g: 1, b: 0, a: 1}
+        key1: {r: 1, g: 0.77791065, b: 0.051886797, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65535
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: -1
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      lineWidth: 0.2
+      usePhysics: 1
+      physicsMaterial: {fileID: 6200000, guid: 5ec4eeef41877db4d8a546f5a1ee493b, type: 2}
+      gravityScaleOverride: 1.4
+      massMult: 1.2
+      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - id: Iron
+    settings:
+      lineColor:
+        serializedVersion: 2
+        key0: {r: 0.7433963, g: 0.7433963, b: 0.7433963, a: 1}
+        key1: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65535
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: -1
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      lineWidth: 0.2
+      usePhysics: 1
+      physicsMaterial: {fileID: 6200000, guid: 28ac6c32b7001b246a3e73d354080f02, type: 2}
+      gravityScaleOverride: 2.3
+      massMult: 5
+      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - id: Static
+    settings:
+      lineColor:
+        serializedVersion: 2
+        key0: {r: 0.6226415, g: 0.24976985, b: 0, a: 1}
+        key1: {r: 0.3433962, g: 0.11903369, b: 0, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65535
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: -1
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      lineWidth: 0.2
+      usePhysics: 0
+      physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
+      gravityScaleOverride: 1
+      massMult: 1
+      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - id: Ice
+    settings:
+      lineColor:
+        serializedVersion: 2
+        key0: {r: 0, g: 0.7922716, b: 1, a: 1}
+        key1: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65535
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: -1
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      lineWidth: 0.2
+      usePhysics: 1
+      physicsMaterial: {fileID: 6200000, guid: 2b676836007a00746a6e089142f33fc4, type: 2}
+      gravityScaleOverride: 2
+      massMult: 0.9
+      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - id: Balloon
+    settings:
+      lineColor:
+        serializedVersion: 2
+        key0: {r: 0.9546869, g: 1, b: 0, a: 1}
+        key1: {r: 1, g: 0.92556876, b: 0.28773582, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65500
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_ColorSpace: -1
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      lineWidth: 0.5
+      usePhysics: 1
+      physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
+      gravityScaleOverride: -0.1
+      massMult: 0.2
+      material: {fileID: 2100000, guid: 3b43f6b6a02abfe4a8932ce8044445ed, type: 2}
