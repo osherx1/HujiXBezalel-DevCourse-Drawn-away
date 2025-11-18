@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c8f6e7574b9a040de9c37f93676cc1a9
+guid: f2d2a181b78a945a8952503a53d28f4c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8265898805026661147
-    second: pencil texture_0
+      213: 1655488994476893145
+    second: metal_1@300x_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pencil texture_0
+      name: metal_1@300x_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 1000
+        width: 228
+        height: 874
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b13a0f62b2f56b270800000000000000
-      internalID: 8265898805026661147
+      spriteID: 9d32d55287a79f610800000000000000
+      internalID: 1655488994476893145
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pencil texture_0: 8265898805026661147
+      metal_1@300x_0: 1655488994476893145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

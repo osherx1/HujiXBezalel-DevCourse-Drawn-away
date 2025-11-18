@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d8e2b1d10b5004d47bb96d9931d0f530
+guid: 802e4960af0ed4a55a5ed5f3d7e30729
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -40952154636399084
-    second: ChatGPT Image Nov 18, 2025, 12_38_49 PM_0
+      213: -1297385133584117307
+    second: Asset 2@300x_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,40 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatGPT Image Nov 18, 2025, 12_38_49 PM_0
+      name: Asset 2@300x_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 430
-        width: 745
-        height: 160
+        x: 0
+        y: 0
+        width: 1630
+        height: 2084
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 361, y: 70, z: 361, w: 73}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 41e4c1a7b328e6ff0800000000000000
-      internalID: -40952154636399084
+      spriteID: 5c198d74813cefde0800000000000000
+      internalID: -1297385133584117307
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 725a39ee24ef6234ab30583117963f49
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ChatGPT Image Nov 18, 2025, 12_38_49 PM_0: -40952154636399084
+      Asset 2@300x_0: -1297385133584117307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
