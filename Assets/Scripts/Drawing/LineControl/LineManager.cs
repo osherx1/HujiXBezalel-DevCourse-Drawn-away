@@ -85,7 +85,7 @@ namespace Drawing.LineControl
 
         void StartLine(Vector2 worldPos)
         {
-            var conf = DrawingConfigController.Instance.GetCurrentSettings();
+            var conf = DrawingConfigController.Instance.currentSettings;
 
             GameObject go;
             if (linePrefab != null)
@@ -102,8 +102,8 @@ namespace Drawing.LineControl
             if (ln == null) ln = go.AddComponent<Line>();
 
             // Initialize so Awake-created components get proper settings
-            ln.Initialize(lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints, 
-                conf.lineColor);
+            ln.Initialize(conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints, 
+                conf.lineColor,conf.material);
 
             currentLine = ln;
             currentLine.AddWorldPoint(worldPos);
@@ -111,7 +111,7 @@ namespace Drawing.LineControl
 
         void FinishLine()
         {
-            var conf = DrawingConfigController.Instance.GetCurrentSettings();
+            var conf = DrawingConfigController.Instance.currentSettings;
             isDrawing = false;
             if (currentLine == null) return;
             // If too short, discard

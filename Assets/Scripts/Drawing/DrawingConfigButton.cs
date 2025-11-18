@@ -1,155 +1,148 @@
+using Drawing.Data;
+using Drawing.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Drawing
 {
-    /// <summary>
-    /// Button component that applies drawing configuration settings when clicked.
-    /// Attach this to a UI Button and configure the settings in the Inspector.
-    /// </summary>
     [RequireComponent(typeof(Button))]
     public class DrawingConfigButton : MonoBehaviour
     {
-  
+        [Header("Values to Apply")] [SerializeField]
+        private LineSettingsCollection lineSettingsCollection;
 
-        [Tooltip("If true, applies all configured settings. If false, only applies non-zero/null values.")]
-        [SerializeField] private bool applyAllSettings = false;
-        [SerializeField] private Button button;
-        [SerializeField] private LineSettings lineSettings;
+        [SerializeField] private string settingID = "Default";
+        private LineSettings valuesToApply;
+
+
+        [Header("What to Override?")] [SerializeField]
+        private bool applyColor;
+
+        [SerializeField] private bool applyWidth;
+        [SerializeField] private bool applyUsePhysics;
+        [SerializeField] private bool applyPhysicsMaterial;
+        [SerializeField] private bool applyGravity;
+        [SerializeField] private bool applyMass;
+        [SerializeField] private bool applyMaterial;
+
+
+        [Header("Visual Feedback State")] private Color normalColor;
+        [SerializeField] private Color selectedColor = Color.green;
+        private Button _button;
+        private bool _isSelected = false;
+        private Image _buttonImage;
+
+        private void Awake()
+        {
+            // Cache references to avoid repetitive GetComponent calls
+            _button = GetComponent<Button>();
+            _buttonImage = GetComponent<Image>();
+            normalColor = _buttonImage.color;
+            //_buttonImage.color = normalColor;
+            InitializeFromCollection();
+        }
+
+        private void InitializeFromCollection()
+        {
+            LineSettings settings = lineSettingsCollection.GetSettingsByID(settingID);
+            if (settings != null)
+            {
+                valuesToApply = settings;
+            }
+            else
+            {
+                Debug.LogWarningFormat("Setting '{0}' does not exist.", settingID);
+            }
+        }
 
         private void OnEnable()
         {
-            if (button != null)
-            {
-                button.onClick.AddListener(OnButtonClicked);
-            }
-            else
-            {
-                Debug.LogWarning("DrawingConfigButton: Button is null. Cannot apply settings.", this);
-            }
+            // Listen for local click events
+            if (_button != null)
+                _button.onClick.AddListener(OnButtonClicked);
+
+            // Subscribe to the global event to know when OTHER buttons are clicked
+            EventManager.Instance.OnConfigButtonSelected += OnGlobalConfigChanged;
         }
-        
 
         private void OnDisable()
         {
-            if (button != null)
-            {
-                button.onClick.RemoveListener(OnButtonClicked);
-            }
-            else
-            {
-                Debug.LogWarning("DrawingConfigButton: Button is null. Cannot apply settings.", this);
-            }
+            // Always unsubscribe from events to prevent memory leaks
+            if (_button != null)
+                _button.onClick.RemoveListener(OnButtonClicked);
+
+            EventManager.Instance.OnConfigButtonSelected -= OnGlobalConfigChanged;
         }
 
+
         /// <summary>
-        /// Called when the button is clicked. Applies the configured settings to DrawingConfigController.
+        /// Called when the user clicks THIS button.
         /// </summary>
         private void OnButtonClicked()
         {
-            if (DrawingConfigController.Instance == null)
-            {
-                Debug.LogWarning("DrawingConfigButton: DrawingConfigController.Instance is null. Cannot apply settings.", this);
-                return;
-            }
+            // Optimization: If already selected, do nothing (optional behavior)
+            if (_isSelected) return;
 
-            if (applyAllSettings)
+            // 1. Update internal state to Active
+            SetSelectionState(true);
+
+            // 2. Push the configuration to the central controller
+            ApplySettings();
+
+            // 3. Notify the EventManager that this specific button was selected.
+            // We pass 'this' as the sender so we don't reset ourselves in the event callback.
+            EventManager.Instance.TriggerConfigButtonSelected(this);
+        }
+
+        /// <summary>
+        /// Callback triggered whenever ANY configuration button is selected.
+        /// </summary>
+        /// <param name="sender">The specific button script that triggered the event.</param>
+        private void OnGlobalConfigChanged(object sender)
+        {
+            // If the button that triggered the event is NOT this one,
+            // it means another button was clicked. We must deactivate (reset) this one.
+            if (sender != this)
             {
-                // Apply all settings regardless of values
-                ApplyAllSettings();
-            }
-            else
-            {
-                // Apply only non-default/non-null values
-                ApplySelectiveSettings();
+                SetSelectionState(false);
             }
         }
 
         /// <summary>
-        /// Applies all configured settings to DrawingConfigController.
+        /// Updates the logical state and visual appearance of the button.
         /// </summary>
-        private void ApplyAllSettings()
+        /// <param name="isSelected">True for Active/Selected, False for Inactive.</param>
+        private void SetSelectionState(bool isSelected)
         {
-            //DrawingConfigController.Instance.SetWidth(lineWidth);
-            DrawingConfigController.Instance.SetUsePhysics(lineSettings.usePhysics);
+            _isSelected = isSelected;
 
-            if (lineSettings.physicsMaterial != null)
+            // Update visual feedback (change color)
+            if (_buttonImage != null)
             {
-                DrawingConfigController.Instance.SetPhysicsMaterial(lineSettings.physicsMaterial);
-            }
-
-            DrawingConfigController.Instance.SetGravity(lineSettings.gravityScaleOverride);
-        }
-
-        /// <summary>
-        /// Applies only settings that have been explicitly configured (non-zero/null values).
-        /// </summary>
-        private void ApplySelectiveSettings()
-        {
-            DrawingConfigController.Instance.SetUsePhysics(lineSettings.usePhysics);
-            if (lineSettings.changeColor)
-            {
-                DrawingConfigController.Instance.SetColor(lineSettings.lineColor);
-
-                
-            }
-            
-
-            // Apply width only if it's greater than 0
-            /*if (lineWidth > 0f)
-            {
-                Debug.Log("Applying line width: " + lineWidth);
-                DrawingConfigController.Instance.SetWidth(lineWidth);
-            }*/
-
-            // Apply physics setting only if override is enabled
-
-            
-
-            // Apply physics material only if one is assigned
-            if (lineSettings.physicsMaterial != null)
-            {
-                Debug.Log("Applying physics material: " + lineSettings.physicsMaterial.name);
-                DrawingConfigController.Instance.SetPhysicsMaterial(lineSettings.physicsMaterial);
-            }
-            
-
-            if (lineSettings.changeGravityScale)
-            {
-                Debug.Log("Applying gravity scale: " + lineSettings.gravityScaleOverride);
-                DrawingConfigController.Instance.SetGravityActivate(lineSettings.changeGravityScale);
-
-                DrawingConfigController.Instance.SetGravity(lineSettings.gravityScaleOverride);
-            }
-   
-        }
-
-        
-        /*
-        /// <summary>
-        /// Public method to programmatically set the line width and apply it immediately.
-        /// </summary>
-        public void SetLineWidth(float width)
-        {
-            lineSettings.lineWidth = width;
-            if (DrawingConfigController.Instance != null)
-            {
-                DrawingConfigController.Instance.SetWidth(lineSettings.lineWidth);
+                _buttonImage.color = isSelected ? selectedColor : normalColor;
             }
         }
 
-        /// <summary>
-        /// Public method to programmatically set the use physics flag and apply it immediately.
-        /// </summary>
-        public void SetUsePhysics(bool usePhysicsValue)
+
+        private void ApplySettings()
         {
-            lineSettings.usePhysics = usePhysicsValue;
-            
-            if (DrawingConfigController.Instance != null)
-            {
-                DrawingConfigController.Instance.SetUsePhysics(lineSettings.usePhysics);
-            }
-        }*/
+            if (DrawingConfigController.Instance == null) return;
+
+            var controller = DrawingConfigController.Instance;
+
+            // Injecting: (Do we want to override?, The value to use if we do)
+
+            controller.SetColor(valuesToApply.lineColor, applyColor);
+
+            controller.SetWidth(valuesToApply.lineWidth, applyWidth);
+
+            controller.SetUsePhysics(valuesToApply.usePhysics, applyUsePhysics);
+
+            controller.SetPhysicsMaterial(valuesToApply.physicsMaterial, applyPhysicsMaterial);
+
+            controller.SetGravity(valuesToApply.gravityScaleOverride, applyGravity);
+            controller.SetMassMult(valuesToApply.massMult, applyMass);
+            controller.SetMaterial(valuesToApply.material, applyMaterial);
+        }
     }
 }
-

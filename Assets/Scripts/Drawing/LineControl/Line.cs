@@ -37,7 +37,9 @@ namespace Drawing.LineControl
         /// Initialize visual/physics parameters when a new line is spawned.
         /// Material is expected to be set on the prefab/LineRenderer; we don't reassign it here.
         /// </summary>
-        public void Initialize(float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon, bool collideWhileDrawing = false, float simplifyTolerance = -1f, int maxPoints = -1,Gradient colorGradient = null)
+        public void Initialize(float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon,
+            bool collideWhileDrawing = false, float simplifyTolerance = -1f, int maxPoints = -1,
+            Gradient colorGradient = null, Material material = null)
         {
             // Ensure required components
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
@@ -45,6 +47,10 @@ namespace Drawing.LineControl
             if (colorGradient != null)
             {
                 lineRenderer.colorGradient = colorGradient;
+            }
+            if (material != null)
+            {
+                lineRenderer.material = material;
             }
             // We will work in LOCAL space so colliders and renderer match exactly.
             lineRenderer.useWorldSpace = false;
@@ -168,7 +174,7 @@ namespace Drawing.LineControl
         public void FinalizeLine(LineSettings lineSetting = null)
         {
             var config = lineSetting;
-            if(config == null) config= DrawingConfigController.Instance.GetCurrentSettings();
+            if(config == null) config = DrawingConfigController.Instance.currentSettings;
             // Ensure width is set (safety if Initialize skipped)
             if (lineRenderer && lineRenderer.positionCount == 0 && pointsCount > 0)
             {
@@ -235,7 +241,9 @@ namespace Drawing.LineControl
                 float length = 0f;
                 for (int i = 1; i < physicsPts.Count; i++) length += Vector2.Distance(physicsPts[i - 1], physicsPts[i]);
                 float area = Mathf.Max(0.0001f, length * width);
-                rigidBody.mass = Mathf.Clamp(area, 0.1f, 5f);
+                rigidBody.mass = Mathf.Clamp(area, 0.1f, 5f)* config.massMult;
+                Debug.Log($"Line Finalize: length={length:F3}, width={width:F3}, area={area:F3}, mass={rigidBody.mass:F3}");
+                Debug.Log("Mass Multiplier: " + config.massMult);
                 SetGravity(config);
             }
 
@@ -244,10 +252,7 @@ namespace Drawing.LineControl
 
         private void SetGravity(LineSettings config)
         {
-            if (config.changeGravityScale)
-            {
-                rigidBody.gravityScale = config.gravityScaleOverride;
-            }
+            rigidBody.gravityScale = config.gravityScaleOverride;
         }
 
         // Create a polygon “ribbon” around the polyline in local space
