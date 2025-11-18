@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 namespace Drawing.LineControl
 {
     
@@ -84,7 +83,8 @@ public class LinesDrawer : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void EndDraw()
     {
         //TODO check with Osher and maybe need to change 
-        var conf = DrawingConfigController.Instance.GetCurrentSettings();
+        var conf = DrawingConfigController.Instance.currentSettings;
+
         if (currentLine == null) return;
 
         if (currentLine.pointsCount < 2)

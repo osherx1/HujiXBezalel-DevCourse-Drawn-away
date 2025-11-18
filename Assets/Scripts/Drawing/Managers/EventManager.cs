@@ -16,9 +16,18 @@ namespace Drawing.Managers
         // public void RaiseSomething(MyEventArgs args) => OnSomething?.Invoke(args);
         
         public event Action OnEraserActive;
+        public event Action<object> OnConfigButtonSelected;
+        
+        
+
         public void TriggerEraserActive() => OnEraserActive?.Invoke();
         
         public event Action OnEraserInactive;
         public void TriggerEraserInactive() => OnEraserInactive?.Invoke();
+        
+        public void TriggerConfigButtonSelected(object senderButton) 
+        {
+            OnConfigButtonSelected?.Invoke(senderButton);
+        }
     }
 }
