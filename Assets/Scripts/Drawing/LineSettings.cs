@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Drawing.Data;
+using UnityEngine;
 
 namespace Drawing
 {
@@ -16,6 +17,11 @@ namespace Drawing
         public int endCapVertices = 0;
         [Range(0,90)]
         public int cornerVertices = 0;
+        public GameSoundsSo.AudioType drawSound = GameSoundsSo.AudioType.None ;
+        public GameSoundsSo.AudioType collisionSound = GameSoundsSo.AudioType.None ;
+        public GameSoundsSo.AudioType releaseSound = GameSoundsSo.AudioType.None ;
+        
+                
         
     }
 }

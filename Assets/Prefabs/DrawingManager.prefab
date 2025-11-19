@@ -53,6 +53,13 @@ MonoBehaviour:
   collideWhileDrawing: 0
   colliderSimplifyTolerance: 0.03
   maxColliderPoints: 128
+  cantDrawOverLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  penPressureThreshold: 0.15
+  logPenDebug: 0
+  logMouseDebug: 0
+  logTouchDebug: 0
   linePrefab: {fileID: 0}
   linesRoot: {fileID: 0}
 --- !u!114 &1959339671015974043
@@ -69,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigController
   lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
   _defaultSettingID: Default
-  showDebugLogs: 1
+  showDebugLogs: 0
   currentSettings:
     lineColor:
       serializedVersion: 2
@@ -106,6 +113,12 @@ MonoBehaviour:
     physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
     gravityScaleOverride: 1
     massMult: 1
+    material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    endCapVertices: 0
+    cornerVertices: 0
+    drawSound: 10
+    collisionSound: -1
+    releaseSound: -1
 --- !u!1001 &5433506807876587594
 PrefabInstance:
   m_ObjectHideFlags: 0

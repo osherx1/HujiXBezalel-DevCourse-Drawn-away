@@ -53,6 +53,9 @@ MonoBehaviour:
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
       endCapVertices: 0
       cornerVertices: 0
+      drawSound: 10
+      collisionSound: -1
+      releaseSound: -1
   - id: Spring
     settings:
       lineColor:
@@ -93,6 +96,9 @@ MonoBehaviour:
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
       endCapVertices: 0
       cornerVertices: 0
+      drawSound: -1
+      collisionSound: 21
+      releaseSound: -1
   - id: Iron
     settings:
       lineColor:
@@ -133,6 +139,9 @@ MonoBehaviour:
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
       endCapVertices: 0
       cornerVertices: 0
+      drawSound: -1
+      collisionSound: 22
+      releaseSound: -1
   - id: Static
     settings:
       lineColor:
@@ -173,6 +182,9 @@ MonoBehaviour:
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
       endCapVertices: 0
       cornerVertices: 0
+      drawSound: -1
+      collisionSound: -1
+      releaseSound: -1
   - id: Ice
     settings:
       lineColor:
@@ -213,6 +225,9 @@ MonoBehaviour:
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
       endCapVertices: 0
       cornerVertices: 0
+      drawSound: -1
+      collisionSound: -1
+      releaseSound: -1
   - id: Balloon
     settings:
       lineColor:
@@ -253,3 +268,6 @@ MonoBehaviour:
       material: {fileID: 2100000, guid: 3d00328cd1d216244b79ca932d19171b, type: 2}
       endCapVertices: 69
       cornerVertices: 90
+      drawSound: 13
+      collisionSound: -1
+      releaseSound: 33

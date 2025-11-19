@@ -1,6 +1,8 @@
 // Clean Line.cs that mirrors the user's provided implementation (points + circle colliders + edge collider + physics toggle)
 
 using System.Collections.Generic;
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 
 namespace Drawing.LineControl
@@ -8,19 +10,27 @@ namespace Drawing.LineControl
     public class Line : MonoBehaviour
     {
         public LineRenderer lineRenderer;
+
         [Tooltip("Used only while drawing; disabled after FinalizeLine when polygonCollider is created.")]
         public EdgeCollider2D edgeCollider;
+
         [Tooltip("Assigned/created at FinalizeLine; used for mass/physics after drawing.")]
         public PolygonCollider2D polygonCollider;
+
         public Rigidbody2D rigidBody;
+
         [Tooltip("Add a CircleCollider2D per point (heavier). Leave OFF for better performance.")]
         public bool addCircleColliderPerPoint = false;
+
         [Tooltip("Use a PolygonCollider2D with thickness when finalizing the line so it has mass and can fall.")]
         public bool usePolygonCollider = true;
+
         [Tooltip("Simplification tolerance (world units) used before baking colliders. Higher = fewer points.")]
         public float colliderSimplifyTolerance = 0.03f;
+
         [Tooltip("Clamp the number of points used to build the collider. 0 = unlimited (not recommended).")]
         public int maxColliderPoints = 128;
+
         [Tooltip("Destroy the not-used collider component after finalize to reduce overhead on many line objects.")]
         public bool destroyUnusedCollidersOnFinalize = true;
 
@@ -29,8 +39,9 @@ namespace Drawing.LineControl
         [HideInInspector] public int pointsCount = 0;
 
         float pointsMinDistance = 0.1f; // configurable via setter
-        float circleColliderRadius;      // updated when SetLineWidth is called
-
+        float circleColliderRadius; // updated when SetLineWidth is called
+        private GameSoundsSo.AudioType _collisionSound = GameSoundsSo.AudioType.None;
+        private float _minImpactVelocity = 1.0f; // Minimum speed to trigger sound
         private PhysicsMaterial2D _physicsMat;
 
         /// <summary>
@@ -48,15 +59,17 @@ namespace Drawing.LineControl
             {
                 lineRenderer.colorGradient = colorGradient;
             }
+
             if (material != null)
             {
                 lineRenderer.material = material;
             }
+
             // We will work in LOCAL space so colliders and renderer match exactly.
             lineRenderer.useWorldSpace = false;
 
             // Apply configurable values
-            SetLineShape(width,endCapVertices, cornerVertices);
+            SetLineShape(width, endCapVertices, cornerVertices);
             SetPointsMinDistance(minDist);
 
             if (simplifyTolerance >= 0f) colliderSimplifyTolerance = simplifyTolerance;
@@ -70,7 +83,6 @@ namespace Drawing.LineControl
                 if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
                 if (_physicsMat != null && edgeCollider != null) edgeCollider.sharedMaterial = physicsMat;
                 if (edgeCollider != null) edgeCollider.enabled = true;
-                
             }
             else
             {
@@ -80,7 +92,7 @@ namespace Drawing.LineControl
 
             // Start without physics while drawing
             UsePhysics(false);
-   
+
 
             usePolygonCollider = usePolygon;
         }
@@ -174,7 +186,8 @@ namespace Drawing.LineControl
             lineRenderer.endWidth = width;
             circleColliderRadius = width * 0.5f;
             if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
-            if (edgeCollider) edgeCollider.edgeRadius = circleColliderRadius * 0.9f; // tube-like thickness without per-point circles
+            if (edgeCollider)
+                edgeCollider.edgeRadius = circleColliderRadius * 0.9f; // tube-like thickness without per-point circles
         }
 
         /// <summary>
@@ -183,7 +196,7 @@ namespace Drawing.LineControl
         public void FinalizeLine(LineSettings lineSetting = null)
         {
             var config = lineSetting;
-            if(config == null) config = DrawingConfigController.Instance.currentSettings;
+            if (config == null) config = DrawingConfigController.Instance.currentSettings;
             // Ensure width is set (safety if Initialize skipped)
             if (lineRenderer && lineRenderer.positionCount == 0 && pointsCount > 0)
             {
@@ -199,6 +212,7 @@ namespace Drawing.LineControl
                 physicsPts = new List<Vector2>(points);
                 physicsPts = SimplifyRdp(physicsPts, colliderSimplifyTolerance);
             }
+
             if (maxColliderPoints > 0 && physicsPts.Count > maxColliderPoints)
             {
                 physicsPts = ResampleByCount(physicsPts, maxColliderPoints);
@@ -250,8 +264,9 @@ namespace Drawing.LineControl
                 float length = 0f;
                 for (int i = 1; i < physicsPts.Count; i++) length += Vector2.Distance(physicsPts[i - 1], physicsPts[i]);
                 float area = Mathf.Max(0.0001f, length * width);
-                rigidBody.mass = Mathf.Clamp(area, 0.1f, 5f)* config.massMult;
-                Debug.Log($"Line Finalize: length={length:F3}, width={width:F3}, area={area:F3}, mass={rigidBody.mass:F3}");
+                rigidBody.mass = Mathf.Clamp(area, 0.1f, 5f) * config.massMult;
+                Debug.Log(
+                    $"Line Finalize: length={length:F3}, width={width:F3}, area={area:F3}, mass={rigidBody.mass:F3}");
                 Debug.Log("Mass Multiplier: " + config.massMult);
                 SetGravity(config);
             }
@@ -285,6 +300,7 @@ namespace Drawing.LineControl
                     forward = (d1 + d2).normalized;
                     if (forward == Vector2.zero) forward = d1;
                 }
+
                 Vector2 normal = new Vector2(-forward.y, forward.x);
                 Vector2 p = localPts[i];
                 left.Add(p + normal * half);
@@ -311,7 +327,8 @@ namespace Drawing.LineControl
             while (stack.Count > 0)
             {
                 var (start, end) = stack.Pop();
-                float maxDist = 0f; int index = -1;
+                float maxDist = 0f;
+                int index = -1;
                 Vector2 a = pts[start];
                 Vector2 b = pts[end];
                 Vector2 ab = b - a;
@@ -324,9 +341,11 @@ namespace Drawing.LineControl
                     float dSq = (pts[i] - proj).sqrMagnitude;
                     if (dSq > maxDist)
                     {
-                        maxDist = dSq; index = i;
+                        maxDist = dSq;
+                        index = i;
                     }
                 }
+
                 if (maxDist > sqTol && index != -1)
                 {
                     keep[index] = true;
@@ -336,7 +355,9 @@ namespace Drawing.LineControl
             }
 
             var outPts = new List<Vector2>();
-            for (int i = 0; i < pts.Count; i++) if (keep[i]) outPts.Add(pts[i]);
+            for (int i = 0; i < pts.Count; i++)
+                if (keep[i])
+                    outPts.Add(pts[i]);
             return outPts;
         }
 
@@ -344,13 +365,16 @@ namespace Drawing.LineControl
         private static List<Vector2> ResampleByCount(List<Vector2> pts, int maxCount)
         {
             if (pts.Count <= maxCount) return pts;
-            float total = 0f; for (int i = 1; i < pts.Count; i++) total += Vector2.Distance(pts[i - 1], pts[i]);
+            float total = 0f;
+            for (int i = 1; i < pts.Count; i++) total += Vector2.Distance(pts[i - 1], pts[i]);
             if (total <= 1e-6f) return new List<Vector2> { pts[0], pts[pts.Count - 1] };
             int target = Mathf.Max(2, maxCount);
             float step = total / (target - 1);
             var result = new List<Vector2>(target);
             result.Add(pts[0]);
-            float acc = 0f; int seg = 1; float distToNext = step;
+            float acc = 0f;
+            int seg = 1;
+            float distToNext = step;
             while (result.Count < target - 1)
             {
                 if (seg >= pts.Count) break;
@@ -371,8 +395,28 @@ namespace Drawing.LineControl
                     seg++;
                 }
             }
+
             result.Add(pts[pts.Count - 1]);
             return result;
         }
+
+ 
+
+        public void InitializeSound(GameSoundsSo.AudioType collisionSoundType)
+        {
+            _collisionSound = collisionSoundType;
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (_collisionSound == GameSoundsSo.AudioType.None) return;
+
+            // Check relative velocity to avoid spamming sounds when resting
+            if (other.relativeVelocity.magnitude > _minImpactVelocity&&!other.gameObject.CompareTag("Line"))
+            {
+                AudioManager.Instance.PlaySoundByAudioType(_collisionSound);
+            }
+        }
     }
 }
+

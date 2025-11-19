@@ -1,3 +1,5 @@
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +24,7 @@ namespace Drawing.Buttons
 
         private void OnResetButtonClicked()
         {
+            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
             foreach (Transform child in lineroot.transform)
             {
                 Destroy(child.gameObject);
