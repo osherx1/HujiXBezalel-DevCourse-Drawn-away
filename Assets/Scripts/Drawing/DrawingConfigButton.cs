@@ -15,15 +15,23 @@ namespace Drawing
         private LineSettings valuesToApply;
 
 
-        [Header("What to Override?")] [SerializeField]
-        private bool applyColor;
-
-        [SerializeField] private bool applyWidth;
+        [Header("What to Override?")]
+        [Space(10)]
+        [Header("Visual Settings")]
+        [SerializeField] private bool applyColor;
+        [SerializeField] private bool applyMaterial;
+        [SerializeField] private bool applyLineWidth;
+        [SerializeField] private bool applyCapVertices;
+        [SerializeField] private bool applyCornerVertices;
+        [Space(2)]
+        [Header("Physics Settings")]
         [SerializeField] private bool applyUsePhysics;
         [SerializeField] private bool applyPhysicsMaterial;
         [SerializeField] private bool applyGravity;
         [SerializeField] private bool applyMass;
-        [SerializeField] private bool applyMaterial;
+        
+
+        
 
 
         [Header("Visual Feedback State")] private Color normalColor;
@@ -134,7 +142,7 @@ namespace Drawing
 
             controller.SetColor(valuesToApply.lineColor, applyColor);
 
-            controller.SetWidth(valuesToApply.lineWidth, applyWidth);
+            controller.SetWidth(valuesToApply.lineWidth, applyLineWidth);
 
             controller.SetUsePhysics(valuesToApply.usePhysics, applyUsePhysics);
 
@@ -143,6 +151,8 @@ namespace Drawing
             controller.SetGravity(valuesToApply.gravityScaleOverride, applyGravity);
             controller.SetMassMult(valuesToApply.massMult, applyMass);
             controller.SetMaterial(valuesToApply.material, applyMaterial);
+            controller.SetCapVertices(valuesToApply.endCapVertices, applyCapVertices);
+            controller.SetCornerVertices(valuesToApply.cornerVertices, applyCornerVertices);
         }
     }
 }

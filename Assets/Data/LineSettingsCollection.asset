@@ -51,6 +51,8 @@ MonoBehaviour:
       gravityScaleOverride: 1
       massMult: 1
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Spring
     settings:
       lineColor:
@@ -89,6 +91,8 @@ MonoBehaviour:
       gravityScaleOverride: 1.4
       massMult: 1.2
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Iron
     settings:
       lineColor:
@@ -127,6 +131,8 @@ MonoBehaviour:
       gravityScaleOverride: 2.3
       massMult: 5
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Static
     settings:
       lineColor:
@@ -165,6 +171,8 @@ MonoBehaviour:
       gravityScaleOverride: 1
       massMult: 1
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Ice
     settings:
       lineColor:
@@ -203,12 +211,14 @@ MonoBehaviour:
       gravityScaleOverride: 2
       massMult: 0.9
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Balloon
     settings:
       lineColor:
         serializedVersion: 2
-        key0: {r: 0.9546869, g: 1, b: 0, a: 1}
-        key1: {r: 1, g: 0.92556876, b: 0.28773582, a: 1}
+        key0: {r: 0.98464334, g: 0.98490566, b: 0.9793307, a: 1}
+        key1: {r: 0.87169814, g: 0.8691226, b: 0.8470274, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -240,4 +250,6 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
       gravityScaleOverride: -0.1
       massMult: 0.2
-      material: {fileID: 2100000, guid: 3b43f6b6a02abfe4a8932ce8044445ed, type: 2}
+      material: {fileID: 2100000, guid: 3d00328cd1d216244b79ca932d19171b, type: 2}
+      endCapVertices: 69
+      cornerVertices: 90
