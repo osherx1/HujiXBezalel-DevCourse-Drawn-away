@@ -1,3 +1,4 @@
+using System;
 using Drawing.Data;
 using Drawing.LineControl;
 using Drawing.Managers;
@@ -15,9 +16,19 @@ namespace Drawing.Buttons
         [SerializeField] private CircleCollider2D cursorCollider;
         [SerializeField] private LineManager lineManager;
         
+        
+        
         private Sprite pencilSprite;
         private bool isEraserActive = false;
-        
+        private Image _buttonImage;
+        private Color normalColor;
+        [SerializeField] private Color selectedColor = Color.green;
+
+        private void Awake()
+        {
+            _buttonImage = GetComponent<Image>();
+            normalColor = _buttonImage.color;
+        }
 
         private void OnEnable()
         {
