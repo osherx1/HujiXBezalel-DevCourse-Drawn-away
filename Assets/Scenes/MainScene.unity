@@ -706,10 +706,6 @@ PrefabInstance:
       propertyPath: lineroot
       value: 
       objectReference: {fileID: 1017796403}
-    - target: {fileID: 3860628564910837537, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 4821352767704367762, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -931,30 +927,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1021361687451946729, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 1021361687451946729, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 33.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557854806356353488, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557854806356353488, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557854806356353488, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557854806356353488, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8544620030880778873, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
