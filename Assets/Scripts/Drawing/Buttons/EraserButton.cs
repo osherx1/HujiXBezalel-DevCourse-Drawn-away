@@ -20,6 +20,7 @@ namespace Drawing.Buttons
         private Image _buttonImage;
         private Color normalColor;
         [SerializeField] private Color selectedColor = Color.green;
+        private bool _isEraserActive;
 
         private void Awake()
         {
@@ -29,34 +30,83 @@ namespace Drawing.Buttons
 
         private void OnEnable()
         {
-            if (!button) return;
-            button.onClick.AddListener(OnEraserButtonClicked);
-            EventManager.Instance.OnConfigButtonSelected += CancelEraser;
+            if (button)
+            {
+                button.onClick.AddListener(OnEraserButtonClicked);
+            }
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnConfigButtonSelected += CancelEraser;
+            }
         }
 
         private void OnDisable()
         {
-            if (!button) return;
-            button.onClick.RemoveListener(OnEraserButtonClicked);
-            EventManager.Instance.OnConfigButtonSelected -= CancelEraser;
+            if (button)
+            {
+                button.onClick.RemoveListener(OnEraserButtonClicked);
+            }
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnConfigButtonSelected -= CancelEraser;
+            }
+
+            if (_isEraserActive)
+            {
+                RestoreCursorVisibility();
+                _isEraserActive = false;
+                EventManager.Instance?.TriggerEraserInactive();
+            }
         }
 
         private void OnEraserButtonClicked()
         {
-            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
+            if (_isEraserActive)
+            {
+                CancelEraser(this);
+                return;
+            }
 
-            EventManager.Instance.TriggerEraserActive();
-            curserSpriteRenderer.sprite = eraserSprite;
-            cursorCollider.enabled = true;
-            lineManager.enabled = false;
+            ActivateEraserMode();
         }
         
         private void CancelEraser(object sender)
         {
+            if (!_isEraserActive) return;
+
             AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
-            curserSpriteRenderer.sprite = pencilSprite;
-            cursorCollider.enabled = false;
-            lineManager.enabled = true;
+            if (curserSpriteRenderer) curserSpriteRenderer.sprite = pencilSprite;
+            if (cursorCollider) cursorCollider.enabled = false;
+            if (lineManager) lineManager.enabled = true;
+            RestoreCursorVisibility();
+            _isEraserActive = false;
+            SetButtonVisual(false);
+
+            EventManager.Instance?.TriggerEraserInactive();
+        }
+
+        private void ActivateEraserMode()
+        {
+            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
+            EventManager.Instance?.TriggerEraserActive();
+
+            if (curserSpriteRenderer) curserSpriteRenderer.sprite = eraserSprite;
+            if (cursorCollider) cursorCollider.enabled = true;
+            if (lineManager) lineManager.enabled = false;
+
+            _isEraserActive = true;
+            SetButtonVisual(true);
+        }
+
+        private void RestoreCursorVisibility()
+        {
+            Cursor.visible = true;
+        }
+
+        private void SetButtonVisual(bool isSelected)
+        {
+            if (_buttonImage == null) return;
+            _buttonImage.color = isSelected ? selectedColor : normalColor;
         }
     }
 }

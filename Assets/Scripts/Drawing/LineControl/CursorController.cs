@@ -1,9 +1,9 @@
 ﻿using System;
+using Drawing.Data;
 using Drawing.Managers;
 using Drawing.Managers.Core.Managers;
 using UnityEngine;
-using Drawing.Data;
-
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Drawing.LineControl
@@ -28,6 +28,7 @@ namespace Drawing.LineControl
         private Vector3 _lastPosition;
         private Camera _camera;
         private float _currentSmoothedSpeed;
+        private bool _isEraserMode;
 
 
 
@@ -61,11 +62,16 @@ namespace Drawing.LineControl
 
             _lastPosition = GetMouseWorldPosition();
             transform.position = _lastPosition;
+            UpdateCursorVisibility();
         }
 
         private void Update()
         {
-            if (_camera == null || Mouse.current == null) return; // Safety check for mouse
+            if (_camera == null || Mouse.current == null)
+            {
+                UpdateCursorVisibility();
+                return; // Safety check for mouse
+            }
 
             // 1. Get current mouse position in world space
             Vector3 currentMouseWorldPos = GetMouseWorldPosition();
@@ -102,6 +108,8 @@ namespace Drawing.LineControl
 
             // 5. Save the current position for the next frame's speed calculation
             _lastPosition = currentMouseWorldPos;
+
+            UpdateCursorVisibility();
         }
 
         private Vector3 GetMouseWorldPosition()
@@ -121,8 +129,12 @@ namespace Drawing.LineControl
         private void OnEnable()
         {
             //listen to event of button pressed to change the drawing sound
-            EventManager.Instance.OnConfigButtonSelected += HandleButtonPressed;
-            EventManager.Instance.OnEraserActive += HandleEraserActive;
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnConfigButtonSelected += HandleButtonPressed;
+                EventManager.Instance.OnEraserActive += HandleEraserActive;
+                EventManager.Instance.OnEraserInactive += HandleEraserInactive;
+            }
             
         }
 
@@ -131,12 +143,28 @@ namespace Drawing.LineControl
             var config = DrawingConfigController.Instance.currentSettings;
             //TODO maybe need to change to eraser sound later
             AudioManager.Instance.SetBackgroundMusic(GameSoundsSo.AudioType.None);
+            _isEraserMode = true;
+            UpdateCursorVisibility();
+        }
+
+        private void HandleEraserInactive()
+        {
+            _isEraserMode = false;
+            HandleButtonPressed(null);
+            UpdateCursorVisibility();
         }
 
         private void OnDisable()
         {
-            EventManager.Instance.OnConfigButtonSelected -= HandleButtonPressed;
-            EventManager.Instance.OnEraserActive -= HandleEraserActive;
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnConfigButtonSelected -= HandleButtonPressed;
+                EventManager.Instance.OnEraserActive -= HandleEraserActive;
+                EventManager.Instance.OnEraserInactive -= HandleEraserInactive;
+            }
+
+            _isEraserMode = false;
+            Cursor.visible = true;
 
         }
 
@@ -148,6 +176,28 @@ namespace Drawing.LineControl
                 AudioManager.Instance.SetBackgroundMusic(config.drawSound);
             }
             
+            UpdateCursorVisibility();
+        }
+
+        private void UpdateCursorVisibility()
+        {
+            bool shouldShowCursor = true;
+
+            if (_isEraserMode)
+            {
+                shouldShowCursor = IsPointerOverUI();
+            }
+
+            if (Cursor.visible != shouldShowCursor)
+            {
+                Cursor.visible = shouldShowCursor;
+            }
+        }
+
+        private bool IsPointerOverUI()
+        {
+            if (EventSystem.current == null) return false;
+            return EventSystem.current.IsPointerOverGameObject();
         }
     }
 }
