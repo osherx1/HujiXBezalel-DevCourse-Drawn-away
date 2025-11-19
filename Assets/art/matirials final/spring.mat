@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UsefulMaterial
-  m_Shader: {fileID: 4800000, guid: 8f67f591fb47dfe459397480d56a3d1c, type: 3}
+  m_Name: spring
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ddd9692b2161647bdb23247ed844d3aa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5cadc4ad459a24a6888d123f0adea1f3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -42,17 +42,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _OutlineThickness: 0.022
-    - _Shine: 0.51
-    - _ShinePos: 0.13
-    - _ShinePower: 0.55
-    - _ShineWidth: 0.361
-    - _Smooth: 0.118
-    - _Thickness: 1
+    - _OutlineThickness: 0
+    - _ShinePos: 0
+    - _ShinePower: 0.18
+    - _ShineWidth: 0.45
+    - _Smooth: 0.041
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.70748186, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShineColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
