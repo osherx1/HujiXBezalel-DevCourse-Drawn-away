@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e02d93faa86642f5aefb34f9820f474b, type: 3}
-  m_Name: LineSettingsCollection 1
+  m_Name: line setting copy
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.Data.LineSettingsCollection
   settingsList:
   - id: Default
@@ -50,7 +50,9 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 1
       massMult: 1
-      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      material: {fileID: 2100000, guid: 916787503b59f49f7a42cee21baf5a47, type: 2}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Spring
     settings:
       lineColor:
@@ -88,7 +90,9 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: 5ec4eeef41877db4d8a546f5a1ee493b, type: 2}
       gravityScaleOverride: 1.4
       massMult: 1.2
-      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      material: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Iron
     settings:
       lineColor:
@@ -126,7 +130,9 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: 28ac6c32b7001b246a3e73d354080f02, type: 2}
       gravityScaleOverride: 2.3
       massMult: 5
-      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Static
     settings:
       lineColor:
@@ -164,7 +170,9 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 1
       massMult: 1
-      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      material: {fileID: 2100000, guid: 287020c5e8b8f42e4923671f51f9c05a, type: 2}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Ice
     settings:
       lineColor:
@@ -203,6 +211,8 @@ MonoBehaviour:
       gravityScaleOverride: 2
       massMult: 0.9
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      endCapVertices: 0
+      cornerVertices: 0
   - id: Balloon
     settings:
       lineColor:
@@ -240,4 +250,6 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
       gravityScaleOverride: -0.1
       massMult: 0.2
-      material: {fileID: 2100000, guid: 3b43f6b6a02abfe4a8932ce8044445ed, type: 2}
+      material: {fileID: 2100000, guid: 888556c7ffbfa488183e950af2223c83, type: 2}
+      endCapVertices: 0
+      cornerVertices: 0
