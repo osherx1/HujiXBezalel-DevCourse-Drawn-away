@@ -132,11 +132,17 @@ namespace Drawing
             string status = isOverride ? "<color=cyan>Override</color>" : "<color=orange>Revert</color>";
             Log($"{settingName} -> {status}. New Value: <b>{value}</b>");
         }
-        
-        
 
-  
 
-   
+        public void SetCapVertices(int endCapVertices, bool overrideValue = false)
+        {
+            currentSettings.endCapVertices = overrideValue ? endCapVertices : defaultSettings.endCapVertices;
+
+        }
+
+        public void SetCornerVertices(int cornerVertices, bool overrideValue = false)
+        {
+            currentSettings.cornerVertices = overrideValue ? cornerVertices : defaultSettings.cornerVertices;
+        }
     }
 }

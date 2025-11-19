@@ -39,7 +39,7 @@ namespace Drawing.LineControl
         /// </summary>
         public void Initialize(float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon,
             bool collideWhileDrawing = false, float simplifyTolerance = -1f, int maxPoints = -1,
-            Gradient colorGradient = null, Material material = null)
+            Gradient colorGradient = null, Material material = null, int endCapVertices = 0, int cornerVertices = 0)
         {
             // Ensure required components
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
@@ -56,7 +56,7 @@ namespace Drawing.LineControl
             lineRenderer.useWorldSpace = false;
 
             // Apply configurable values
-            SetLineWidth(width);
+            SetLineShape(width,endCapVertices, cornerVertices);
             SetPointsMinDistance(minDist);
 
             if (simplifyTolerance >= 0f) colliderSimplifyTolerance = simplifyTolerance;
@@ -84,6 +84,15 @@ namespace Drawing.LineControl
 
             usePolygonCollider = usePolygon;
         }
+
+        private void SetLineShape(float width, int endCapVertices, int cornerVertices)
+        {
+            if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
+            SetLineWidth(width);
+            lineRenderer.numCapVertices = endCapVertices;
+            lineRenderer.numCornerVertices = cornerVertices;
+        }
+
 
         /// <summary>
         /// Add a LOCAL point (already converted relative to this transform).
