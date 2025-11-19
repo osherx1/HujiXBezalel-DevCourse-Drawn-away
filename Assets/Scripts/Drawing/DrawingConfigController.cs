@@ -144,5 +144,14 @@ namespace Drawing
         {
             currentSettings.cornerVertices = overrideValue ? cornerVertices : defaultSettings.cornerVertices;
         }
+        public void SetSoundSettings(GameSoundsSo.AudioType drawSound,
+            GameSoundsSo.AudioType collisionSound,
+            GameSoundsSo.AudioType releaseSound)
+        {
+            currentSettings.drawSound = drawSound;
+            currentSettings.collisionSound = collisionSound;
+            currentSettings.releaseSound = releaseSound;
+            
+        }
     }
 }

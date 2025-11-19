@@ -1,5 +1,6 @@
 using Drawing.Data;
 using Drawing.Managers;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -88,6 +89,7 @@ namespace Drawing
         /// </summary>
         private void OnButtonClicked()
         {
+            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
             // Optimization: If already selected, do nothing (optional behavior)
             if (_isSelected) return;
 
@@ -131,6 +133,8 @@ namespace Drawing
             }
         }
 
+   
+
 
         private void ApplySettings()
         {
@@ -153,6 +157,7 @@ namespace Drawing
             controller.SetMaterial(valuesToApply.material, applyMaterial);
             controller.SetCapVertices(valuesToApply.endCapVertices, applyCapVertices);
             controller.SetCornerVertices(valuesToApply.cornerVertices, applyCornerVertices);
+            controller.SetSoundSettings(valuesToApply.drawSound, valuesToApply.collisionSound, valuesToApply.releaseSound);
         }
     }
 }

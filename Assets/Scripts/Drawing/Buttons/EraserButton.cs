@@ -1,5 +1,7 @@
+using Drawing.Data;
 using Drawing.LineControl;
 using Drawing.Managers;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +33,8 @@ namespace Drawing.Buttons
 
         private void OnEraserButtonClicked()
         {
+            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
+
             isEraserActive = !isEraserActive;
 
             if (isEraserActive)

@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using Drawing.Managers;
+using Drawing.Managers.Core.Managers;
+using UnityEngine;
+using Drawing.Data;
+
 using UnityEngine.InputSystem;
 
 namespace Drawing.LineControl
@@ -12,31 +17,19 @@ namespace Drawing.LineControl
     
         [SerializeField] private float minPitch = 0.8f;
         [SerializeField] private float maxPitch = 1.3f;
-    
         [SerializeField] private float maxVolume = 0.5f;
 
         // --- Mouse Following ---
         [SerializeField] private float zOffsetFromCamera = 10f;
         [SerializeField] private float smoothingFactor = 5f;
+        
+        
         private AudioSource _audioSource;
         private Vector3 _lastPosition;
         private Camera _camera;
         private float _currentSmoothedSpeed;
 
-        private void Awake()
-        {
-            _audioSource = GetComponent<AudioSource>();
-            if (_audioSource.clip == null)
-            {
-                Debug.LogWarning("DrawingSoundController: AudioSource is missing an AudioClip.", this);
-            }
 
-            _audioSource.loop = true;
-            _audioSource.playOnAwake = true;
-            _audioSource.volume = 0; 
-            _audioSource.pitch = minPitch;
-            _audioSource.Play();
-        }
 
         private void Start()
         {
@@ -47,6 +40,24 @@ namespace Drawing.LineControl
                 enabled = false;
                 return;
             }
+            var config = DrawingConfigController.Instance.currentSettings;
+            if (config == null)
+            {
+                Debug.LogWarning("[Cursor Controller] - Current drawing configuration is null.", this);
+                return;
+            }
+
+            AudioManager.Instance.SetBackgroundMusic(config.drawSound);
+            _audioSource = AudioManager.Instance.GetBackgroundMusicAudioSource();
+            if (_audioSource.clip == null)
+            {
+                Debug.LogWarning("DrawingSoundController: AudioSource is missing an AudioClip.", this);
+            }
+
+            _audioSource.loop = true;
+            _audioSource.volume = 0; 
+            _audioSource.pitch = minPitch;
+            _audioSource.Play();
 
             _lastPosition = GetMouseWorldPosition();
             transform.position = _lastPosition;
@@ -105,6 +116,38 @@ namespace Drawing.LineControl
         
             mouseScreenPos.z = zOffsetFromCamera; 
             return _camera.ScreenToWorldPoint(mouseScreenPos);
+        }
+
+        private void OnEnable()
+        {
+            //listen to event of button pressed to change the drawing sound
+            EventManager.Instance.OnConfigButtonSelected += HandleButtonPressed;
+            EventManager.Instance.OnEraserActive += HandleEraserActive;
+            
+        }
+
+        private void HandleEraserActive()
+        {
+            var config = DrawingConfigController.Instance.currentSettings;
+            //TODO maybe need to change to eraser sound later
+            AudioManager.Instance.SetBackgroundMusic(GameSoundsSo.AudioType.None);
+        }
+
+        private void OnDisable()
+        {
+            EventManager.Instance.OnConfigButtonSelected -= HandleButtonPressed;
+            EventManager.Instance.OnEraserActive -= HandleEraserActive;
+
+        }
+
+        private void HandleButtonPressed(object obj)
+        {
+            var config = DrawingConfigController.Instance.currentSettings;
+            if (config != null)
+            {
+                AudioManager.Instance.SetBackgroundMusic(config.drawSound);
+            }
+            
         }
     }
 }

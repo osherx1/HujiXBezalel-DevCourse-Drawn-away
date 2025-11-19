@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem.Controls;
 #endif
@@ -205,6 +207,7 @@ namespace Drawing.LineControl
             // Initialize so Awake-created components get proper settings
             ln.Initialize(conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints, 
                 conf.lineColor,conf.material,conf.endCapVertices,conf.cornerVertices);
+            ln.InitializeSound(conf.collisionSound);
 
             currentLine = ln;
             currentLine.AddWorldPoint(worldPos);
@@ -230,6 +233,7 @@ namespace Drawing.LineControl
                 }
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
+                if(conf.releaseSound!= GameSoundsSo.AudioType.None) AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
             }
             currentLine = null;
         }
