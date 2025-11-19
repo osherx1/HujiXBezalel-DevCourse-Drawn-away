@@ -13,13 +13,10 @@ namespace Drawing.Buttons
         [SerializeField] private Button button;
         [SerializeField] private Sprite eraserSprite;
         [SerializeField] private SpriteRenderer curserSpriteRenderer;
+        [SerializeField] private Sprite pencilSprite;
         [SerializeField] private CircleCollider2D cursorCollider;
         [SerializeField] private LineManager lineManager;
         
-        
-        
-        private Sprite pencilSprite;
-        private bool isEraserActive = false;
         private Image _buttonImage;
         private Color normalColor;
         [SerializeField] private Color selectedColor = Color.green;
@@ -34,35 +31,32 @@ namespace Drawing.Buttons
         {
             if (!button) return;
             button.onClick.AddListener(OnEraserButtonClicked);
+            EventManager.Instance.OnConfigButtonSelected += CancelEraser;
         }
 
         private void OnDisable()
         {
             if (!button) return;
             button.onClick.RemoveListener(OnEraserButtonClicked);
+            EventManager.Instance.OnConfigButtonSelected -= CancelEraser;
         }
 
         private void OnEraserButtonClicked()
         {
             AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
 
-            isEraserActive = !isEraserActive;
-
-            if (isEraserActive)
-            {
-                EventManager.Instance.TriggerEraserActive();
-                pencilSprite = curserSpriteRenderer.sprite;
-                curserSpriteRenderer.sprite = eraserSprite;
-                cursorCollider.enabled = true;
-                lineManager.enabled = false;
-            }
-            else
-            {
-                EventManager.Instance.TriggerEraserInactive();
-                curserSpriteRenderer.sprite = pencilSprite;
-                cursorCollider.enabled = false;
-                lineManager.enabled = true;
-            }
+            EventManager.Instance.TriggerEraserActive();
+            curserSpriteRenderer.sprite = eraserSprite;
+            cursorCollider.enabled = true;
+            lineManager.enabled = false;
+        }
+        
+        private void CancelEraser(object sender)
+        {
+            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
+            curserSpriteRenderer.sprite = pencilSprite;
+            cursorCollider.enabled = false;
+            lineManager.enabled = true;
         }
     }
 }
