@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem.Controls;
+#endif
 
 namespace Drawing.LineControl
 {
@@ -25,6 +29,20 @@ namespace Drawing.LineControl
         [Tooltip("Clamp the number of points used to bake the collider. Lower = faster. 128 is a good default.")]
         public int maxColliderPoints = 128;
 
+        [Header("Collision")]
+        [Tooltip("Lines on these layers will block drawing (finish line) while drawing.")]
+        public LayerMask cantDrawOverLayer;
+
+        [Header("Input")]
+        [Tooltip("If tip isn't reported by the pen, use pressure >= this to treat as pressed.")]
+        public float penPressureThreshold = 0.15f;
+        [Tooltip("Log pen press state changes for debugging.")]
+        public bool logPenDebug = false;
+        [Tooltip("Log mouse press state changes for debugging.")]
+        public bool logMouseDebug = false;
+        [Tooltip("Log touch press state changes for debugging.")]
+        public bool logTouchDebug = false;
+
         [Header("Optional Prefab")]
         public GameObject linePrefab; // optional prefab with Line component already
         [Header("World Parenting")]
@@ -32,13 +50,74 @@ namespace Drawing.LineControl
 
         private Line currentLine;
         private bool isDrawing;
+        private bool _penPressed;
+        private bool _warnedCantDrawMaskOnce;
 
         void Update()
         {
 #if ENABLE_INPUT_SYSTEM
             if (Camera.main == null) return;
+            var pen = Pen.current;
             var mouse = Mouse.current;
             var touch = Touchscreen.current;
+
+            // Pen (graphics tablet) support
+            if (pen != null)
+            {
+                bool tip = false;
+                float pressure = 0f;
+                Vector2 penPos = Vector2.zero;
+#if ENABLE_INPUT_SYSTEM
+                ButtonControl barrel1 = null;
+                ButtonControl barrel2 = null;
+                ButtonControl eraserBtn = null;
+#endif
+                try { tip = pen.tip.isPressed; } catch { tip = false; }
+                try { pressure = pen.pressure.ReadValue(); } catch { pressure = 0f; }
+                try { penPos = pen.position.ReadValue(); } catch { penPos = Vector2.zero; }
+#if ENABLE_INPUT_SYSTEM
+                try { barrel1 = pen.TryGetChildControl<ButtonControl>("firstBarrelButton") ?? pen.TryGetChildControl<ButtonControl>("barrelButton") ?? pen.TryGetChildControl<ButtonControl>("barrel"); } catch { barrel1 = null; }
+                try { barrel2 = pen.TryGetChildControl<ButtonControl>("secondBarrelButton") ?? pen.TryGetChildControl<ButtonControl>("barrelButton2") ; } catch { barrel2 = null; }
+                try { eraserBtn = pen.TryGetChildControl<ButtonControl>("eraser"); } catch { eraserBtn = null; }
+#endif
+                bool pressed = tip || pressure >= penPressureThreshold
+#if ENABLE_INPUT_SYSTEM
+                                || (barrel1 != null && barrel1.isPressed)
+                                || (barrel2 != null && barrel2.isPressed)
+                                || (eraserBtn != null && eraserBtn.isPressed)
+#endif
+                                ;
+
+                if (pressed && !_penPressed)
+                {
+                    Vector2 wp = Camera.main.ScreenToWorldPoint(penPos);
+                    StartLine(wp);
+                    isDrawing = true;
+                    _penPressed = true;
+                    // if (logPenDebug) Debug.Log($"LineManager: Pen down (tip={tip}, pressure={pressure:F2}).", this);
+                    return; // Prefer pen over others this frame
+                }
+                if (pressed && currentLine != null)
+                {
+                    Vector2 wp = Camera.main.ScreenToWorldPoint(penPos);
+                    if (IsBlocked(wp))
+                    {
+                        FinishLine();
+                        _penPressed = false;
+                        // if (logPenDebug) Debug.Log("LineManager: Pen blocked by overlap; finishing line.", this);
+                        return;
+                    }
+                    currentLine.AddWorldPoint(wp);
+                    return;
+                }
+                if (!pressed && _penPressed)
+                {
+                    FinishLine();
+                    _penPressed = false;
+                    // if (logPenDebug) Debug.Log("LineManager: Pen up.", this);
+                    return;
+                }
+            }
 
             // Mouse
             if (mouse != null)
@@ -48,15 +127,26 @@ namespace Drawing.LineControl
                     Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
                     StartLine(wp);
                     isDrawing = true;
+                    // if (logMouseDebug) Debug.Log("LineManager: Mouse down.", this);
                 }
                 if (mouse.leftButton.isPressed && currentLine != null)
                 {
                     Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
-                    currentLine.AddWorldPoint(wp);
+                    // Prevent drawing over existing finalized lines
+                    if (IsBlocked(wp))
+                    {
+                        FinishLine();
+                        // if (logMouseDebug) Debug.Log("LineManager: Mouse blocked by overlap; finishing line.", this);
+                    }
+                    else
+                    {
+                        currentLine.AddWorldPoint(wp);
+                    }
                 }
                 if (mouse.leftButton.wasReleasedThisFrame)
                 {
                     FinishLine();
+                    // if (logMouseDebug) Debug.Log("LineManager: Mouse up.", this);
                 }
             }
 
@@ -69,15 +159,26 @@ namespace Drawing.LineControl
                     Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
                     StartLine(wp);
                     isDrawing = true;
+                    // if (logTouchDebug) Debug.Log("LineManager: Touch down.", this);
                 }
                 if (primary.press.isPressed && currentLine != null)
                 {
                     Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
-                    currentLine.AddWorldPoint(wp);
+                    // Prevent drawing over existing finalized lines
+                    if (IsBlocked(wp))
+                    {
+                        FinishLine();
+                        // if (logTouchDebug) Debug.Log("LineManager: Touch blocked by overlap; finishing line.", this);
+                    }
+                    else
+                    {
+                        currentLine.AddWorldPoint(wp);
+                    }
                 }
                 if (primary.press.wasReleasedThisFrame)
                 {
                     FinishLine();
+                    // if (logTouchDebug) Debug.Log("LineManager: Touch up.", this);
                 }
             }
 #endif
@@ -121,10 +222,39 @@ namespace Drawing.LineControl
             }
             else
             {
+                // Prevent future drawing over this line by assigning it to the CantDrawOver layer (if it exists)
+                int cantDrawIdx = LayerMask.NameToLayer("CantDrawOver");
+                if (cantDrawIdx >= 0)
+                {
+                    currentLine.gameObject.layer = cantDrawIdx;
+                }
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
             }
             currentLine = null;
+        }
+
+        // Compute the overlap radius used to stop drawing when we hit existing lines
+        float GetOverlapRadius()
+        {
+            var conf = DrawingConfigController.Instance != null ? DrawingConfigController.Instance.currentSettings : null;
+            float width = conf != null ? conf.lineWidth : lineWidth;
+            // Use half the width to closely match the visual thickness
+            return Mathf.Max(0.001f, width * 0.5f);
+        }
+
+        bool IsBlocked(Vector2 worldPoint)
+        {
+            if (cantDrawOverLayer.value == 0)
+            {
+                if (!_warnedCantDrawMaskOnce)
+                {
+                    // Debug.LogWarning("LineManager: 'cantDrawOverLayer' is not set. Overlap blocking will not work.", this);
+                    _warnedCantDrawMaskOnce = true;
+                }
+                return false;
+            }
+            return Physics2D.OverlapCircle(worldPoint, GetOverlapRadius(), cantDrawOverLayer);
         }
     }
 }

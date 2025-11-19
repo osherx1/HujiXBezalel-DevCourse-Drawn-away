@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &110519280 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5247383489900493533, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-  m_PrefabInstance: {fileID: 4958629671782194544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +460,71 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8309239507475747446, guid: e55d449fee3269349915db3efd37f077, type: 3}
   m_PrefabInstance: {fileID: 60771080223775973}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1139725828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139725831}
+  - component: {fileID: 1139725830}
+  - component: {fileID: 1139725829}
+  m_Layer: 0
+  m_Name: Inputs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1139725829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139725828}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d7186557705fc47a92c490827ed6f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drawing.Utilities.InputDiagnostics
+  showOnGUI: 1
+  fontSize: 30
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  offset: {x: 22.08, y: 10}
+  logStateChanges: 1
+--- !u!114 &1139725830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139725828}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac31059fdf65654091735a526589fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drawing.Utilities.InputRawTrace
+  logToConsole: 1
+  writeToFile: 1
+  fileName: input_trace.log
+--- !u!4 &1139725831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139725828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.55121, y: 0.39852, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &60771080223775973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480,10 +540,14 @@ PrefabInstance:
     - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: linePrefab
       value: 
-      objectReference: {fileID: 110519280}
+      objectReference: {fileID: 5247383489900493533, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
+    - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
+      propertyPath: cantDrawOverLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1959339671015974043, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: showDebugLogs
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1959339671015974043, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: currentSettings.material
@@ -762,6 +826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Line
       objectReference: {fileID: 0}
+    - target: {fileID: 5247383489900493533, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -790,6 +858,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58274319323775801, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457807196307765702, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814539426897314454, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8544620030880778873, guid: 76308330f44b4334aaad152b036e9eac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -851,3 +931,4 @@ SceneRoots:
   - {fileID: 1017796404}
   - {fileID: 9186165042341244713}
   - {fileID: 2699827429421228591}
+  - {fileID: 1139725831}

@@ -486,6 +486,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1959339671015974043, guid: e55d449fee3269349915db3efd37f077, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: lineSettingsCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 9fa2008ebd2864b269a1a44322779fb7, type: 2}
+    - target: {fileID: 1959339671015974043, guid: e55d449fee3269349915db3efd37f077, type: 3}
+>>>>>>> e4de1116de8b43262ed7671026a0e853aee6bfab
       propertyPath: currentSettings.material
       value: 
       objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
@@ -565,10 +572,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 5985318076396200009, guid: a45fee68f9d92a444aa4cbf67547588e, type: 3}
       propertyPath: lineSettingsCollection
       value: 
       objectReference: {fileID: 11400000, guid: cdeae9677cfa149fb8f0e368fcc113a4, type: 2}
+=======
+>>>>>>> e4de1116de8b43262ed7671026a0e853aee6bfab
     - target: {fileID: 7171113052981640278, guid: a45fee68f9d92a444aa4cbf67547588e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
