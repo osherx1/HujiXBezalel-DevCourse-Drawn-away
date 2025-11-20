@@ -819,6 +819,10 @@ PrefabInstance:
       propertyPath: curserSpriteRenderer
       value: 
       objectReference: {fileID: 1057926442}
+    - target: {fileID: 2836866565800789088, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.2626953
+      objectReference: {fileID: 0}
     - target: {fileID: 3818810970860641517, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
       propertyPath: lineroot
       value: 
@@ -936,22 +940,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2815822651838663589, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: rigidBody
-      value: 
-      objectReference: {fileID: 4958629671782194546}
-    - target: {fileID: 2815822651838663589, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: edgeCollider
-      value: 
-      objectReference: {fileID: 4958629671782194547}
-    - target: {fileID: 2815822651838663589, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: lineRenderer
-      value: 
-      objectReference: {fileID: 4958629671782194548}
-    - target: {fileID: 2815822651838663589, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: usePolygonCollider
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3742236240087425688, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16616
@@ -992,66 +980,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0.09777853
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0.09777853
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.r
-      value: 0.11698109
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.b
-      value: 0.63928086
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.g
-      value: 0.63928086
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.r
-      value: 0.6528301
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Parameters.colorGradient.m_ColorSpace
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5247383489900493533, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
       propertyPath: m_Name
       value: Line
-      objectReference: {fileID: 0}
-    - target: {fileID: 5247383489900493533, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
---- !u!50 &4958629671782194546 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 2180012859660155668, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-  m_PrefabInstance: {fileID: 4958629671782194544}
-  m_PrefabAsset: {fileID: 0}
---- !u!68 &4958629671782194547 stripped
-EdgeCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8541051740542230168, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-  m_PrefabInstance: {fileID: 4958629671782194544}
-  m_PrefabAsset: {fileID: 0}
---- !u!120 &4958629671782194548 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 4193962718934532835, guid: a03cfb6f441841445bfa9cbb5bb64914, type: 3}
-  m_PrefabInstance: {fileID: 4958629671782194544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9186165042341244713
 PrefabInstance:
   m_ObjectHideFlags: 0

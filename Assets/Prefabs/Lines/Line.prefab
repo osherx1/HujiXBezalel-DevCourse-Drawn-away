@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f430475d4e2c14f8a53633d528b3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Line
-  lineRenderer: {fileID: 0}
-  edgeCollider: {fileID: 0}
+  lineRenderer: {fileID: 4193962718934532835}
+  edgeCollider: {fileID: 8541051740542230168}
   polygonCollider: {fileID: 0}
-  rigidBody: {fileID: 0}
+  rigidBody: {fileID: 2180012859660155668}
   addCircleColliderPerPoint: 0
   usePolygonCollider: 1
   colliderSimplifyTolerance: 0.03
@@ -58,7 +58,7 @@ MonoBehaviour:
   destroyUnusedCollidersOnFinalize: 1
   points: []
   pointsCount: 0
-  soundCollisionLimit: 5
+  soundCollisionLimit: 30
 --- !u!120 &4193962718934532835
 LineRenderer:
   serializedVersion: 2
@@ -85,7 +85,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,8 +130,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.11698109, g: 0.09777853, b: 0.09777853, a: 1}
+      key1: {r: 0.6528301, g: 0.63928086, b: 0.63928086, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -155,7 +155,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
