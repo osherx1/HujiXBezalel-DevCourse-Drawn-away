@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
 using UnityEngine;
+using Utilities.Camera;
 
 namespace Drawing.LineControl
 {
@@ -42,7 +43,13 @@ namespace Drawing.LineControl
         float circleColliderRadius; // updated when SetLineWidth is called
         private GameSoundsSo.AudioType _collisionSound = GameSoundsSo.AudioType.None;
         private float _minImpactVelocity = 1.0f; // Minimum speed to trigger sound
+
         private PhysicsMaterial2D _physicsMat;
+
+        //Counter for the number of collision 
+        private int _collisionCounter;
+        [SerializeField] private int soundCollisionLimit = 1;
+
 
         /// <summary>
         /// Initialize visual/physics parameters when a new line is spawned.
@@ -400,7 +407,7 @@ namespace Drawing.LineControl
             return result;
         }
 
- 
+
 
         public void InitializeSound(GameSoundsSo.AudioType collisionSoundType)
         {
@@ -412,9 +419,14 @@ namespace Drawing.LineControl
             if (_collisionSound == GameSoundsSo.AudioType.None) return;
 
             // Check relative velocity to avoid spamming sounds when resting
-            if (other.relativeVelocity.magnitude > _minImpactVelocity&&!other.gameObject.CompareTag("Line"))
+            if (other.relativeVelocity.magnitude > _minImpactVelocity && !other.gameObject.CompareTag("Line") &&
+                _collisionCounter < soundCollisionLimit)
             {
+                _collisionCounter++;
+                CameraShaker.Instance.Shake(0.1f, 0.1f);
+                Debug.Log("Playing collision sound for line.");
                 AudioManager.Instance.PlaySoundByAudioType(_collisionSound);
+
             }
         }
     }

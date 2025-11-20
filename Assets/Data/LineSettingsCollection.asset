@@ -135,7 +135,7 @@ MonoBehaviour:
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 28ac6c32b7001b246a3e73d354080f02, type: 2}
       gravityScaleOverride: 2.3
-      massMult: 5
+      massMult: 3
       material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
       endCapVertices: 0
       cornerVertices: 0
