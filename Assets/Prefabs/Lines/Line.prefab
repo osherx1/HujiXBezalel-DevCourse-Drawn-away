@@ -58,6 +58,7 @@ MonoBehaviour:
   destroyUnusedCollidersOnFinalize: 1
   points: []
   pointsCount: 0
+  soundCollisionLimit: 5
 --- !u!120 &4193962718934532835
 LineRenderer:
   serializedVersion: 2
