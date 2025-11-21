@@ -48,14 +48,21 @@ namespace Drawing
 
         public void ResetToDefaults()
         {
+            if(currentSettings == null) currentSettings = new LineSettings();
             Log("Resetting all settings to defaults.");
+            currentSettings.lineWidth = defaultSettings.lineWidth;
+            currentSettings.lineColor = defaultSettings.lineColor;
+            currentSettings.material = defaultSettings.material;
+            currentSettings.usePhysics = defaultSettings.usePhysics;
+            currentSettings.physicsMaterial = defaultSettings.physicsMaterial;
+            currentSettings.gravityScaleOverride = defaultSettings.gravityScaleOverride;
+            currentSettings.massMult = defaultSettings.massMult;
+            currentSettings.endCapVertices = defaultSettings.endCapVertices;
+            currentSettings.cornerVertices = defaultSettings.cornerVertices;
+            currentSettings.drawSound = defaultSettings.drawSound;
+            currentSettings.collisionSound = defaultSettings.collisionSound;
+            currentSettings.releaseSound = defaultSettings.releaseSound;
             
-            // Copy all values from default to current
-            SetColor(null, false);
-            SetWidth(0, false);
-            SetUsePhysics(false, false);
-            SetPhysicsMaterial(null, false);
-            SetGravity(0, false);
         }
 
         // --- SETTERS WITH LOGIC ---

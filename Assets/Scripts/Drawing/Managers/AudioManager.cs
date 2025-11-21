@@ -38,7 +38,7 @@ namespace Drawing.Managers
             /// <summary>
             /// Called when the object is initialized. Plays background music if enabled.
             /// </summary>
-            void Awake()
+            void Start()
             {
                 if (startWithBackgroundMusic)
                 {
@@ -57,6 +57,7 @@ namespace Drawing.Managers
                     backgroundMusic.Play();
                 }
             }
+
             public AudioSource GetBackgroundMusicAudioSource()
             {
                 return backgroundMusic;
@@ -71,7 +72,7 @@ namespace Drawing.Managers
                 }
 
                 AudioClip clip = gameSoundsSo.GetClip(audioType);
-                
+
                 if (clip != null)
                 {
                     backgroundMusic.clip = clip;
@@ -81,23 +82,26 @@ namespace Drawing.Managers
                 {
                     Debug.LogWarning($"Background music {audioType} not found!");
                 }
-                
             }
 
             /// <summary>
             /// Plays a sound effect based on the audio type defined in the GameSoundsSO.
             /// </summary>
             /// <param name="audioType">The type of sound to play.</param>
-            public void PlaySoundByAudioType(GameSoundsSo.AudioType audioType)
+            public void PlaySoundByAudioType(GameSoundsSo.AudioType audioType, float volumeScale = 1.0f)
             {
+                if (audioType == GameSoundsSo.AudioType.None) return;
+
                 AudioClip clip = gameSoundsSo.GetClip(audioType);
                 if (clip != null)
                 {
-                    audioSource.PlayOneShot(clip);
+                    // PlayOneShot allows passing a volume scale (0-1)
+                    audioSource.PlayOneShot(clip, volumeScale);
                 }
                 else
                 {
-                    Debug.LogWarning($"Sound {audioType} not found!");
+                    // Optional: Reduce log noise if needed
+                    // Debug.LogWarning($"Sound {audioType} not found!");
                 }
             }
 
@@ -135,7 +139,6 @@ namespace Drawing.Managers
                     audioSource.volume = Mathf.Clamp01(volume);
                 }
             }
-
 
 
             /// <summary>

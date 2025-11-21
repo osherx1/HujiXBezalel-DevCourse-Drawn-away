@@ -41,14 +41,23 @@ namespace Drawing.LineControl
 
         float pointsMinDistance = 0.1f; // configurable via setter
         float circleColliderRadius; // updated when SetLineWidth is called
-        private GameSoundsSo.AudioType _collisionSound = GameSoundsSo.AudioType.None;
-        private float _minImpactVelocity = 1.0f; // Minimum speed to trigger sound
+
 
         private PhysicsMaterial2D _physicsMat;
+        private GameSoundsSo.AudioType _collisionSound = GameSoundsSo.AudioType.None;
+        private float _minImpactVelocity = 3.0f; // Minimum speed to trigger sound
 
-        //Counter for the number of collision 
-        private int _collisionCounter;
-        [SerializeField] private int soundCollisionLimit = 1;
+        private float _baseVolume = 1f;
+        private const float MaxVolumeVelocity = 15f;
+        private const float MaxVolumeMass = 5;
+        
+        private const float MinVelocityThresholdSqr = 0.01f;
+        private const float MinVolumeThreshold = 0.01f;
+        
+        
+        private const float CameraShakeVolumeThreshold = 0.1f;
+        [SerializeField] private float minShakeIntensity = 0.1f; // Minimum shake magnitude
+        [SerializeField] private float maxShakeIntensity = 0.5f; // Maximum shake magnitude
 
 
         /// <summary>
@@ -272,9 +281,9 @@ namespace Drawing.LineControl
                 for (int i = 1; i < physicsPts.Count; i++) length += Vector2.Distance(physicsPts[i - 1], physicsPts[i]);
                 float area = Mathf.Max(0.0001f, length * width);
                 rigidBody.mass = Mathf.Clamp(area, 0.1f, 5f) * config.massMult;
-                Debug.Log(
-                    $"Line Finalize: length={length:F3}, width={width:F3}, area={area:F3}, mass={rigidBody.mass:F3}");
-                Debug.Log("Mass Multiplier: " + config.massMult);
+                /*Debug.Log(
+                    $"Line Finalize: length={length:F3}, width={width:F3}, area={area:F3}, mass={rigidBody.mass:F3}");*/
+                //Debug.Log("Mass Multiplier: " + config.massMult);
                 SetGravity(config);
             }
 
@@ -408,7 +417,6 @@ namespace Drawing.LineControl
         }
 
 
-
         public void InitializeSound(GameSoundsSo.AudioType collisionSoundType)
         {
             _collisionSound = collisionSoundType;
@@ -418,17 +426,58 @@ namespace Drawing.LineControl
         {
             if (_collisionSound == GameSoundsSo.AudioType.None) return;
 
-            // Check relative velocity to avoid spamming sounds when resting
-            if (other.relativeVelocity.magnitude > _minImpactVelocity && !other.gameObject.CompareTag("Line") &&
-                _collisionCounter < soundCollisionLimit)
-            {
-                _collisionCounter++;
-                CameraShaker.Instance.Shake(0.1f, 0.1f);
-                Debug.Log("Playing collision sound for line.");
-                AudioManager.Instance.PlaySoundByAudioType(_collisionSound);
+            if (!ShouldProcessCollision(other)) return;
 
+            float impactSpeed = other.relativeVelocity.magnitude;
+            if (impactSpeed < _minImpactVelocity) return;
+
+            ProcessCollision(impactSpeed, other.gameObject.CompareTag("Line"));
+            
             }
+
+        
+        private bool ShouldProcessCollision(Collision2D other)
+        {
+            // Check my own speed
+            if (rigidBody.linearVelocity.sqrMagnitude < MinVelocityThresholdSqr) return false;
+
+            // Handle Line-to-Line collision priority (prevent double audio)
+            if (other.gameObject.CompareTag("Line"))
+            {
+                if (other.gameObject.TryGetComponent(out Rigidbody2D otherRb))
+                {
+                    // If I am slower than the other line, let them play the sound
+                    if (rigidBody.linearVelocity.sqrMagnitude < otherRb.linearVelocity.sqrMagnitude)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+        
+        private void ProcessCollision(float impactSpeed, bool isTargetLine)
+        {
+            float volume = CalculateVolume(impactSpeed);
+
+            if (volume > MinVolumeThreshold)
+            {
+                AudioManager.Instance.PlaySoundByAudioType(_collisionSound, volume);
+            }
+            // Camera shake for non-line collisions
+            if (volume > CameraShakeVolumeThreshold /*&& !isTargetLine*/)
+            {
+                float finalShakeMagnitude = Mathf.Lerp(minShakeIntensity, maxShakeIntensity, volume);
+                Debug.Log("Camera Shake Magnitude: " + finalShakeMagnitude);
+                CameraShaker.Instance.Shake(0.1f, finalShakeMagnitude);
+            }  
+        }
+        private float CalculateVolume(float impactSpeed)
+        {
+            float velocityFactor = Mathf.InverseLerp(_minImpactVelocity, MaxVolumeVelocity, impactSpeed);
+            float massFactor = Mathf.Clamp01(rigidBody.mass / MaxVolumeMass);
+            return velocityFactor * _baseVolume * massFactor;
         }
     }
 }
-

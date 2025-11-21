@@ -22,6 +22,7 @@ namespace Utilities.Camera
             if (_shakeCoroutine != null)
             {
                 StopCoroutine(_shakeCoroutine);
+                
             }
 
             if (mainCamera != null)
