@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
+using UnityEngine.Serialization;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem.Controls;
 #endif
@@ -49,7 +50,10 @@ namespace Drawing.LineControl
         public GameObject linePrefab; // optional prefab with Line component already
         [Header("World Parenting")]
         public Transform linesRoot; // parent for lines (null = world root, recommended to keep lines out of Canvas)
-
+        [FormerlySerializedAs("creationEffect")]
+        [Header("Visual Effects")]
+        [Tooltip("Particle system to play when the line is finished.")]
+        [SerializeField] private ParticleSystem releaseEffect;
         private Line currentLine;
         private bool isDrawing;
         private bool _penPressed;
@@ -104,7 +108,7 @@ namespace Drawing.LineControl
                     Vector2 wp = Camera.main.ScreenToWorldPoint(penPos);
                     if (IsBlocked(wp))
                     {
-                        FinishLine();
+                        FinishLine(wp);
                         _penPressed = false;
                         // if (logPenDebug) Debug.Log("LineManager: Pen blocked by overlap; finishing line.", this);
                         return;
@@ -114,7 +118,8 @@ namespace Drawing.LineControl
                 }
                 if (!pressed && _penPressed)
                 {
-                    FinishLine();
+                    Vector2 wp = Camera.main.ScreenToWorldPoint(penPos);
+                    FinishLine(wp);
                     _penPressed = false;
                     // if (logPenDebug) Debug.Log("LineManager: Pen up.", this);
                     return;
@@ -124,6 +129,7 @@ namespace Drawing.LineControl
             // Mouse
             if (mouse != null)
             {
+                
                 if (mouse.leftButton.wasPressedThisFrame)
                 {
                     Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
@@ -134,10 +140,11 @@ namespace Drawing.LineControl
                 if (mouse.leftButton.isPressed && currentLine != null)
                 {
                     Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
+
                     // Prevent drawing over existing finalized lines
                     if (IsBlocked(wp))
                     {
-                        FinishLine();
+                        FinishLine(wp);
                         // if (logMouseDebug) Debug.Log("LineManager: Mouse blocked by overlap; finishing line.", this);
                     }
                     else
@@ -147,7 +154,9 @@ namespace Drawing.LineControl
                 }
                 if (mouse.leftButton.wasReleasedThisFrame)
                 {
-                    FinishLine();
+                    Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
+
+                    FinishLine(wp);
                     // if (logMouseDebug) Debug.Log("LineManager: Mouse up.", this);
                 }
             }
@@ -156,9 +165,11 @@ namespace Drawing.LineControl
             if (touch != null && touch.touches.Count > 0)
             {
                 var primary = touch.touches[0];
+
                 if (primary.press.wasPressedThisFrame)
                 {
                     Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
+
                     StartLine(wp);
                     isDrawing = true;
                     // if (logTouchDebug) Debug.Log("LineManager: Touch down.", this);
@@ -166,10 +177,11 @@ namespace Drawing.LineControl
                 if (primary.press.isPressed && currentLine != null)
                 {
                     Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
+
                     // Prevent drawing over existing finalized lines
                     if (IsBlocked(wp))
                     {
-                        FinishLine();
+                        FinishLine(wp);
                         // if (logTouchDebug) Debug.Log("LineManager: Touch blocked by overlap; finishing line.", this);
                     }
                     else
@@ -179,7 +191,9 @@ namespace Drawing.LineControl
                 }
                 if (primary.press.wasReleasedThisFrame)
                 {
-                    FinishLine();
+                    Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
+
+                    FinishLine(wp);
                     // if (logTouchDebug) Debug.Log("LineManager: Touch up.", this);
                 }
             }
@@ -213,8 +227,9 @@ namespace Drawing.LineControl
             currentLine.AddWorldPoint(worldPos);
         }
 
-        void FinishLine()
+        void FinishLine(Vector2 wp)
         {
+            
             var conf = DrawingConfigController.Instance.currentSettings;
             isDrawing = false;
             if (currentLine == null) return;
@@ -226,6 +241,7 @@ namespace Drawing.LineControl
             else
             {
                 // Prevent future drawing over this line by assigning it to the CantDrawOver layer (if it exists)
+                
                 int cantDrawIdx = LayerMask.NameToLayer("CantDrawOver");
                 if (cantDrawIdx >= 0)
                 {
@@ -234,6 +250,12 @@ namespace Drawing.LineControl
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
                 if(conf.releaseSound!= GameSoundsSo.AudioType.None) AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
+                // Trigger Particle System at the final position
+                if (releaseEffect != null)
+                {
+                    releaseEffect.transform.position = wp;
+                    releaseEffect.Play();
+                }
             }
             currentLine = null;
         }

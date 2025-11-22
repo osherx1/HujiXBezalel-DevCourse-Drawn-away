@@ -48,7 +48,9 @@ namespace Drawing.LineControl
                 return;
             }
 
-            AudioManager.Instance.SetBackgroundMusic(config.drawSound);
+            Debug.Log("[Cursor Controller] - Drawing sound set to: " + config.drawSound, this);
+            AudioManager.Instance.SetBackgroundMusic(config.drawSound); 
+            
             _audioSource = AudioManager.Instance.GetBackgroundMusicAudioSource();
             if (_audioSource.clip == null)
             {
