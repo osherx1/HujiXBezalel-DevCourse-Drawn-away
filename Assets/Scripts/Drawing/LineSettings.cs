@@ -1,4 +1,186 @@
-﻿using Drawing.Data;
+﻿using System;
+using UnityEngine;
+using CustomInspector;
+using Drawing.Data;
+using Drawing.LineControl; // Required for the new attributes
+
+namespace Drawing
+{
+    [System.Serializable]
+    public class LineSettings
+    {
+        [Tooltip("If true, use a specific Line prefab. If false, configure manually.")]
+        public bool usePrefab;
+
+        [SerializeField] [AssetsOnly] [ShowIf(nameof(usePrefab))]
+        public GameObject linePrefab; // Added to avoid errors in LineDrawer when using prefab mode.
+
+        // ----------------- TAB: APPEARANCE -----------------
+        [ShowIfNot(nameof(usePrefab))]
+        [Tab("Appearance")]
+        [HorizontalLine("Render Mode")]
+        [Tooltip("The color gradient of the line over its lifetime.")]
+        public Gradient lineColor;
+
+        [ShowIfNot(nameof(usePrefab))] [Tab("Appearance")] [Range(0.1f, 2f)]
+        // Kept Unity's Range, could use [DynamicSlider] if you want adjustable limits
+        public float lineWidth = 0.2f;
+
+
+        [ShowIfNot(nameof(usePrefab))]
+        [Tab("Appearance")]
+        [ForceFill(errorMessage = "Line Material is required!")] // Alert if empty
+        [AssetsOnly]
+        // Ensures you don't accidentally drag a scene material
+        public Material material;
+
+        [ShowIfNot(nameof(usePrefab))]
+        [Tab("Appearance")]
+        [HorizontalLine("Vertex Settings", 1, FixedColor.Gray)] // Visual separator
+        [Range(0, 90)]
+        public int endCapVertices = 0;
+
+        [ShowIfNot(nameof(usePrefab))] [Tab("Appearance")] [Range(0, 90)]
+        public int cornerVertices = 0;
+
+
+        // ----------------- TAB: PHYSICS -----------------
+        [ShowIfNot(nameof(usePrefab))]
+        [Tab("Physics")]
+        [MessageBox("Disable physics to improve performance on static lines.", MessageBoxType.Info)]
+        public bool usePhysics = true;
+
+        // The following fields only show if 'usePhysics' is TRUE
+        [ShowIfNot(nameof(usePrefab))] [Tab("Physics")] [ShowIf(nameof(usePhysics))] [Indent(1)][AssetsOnly]
+        // Indent to show hierarchy visually
+        public PhysicsMaterial2D physicsMaterial;
+
+        [ShowIfNot(nameof(usePrefab))] [Tab("Physics")] [ShowIf(nameof(usePhysics))] [Indent(1)]
+        public float gravityScaleOverride = 1f;
+
+        [ShowIfNot(nameof(usePrefab))] [Tab("Physics")] [ShowIf(nameof(usePhysics))] [Indent(1)]
+        public float massMult = 1f;
+
+
+        // ----------------- TAB: SOUND -----------------
+
+
+        // 1. Draw Sound
+        [Hook(nameof(OnDrawSoundBoolChanged))]
+        [ShowIfNot(nameof(usePrefab))]
+        [Tab("Sound")]
+        [HorizontalLine("Draw Audio")]
+        public bool useDrawSound;
+
+        [ShowIfNot(nameof(usePrefab))] [Tab("Sound")] [ShowIf(nameof(useDrawSound))] [Indent(1)]
+        public GameSoundsSo.AudioType drawSound = GameSoundsSo.AudioType.None;
+
+
+        // 2. Collision Sound
+        [Hook(nameof(OnCollisionSoundBoolChanged))]
+        [ShowIfNot(nameof(usePrefab))]
+        [Tab("Sound")]
+        [HorizontalLine("Collision Audio")]
+        public bool useCollisionSound;
+
+        [ShowIfNot(nameof(usePrefab))] [Tab("Sound")] [ShowIf(nameof(useCollisionSound))] [Indent(1)]
+        public GameSoundsSo.AudioType collisionSound = GameSoundsSo.AudioType.None;
+
+
+        // 3. Release Sound
+        [Hook(nameof(OnReleaseSoundBoolChanged))]
+        [ShowIfNot(nameof(usePrefab))]
+        [Tab("Sound")]
+        [HorizontalLine("Release Audio")]
+        public bool useReleaseSound;
+
+        [ShowIfNot(nameof(usePrefab))] [Tab("Sound")] [ShowIf(nameof(useReleaseSound))] [Indent(1)]
+        public GameSoundsSo.AudioType releaseSound = GameSoundsSo.AudioType.None;
+
+        public void SetLineSetting(LineSettings otherSettings)
+        {
+            usePrefab = otherSettings.usePrefab;
+            if (otherSettings.usePrefab && otherSettings.linePrefab != null)
+            {
+                linePrefab = otherSettings.linePrefab;
+            }
+            else
+            {
+                SetAppearance(otherSettings);
+                SetPhysics(otherSettings);
+                SetSound(otherSettings);
+            }
+        }
+
+        public void OnDrawSoundBoolChanged()
+        {
+            if (!useDrawSound)
+            {
+                // If the boolean is set to false, reset the corresponding sound to None
+                drawSound = GameSoundsSo.AudioType.None;
+            }
+        }
+
+        public void OnCollisionSoundBoolChanged()
+        {
+            if (!useCollisionSound)
+            {
+                // If the boolean is set to false, reset the corresponding sound to None
+                collisionSound = GameSoundsSo.AudioType.None;
+            }
+        }
+
+        public void OnReleaseSoundBoolChanged()
+        {
+            if (!useReleaseSound)
+            {
+                // If the boolean is set to false, reset the corresponding sound to None
+                releaseSound = GameSoundsSo.AudioType.None;
+            }
+        }
+
+
+        private void SetSound(LineSettings otherSettings)
+        {
+            // Sound - Draw
+            useDrawSound = otherSettings.useDrawSound;
+            drawSound = useDrawSound ? otherSettings.drawSound : GameSoundsSo.AudioType.None;
+
+            // Sound - Collision
+            useCollisionSound = otherSettings.useCollisionSound;
+            collisionSound = useCollisionSound ? otherSettings.collisionSound : GameSoundsSo.AudioType.None;
+
+            // Sound - Release
+            useReleaseSound = otherSettings.useReleaseSound;
+            releaseSound = useReleaseSound ? otherSettings.releaseSound : GameSoundsSo.AudioType.None;
+        }
+
+        private void SetPhysics(LineSettings otherSettings)
+        {
+            // Physics
+            usePhysics = otherSettings.usePhysics;
+            physicsMaterial = otherSettings.physicsMaterial;
+            gravityScaleOverride = otherSettings.gravityScaleOverride;
+            massMult = otherSettings.massMult;
+        }
+
+        private void SetAppearance(LineSettings otherSettings)
+        {
+            // Appearance
+            lineWidth = otherSettings.lineWidth;
+            material = otherSettings.material;
+            endCapVertices = otherSettings.endCapVertices;
+            cornerVertices = otherSettings.cornerVertices;
+            if (otherSettings.lineColor != null)
+            {
+                lineColor = new Gradient();
+                lineColor.SetKeys(otherSettings.lineColor.colorKeys, otherSettings.lineColor.alphaKeys);
+                lineColor.mode = otherSettings.lineColor.mode;
+            }
+        }
+    }
+}
+/*using Drawing.Data;
 using UnityEngine;
 
 namespace Drawing
@@ -25,8 +207,8 @@ namespace Drawing
         public GameSoundsSo.AudioType drawSound = GameSoundsSo.AudioType.None ;
         public GameSoundsSo.AudioType collisionSound = GameSoundsSo.AudioType.None ;
         public GameSoundsSo.AudioType releaseSound = GameSoundsSo.AudioType.None ;
-        
-                
-        
+
+
+
     }
-}
+}*/

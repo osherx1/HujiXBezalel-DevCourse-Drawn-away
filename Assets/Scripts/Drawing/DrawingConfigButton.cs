@@ -15,26 +15,6 @@ namespace Drawing
         [SerializeField] private string settingID = "Default";
         private LineSettings valuesToApply;
 
-
-        [Header("What to Override?")]
-        [Space(10)]
-        [Header("Visual Settings")]
-        [SerializeField] private bool applyColor;
-        [SerializeField] private bool applyMaterial;
-        [SerializeField] private bool applyLineWidth;
-        [SerializeField] private bool applyCapVertices;
-        [SerializeField] private bool applyCornerVertices;
-        [Space(2)]
-        [Header("Physics Settings")]
-        [SerializeField] private bool applyUsePhysics;
-        [SerializeField] private bool applyPhysicsMaterial;
-        [SerializeField] private bool applyGravity;
-        [SerializeField] private bool applyMass;
-        
-
-        
-
-
         [Header("Visual Feedback State")] private Color normalColor;
         [SerializeField] private Color selectedColor = Color.green;
         private Button _button;
@@ -133,31 +113,12 @@ namespace Drawing
             }
         }
 
-   
-
-
         private void ApplySettings()
         {
             if (DrawingConfigController.Instance == null) return;
 
             var controller = DrawingConfigController.Instance;
-
-            // Injecting: (Do we want to override?, The value to use if we do)
-
-            controller.SetColor(valuesToApply.lineColor, applyColor);
-
-            controller.SetWidth(valuesToApply.lineWidth, applyLineWidth);
-
-            controller.SetUsePhysics(valuesToApply.usePhysics, applyUsePhysics);
-
-            controller.SetPhysicsMaterial(valuesToApply.physicsMaterial, applyPhysicsMaterial);
-
-            controller.SetGravity(valuesToApply.gravityScaleOverride, applyGravity);
-            controller.SetMassMult(valuesToApply.massMult, applyMass);
-            controller.SetMaterial(valuesToApply.material, applyMaterial);
-            controller.SetCapVertices(valuesToApply.endCapVertices, applyCapVertices);
-            controller.SetCornerVertices(valuesToApply.cornerVertices, applyCornerVertices);
-            controller.SetSoundSettings(valuesToApply.drawSound, valuesToApply.collisionSound, valuesToApply.releaseSound);
+            controller.SetLineSetting(valuesToApply);
         }
     }
 }
