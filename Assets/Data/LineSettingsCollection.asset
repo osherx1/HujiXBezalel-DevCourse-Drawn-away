@@ -15,6 +15,8 @@ MonoBehaviour:
   settingsList:
   - id: Default
     settings:
+      usePrefab: 0
+      linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
         key0: {r: 0, g: 0, b: 0, a: 1}
@@ -53,11 +55,16 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 1
       massMult: 1
+      useDrawSound: 1
       drawSound: 10
+      useCollisionSound: 0
       collisionSound: -1
+      useReleaseSound: 0
       releaseSound: -1
   - id: Spring
     settings:
+      usePrefab: 0
+      linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
         key0: {r: 1, g: 0.5235849, b: 0.8370063, a: 1}
@@ -96,11 +103,16 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: 5ec4eeef41877db4d8a546f5a1ee493b, type: 2}
       gravityScaleOverride: 1.4
       massMult: 1.2
+      useDrawSound: 0
       drawSound: -1
+      useCollisionSound: 1
       collisionSound: 21
+      useReleaseSound: 0
       releaseSound: -1
   - id: Iron
     settings:
+      usePrefab: 0
+      linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
         key0: {r: 0.7433963, g: 0.7433963, b: 0.7433963, a: 1}
@@ -139,11 +151,16 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: 28ac6c32b7001b246a3e73d354080f02, type: 2}
       gravityScaleOverride: 2.3
       massMult: 3
+      useDrawSound: 0
       drawSound: -1
+      useCollisionSound: 1
       collisionSound: 22
+      useReleaseSound: 0
       releaseSound: -1
   - id: Static
     settings:
+      usePrefab: 0
+      linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
         key0: {r: 0.6226415, g: 0.24976985, b: 0, a: 1}
@@ -182,11 +199,16 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 1
       massMult: 1
+      useDrawSound: 0
       drawSound: -1
+      useCollisionSound: 0
       collisionSound: -1
+      useReleaseSound: 0
       releaseSound: -1
   - id: Ice
     settings:
+      usePrefab: 0
+      linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
         key0: {r: 0, g: 0.7922716, b: 1, a: 1}
@@ -225,11 +247,16 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: 2b676836007a00746a6e089142f33fc4, type: 2}
       gravityScaleOverride: 2
       massMult: 0.9
+      useDrawSound: 0
       drawSound: -1
+      useCollisionSound: 0
       collisionSound: -1
+      useReleaseSound: 0
       releaseSound: -1
   - id: Balloon
     settings:
+      usePrefab: 0
+      linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
         key0: {r: 0.9546869, g: 1, b: 0, a: 1}
@@ -268,6 +295,9 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
       gravityScaleOverride: -0.1
       massMult: 0.2
+      useDrawSound: 1
       drawSound: 13
+      useCollisionSound: 0
       collisionSound: -1
+      useReleaseSound: 1
       releaseSound: 33

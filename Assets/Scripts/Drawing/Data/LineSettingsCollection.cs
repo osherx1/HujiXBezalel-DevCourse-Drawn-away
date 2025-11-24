@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CustomInspector;
 using UnityEngine;
 
 namespace Drawing.Data
@@ -8,10 +9,11 @@ namespace Drawing.Data
     /// Unity cannot serialize Dictionaries directly, so we use a List of this struct.
     /// </summary>
     [System.Serializable]
-    public struct NamedLineSetting
+    public class NamedLineSetting
     {
         [Tooltip("The unique ID/Name for this setting.")]
         public string id;
+
 
         [Tooltip("The settings configuration associated with this ID.")]
         public LineSettings settings;

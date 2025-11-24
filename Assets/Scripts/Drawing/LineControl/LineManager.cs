@@ -203,11 +203,20 @@ namespace Drawing.LineControl
         void StartLine(Vector2 worldPos)
         {
             var conf = DrawingConfigController.Instance.currentSettings;
-
-            GameObject go;
-            if (linePrefab != null)
+            GameObject lineToInstantiate;
+            if(conf.usePrefab&& conf.linePrefab!=null)
             {
-                go = linesRoot ? Instantiate(linePrefab, linesRoot) : Instantiate(linePrefab);
+                lineToInstantiate = conf.linePrefab;
+            }
+            else
+            {
+                lineToInstantiate = linePrefab;
+            }
+             
+            GameObject go;
+            if (lineToInstantiate != null)
+            {
+                go = linesRoot ? Instantiate(lineToInstantiate, linesRoot) : Instantiate(lineToInstantiate);
             }
             else
             {

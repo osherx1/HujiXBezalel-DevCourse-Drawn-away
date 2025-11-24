@@ -50,6 +50,9 @@ namespace Drawing
         {
             if(currentSettings == null) currentSettings = new LineSettings();
             Log("Resetting all settings to defaults.");
+            currentSettings.SetLineSetting(defaultSettings);
+                
+            /*
             currentSettings.lineWidth = defaultSettings.lineWidth;
             currentSettings.lineColor = defaultSettings.lineColor;
             currentSettings.material = defaultSettings.material;
@@ -62,6 +65,7 @@ namespace Drawing
             currentSettings.drawSound = defaultSettings.drawSound;
             currentSettings.collisionSound = defaultSettings.collisionSound;
             currentSettings.releaseSound = defaultSettings.releaseSound;
+            */
             
         }
 
@@ -159,6 +163,11 @@ namespace Drawing
             currentSettings.collisionSound = collisionSound;
             currentSettings.releaseSound = releaseSound;
             
+        }
+
+        public void SetLineSetting(LineSettings valuesToApply)
+        {
+            currentSettings.SetLineSetting(valuesToApply);
         }
     }
 }
