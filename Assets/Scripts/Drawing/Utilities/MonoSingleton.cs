@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Drawing
+namespace Drawing.Utilities
 {
     /// <summary>
     /// A generic Singleton class for MonoBehaviours.

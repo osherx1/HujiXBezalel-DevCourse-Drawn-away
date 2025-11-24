@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Drawing.Data; // Required for Coroutines
+using Drawing.Data;
+using Drawing.Utilities; // Required for Coroutines
 
 namespace Drawing.Managers
 {
