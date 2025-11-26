@@ -1,4 +1,4 @@
-namespace Drawing.Utilities
+namespace Drawing.Utilities.Pool
 {
     /**
      * This interface is responsible for the poolable objects.

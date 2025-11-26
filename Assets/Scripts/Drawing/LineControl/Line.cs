@@ -58,6 +58,7 @@ namespace Drawing.LineControl
         private const float CameraShakeVolumeThreshold = 0.1f;
         [SerializeField] private float minShakeIntensity = 0.1f; // Minimum shake magnitude
         [SerializeField] private float maxShakeIntensity = 0.5f; // Maximum shake magnitude
+        private bool _useCameraShake;
 
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Drawing.LineControl
         /// </summary>
         public void Initialize(float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon,
             bool collideWhileDrawing = false, float simplifyTolerance = -1f, int maxPoints = -1,
-            Gradient colorGradient = null, Material material = null, int endCapVertices = 0, int cornerVertices = 0)
+            Gradient colorGradient = null, Material material = null, int endCapVertices = 0, int cornerVertices = 0,LineTextureMode textureMode = LineTextureMode.Stretch)
         {
             // Ensure required components
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
@@ -85,7 +86,7 @@ namespace Drawing.LineControl
             lineRenderer.useWorldSpace = false;
 
             // Apply configurable values
-            SetLineShape(width, endCapVertices, cornerVertices);
+            SetLineShape(width, endCapVertices, cornerVertices, textureMode);
             SetPointsMinDistance(minDist);
 
             if (simplifyTolerance >= 0f) colliderSimplifyTolerance = simplifyTolerance;
@@ -113,12 +114,13 @@ namespace Drawing.LineControl
             usePolygonCollider = usePolygon;
         }
 
-        private void SetLineShape(float width, int endCapVertices, int cornerVertices)
+        private void SetLineShape(float width, int endCapVertices, int cornerVertices, LineTextureMode textureMode /*= LineTextureMode.Stretch*/)
         {
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
             SetLineWidth(width);
             lineRenderer.numCapVertices = endCapVertices;
             lineRenderer.numCornerVertices = cornerVertices;
+            lineRenderer.textureMode = textureMode;
         }
 
 
@@ -200,6 +202,7 @@ namespace Drawing.LineControl
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.startWidth = width;
             lineRenderer.endWidth = width;
+            
             circleColliderRadius = width * 0.5f;
             if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
             if (edgeCollider)
@@ -417,9 +420,11 @@ namespace Drawing.LineControl
         }
 
 
-        public void InitializeSound(GameSoundsSo.AudioType collisionSoundType)
+        public void InitializeSound(GameSoundsSo.AudioType collisionSoundType, float baseVolume,bool useCameraShake)
         {
             _collisionSound = collisionSoundType;
+            _baseVolume = baseVolume;
+            _useCameraShake = useCameraShake;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -429,7 +434,12 @@ namespace Drawing.LineControl
             if (!ShouldProcessCollision(other)) return;
 
             float impactSpeed = other.relativeVelocity.magnitude;
-            if (impactSpeed < _minImpactVelocity) return;
+                //Debug.Log("Impact Speed: " + impactSpeed);
+            if (impactSpeed < _minImpactVelocity)
+            {
+                //Debug.Log("Impact speed below minimum threshold.");
+                return;
+            }
 
             ProcessCollision(impactSpeed, other.gameObject.CompareTag("Line"));
             
@@ -439,7 +449,12 @@ namespace Drawing.LineControl
         private bool ShouldProcessCollision(Collision2D other)
         {
             // Check my own speed
-            if (rigidBody.linearVelocity.sqrMagnitude < MinVelocityThresholdSqr) return false;
+            if (rigidBody.linearVelocity.sqrMagnitude < MinVelocityThresholdSqr)
+            {
+                //print my speed value for debugging
+                //Debug.Log("Linear velocity below threshold: " + rigidBody.linearVelocity.sqrMagnitude);
+                return false;
+            }
 
             // Handle Line-to-Line collision priority (prevent double audio)
             if (other.gameObject.CompareTag("Line"))
@@ -466,10 +481,10 @@ namespace Drawing.LineControl
                 AudioManager.Instance.PlaySoundByAudioType(_collisionSound, volume);
             }
             // Camera shake for non-line collisions
-            if (volume > CameraShakeVolumeThreshold /*&& !isTargetLine*/)
+            if (volume > CameraShakeVolumeThreshold && _useCameraShake/*&& !isTargetLine*/)
             {
                 float finalShakeMagnitude = Mathf.Lerp(minShakeIntensity, maxShakeIntensity, volume);
-                Debug.Log("Camera Shake Magnitude: " + finalShakeMagnitude);
+                //Debug.Log("Camera Shake Magnitude: " + finalShakeMagnitude);
                 CameraShaker.Instance.Shake(0.1f, finalShakeMagnitude);
             }  
         }
