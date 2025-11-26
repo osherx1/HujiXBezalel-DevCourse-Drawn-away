@@ -8,7 +8,7 @@
         public event Action OnTraced;
 
         [Tooltip("The tag of the object that should trigger this point (e.g., 'DrawingTool').")]
-        [SerializeField] private string drawingToolTag = "DrawingTool";
+        [SerializeField] private string drawingToolTag = "Line";
         [SerializeField] Color traceColor = Color.green;
         private Collider2D _collider;
         private SpriteRenderer _spriteRenderer;

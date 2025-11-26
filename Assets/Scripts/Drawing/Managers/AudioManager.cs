@@ -98,9 +98,16 @@ namespace Drawing.Managers
                 if (clip != null)
                 {
                     AudioObject sound = AudioPool.Instance.Get();
-                    sound.Play(clip, volumeScale);
-                    // PlayOneShot allows passing a volume scale (0-1)
-                    //audioSource.PlayOneShot(clip, volumeScale);
+                    if (sound != null)
+                    {
+                        sound.Play(clip, volumeScale);
+                    }
+                    else
+                    {
+                        // PlayOneShot without pooling fallback
+                        audioSource.PlayOneShot(clip, volumeScale);
+                    }
+                   
                 }
                 else
                 {

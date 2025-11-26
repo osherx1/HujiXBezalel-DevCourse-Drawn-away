@@ -31,6 +31,9 @@ namespace TraceableShape
         [SerializeField] private bool animateFadeIn = true;
         
 
+        [Header("Rewards")]
+        [SerializeField] private Utilities.UI.ResourceBarTracker resourceBarTracker;
+        
 
         [Tooltip("AudioSource to play the reveal sound from.")]
         [SerializeField] private AudioSource audioSource;
@@ -112,6 +115,7 @@ namespace TraceableShape
                 Debug.LogWarning("No TracePoints found in children. TraceableShape cannot be completed.", this);
                 return;
             }
+        
 
             foreach (var point in _tracePoints)
             {
@@ -119,6 +123,12 @@ namespace TraceableShape
                // Debug.Log($"TracePoint subscribed: {point.gameObject.name}", this);
                 
                 point.SetShowGizmos(showTracePointsGizmos);
+            }
+            
+            if(resourceBarTracker!= null)
+            {
+                resourceBarTracker.ChangeMaxAmountTo(_totalPoints);
+                resourceBarTracker.ChangeResourceByAmount(-_totalPoints);
             }
             // Ensure physics are disabled initially
             /*if (physicsBody != null)
@@ -210,6 +220,12 @@ namespace TraceableShape
             if (_isRevealed) return;
             _tracedPointsCount++;
             float currentProgress = (float)_tracedPointsCount / _totalPoints;
+            // Update resource bar if assigned
+            if (resourceBarTracker != null)
+            {
+                
+                resourceBarTracker.ChangeResourceByAmount(1);
+            }
 
             if (currentProgress >= completionThreshold)
             {

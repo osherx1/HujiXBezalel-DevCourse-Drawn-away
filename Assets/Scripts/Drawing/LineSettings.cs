@@ -42,27 +42,26 @@ namespace Drawing
         public int endCapVertices = 0;
 
         //[ShowIfNot(nameof(usePrefab))] 
-        [Tab("Appearance")] [Range(0, 90)]
-        public int cornerVertices = 0;
+        [Tab("Appearance")] [Range(0, 90)] public int cornerVertices = 0;
+
         //[ShowIfNot(nameof(usePrefab))] 
         [Tab("Appearance")]
         //change the line rendering mode
         [Tooltip("The texture mode of the line.")]
         //public TextureWrapMode textureMode = TextureWrapMode.Repeat;
         public LineTextureMode lineTextureMode = LineTextureMode.Stretch;
-       
+
         /*public Texture textureMode = TextureMode.Stretch;*/
 
 
         // ----------------- TAB: PHYSICS -----------------
         //[ShowIfNot(nameof(usePrefab))]
-        [Tab("Physics")]
-        [MessageBox("Disable physics to improve performance on static lines.", MessageBoxType.Info)]
+        [Tab("Physics")] [MessageBox("Disable physics to improve performance on static lines.", MessageBoxType.Info)]
         public bool usePhysics = true;
 
         // The following fields only show if 'usePhysics' is TRUE
         //[ShowIfNot(nameof(usePrefab))]
-        [Tab("Physics")] [ShowIf(nameof(usePhysics))] [Indent(1)][AssetsOnly]
+        [Tab("Physics")] [ShowIf(nameof(usePhysics))] [Indent(1)] [AssetsOnly]
         // Indent to show hierarchy visually
         public PhysicsMaterial2D physicsMaterial;
 
@@ -112,10 +111,11 @@ namespace Drawing
         //[ShowIfNot(nameof(usePrefab))]
         [Tab("Sound")] [ShowIf(nameof(useReleaseSound))] [Indent(1)]
         public GameSoundsSo.AudioType releaseSound = GameSoundsSo.AudioType.None;
-        
+
         [Tab("Sound")]
         //[ShowIfNot(nameof(usePrefab))]  [Indent(0)]
         public float baseVolume = 1.0f;
+
         [Tab("Sound")]
         //[ShowIfNot(nameof(usePrefab))]  [Indent(0)]
         public bool useCameraShake = false;
@@ -123,16 +123,10 @@ namespace Drawing
         public void SetLineSetting(LineSettings otherSettings)
         {
             usePrefab = otherSettings.usePrefab;
-            if (otherSettings.usePrefab && otherSettings.linePrefab != null)
-            {
-                linePrefab = otherSettings.linePrefab;
-            }
-            else
-            {
-                SetAppearance(otherSettings);
-                SetPhysics(otherSettings);
-                SetSound(otherSettings);
-            }
+            linePrefab = otherSettings.linePrefab;
+            SetAppearance(otherSettings);
+            SetPhysics(otherSettings);
+            SetSound(otherSettings);
         }
 
         public void OnDrawSoundBoolChanged()
@@ -179,7 +173,6 @@ namespace Drawing
 
             baseVolume = otherSettings.baseVolume;
             useCameraShake = otherSettings.useCameraShake;
-            
         }
 
         private void SetPhysics(LineSettings otherSettings)
@@ -204,6 +197,7 @@ namespace Drawing
                 lineColor.SetKeys(otherSettings.lineColor.colorKeys, otherSettings.lineColor.alphaKeys);
                 lineColor.mode = otherSettings.lineColor.mode;
             }
+
             lineTextureMode = otherSettings.lineTextureMode;
         }
     }
