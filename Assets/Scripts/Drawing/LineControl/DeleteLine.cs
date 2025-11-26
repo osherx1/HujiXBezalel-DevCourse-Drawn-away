@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -7,6 +8,8 @@ namespace Drawing.LineControl
 {
     public class DeleteLine : MonoBehaviour
     {
+        [SerializeField]private List<string> tagsToDelete;
+
         private bool IsErasePressed()
         {
     #if ENABLE_INPUT_SYSTEM
@@ -22,8 +25,15 @@ namespace Drawing.LineControl
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (!IsErasePressed()) return;
-            if (!other.gameObject.CompareTag("Line")) return;
-            Destroy(other.gameObject);
+            if(tagsToDelete == null || tagsToDelete.Count == 0) return;
+            foreach (string tagToCheck in tagsToDelete)
+            {
+                if (other.gameObject.CompareTag(tagToCheck))
+                {
+                    Destroy(other.gameObject);
+                    return; 
+                }
+            }
         }
     }
 }

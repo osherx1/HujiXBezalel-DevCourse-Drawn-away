@@ -135,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.ResetBoard
   button: {fileID: 7961507034059064883}
   lineroot: {fileID: 0}
+  tagToIgnore: DrawingTool
 --- !u!1 &675709786042727169
 GameObject:
   m_ObjectHideFlags: 0

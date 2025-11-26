@@ -250,12 +250,16 @@ namespace Drawing.LineControl
             else
             {
                 // Prevent future drawing over this line by assigning it to the CantDrawOver layer (if it exists)
-                
-                int cantDrawIdx = LayerMask.NameToLayer("CantDrawOver");
-                if (cantDrawIdx >= 0)
+                // only if default layer
+                if (currentLine.gameObject.layer == 0)
                 {
-                    currentLine.gameObject.layer = cantDrawIdx;
+                    int cantDrawIdx = LayerMask.NameToLayer("CantDrawOver");
+                    if (cantDrawIdx >= 0)
+                    {
+                        currentLine.gameObject.layer = cantDrawIdx;
+                    }
                 }
+         
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
                 if(conf.releaseSound!= GameSoundsSo.AudioType.None) AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);

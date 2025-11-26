@@ -9,6 +9,7 @@ namespace Drawing.Buttons
     {
         [SerializeField] private Button button;
         [SerializeField] private GameObject lineroot;
+        [SerializeField] private string tagToIgnore;
 
         private void OnEnable()
         {
@@ -27,6 +28,11 @@ namespace Drawing.Buttons
             AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
             foreach (Transform child in lineroot.transform)
             {
+                if (!string.IsNullOrEmpty(tagToIgnore) && child.CompareTag(tagToIgnore))
+                {
+                    continue;
+                }
+
                 Destroy(child.gameObject);
             }
         }

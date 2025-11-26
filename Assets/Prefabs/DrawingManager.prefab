@@ -80,6 +80,8 @@ MonoBehaviour:
   _defaultSettingID: Default
   showDebugLogs: 1
   currentSettings:
+    usePrefab: 0
+    linePrefab: {fileID: 0}
     lineColor:
       serializedVersion: 2
       key0: {r: 0, g: 0, b: 0, a: 1}
@@ -114,13 +116,19 @@ MonoBehaviour:
     material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     endCapVertices: 0
     cornerVertices: 0
+    lineTextureMode: 0
     usePhysics: 1
     physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
     gravityScaleOverride: 1
     massMult: 1
+    useDrawSound: 0
     drawSound: 10
+    useCollisionSound: 0
     collisionSound: -1
+    useReleaseSound: 0
     releaseSound: -1
+    baseVolume: 1
+    useCameraShake: 0
 --- !u!1001 &5433506807876587594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,6 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066d3fde977eaf1429ea404223607e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DeleteLine
+  tagsToDelete:
+  - Line
+  - DrawingTool
 --- !u!4 &8603095735973221190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4324551146690183948, guid: 4b4f9359d64f6964c9b984454969f66b, type: 3}
