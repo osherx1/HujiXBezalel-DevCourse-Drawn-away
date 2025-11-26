@@ -1708,6 +1708,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3054172416575309453, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -83
+      objectReference: {fileID: 0}
     - target: {fileID: 3818810970860641517, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
       propertyPath: lineroot
       value: 
@@ -1715,6 +1719,10 @@ PrefabInstance:
     - target: {fileID: 4821352767704367762, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129390288741192237, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8172853565977045067, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
       propertyPath: m_Pivot.x
