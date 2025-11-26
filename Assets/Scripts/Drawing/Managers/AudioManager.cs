@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Drawing.Data;
-using Drawing.Utilities; // Required for Coroutines
+using Drawing.Utilities;
+using Drawing.Utilities.Pool; // Required for Coroutines
 
 namespace Drawing.Managers
 {
@@ -96,8 +97,10 @@ namespace Drawing.Managers
                 AudioClip clip = gameSoundsSo.GetClip(audioType);
                 if (clip != null)
                 {
+                    AudioObject sound = AudioPool.Instance.Get();
+                    sound.Play(clip, volumeScale);
                     // PlayOneShot allows passing a volume scale (0-1)
-                    audioSource.PlayOneShot(clip, volumeScale);
+                    //audioSource.PlayOneShot(clip, volumeScale);
                 }
                 else
                 {

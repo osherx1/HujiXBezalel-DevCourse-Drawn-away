@@ -51,6 +51,7 @@ MonoBehaviour:
       material: {fileID: 2100000, guid: 916787503b59f49f7a42cee21baf5a47, type: 2}
       endCapVertices: 0
       cornerVertices: 0
+      lineTextureMode: 0
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 1
@@ -61,6 +62,8 @@ MonoBehaviour:
       collisionSound: -1
       useReleaseSound: 0
       releaseSound: -1
+      baseVolume: 1
+      useCameraShake: 0
   - id: Spring
     settings:
       usePrefab: 0
@@ -99,6 +102,7 @@ MonoBehaviour:
       material: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
       endCapVertices: 0
       cornerVertices: 0
+      lineTextureMode: 0
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 5ec4eeef41877db4d8a546f5a1ee493b, type: 2}
       gravityScaleOverride: 1.4
@@ -109,6 +113,8 @@ MonoBehaviour:
       collisionSound: 21
       useReleaseSound: 0
       releaseSound: -1
+      baseVolume: 1.1
+      useCameraShake: 0
   - id: Iron
     settings:
       usePrefab: 0
@@ -147,6 +153,7 @@ MonoBehaviour:
       material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
       endCapVertices: 0
       cornerVertices: 0
+      lineTextureMode: 0
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 28ac6c32b7001b246a3e73d354080f02, type: 2}
       gravityScaleOverride: 2.3
@@ -157,6 +164,8 @@ MonoBehaviour:
       collisionSound: 22
       useReleaseSound: 0
       releaseSound: -1
+      baseVolume: 1
+      useCameraShake: 1
   - id: Static
     settings:
       usePrefab: 0
@@ -195,6 +204,7 @@ MonoBehaviour:
       material: {fileID: 2100000, guid: 287020c5e8b8f42e4923671f51f9c05a, type: 2}
       endCapVertices: 0
       cornerVertices: 0
+      lineTextureMode: 0
       usePhysics: 0
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 1
@@ -205,6 +215,8 @@ MonoBehaviour:
       collisionSound: -1
       useReleaseSound: 0
       releaseSound: -1
+      baseVolume: 1
+      useCameraShake: 0
   - id: Ice
     settings:
       usePrefab: 0
@@ -243,6 +255,7 @@ MonoBehaviour:
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
       endCapVertices: 0
       cornerVertices: 0
+      lineTextureMode: 0
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 2b676836007a00746a6e089142f33fc4, type: 2}
       gravityScaleOverride: 2
@@ -253,6 +266,8 @@ MonoBehaviour:
       collisionSound: -1
       useReleaseSound: 0
       releaseSound: -1
+      baseVolume: 1
+      useCameraShake: 0
   - id: Balloon
     settings:
       usePrefab: 0
@@ -291,6 +306,7 @@ MonoBehaviour:
       material: {fileID: 2100000, guid: 888556c7ffbfa488183e950af2223c83, type: 2}
       endCapVertices: 90
       cornerVertices: 90
+      lineTextureMode: 0
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
       gravityScaleOverride: -0.1
@@ -301,3 +317,5 @@ MonoBehaviour:
       collisionSound: -1
       useReleaseSound: 1
       releaseSound: 33
+      baseVolume: 1
+      useCameraShake: 0

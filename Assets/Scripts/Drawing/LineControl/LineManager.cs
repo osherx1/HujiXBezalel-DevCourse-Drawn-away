@@ -229,8 +229,8 @@ namespace Drawing.LineControl
 
             // Initialize so Awake-created components get proper settings
             ln.Initialize(conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints, 
-                conf.lineColor,conf.material,conf.endCapVertices,conf.cornerVertices);
-            ln.InitializeSound(conf.collisionSound);
+                conf.lineColor,conf.material,conf.endCapVertices,conf.cornerVertices, conf.lineTextureMode);
+            ln.InitializeSound(conf.collisionSound,conf.baseVolume,conf.useCameraShake);
 
             currentLine = ln;
             currentLine.AddWorldPoint(worldPos);

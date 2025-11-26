@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Drawing.Utilities
+namespace Drawing.Utilities.Pool
 {
     /**
      * This class is a pool for MonoBehaviours that implement the IPoolable interface.
