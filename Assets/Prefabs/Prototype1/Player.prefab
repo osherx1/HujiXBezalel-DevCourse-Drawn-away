@@ -261,11 +261,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype1.PlayerController
   moveSpeed: 5
-  jumpSpeed: 5
-  maxJumpLength: 0.5
+  jumpSpeed: 8
+  maxJumpLength: 0.8
   minJumpLength: 0.1
   jumpBufferInputLength: 0.2
-  jumpForgiveLength: 0.06
+  jumpForgiveLength: 0.1
   groundLayer:
     serializedVersion: 2
     m_Bits: 72
