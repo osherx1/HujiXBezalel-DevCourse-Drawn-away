@@ -17,6 +17,11 @@ namespace Prototype1
         public LayerMask groundLayer = 1;
         public SpriteRenderer spriteRenderer;
 
+        [Header("Fall Physics")]
+        public bool enableFastFallGravity = true;
+        public float fallGravityMultiplier = 2f;
+        public float maxFallSpeed = 25f;
+
         [Header("Ground Check (Optional)")]
         public Transform groundCheck;
         public float groundCheckRadius = 0.12f;
@@ -134,6 +139,7 @@ namespace Prototype1
             if (rb != null)
             {
                 rb.linearVelocity = new Vector2(moveDir * moveSpeed, rb.linearVelocity.y);
+                ApplyFallGravityBoost();
             }
 
             if (jumpBufferedTimer > 0f)
@@ -147,6 +153,24 @@ namespace Prototype1
 
             wantToJump = false;
             wantToStopJump = false;
+        }
+
+        private void ApplyFallGravityBoost()
+        {
+            if (!enableFastFallGravity || rb == null || rb.linearVelocity.y >= 0f)
+            {
+                return;
+            }
+
+            float multiplier = Mathf.Max(1f, fallGravityMultiplier);
+            float extraGravity = Physics2D.gravity.y * (multiplier - 1f) * Time.fixedDeltaTime;
+            float newY = rb.linearVelocity.y + extraGravity;
+            if (newY < -Mathf.Abs(maxFallSpeed))
+            {
+                newY = -Mathf.Abs(maxFallSpeed);
+            }
+
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, newY);
         }
 
         private float ReadHorizontalInput()

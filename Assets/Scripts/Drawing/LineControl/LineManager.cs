@@ -4,6 +4,7 @@ using System;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
 using UnityEngine.Serialization;
+using UnityEngine.Rendering;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem.Controls;
 #endif
@@ -36,6 +37,23 @@ namespace Drawing.LineControl
         [Tooltip("Lines on these layers will block drawing (finish line) while drawing.")]
         public LayerMask cantDrawOverLayer;
 
+        [Header("Draw Area Limit")]
+        [Tooltip("Restrict drawing to an area around the selected center.")]
+        public bool limitDrawingArea = false;
+        [Tooltip("Center point used when limiting drawing (e.g., the player).")]
+        public Transform drawAreaCenter;
+        public DrawAreaShape drawAreaShape = DrawAreaShape.Circle;
+        [Min(0.1f)] public float circleRadius = 5f;
+        public Vector2 rectangleSize = new Vector2(8f, 4f);
+        [Tooltip("Render a visible area in Game view to preview the drawing limit.")]
+        public bool showDrawAreaVisual = true;
+        [Tooltip("Optional LineRenderer used to display the drawing limit. If empty, one will be created automatically.")]
+        public LineRenderer drawAreaRenderer;
+        [Tooltip("Color used by the runtime draw-area visualization.")]
+        public Color drawAreaLineColor = new Color(0.1f, 1f, 1f, 0.6f);
+        [Min(0.001f)] public float drawAreaLineWidth = 0.05f;
+        [Range(8, 128)] public int circleSegments = 48;
+
         [Header("Input")]
         [Tooltip("If tip isn't reported by the pen, use pressure >= this to treat as pressed.")]
         public float penPressureThreshold = 0.15f;
@@ -58,6 +76,16 @@ namespace Drawing.LineControl
         private bool isDrawing;
         private bool _penPressed;
         private bool _warnedCantDrawMaskOnce;
+        private bool _warnedMissingDrawCenter;
+        private Material _drawAreaMaterial;
+
+        void Awake()
+        {
+            if (showDrawAreaVisual)
+            {
+                EnsureDrawAreaRenderer();
+            }
+        }
 
         void Update()
         {
@@ -96,7 +124,7 @@ namespace Drawing.LineControl
 
                 if (pressed && !_penPressed)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(penPos);
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
                     StartLine(wp);
                     isDrawing = true;
                     _penPressed = true;
@@ -105,7 +133,7 @@ namespace Drawing.LineControl
                 }
                 if (pressed && currentLine != null)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(penPos);
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
                     if (IsBlocked(wp))
                     {
                         FinishLine(wp);
@@ -118,7 +146,7 @@ namespace Drawing.LineControl
                 }
                 if (!pressed && _penPressed)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(penPos);
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
                     FinishLine(wp);
                     _penPressed = false;
                     // if (logPenDebug) Debug.Log("LineManager: Pen up.", this);
@@ -132,14 +160,14 @@ namespace Drawing.LineControl
                 
                 if (mouse.leftButton.wasPressedThisFrame)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
                     StartLine(wp);
                     isDrawing = true;
                     // if (logMouseDebug) Debug.Log("LineManager: Mouse down.", this);
                 }
                 if (mouse.leftButton.isPressed && currentLine != null)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
 
                     // Prevent drawing over existing finalized lines
                     if (IsBlocked(wp))
@@ -154,7 +182,7 @@ namespace Drawing.LineControl
                 }
                 if (mouse.leftButton.wasReleasedThisFrame)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(mouse.position.ReadValue());
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
 
                     FinishLine(wp);
                     // if (logMouseDebug) Debug.Log("LineManager: Mouse up.", this);
@@ -168,7 +196,7 @@ namespace Drawing.LineControl
 
                 if (primary.press.wasPressedThisFrame)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
 
                     StartLine(wp);
                     isDrawing = true;
@@ -176,7 +204,7 @@ namespace Drawing.LineControl
                 }
                 if (primary.press.isPressed && currentLine != null)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
 
                     // Prevent drawing over existing finalized lines
                     if (IsBlocked(wp))
@@ -191,13 +219,15 @@ namespace Drawing.LineControl
                 }
                 if (primary.press.wasReleasedThisFrame)
                 {
-                    Vector2 wp = Camera.main.ScreenToWorldPoint(primary.position.ReadValue());
+                    Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
 
                     FinishLine(wp);
                     // if (logTouchDebug) Debug.Log("LineManager: Touch up.", this);
                 }
             }
 #endif
+
+                UpdateDrawAreaVisualization();
         }
 
         void StartLine(Vector2 worldPos)
@@ -295,5 +325,133 @@ namespace Drawing.LineControl
             }
             return Physics2D.OverlapCircle(worldPoint, GetOverlapRadius(), cantDrawOverLayer);
         }
+
+        Vector2 ClampToDrawArea(Vector2 worldPos)
+        {
+            if (!limitDrawingArea)
+            {
+                return worldPos;
+            }
+
+            if (drawAreaCenter == null)
+            {
+                if (!_warnedMissingDrawCenter)
+                {
+                    Debug.LogWarning("LineManager: limitDrawingArea is enabled but no drawAreaCenter is assigned.", this);
+                    _warnedMissingDrawCenter = true;
+                }
+                return worldPos;
+            }
+
+            Vector2 center = drawAreaCenter.position;
+            switch (drawAreaShape)
+            {
+                case DrawAreaShape.Rectangle:
+                    Vector2 halfSize = rectangleSize * 0.5f;
+                    return new Vector2(
+                        Mathf.Clamp(worldPos.x, center.x - halfSize.x, center.x + halfSize.x),
+                        Mathf.Clamp(worldPos.y, center.y - halfSize.y, center.y + halfSize.y));
+                case DrawAreaShape.Circle:
+                default:
+                    float maxDistance = Mathf.Max(0.01f, circleRadius);
+                    Vector2 offset = worldPos - center;
+                    if (offset.sqrMagnitude <= maxDistance * maxDistance)
+                    {
+                        return worldPos;
+                    }
+                    return center + offset.normalized * maxDistance;
+            }
+        }
+
+        void EnsureDrawAreaRenderer()
+        {
+            if (drawAreaRenderer == null)
+            {
+                drawAreaRenderer = GetComponent<LineRenderer>();
+                if (drawAreaRenderer == null)
+                {
+                    drawAreaRenderer = gameObject.AddComponent<LineRenderer>();
+                }
+            }
+
+            if (_drawAreaMaterial == null)
+            {
+                Shader spriteShader = Shader.Find("Sprites/Default");
+                _drawAreaMaterial = spriteShader != null ? new Material(spriteShader) : new Material(Shader.Find("Legacy Shaders/Particles/Additive"));
+            }
+
+            drawAreaRenderer.material = _drawAreaMaterial;
+            drawAreaRenderer.useWorldSpace = true;
+            drawAreaRenderer.loop = true;
+            drawAreaRenderer.startWidth = drawAreaLineWidth;
+            drawAreaRenderer.endWidth = drawAreaLineWidth;
+            drawAreaRenderer.startColor = drawAreaLineColor;
+            drawAreaRenderer.endColor = drawAreaLineColor;
+            drawAreaRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            drawAreaRenderer.receiveShadows = false;
+        }
+
+        void UpdateDrawAreaVisualization()
+        {
+            if (!showDrawAreaVisual || !limitDrawingArea)
+            {
+                if (drawAreaRenderer != null)
+                {
+                    drawAreaRenderer.enabled = false;
+                }
+                return;
+            }
+
+            if (drawAreaCenter == null)
+            {
+                if (drawAreaRenderer != null)
+                {
+                    drawAreaRenderer.enabled = false;
+                }
+                return;
+            }
+
+            EnsureDrawAreaRenderer();
+            drawAreaRenderer.enabled = true;
+            drawAreaRenderer.startColor = drawAreaLineColor;
+            drawAreaRenderer.endColor = drawAreaLineColor;
+            drawAreaRenderer.startWidth = drawAreaLineWidth;
+            drawAreaRenderer.endWidth = drawAreaLineWidth;
+
+            Vector3 center = drawAreaCenter.position;
+            if (drawAreaShape == DrawAreaShape.Rectangle)
+            {
+                Vector2 half = rectangleSize * 0.5f;
+                Vector3[] points = new Vector3[5];
+                points[0] = new Vector3(center.x - half.x, center.y - half.y, center.z);
+                points[1] = new Vector3(center.x - half.x, center.y + half.y, center.z);
+                points[2] = new Vector3(center.x + half.x, center.y + half.y, center.z);
+                points[3] = new Vector3(center.x + half.x, center.y - half.y, center.z);
+                points[4] = points[0];
+                drawAreaRenderer.loop = false;
+                drawAreaRenderer.positionCount = points.Length;
+                drawAreaRenderer.SetPositions(points);
+            }
+            else
+            {
+                int segments = Mathf.Max(8, circleSegments);
+                drawAreaRenderer.loop = true;
+                drawAreaRenderer.positionCount = segments;
+                float radius = Mathf.Max(0.01f, circleRadius);
+                for (int i = 0; i < segments; i++)
+                {
+                    float t = (float)i / segments * Mathf.PI * 2f;
+                    float x = Mathf.Cos(t) * radius;
+                    float y = Mathf.Sin(t) * radius;
+                    drawAreaRenderer.SetPosition(i, new Vector3(center.x + x, center.y + y, center.z));
+                }
+            }
+        }
+    }
+
+    public enum DrawAreaShape
+    {
+        Circle,
+        Rectangle
     }
 }
