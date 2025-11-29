@@ -309,8 +309,8 @@ MonoBehaviour:
       lineTextureMode: 0
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
-      gravityScaleOverride: -0.1
-      massMult: 0.2
+      gravityScaleOverride: -2
+      massMult: 0.4
       useDrawSound: 1
       drawSound: 13
       useCollisionSound: 0
