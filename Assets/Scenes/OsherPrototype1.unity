@@ -809,10 +809,10 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: 0.000000007450581, y: 0.3000005}
+    ScreenPosition: {x: 0.000000007450581, y: 0.2999987}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.2, y: 0.34777784}
+      Size: {x: 0.2, y: 0.17370331}
     HardLimits:
       Enabled: 0
       Size: {x: 0.8, y: 2}
@@ -1256,6 +1256,10 @@ PrefabInstance:
       propertyPath: curserSpriteRenderer
       value: 
       objectReference: {fileID: 719797242}
+    - target: {fileID: 3478647167989426080, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
+      propertyPath: settingID
+      value: Glue
+      objectReference: {fileID: 0}
     - target: {fileID: 3818810970860641517, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
       propertyPath: lineroot
       value: 
