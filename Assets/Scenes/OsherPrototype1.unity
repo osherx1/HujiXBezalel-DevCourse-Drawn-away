@@ -814,9 +814,9 @@ MonoBehaviour:
       Enabled: 1
       Size: {x: 0.2, y: 0.17370331}
     HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 2}
-      Offset: {x: 0, y: 0}
+      Enabled: 1
+      Size: {x: 0.81, y: 0.26}
+      Offset: {x: 0.06, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
   Damping: {x: 0.1, y: 0, z: 1}
