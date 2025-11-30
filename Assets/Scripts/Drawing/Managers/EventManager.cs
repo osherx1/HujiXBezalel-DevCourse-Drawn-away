@@ -17,6 +17,7 @@ namespace Drawing.Managers
         
         public event Action OnEraserActive;
         public event Action<object> OnConfigButtonSelected;
+        public event Action OnGameFinished;
         
         
 
@@ -28,6 +29,11 @@ namespace Drawing.Managers
         public void TriggerConfigButtonSelected(object senderButton) 
         {
             OnConfigButtonSelected?.Invoke(senderButton);
+        }
+
+        public void TriggerGameFinished()
+        {
+            OnGameFinished?.Invoke();
         }
     }
 }

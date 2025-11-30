@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
+using Drawing.Managers;
 using UnityEngine.Serialization;
 using UnityEngine.Rendering;
 #if ENABLE_INPUT_SYSTEM
@@ -77,6 +78,7 @@ namespace Drawing.LineControl
         private bool _penPressed;
         private bool _warnedCantDrawMaskOnce;
         private bool _warnedMissingDrawCenter;
+        private bool _isGameFinished;
         private Material _drawAreaMaterial;
 
         void Awake()
@@ -87,8 +89,29 @@ namespace Drawing.LineControl
             }
         }
 
+        void OnEnable()
+        {
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnGameFinished += HandleGameFinished;
+            }
+        }
+
+        void OnDisable()
+        {
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnGameFinished -= HandleGameFinished;
+            }
+        }
+
         void Update()
         {
+            if (_isGameFinished)
+            {
+                UpdateDrawAreaVisualization();
+                return;
+            }
 #if ENABLE_INPUT_SYSTEM
             if (Camera.main == null) return;
             var pen = Pen.current;
@@ -232,6 +255,10 @@ namespace Drawing.LineControl
 
         void StartLine(Vector2 worldPos)
         {
+            if (_isGameFinished)
+            {
+                return;
+            }
             var conf = DrawingConfigController.Instance.currentSettings;
             GameObject lineToInstantiate;
             if(conf.usePrefab&& conf.linePrefab!=null)
@@ -268,10 +295,13 @@ namespace Drawing.LineControl
 
         void FinishLine(Vector2 wp)
         {
+            if (currentLine == null)
+            {
+                return;
+            }
             
             var conf = DrawingConfigController.Instance.currentSettings;
             isDrawing = false;
-            if (currentLine == null) return;
             // If too short, discard
             if (currentLine.pointsCount < 2)
             {
@@ -360,6 +390,23 @@ namespace Drawing.LineControl
                         return worldPos;
                     }
                     return center + offset.normalized * maxDistance;
+            }
+        }
+
+        void HandleGameFinished()
+        {
+            _isGameFinished = true;
+            isDrawing = false;
+            _penPressed = false;
+            if (currentLine != null)
+            {
+                Destroy(currentLine.gameObject);
+                currentLine = null;
+            }
+
+            if (drawAreaRenderer != null)
+            {
+                drawAreaRenderer.enabled = true; // keep visible but ensure latest size
             }
         }
 
