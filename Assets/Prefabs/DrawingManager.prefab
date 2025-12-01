@@ -57,6 +57,16 @@ MonoBehaviour:
   cantDrawOverLayer:
     serializedVersion: 2
     m_Bits: 64
+  limitDrawingArea: 1
+  drawAreaCenter: {fileID: 0}
+  drawAreaShape: 1
+  circleRadius: 5
+  rectangleSize: {x: 15, y: 12}
+  showDrawAreaVisual: 1
+  drawAreaRenderer: {fileID: 0}
+  drawAreaLineColor: {r: 0.1, g: 1, b: 1, a: 0.6}
+  drawAreaLineWidth: 0.05
+  circleSegments: 48
   penPressureThreshold: 0.15
   logPenDebug: 0
   logMouseDebug: 0

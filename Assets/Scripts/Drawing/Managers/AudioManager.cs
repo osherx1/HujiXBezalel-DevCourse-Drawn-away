@@ -3,6 +3,7 @@ using System.Collections;
 using Drawing.Data;
 using Drawing.Utilities;
 using Drawing.Utilities.Pool; // Required for Coroutines
+using Drawing.Managers;
 
 namespace Drawing.Managers
 {
@@ -36,6 +37,9 @@ namespace Drawing.Managers
             /// Whether to automatically start background music on Awake.
             /// </summary>
             [SerializeField] private bool startWithBackgroundMusic;
+            [SerializeField] private bool muteOnGameFinished = true;
+
+            private bool _isMutedFromGameEnd;
 
             /// <summary>
             /// Called when the object is initialized. Plays background music if enabled.
@@ -45,6 +49,22 @@ namespace Drawing.Managers
                 if (startWithBackgroundMusic)
                 {
                     PlayBackgroundMusic();
+                }
+            }
+
+            private void OnEnable()
+            {
+                if (EventManager.Instance != null)
+                {
+                    EventManager.Instance.OnGameFinished += HandleGameFinished;
+                }
+            }
+
+            private void OnDisable()
+            {
+                if (EventManager.Instance != null)
+                {
+                    EventManager.Instance.OnGameFinished -= HandleGameFinished;
                 }
             }
 
@@ -93,6 +113,7 @@ namespace Drawing.Managers
             public void PlaySoundByAudioType(GameSoundsSo.AudioType audioType, float volumeScale = 1.0f)
             {
                 if (audioType == GameSoundsSo.AudioType.None) return;
+                if (_isMutedFromGameEnd) return;
 
                 AudioClip clip = gameSoundsSo.GetClip(audioType);
                 if (clip != null)
@@ -123,6 +144,7 @@ namespace Drawing.Managers
             /// <param name="volume">The volume (default is 0.8).</param>
             public void PlaySound(AudioSource audioSource, float volume = 0.8f)
             {
+                if (_isMutedFromGameEnd) return;
                 audioSource.volume = volume;
                 audioSource.Play();
             }
@@ -157,6 +179,7 @@ namespace Drawing.Managers
             /// </summary>
             public void ResumeBackgroundMusic()
             {
+                if (_isMutedFromGameEnd) return;
                 if (!backgroundMusic.isPlaying)
                 {
                     backgroundMusic.UnPause();
@@ -207,10 +230,30 @@ namespace Drawing.Managers
             /// <param name="newClip">The new AudioClip to play.</param>
             public void SetBackgroundMusic(AudioClip newClip)
             {
+                if (_isMutedFromGameEnd) return;
                 if (backgroundMusic.clip != newClip)
                 {
                     backgroundMusic.clip = newClip;
                     backgroundMusic.Play();
+                }
+            }
+
+            private void HandleGameFinished()
+            {
+                if (!muteOnGameFinished || _isMutedFromGameEnd)
+                {
+                    return;
+                }
+
+                _isMutedFromGameEnd = true;
+                StopBackgroundMusic();
+                if (audioSource != null)
+                {
+                    audioSource.Stop();
+                }
+                if (backgroundMusic != null)
+                {
+                    backgroundMusic.loop = false;
                 }
             }
         }

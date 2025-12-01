@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Drawing.Managers;
 
 namespace Prototype1
 {
@@ -21,6 +22,12 @@ namespace Prototype1
         public bool enableFastFallGravity = true;
         public float fallGravityMultiplier = 2f;
         public float maxFallSpeed = 25f;
+
+        [Header("Respawn")]
+        [Tooltip("Optional transform used as the player's reset point.")]
+        [SerializeField] private Transform respawnPoint;
+        [Tooltip("Move the player to the respawn point right when the scene starts.")]
+        [SerializeField] private bool snapToRespawnOnStart = true;
 
         [Header("Ground Check (Optional)")]
         public Transform groundCheck;
@@ -50,6 +57,8 @@ namespace Prototype1
 
         private int facingDir = 1;
         private int lookDir = 1;
+        private Vector3 fallbackSpawnPosition;
+        private bool isGameFinished;
 
         private void Awake()
         {
@@ -62,6 +71,19 @@ namespace Prototype1
             Instance = this;
             rb = GetComponent<Rigidbody2D>();
             boxCol = GetComponent<Collider2D>();
+            fallbackSpawnPosition = transform.position;
+            if (respawnPoint != null)
+            {
+                fallbackSpawnPosition = respawnPoint.position;
+            }
+        }
+
+        private void Start()
+        {
+            if (respawnPoint != null && snapToRespawnOnStart)
+            {
+                transform.position = respawnPoint.position;
+            }
         }
 
         private void OnEnable()
@@ -72,6 +94,11 @@ namespace Prototype1
                 jumpAction.action.Enable();
                 jumpAction.action.performed += OnJumpPerformed;
                 jumpAction.action.canceled += OnJumpCanceled;
+            }
+
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnGameFinished += HandleGameFinished;
             }
         }
 
@@ -84,10 +111,20 @@ namespace Prototype1
                 jumpAction.action.canceled -= OnJumpCanceled;
                 jumpAction.action.Disable();
             }
+
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnGameFinished -= HandleGameFinished;
+            }
         }
 
         private void Update()
         {
+            if (isGameFinished)
+            {
+                return;
+            }
+
             float moveDirFloat = ReadHorizontalInput();
             movePower = Mathf.Abs(moveDirFloat);
 
@@ -119,10 +156,22 @@ namespace Prototype1
             {
                 PollFallbackJumpInput();
             }
+
+            HandleResetShortcut();
         }
 
         private void FixedUpdate()
         {
+            if (isGameFinished)
+            {
+                if (rb != null)
+                {
+                    rb.linearVelocity = Vector2.zero;
+                    rb.angularVelocity = 0f;
+                }
+                return;
+            }
+
             CheckIsOnGround();
 
             if (isOnGround)
@@ -370,6 +419,53 @@ namespace Prototype1
             {
                 Gizmos.color = Color.yellow;
                 Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+            }
+        }
+
+        private void HandleResetShortcut()
+        {
+            var keyboard = Keyboard.current;
+            if (keyboard == null)
+            {
+                return;
+            }
+
+            bool ctrlHeld = (keyboard.leftCtrlKey != null && keyboard.leftCtrlKey.isPressed)
+                             || (keyboard.rightCtrlKey != null && keyboard.rightCtrlKey.isPressed);
+
+            if (ctrlHeld && keyboard.qKey != null && keyboard.qKey.wasPressedThisFrame)
+            {
+                ResetToRespawnPoint();
+            }
+        }
+
+        public void ResetToRespawnPoint()
+        {
+            Vector3 targetPosition = respawnPoint != null ? respawnPoint.position : fallbackSpawnPosition;
+            transform.position = targetPosition;
+
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+            }
+
+            isJumping = false;
+            jumpWasUsed = false;
+            wantToJump = false;
+            wantToStopJump = false;
+        }
+
+        private void HandleGameFinished()
+        {
+            isGameFinished = true;
+            moveDir = 0;
+            wantToJump = false;
+            wantToStopJump = false;
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.angularVelocity = 0f;
             }
         }
     }
