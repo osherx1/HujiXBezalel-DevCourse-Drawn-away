@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using System.Collections;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
 using Drawing.Managers;
@@ -37,6 +38,10 @@ namespace Drawing.LineControl
         [Header("Collision")]
         [Tooltip("Lines on these layers will block drawing (finish line) while drawing.")]
         public LayerMask cantDrawOverLayer;
+        [Tooltip("Multiplier applied to the line width when checking for overlap.")]
+        [Range(0.05f, 1f)] public float drawOverlapPadding = 0.3f;
+        [Tooltip("Seconds to wait before moving a finished line to the CantDrawOver layer.")]
+        [Min(0f)] public float cantDrawLayerDelay = 0.1f;
 
         [Header("Draw Area Limit")]
         [Tooltip("Restrict drawing to an area around the selected center.")]
@@ -309,17 +314,8 @@ namespace Drawing.LineControl
             }
             else
             {
-                // Prevent future drawing over this line by assigning it to the CantDrawOver layer (if it exists)
-                // only if default layer
-                if (currentLine.gameObject.layer == 0)
-                {
-                    int cantDrawIdx = LayerMask.NameToLayer("CantDrawOver");
-                    if (cantDrawIdx >= 0)
-                    {
-                        currentLine.gameObject.layer = cantDrawIdx;
-                    }
-                }
-         
+                ScheduleCantDrawLayerSwitch(currentLine.gameObject);
+
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
                 if(conf.releaseSound!= GameSoundsSo.AudioType.None) AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
@@ -338,8 +334,8 @@ namespace Drawing.LineControl
         {
             var conf = DrawingConfigController.Instance != null ? DrawingConfigController.Instance.currentSettings : null;
             float width = conf != null ? conf.lineWidth : lineWidth;
-            // Use half the width to closely match the visual thickness
-            return Mathf.Max(0.001f, width * 0.5f);
+            float padding = Mathf.Clamp(drawOverlapPadding, 0.01f, 1f);
+            return Mathf.Max(0.001f, width * padding);
         }
 
         bool IsBlocked(Vector2 worldPoint)
@@ -354,6 +350,55 @@ namespace Drawing.LineControl
                 return false;
             }
             return Physics2D.OverlapCircle(worldPoint, GetOverlapRadius(), cantDrawOverLayer);
+        }
+
+        void ScheduleCantDrawLayerSwitch(GameObject lineObject)
+        {
+            if (lineObject == null || lineObject.layer != 0)
+            {
+                return;
+            }
+
+            if (cantDrawLayerDelay <= 0f)
+            {
+                AssignCantDrawLayer(lineObject);
+            }
+            else
+            {
+                StartCoroutine(ApplyCantDrawLayerDelayed(lineObject, cantDrawLayerDelay));
+            }
+        }
+
+        void AssignCantDrawLayer(GameObject lineObject)
+        {
+            if (lineObject == null)
+            {
+                return;
+            }
+
+            int cantDrawIdx = LayerMask.NameToLayer("CantDrawOver");
+            if (cantDrawIdx >= 0)
+            {
+                lineObject.layer = cantDrawIdx;
+            }
+        }
+
+        IEnumerator ApplyCantDrawLayerDelayed(GameObject lineObject, float delay)
+        {
+            if (lineObject == null)
+            {
+                yield break;
+            }
+
+            if (delay > 0f)
+            {
+                yield return new WaitForSeconds(delay);
+            }
+
+            if (lineObject != null && lineObject.layer == 0)
+            {
+                AssignCantDrawLayer(lineObject);
+            }
         }
 
         Vector2 ClampToDrawArea(Vector2 worldPos)
