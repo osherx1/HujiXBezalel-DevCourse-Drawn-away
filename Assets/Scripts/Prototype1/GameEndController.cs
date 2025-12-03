@@ -56,7 +56,7 @@ namespace Prototype1
                 return;
             }
 
-            if (gameEndCanvas != null)
+            if (endAction == GameEndAction.ReloadCurrentScene && gameEndCanvas != null)
             {
                 gameEndCanvas.SetActive(true);
             }
