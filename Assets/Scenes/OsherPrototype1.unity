@@ -1790,21 +1790,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1185081031527145602, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
-      propertyPath: jumpSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185081031527145602, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
-      propertyPath: moveSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185081031527145602, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 1482379464}
-    - target: {fileID: 1185081031527145602, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
-      propertyPath: maxJumpLength
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1699645875162652286, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1
@@ -1851,10 +1839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1699645875162652286, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 808259063}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
 --- !u!4 &636762044 stripped
@@ -2449,37 +2434,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1360315777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &808259062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 808259063}
-  m_Layer: 0
-  m_Name: Player Camera Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &808259063
+--- !u!4 &808259063 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 25193486824459550, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
+  m_PrefabInstance: {fileID: 636762043}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808259062}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 636762044}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &853551034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5063,6 +5022,10 @@ PrefabInstance:
       propertyPath: drawAreaCenter
       value: 
       objectReference: {fileID: 636762044}
+    - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
+      propertyPath: limitDrawingArea
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2320167678442860604, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: m_Name
       value: DrawingManager
