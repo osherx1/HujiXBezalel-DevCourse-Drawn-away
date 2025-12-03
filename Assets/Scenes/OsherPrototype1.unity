@@ -1528,13 +1528,13 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: 0.000000007450581, y: 0.30092505}
+    ScreenPosition: {x: -0.000000007450581, y: 0.30092332}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.23, y: 0.26}
+      Size: {x: 0.23, y: 0.12481455}
     HardLimits:
       Enabled: 1
-      Size: {x: 0.81, y: 0.3}
+      Size: {x: 0.81, y: 0.23333308}
       Offset: {x: 0.06, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
@@ -1569,7 +1569,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 14.95
+    OrthographicSize: 23
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1596,7 +1596,7 @@ Transform:
   m_GameObject: {fileID: 463643153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0114799, y: 8.401888, z: -10}
+  m_LocalPosition: {x: -3.0114799, y: 13.24678, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3106,7 +3106,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.95
+  orthographic size: 23
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3131,7 +3131,7 @@ Transform:
   m_GameObject: {fileID: 960488332}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0114799, y: 8.401888, z: -10}
+  m_LocalPosition: {x: -3.0114799, y: 13.24678, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5023,8 +5023,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 636762044}
     - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
+      propertyPath: rectangleSize.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
+      propertyPath: rectangleSize.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: limitDrawingArea
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2320167678442860604, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: m_Name
