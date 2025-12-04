@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9ac581673ff094eb99c466af761ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItaiPrototype.Scenario2.JudgeHealth
-  maxHealth: 1000
+  maxHealth: 500
   healthBarFill: {fileID: 1764382696}
   damageMultiplier: 1
   minDamageThreshold: 5
