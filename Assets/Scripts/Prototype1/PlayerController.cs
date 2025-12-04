@@ -8,20 +8,34 @@ namespace Prototype1
     {
         public static PlayerController Instance { get; private set; }
 
-        [Header("Movement")]
-        public float moveSpeed = 10f;
-        public float jumpSpeed = 5f;
-        public float maxJumpLength = 0.5f;
-        public float minJumpLength = 0.1f;
-        public float jumpBufferInputLength = 0.2f;
-        public float jumpForgiveLength = 0.06f;
+        [Header("Movement (Toolkit)")]
+        [Tooltip("When false the character snaps to max speed without easing.")]
+        public bool useAcceleration = true;
+        [SerializeField, Range(0f, 30f)] private float maxSpeed = 10f;
+        [SerializeField, Range(0f, 100f)] private float maxAcceleration = 52f;
+        [SerializeField, Range(0f, 100f)] private float maxDeceleration = 52f;
+        [SerializeField, Range(0f, 100f)] private float maxTurnSpeed = 80f;
+        [SerializeField, Range(0f, 100f)] private float maxAirAcceleration = 40f;
+        [SerializeField, Range(0f, 100f)] private float maxAirDeceleration = 40f;
+        [SerializeField, Range(0f, 100f)] private float maxAirTurnSpeed = 80f;
+        [SerializeField, Range(0f, 5f)] private float friction = 0f;
+
+        [Header("Jumping (Toolkit)")]
+        [SerializeField, Range(1f, 8f)] private float jumpHeight = 5.5f;
+        [SerializeField, Range(0.2f, 1.25f)] private float timeToJumpApex = 0.45f;
+        [SerializeField, Range(0f, 5f)] private float upwardMovementMultiplier = 1f;
+        [SerializeField, Range(1f, 10f)] private float downwardMovementMultiplier = 6f;
+        [SerializeField, Range(0, 1)] private int maxAirJumps = 0;
+        [Tooltip("Allow shorter jumps by releasing the button early.")]
+        public bool variableJumpHeight = true;
+        [SerializeField, Range(1f, 10f)] private float jumpCutOff = 4f;
+        [SerializeField, Range(0f, 30f)] private float speedLimit = 25f;
+        [SerializeField, Range(0f, 0.3f)] private float coyoteTime = 0.15f;
+        [SerializeField, Range(0f, 0.3f)] private float jumpBuffer = 0.15f;
+
+        [Header("Grounding & Visuals")]
         public LayerMask groundLayer = 1;
         public SpriteRenderer spriteRenderer;
-
-        [Header("Fall Physics")]
-        public bool enableFastFallGravity = true;
-        public float fallGravityMultiplier = 2f;
-        public float maxFallSpeed = 25f;
 
         [Header("Respawn")]
         [Tooltip("Optional transform used as the player's reset point.")]
@@ -40,20 +54,26 @@ namespace Prototype1
         private Rigidbody2D rb;
         private Collider2D boxCol;
 
-        private int moveDir;
-        private float movePower;
         private bool isOnGround;
         private readonly Collider2D[] collisionResult = new Collider2D[1];
+        private float directionX;
+        private bool pressingKey;
+        private Vector2 desiredVelocity;
+        private Vector2 velocity;
+        private float maxSpeedChange;
+        private float acceleration;
+        private float deceleration;
+        private float turnSpeed;
 
-        private bool wantToJump;
-        private bool wantToStopJump;
-        private bool isJumping;
-        private bool jumpWasUsed;
-        private float jumpTimer;
-        private float jumpBufferedTimer;
-        private float jumpForgiveTimer;
-        private bool endJumpOnMin;
-        private bool endNextJumpOnMin;
+        private bool desiredJump;
+        private bool pressingJump;
+        private float jumpBufferCounter;
+        private float coyoteTimeCounter;
+        private bool currentlyJumping;
+        private int airJumpsRemaining;
+        private float gravMultiplier = 1f;
+        private float defaultGravityScale = 1f;
+        private float jumpSpeed;
 
         private int facingDir = 1;
         private int lookDir = 1;
@@ -71,6 +91,12 @@ namespace Prototype1
             Instance = this;
             rb = GetComponent<Rigidbody2D>();
             boxCol = GetComponent<Collider2D>();
+            if (rb != null)
+            {
+                defaultGravityScale = Mathf.Max(rb.gravityScale, 0.0001f);
+            }
+            gravMultiplier = 1f;
+            airJumpsRemaining = maxAirJumps;
             fallbackSpawnPosition = transform.position;
             if (respawnPoint != null)
             {
@@ -122,28 +148,24 @@ namespace Prototype1
         {
             if (isGameFinished)
             {
+                directionX = 0f;
+                pressingKey = false;
+                HandleResetShortcut();
                 return;
             }
 
-            float moveDirFloat = ReadHorizontalInput();
-            movePower = Mathf.Abs(moveDirFloat);
+            CheckIsOnGround();
 
-            if (moveDirFloat > Mathf.Epsilon)
+            directionX = ReadHorizontalInput();
+            if (Mathf.Abs(directionX) > Mathf.Epsilon)
             {
-                moveDir = 1;
-            }
-            else if (moveDirFloat < -Mathf.Epsilon)
-            {
-                moveDir = -1;
+                pressingKey = true;
+                lookDir = directionX > 0f ? 1 : -1;
             }
             else
             {
-                moveDir = 0;
-            }
-
-            if (moveDir != 0)
-            {
-                lookDir = moveDir;
+                pressingKey = false;
+                directionX = 0f;
             }
 
             if (facingDir != lookDir)
@@ -151,11 +173,12 @@ namespace Prototype1
                 FlipSprite();
             }
 
-            // if no jump action is assigned we still need to poll inputs to support keyboard/gamepad defaults
             if (jumpAction == null)
             {
                 PollFallbackJumpInput();
             }
+
+            UpdateJumpAssistTimers(Time.deltaTime);
 
             HandleResetShortcut();
         }
@@ -173,57 +196,219 @@ namespace Prototype1
             }
 
             CheckIsOnGround();
-
-            if (isOnGround)
-            {
-                jumpForgiveTimer = jumpForgiveLength;
-            }
-            else if (jumpForgiveTimer > 0f)
-            {
-                jumpForgiveTimer -= Time.fixedDeltaTime;
-            }
-
-            HandleJumpLogic();
-
-            if (rb != null)
-            {
-                rb.linearVelocity = new Vector2(moveDir * moveSpeed, rb.linearVelocity.y);
-                ApplyFallGravityBoost();
-            }
-
-            if (jumpBufferedTimer > 0f)
-            {
-                jumpBufferedTimer -= Time.fixedDeltaTime;
-                if (jumpBufferedTimer < Mathf.Epsilon)
-                {
-                    endNextJumpOnMin = false;
-                }
-            }
-
-            wantToJump = false;
-            wantToStopJump = false;
+            ApplyHorizontalMovement();
+            ApplyJumpPhysics();
         }
 
-        private void ApplyFallGravityBoost()
+        private void ApplyHorizontalMovement()
         {
-            if (!enableFastFallGravity || rb == null || rb.linearVelocity.y >= 0f)
+            if (rb == null)
             {
                 return;
             }
 
-            float multiplier = Mathf.Max(1f, fallGravityMultiplier);
-            float extraGravity = Physics2D.gravity.y * (multiplier - 1f) * Time.fixedDeltaTime;
-            float newY = rb.linearVelocity.y + extraGravity;
-            if (newY < -Mathf.Abs(maxFallSpeed))
+            desiredVelocity = new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f);
+            velocity = rb.linearVelocity;
+
+            if (useAcceleration)
             {
-                newY = -Mathf.Abs(maxFallSpeed);
+                acceleration = isOnGround ? maxAcceleration : maxAirAcceleration;
+                deceleration = isOnGround ? maxDeceleration : maxAirDeceleration;
+                turnSpeed = isOnGround ? maxTurnSpeed : maxAirTurnSpeed;
+
+                if (pressingKey)
+                {
+                    float inputSign = Mathf.Sign(directionX);
+                    float velocitySign = Mathf.Sign(velocity.x);
+                    bool turningAround = inputSign != 0f && inputSign != velocitySign;
+                    maxSpeedChange = (turningAround ? turnSpeed : acceleration) * Time.fixedDeltaTime;
+                }
+                else
+                {
+                    maxSpeedChange = deceleration * Time.fixedDeltaTime;
+                }
+
+                velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
+            }
+            else
+            {
+                velocity.x = desiredVelocity.x;
             }
 
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, newY);
+            rb.linearVelocity = new Vector2(velocity.x, rb.linearVelocity.y);
+        }
+
+        private void ApplyJumpPhysics()
+        {
+            if (rb == null)
+            {
+                return;
+            }
+
+            velocity = rb.linearVelocity;
+
+            if (desiredJump)
+            {
+                if (TryConsumeJumpRequest())
+                {
+                    rb.linearVelocity = velocity;
+                    return;
+                }
+
+                if (Mathf.Approximately(jumpBuffer, 0f))
+                {
+                    desiredJump = false;
+                }
+            }
+
+            ApplyGravity();
+        }
+
+        private bool TryConsumeJumpRequest()
+        {
+            bool withinCoyoteWindow = !isOnGround && !currentlyJumping && coyoteTimeCounter > 0.03f && coyoteTimeCounter < coyoteTime;
+            bool groundedJump = isOnGround || withinCoyoteWindow;
+
+            if (!groundedJump && airJumpsRemaining <= 0)
+            {
+                return false;
+            }
+
+            desiredJump = false;
+            jumpBufferCounter = 0f;
+            coyoteTimeCounter = 0f;
+
+            if (groundedJump)
+            {
+                airJumpsRemaining = maxAirJumps;
+            }
+            else
+            {
+                airJumpsRemaining = Mathf.Max(airJumpsRemaining - 1, 0);
+            }
+
+            float gravityFactor = rb != null ? rb.gravityScale : 1f;
+            jumpSpeed = Mathf.Sqrt(Mathf.Max(0f, -2f * Physics2D.gravity.y * gravityFactor * jumpHeight));
+
+            if (velocity.y > 0f)
+            {
+                jumpSpeed = Mathf.Max(jumpSpeed - velocity.y, 0f);
+            }
+            else if (velocity.y < 0f)
+            {
+                jumpSpeed += Mathf.Abs(rb.linearVelocity.y);
+            }
+
+            velocity.y += jumpSpeed;
+            currentlyJumping = true;
+
+            return true;
+        }
+
+        private void ApplyGravity()
+        {
+            if (rb == null)
+            {
+                return;
+            }
+
+            float verticalVelocity = rb.linearVelocity.y;
+
+            if (verticalVelocity > 0.01f)
+            {
+                if (isOnGround)
+                {
+                    gravMultiplier = defaultGravityScale;
+                }
+                else if (variableJumpHeight && pressingJump && currentlyJumping)
+                {
+                    gravMultiplier = upwardMovementMultiplier;
+                }
+                else if (variableJumpHeight)
+                {
+                    gravMultiplier = jumpCutOff;
+                }
+                else
+                {
+                    gravMultiplier = upwardMovementMultiplier;
+                }
+            }
+            else if (verticalVelocity < -0.01f)
+            {
+                gravMultiplier = isOnGround ? defaultGravityScale : downwardMovementMultiplier;
+            }
+            else
+            {
+                if (isOnGround)
+                {
+                    currentlyJumping = false;
+                    airJumpsRemaining = maxAirJumps;
+                }
+
+                gravMultiplier = defaultGravityScale;
+            }
+
+            UpdateGravityScale();
+
+            Vector2 clampedVelocity = rb.linearVelocity;
+            clampedVelocity.y = Mathf.Clamp(clampedVelocity.y, -Mathf.Abs(speedLimit), 100f);
+
+            if (HasHitHead() && clampedVelocity.y > 0f)
+            {
+                clampedVelocity.y = 0f;
+                currentlyJumping = false;
+            }
+
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, clampedVelocity.y);
+        }
+
+        private void UpdateGravityScale()
+        {
+            if (rb == null)
+            {
+                return;
+            }
+
+            float apexTime = Mathf.Max(0.01f, timeToJumpApex);
+            float baseGravity = (-2f * jumpHeight) / (apexTime * apexTime);
+            float multiplier = Mathf.Max(gravMultiplier, 0f);
+            rb.gravityScale = (baseGravity / Physics2D.gravity.y) * multiplier;
+        }
+
+        private void UpdateJumpAssistTimers(float deltaTime)
+        {
+            if (jumpBuffer > 0f && desiredJump)
+            {
+                jumpBufferCounter += deltaTime;
+                if (jumpBufferCounter > jumpBuffer)
+                {
+                    desiredJump = false;
+                    jumpBufferCounter = 0f;
+                }
+            }
+
+            if (!currentlyJumping && !isOnGround)
+            {
+                coyoteTimeCounter += deltaTime;
+            }
+            else
+            {
+                coyoteTimeCounter = 0f;
+            }
+
+            if (isOnGround)
+            {
+                airJumpsRemaining = maxAirJumps;
+            }
         }
 
         private float ReadHorizontalInput()
         {
+            if (isGameFinished)
+            {
+                return 0f;
+            }
+
             float axis = 0f;
             if (moveAction != null)
             {
@@ -250,103 +435,56 @@ namespace Prototype1
 
         private void PollFallbackJumpInput()
         {
+            if (isGameFinished)
+            {
+                return;
+            }
+
             var kb = Keyboard.current;
             if (kb != null)
             {
-                if (kb.spaceKey.wasPressedThisFrame) wantToJump = true;
-                if (kb.spaceKey.wasReleasedThisFrame) wantToStopJump = true;
+                if (kb.spaceKey.wasPressedThisFrame)
+                {
+                    desiredJump = true;
+                    pressingJump = true;
+                }
+
+                if (kb.spaceKey.wasReleasedThisFrame)
+                {
+                    pressingJump = false;
+                }
             }
 
             var gp = Gamepad.current;
             if (gp != null)
             {
-                if (gp.buttonSouth.wasPressedThisFrame) wantToJump = true;
-                if (gp.buttonSouth.wasReleasedThisFrame) wantToStopJump = true;
+                if (gp.buttonSouth.wasPressedThisFrame)
+                {
+                    desiredJump = true;
+                    pressingJump = true;
+                }
+
+                if (gp.buttonSouth.wasReleasedThisFrame)
+                {
+                    pressingJump = false;
+                }
             }
         }
 
         private void OnJumpPerformed(InputAction.CallbackContext ctx)
         {
-            wantToJump = true;
+            if (isGameFinished)
+            {
+                return;
+            }
+
+            desiredJump = true;
+            pressingJump = true;
         }
 
         private void OnJumpCanceled(InputAction.CallbackContext ctx)
         {
-            wantToStopJump = true;
-        }
-
-        private void HandleJumpLogic()
-        {
-            if (rb == null)
-            {
-                return;
-            }
-
-            if (isOnGround && jumpWasUsed)
-            {
-                jumpWasUsed = false;
-            }
-
-            bool canJump = (isOnGround || jumpForgiveTimer > Mathf.Epsilon)
-                           && (wantToJump || jumpBufferedTimer > Mathf.Epsilon)
-                           && !isJumping && !jumpWasUsed;
-
-            if (canJump)
-            {
-                if (endNextJumpOnMin)
-                {
-                    endNextJumpOnMin = false;
-                    endJumpOnMin = true;
-                }
-
-                isJumping = true;
-                jumpWasUsed = true;
-                jumpTimer = 0f;
-                jumpBufferedTimer = 0f;
-
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpSpeed);
-            }
-            else if (wantToJump)
-            {
-                jumpBufferedTimer = jumpBufferInputLength;
-            }
-
-            if (wantToStopJump && isJumping)
-            {
-                if (jumpTimer < minJumpLength)
-                {
-                    endJumpOnMin = true;
-                }
-                else
-                {
-                    StopJump();
-                }
-            }
-
-            if (isJumping)
-            {
-                jumpTimer += Time.fixedDeltaTime;
-                if (jumpTimer >= maxJumpLength || (jumpTimer >= minJumpLength && endJumpOnMin) || HasHitHead())
-                {
-                    endJumpOnMin = false;
-                    StopJump();
-                }
-                else
-                {
-                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpSpeed);
-                }
-            }
-        }
-
-        private void StopJump()
-        {
-            if (rb == null)
-            {
-                return;
-            }
-
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-            isJumping = false;
+            pressingJump = false;
         }
 
         private bool HasHitHead()
@@ -450,18 +588,23 @@ namespace Prototype1
                 rb.angularVelocity = 0f;
             }
 
-            isJumping = false;
-            jumpWasUsed = false;
-            wantToJump = false;
-            wantToStopJump = false;
+            currentlyJumping = false;
+            desiredJump = false;
+            pressingJump = false;
+            directionX = 0f;
+            pressingKey = false;
+            jumpBufferCounter = 0f;
+            coyoteTimeCounter = 0f;
+            airJumpsRemaining = maxAirJumps;
         }
 
         private void HandleGameFinished()
         {
             isGameFinished = true;
-            moveDir = 0;
-            wantToJump = false;
-            wantToStopJump = false;
+            directionX = 0f;
+            pressingKey = false;
+            desiredJump = false;
+            pressingJump = false;
             if (rb != null)
             {
                 rb.linearVelocity = Vector2.zero;
