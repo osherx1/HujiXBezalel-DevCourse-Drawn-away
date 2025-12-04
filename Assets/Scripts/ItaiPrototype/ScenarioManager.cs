@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,60 +6,61 @@ namespace ItaiPrototype
 {
     public class ScenarioManager : MonoBehaviour
     {
-        [SerializeField] private Transform spawnPoint; // Where should the drawing appear?
-        [SerializeField] private Text timerText;
+        [Header("Setup")]
+        [SerializeField] private Transform spawnPoint; // Where the drawing appears
+        [SerializeField] private TextMeshProUGUI timerText;       // UI for timer
     
-        private float timeLeft;
-        private bool levelActive = true;
+        private float _timeLeft;
+        private bool _levelActive = true;
 
         private void Start()
         {
-            // 1. Get Level Data
-            int levelIdx = GameManager.instance.currentLevelIndex;
-            timeLeft = GameManager.instance.levels[levelIdx].timeLimit;
+            if (GameManager.instance == null) return;
 
-            // 2. Retrieve the Drawing
+            // 1. Setup Timer based on Level Data
+            GameManager.LevelData data = GameManager.instance.GetCurrentLevelData();
+            _timeLeft = data.timeLimit;
+
+            // 2. Spawn the Drawing
             GameObject drawing = GameManager.instance.storedDrawing;
-
             if (drawing == null) return;
-            // Position it
+            // Move it to the spawn point
             drawing.transform.position = spawnPoint.position;
-            drawing.transform.rotation = Quaternion.identity;
             
-            // Re-enable it
+            // Re-enable it (this turns physics back on)
             drawing.SetActive(true);
-            
-            // Optional: You might want to nudge it or set velocity to 0
         }
 
         private void Update()
         {
-            if (!levelActive) return;
+            if (!_levelActive) return;
 
-            // Timer Logic
-            timeLeft -= Time.deltaTime;
-            if (timerText != null) timerText.text = Mathf.Ceil(timeLeft).ToString();
+            // Count down
+            _timeLeft -= Time.deltaTime;
+        
+            // Update UI (Optional)
+            if (timerText != null) 
+                timerText.text = Mathf.Ceil(_timeLeft).ToString();
 
-            if (timeLeft <= 0)
+            // Check for Loss
+            if (_timeLeft <= 0)
             {
-                LoseLevel();
+                Lose();
             }
         }
 
-        // Call this when the player hits the target
-        public void WinLevel()
+        // Call this specifically when the WIN condition is met
+        public void Win()
         {
-            if (!levelActive) return;
-            levelActive = false;
-            Debug.Log("Success!");
+            if (!_levelActive) return;
+            _levelActive = false;
             GameManager.instance.LevelComplete();
         }
 
-        public void LoseLevel()
+        private void Lose()
         {
-            if (!levelActive) return;
-            levelActive = false;
-            Debug.Log("Time's up!");
+            if (!_levelActive) return;
+            _levelActive = false;
             GameManager.instance.LevelFailed();
         }
     }

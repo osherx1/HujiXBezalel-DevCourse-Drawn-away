@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 163789608}
   - component: {fileID: 163789607}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: DrawingSceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1358,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 163789607}
         m_TargetAssemblyTypeName: ItaiPrototype.LineMerger, Assembly-CSharp
-        m_MethodName: CreateNewPhysicalObject
+        m_MethodName: FinishAndStartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1851,6 +1851,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 373047381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &741556810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741556812}
+  - component: {fileID: 741556811}
+  m_Layer: 0
+  m_Name: PromptManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &741556811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741556810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418aa358fa2ea884cbd15f8b35701736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItaiPrototype.DrawingSceneUI
+  promptText: {fileID: 1636657136}
+--- !u!4 &741556812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741556810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.39019, y: -1.28626, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &869329774
 GameObject:
@@ -2348,6 +2393,65 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8309239507475747446, guid: e55d449fee3269349915db3efd37f077, type: 3}
   m_PrefabInstance: {fileID: 9854646}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1688605376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1688605378}
+  - component: {fileID: 1688605377}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1688605377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688605376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6702606e9fdc2f4eaef137bdbc7f570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItaiPrototype.GameManager
+  currentLevelIndex: 0
+  storedDrawing: {fileID: 0}
+  levels:
+  - name: Race
+    prompt: Draw something that is... Fast.
+    actionSceneName: Scenario1
+    timeLimit: 15
+  - name: Court
+    prompt: Defend yourself!
+    actionSceneName: Scenario2
+    timeLimit: 15
+  - name: Graveyard
+    prompt: You need to dig with something.
+    actionSceneName: Scenario3
+    timeLimit: 15
+--- !u!4 &1688605378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688605376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.39019, y: -1.28626, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1846989367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,3 +2743,5 @@ SceneRoots:
   - {fileID: 585137566}
   - {fileID: 1925567636}
   - {fileID: 163789608}
+  - {fileID: 1688605378}
+  - {fileID: 741556812}
