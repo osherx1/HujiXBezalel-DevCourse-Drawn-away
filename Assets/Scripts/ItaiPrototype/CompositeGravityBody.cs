@@ -40,5 +40,28 @@ namespace ItaiPrototype
                 _rb.AddForceAtPosition(gravityForce, worldPos);
             }
         }
+        
+        // Add this inside CompositeGravityBody.cs
+
+        void OnDrawGizmos()
+        {
+            // Only draw if the game is running and we have points
+            if (!Application.isPlaying || gravityPoints == null) return;
+
+            Gizmos.color = Color.red;
+
+            foreach (var point in gravityPoints)
+            {
+                // Calculate the world position of the gravity point
+                Vector3 worldPos = transform.TransformPoint(point.localPosition);
+        
+                // Draw a line representing the gravity force vector
+                // We multiply by 0.5f just to make the line a reasonable visual length
+                Vector3 direction = Physics2D.gravity * point.gravityScale * 0.5f;
+        
+                Gizmos.DrawRay(worldPos, direction);
+                Gizmos.DrawSphere(worldPos, 0.05f); // Draw a dot at the center of mass
+            }
+        }
     }
 }
