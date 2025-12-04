@@ -7,9 +7,9 @@ namespace ItaiPrototype
     {
         [SerializeField] private Transform lineRoot;
 
-        public void CreateNewPhysicalObject()
+        public GameObject CreateNewPhysicalObject()
         {
-            if (lineRoot.childCount == 0) return;
+            if (lineRoot.childCount == 0) return null;
 
             // --- STEP 1: CALCULATE MASS & CENTER (Updated) ---
             Vector3 weightedPositionSum = Vector3.zero;
@@ -38,9 +38,14 @@ namespace ItaiPrototype
             Vector3 finalCenterOfMass = weightedPositionSum / totalMass;
 
             // --- STEP 2: CREATE THE NEW PARENT ---
-            GameObject newParentObj = new GameObject("Physical_Drawing_" + Time.frameCount);
-            newParentObj.transform.position = finalCenterOfMass;
-            
+            GameObject newParentObj = new GameObject("Physical_Drawing_" + Time.frameCount)
+                {
+                    transform =
+                    {
+                        position = finalCenterOfMass
+                    }
+                };
+
             // Optional: Set Layer
             // newParentObj.layer = LayerMask.NameToLayer("Objects");
 
@@ -77,6 +82,25 @@ namespace ItaiPrototype
             // --- STEP 4: CONFIGURE MAIN RIGIDBODY ---
             Rigidbody2D rootRb = newParentObj.AddComponent<Rigidbody2D>();
             rootRb.mass = totalMass; 
+            
+            return newParentObj;
+        }
+        
+        public void FinishAndStartLevel()
+        {
+            // 1. Merge the lines and CATCH the result in a variable
+            GameObject lastCreatedObject = CreateNewPhysicalObject();
+
+            // 2. If we successfully created an object (player didn't click finish on empty screen)
+            if (lastCreatedObject != null)
+            {
+                // 3. Send it to the Manager to carry to the next scene
+                GameManager.instance.SubmitDrawing(lastCreatedObject);
+            }
+            else
+            {
+                Debug.LogWarning("Nothing to submit! Draw something first.");
+            }
         }
     }
 }
