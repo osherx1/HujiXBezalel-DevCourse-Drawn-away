@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ItaiPrototype
+namespace ItaiPrototype.Utilities
 {
     public class GameManager : MonoBehaviour
     {
-        public static GameManager instance;
+        public static GameManager Instance;
 
         [Header("Game State")]
         public int currentLevelIndex = 0;
@@ -24,9 +24,9 @@ namespace ItaiPrototype
 
         private void Awake()
         {
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = this;
+                Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
             else
@@ -71,7 +71,7 @@ namespace ItaiPrototype
             }
 
             // 4. Return to Drawing Board
-            SceneManager.LoadScene($"DrawingScene");
+            SceneManager.LoadScene($"DrawingScreen");
         }
 
         // --- STEP 3: PLAYER FAILS (Time Up) ---
@@ -85,7 +85,7 @@ namespace ItaiPrototype
             // 2. DO NOT Increment Level (Retry same index)
 
             // 3. Return to Drawing Board
-            SceneManager.LoadScene($"DrawingScene");
+            SceneManager.LoadScene($"DrawingScreen");
         }
 
         // Helper to get current level data

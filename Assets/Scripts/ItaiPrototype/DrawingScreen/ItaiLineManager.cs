@@ -3,6 +3,8 @@ using Drawing;
 using Drawing.Data;
 using Drawing.Managers;
 using Drawing.Managers.Core.Managers;
+using ItaiPrototype.DrawingScreen;
+using ItaiPrototype.Utilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -315,7 +317,7 @@ namespace ItaiPrototype
 
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
-                if(conf.releaseSound!= GameSoundsSo.AudioType.None) AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
+                if(conf.releaseSound!= GameSoundsSo.AudioType.None) ItaiAudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
                 // Trigger Particle System at the final position
                 if (releaseEffect != null)
                 {

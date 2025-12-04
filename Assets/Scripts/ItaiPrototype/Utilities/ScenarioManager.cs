@@ -1,31 +1,33 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace ItaiPrototype
+namespace ItaiPrototype.Utilities
 {
     public class ScenarioManager : MonoBehaviour
     {
         [Header("Setup")]
         [SerializeField] private Transform spawnPoint; // Where the drawing appears
         [SerializeField] private TextMeshProUGUI timerText;       // UI for timer
+        [SerializeField] private float drawingScale = 0.5f; // Default to half size
     
         private float _timeLeft;
         private bool _levelActive = true;
 
         private void Start()
         {
-            if (GameManager.instance == null) return;
+            if (GameManager.Instance == null) return;
 
             // 1. Setup Timer based on Level Data
-            GameManager.LevelData data = GameManager.instance.GetCurrentLevelData();
+            GameManager.LevelData data = GameManager.Instance.GetCurrentLevelData();
             _timeLeft = data.timeLimit;
 
             // 2. Spawn the Drawing
-            GameObject drawing = GameManager.instance.storedDrawing;
+            GameObject drawing = GameManager.Instance.storedDrawing;
             if (drawing == null) return;
             // Move it to the spawn point
             drawing.transform.position = spawnPoint.position;
+            // Apply the custom scale immediately
+            drawing.transform.localScale = Vector3.one * drawingScale;
             
             // Re-enable it (this turns physics back on)
             drawing.SetActive(true);
@@ -54,14 +56,14 @@ namespace ItaiPrototype
         {
             if (!_levelActive) return;
             _levelActive = false;
-            GameManager.instance.LevelComplete();
+            GameManager.Instance.LevelComplete();
         }
 
-        private void Lose()
+        public void Lose()
         {
             if (!_levelActive) return;
             _levelActive = false;
-            GameManager.instance.LevelFailed();
+            GameManager.Instance.LevelFailed();
         }
     }
 }

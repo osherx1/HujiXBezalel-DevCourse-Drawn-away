@@ -1,9 +1,10 @@
+using ItaiPrototype.Utilities;
 using TMPro;
 using UnityEngine;
 
 // Or TMPro if you use TextMeshPro
 
-namespace ItaiPrototype
+namespace ItaiPrototype.DrawingScreen
 {
     public class DrawingSceneUI : MonoBehaviour
     {
@@ -12,9 +13,9 @@ namespace ItaiPrototype
         private void Start()
         {
             // Pull the prompt from the current level data
-            if (GameManager.instance != null)
+            if (GameManager.Instance != null)
             {
-                promptText.text = GameManager.instance.GetCurrentLevelData().prompt;
+                promptText.text = GameManager.Instance.GetCurrentLevelData().prompt;
             }
         }
     }

@@ -1,13 +1,15 @@
 // Clean Line.cs that mirrors the user's provided implementation (points + circle colliders + edge collider + physics toggle)
 
 using System.Collections.Generic;
+using System.Linq;
 using Drawing;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
 using UnityEngine;
 using Utilities.Camera;
+using ItaiAudioManager = ItaiPrototype.Utilities.ItaiAudioManager;
 
-namespace ItaiPrototype
+namespace ItaiPrototype.DrawingScreen
 {
     public class ItaiLine : MonoBehaviour
     {
@@ -80,7 +82,7 @@ namespace ItaiPrototype
                 lineRenderer.colorGradient = colorGradient;
             }
 
-            if (material != null)
+            if (material)
             {
                 lineRenderer.material = material;
             }
@@ -101,8 +103,8 @@ namespace ItaiPrototype
             if (collideWhileDrawing)
             {
                 if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
-                if (_physicsMat != null && edgeCollider != null) edgeCollider.sharedMaterial = physicsMat;
-                if (edgeCollider != null) edgeCollider.enabled = true;
+                if (_physicsMat && edgeCollider) edgeCollider.sharedMaterial = physicsMat;
+                if (edgeCollider) edgeCollider.enabled = true;
             }
             else
             {
@@ -178,8 +180,7 @@ namespace ItaiPrototype
 
         public Vector2 GetLastPoint()
         {
-            if (pointsCount == 0) return Vector2.zero;
-            return points[pointsCount - 1];
+            return pointsCount == 0 ? Vector2.zero : points[pointsCount - 1];
         }
 
         public void UsePhysics(bool usePhysics)
@@ -217,8 +218,7 @@ namespace ItaiPrototype
         /// </summary>
         public void FinalizeLine(LineSettings lineSetting = null)
         {
-            var config = lineSetting;
-            if (config == null) config = DrawingConfigController.Instance.currentSettings;
+            var config = lineSetting ?? DrawingConfigController.Instance.currentSettings;
             // Ensure width is set (safety if Initialize skipped)
             if (lineRenderer && lineRenderer.positionCount == 0 && pointsCount > 0)
             {
@@ -240,38 +240,44 @@ namespace ItaiPrototype
                 physicsPts = ResampleByCount(physicsPts, maxColliderPoints);
             }
 
-            if (usePolygonCollider && physicsPts.Count >= 2)
+            switch (usePolygonCollider)
             {
-                if (!polygonCollider) polygonCollider = GetComponent<PolygonCollider2D>();
-                if (!polygonCollider) polygonCollider = gameObject.AddComponent<PolygonCollider2D>();
-                if (_physicsMat != null) polygonCollider.sharedMaterial = _physicsMat;
-
-                // Build thick path with current line width
-                float width = lineRenderer ? lineRenderer.startWidth : (circleColliderRadius * 2f);
-                Vector2[] path = BuildThickPath(physicsPts, width);
-                if (path != null && path.Length >= 3)
+                case true when physicsPts.Count >= 2:
                 {
-                    polygonCollider.pathCount = 1;
-                    polygonCollider.SetPath(0, path);
-                }
+                    if (!polygonCollider) polygonCollider = GetComponent<PolygonCollider2D>();
+                    if (!polygonCollider) polygonCollider = gameObject.AddComponent<PolygonCollider2D>();
+                    if (_physicsMat != null) polygonCollider.sharedMaterial = _physicsMat;
 
-                // Disable edge collider; polygon now handles collisions
-                if (edgeCollider)
-                {
-                    if (destroyUnusedCollidersOnFinalize) Destroy(edgeCollider);
-                    else edgeCollider.enabled = false;
+                    // Build thick path with current line width
+                    float width = lineRenderer ? lineRenderer.startWidth : (circleColliderRadius * 2f);
+                    Vector2[] path = BuildThickPath(physicsPts, width);
+                    if (path is { Length: >= 3 })
+                    {
+                        polygonCollider.pathCount = 1;
+                        polygonCollider.SetPath(0, path);
+                    }
+
+                    // Disable edge collider; polygon now handles collisions
+                    if (edgeCollider)
+                    {
+                        if (destroyUnusedCollidersOnFinalize) Destroy(edgeCollider);
+                        else edgeCollider.enabled = false;
+                    }
+
+                    break;
                 }
-            }
-            else if (!usePolygonCollider)
-            {
-                // Ensure we have an edge collider and set it once now
-                if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
-                if (!edgeCollider) edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
-                if (_physicsMat != null) edgeCollider.sharedMaterial = _physicsMat;
-                edgeCollider.enabled = true;
-                if (physicsPts.Count > 1) edgeCollider.points = physicsPts.ToArray();
-                // If polygon collider exists but not used, optionally remove
-                if (polygonCollider && destroyUnusedCollidersOnFinalize) Destroy(polygonCollider);
+                case false:
+                {
+                    // Ensure we have an edge collider and set it once now
+                    if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
+                    if (!edgeCollider) edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+                    if (_physicsMat) edgeCollider.sharedMaterial = _physicsMat;
+                    edgeCollider.enabled = true;
+                    if (physicsPts.Count > 1) edgeCollider.points = physicsPts.ToArray();
+                    // If polygon collider exists but not used, optionally remove
+                    if (polygonCollider && destroyUnusedCollidersOnFinalize) Destroy(polygonCollider);
+                    break;
+                }
             }
 
             // Light-weight physics defaults
@@ -362,26 +368,18 @@ namespace ItaiPrototype
                     float t = Mathf.Clamp01(Vector2.Dot(ap, ab) / abLenSq);
                     Vector2 proj = a + ab * t;
                     float dSq = (pts[i] - proj).sqrMagnitude;
-                    if (dSq > maxDist)
-                    {
-                        maxDist = dSq;
-                        index = i;
-                    }
+                    if (!(dSq > maxDist)) continue;
+                    maxDist = dSq;
+                    index = i;
                 }
 
-                if (maxDist > sqTol && index != -1)
-                {
-                    keep[index] = true;
-                    stack.Push((start, index));
-                    stack.Push((index, end));
-                }
+                if (!(maxDist > sqTol) || index == -1) continue;
+                keep[index] = true;
+                stack.Push((start, index));
+                stack.Push((index, end));
             }
 
-            var outPts = new List<Vector2>();
-            for (int i = 0; i < pts.Count; i++)
-                if (keep[i])
-                    outPts.Add(pts[i]);
-            return outPts;
+            return pts.Where((t, i) => keep[i]).ToList();
         }
 
         // Uniformly resample a polyline to a fixed max count (including endpoints)
@@ -393,9 +391,7 @@ namespace ItaiPrototype
             if (total <= 1e-6f) return new List<Vector2> { pts[0], pts[pts.Count - 1] };
             int target = Mathf.Max(2, maxCount);
             float step = total / (target - 1);
-            var result = new List<Vector2>(target);
-            result.Add(pts[0]);
-            float acc = 0f;
+            var result = new List<Vector2>(target) { pts[0] };
             int seg = 1;
             float distToNext = step;
             while (result.Count < target - 1)
@@ -486,15 +482,13 @@ namespace ItaiPrototype
 
             if (volume > MinVolumeThreshold)
             {
-                AudioManager.Instance.PlaySoundByAudioType(_collisionSound, volume);
+                ItaiAudioManager.Instance.PlaySoundByAudioType(_collisionSound, volume);
             }
             // Camera shake for non-line collisions
-            if (volume > CameraShakeVolumeThreshold && _useCameraShake/*&& !isTargetLine*/)
-            {
-                float finalShakeMagnitude = Mathf.Lerp(minShakeIntensity, maxShakeIntensity, volume);
-                //Debug.Log("Camera Shake Magnitude: " + finalShakeMagnitude);
-                CameraShaker.Instance.Shake(0.1f, finalShakeMagnitude);
-            }  
+            if (!(volume > CameraShakeVolumeThreshold) || !_useCameraShake /*&& !isTargetLine*/) return;
+            float finalShakeMagnitude = Mathf.Lerp(minShakeIntensity, maxShakeIntensity, volume);
+            //Debug.Log("Camera Shake Magnitude: " + finalShakeMagnitude);
+            CameraShaker.Instance.Shake(0.1f, finalShakeMagnitude);
         }
         private float CalculateVolume(float impactSpeed)
         {

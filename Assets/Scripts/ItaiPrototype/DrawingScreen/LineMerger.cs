@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using ItaiPrototype.DrawingScreen;
+using ItaiPrototype.Utilities;
 using UnityEngine;
 
 namespace ItaiPrototype
@@ -81,7 +83,9 @@ namespace ItaiPrototype
 
             // --- STEP 4: CONFIGURE MAIN RIGIDBODY ---
             Rigidbody2D rootRb = newParentObj.AddComponent<Rigidbody2D>();
-            rootRb.mass = totalMass; 
+            rootRb.mass = totalMass;
+            
+            newParentObj.tag = "Player";
             
             return newParentObj;
         }
@@ -95,7 +99,7 @@ namespace ItaiPrototype
             if (lastCreatedObject != null)
             {
                 // 3. Send it to the Manager to carry to the next scene
-                GameManager.instance.SubmitDrawing(lastCreatedObject);
+                GameManager.Instance.SubmitDrawing(lastCreatedObject);
             }
             else
             {

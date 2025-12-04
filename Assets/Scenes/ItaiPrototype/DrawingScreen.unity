@@ -1037,6 +1037,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5079494204976436088, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6927786786437442963, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -1044,7 +1048,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6927786786437442963, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1441934959}
   m_SourcePrefab: {fileID: 100100000, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
 --- !u!1 &331588195
 GameObject:
@@ -2190,6 +2197,38 @@ Transform:
   - {fileID: 961627032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1441934955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6927786786437442963, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
+  m_PrefabInstance: {fileID: 297990322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1441934956 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1934918170265368739, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
+  m_PrefabInstance: {fileID: 297990322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1441934957 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4568474827926979531, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
+  m_PrefabInstance: {fileID: 297990322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441934959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441934955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 770d5558f1347ce449609af0f4baa4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItaiPrototype.Utilities.ItaiAudioManager
+  gameSoundsSo: {fileID: 11400000, guid: ff6142ca9c3180e49bd089415537c222, type: 2}
+  audioSource: {fileID: 1441934957}
+  backgroundMusic: {fileID: 1441934956}
+  startWithBackgroundMusic: 0
+  muteOnGameFinished: 1
 --- !u!114 &1584444361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
@@ -2247,6 +2286,71 @@ MonoBehaviour:
   linePrefab: {fileID: 5247383489900493533, guid: 7b48f41e330369d44a392c4fc91c64ce, type: 3}
   linesRoot: {fileID: 717280786}
   releaseEffect: {fileID: 517156973}
+--- !u!1 &1636453589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1636453592}
+  - component: {fileID: 1636453591}
+  - component: {fileID: 1636453590}
+  m_Layer: 0
+  m_Name: Inputs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1636453590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636453589}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d7186557705fc47a92c490827ed6f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drawing.Utilities.InputDiagnostics
+  showOnGUI: 1
+  fontSize: 30
+  textColor: {r: 1, g: 0, b: 0, a: 1}
+  offset: {x: 22.08, y: 10}
+  logStateChanges: 1
+--- !u!114 &1636453591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636453589}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac31059fdf65654091735a526589fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drawing.Utilities.InputRawTrace
+  logToConsole: 1
+  writeToFile: 1
+  fileName: input_trace.log
+--- !u!4 &1636453592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636453589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.55121, y: 0.39852, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636657134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,3 +2849,4 @@ SceneRoots:
   - {fileID: 163789608}
   - {fileID: 1688605378}
   - {fileID: 741556812}
+  - {fileID: 1636453592}
