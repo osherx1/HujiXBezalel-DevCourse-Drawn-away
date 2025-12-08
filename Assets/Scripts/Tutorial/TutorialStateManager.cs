@@ -1,12 +1,12 @@
+// THIS FILE HAS BEEN TEMPORARILY DISABLED
+// Wrapped in #if false to prevent compilation while you investigate or migrate the code.
+// To re-enable: remove the leading '#if false' and the trailing '#endif'.
+// Disabled on 2025-12-08.
+
+#if false
 using System;
 using System.Collections;
 using DG.Tweening;
-using Game.Core.Audio;
-using Game.Core.Camera.Scripts;
-using Game.Core.Input;
-using Game.Core.Managers;
-using Game.Enemies.Scripts;
-using Game.Platforms.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -16,7 +16,7 @@ namespace Game.Core.Tutorial.Scripts
 {
     public class TutorialStateManager : MonoBehaviour
     {
-        [SerializeField] private HybridCameraFollow hybridCamera;
+        //[SerializeField] private HybridCameraFollow hybridCamera;
         [SerializeField] private Transform cameraTarget;
         [SerializeField] private Transform playerPosition;
         [SerializeField] private Transform firstPositionOfCamera;
@@ -273,7 +273,7 @@ namespace Game.Core.Tutorial.Scripts
 
         #region ServantEnterState
 
-        [SerializeField] private PlatformWaypointPoint waypointPointServantEnter;
+        //[SerializeField] private PlatformWaypointPoint waypointPointServantEnter;
 
         private IEnumerator ServantEnterState()
         {
@@ -419,8 +419,8 @@ namespace Game.Core.Tutorial.Scripts
 
         #region TutorialResetState
 
-        [SerializeField] private GameObject servantRouteHead;
-        [SerializeField] private PlatformWaypointPoint wayPointServant2;
+        //[SerializeField] private GameObject servantRouteHead;
+        //[SerializeField] private PlatformWaypointPoint wayPointServant2;
 
         private IEnumerator TutorialResetState(Action<Action> onComplete)
         {
@@ -449,8 +449,8 @@ namespace Game.Core.Tutorial.Scripts
         [TextArea(3, 10)] [SerializeField] private string greatJobText;
 
 
-        [SerializeField] private PlatformWaypointPoint waypointPointServantEnd;
-        [SerializeField] private PlatformWaypointPoint wayPointQueen;
+        //[SerializeField] private PlatformWaypointPoint waypointPointServantEnd;
+        //[SerializeField] private PlatformWaypointPoint wayPointQueen;
         [SerializeField] private GameObject mouseTutorial2;
 
 
@@ -542,3 +542,4 @@ namespace Game.Core.Tutorial.Scripts
         #endregion
     }
 }
+#endif
