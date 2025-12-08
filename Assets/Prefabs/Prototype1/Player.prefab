@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 9013898741706573847}
   - component: {fileID: 1717714238766563650}
   - component: {fileID: 1185081031527145602}
+  - component: {fileID: 3901147994053592755}
+  - component: {fileID: 1867496389800315899}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -83,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 14
-  m_Sprite: {fileID: 3900635952153882102, guid: aa5c60ec7637749ed9b706b537070988, type: 3}
+  m_Sprite: {fileID: -813649108, guid: fb6d4332b6ece4560b2e693ffd4a2bc2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,7 +130,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4874740186246839847}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -170,25 +172,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b9cbb09ebb45038680958196cf8ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype1.PlayerController
-  moveSpeed: 8
-  jumpSpeed: 12
-  maxJumpLength: 0.5
-  minJumpLength: 0.1
-  jumpBufferInputLength: 0.2
-  jumpForgiveLength: 0.1
+  useAcceleration: 1
+  maxSpeed: 30
+  maxAcceleration: 79.1
+  maxDeceleration: 52
+  maxTurnSpeed: 80
+  maxAirAcceleration: 40
+  maxAirDeceleration: 40
+  maxAirTurnSpeed: 80
+  friction: 0
+  jumpHeight: 6.11
+  timeToJumpApex: 0.434
+  upwardMovementMultiplier: 0.8
+  downwardMovementMultiplier: 6
+  maxAirJumps: 0
+  variableJumpHeight: 1
+  jumpCutOff: 4
+  speedLimit: 25
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
   groundLayer:
     serializedVersion: 2
     m_Bits: 72
   spriteRenderer: {fileID: 0}
-  enableFastFallGravity: 1
-  fallGravityMultiplier: 6
-  maxFallSpeed: 25
   respawnPoint: {fileID: 0}
   snapToRespawnOnStart: 1
   groundCheck: {fileID: 0}
   groundCheckRadius: 0.12
   moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+--- !u!58 &3901147994053592755
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 1.4930725}
+  m_Radius: 1.4930723
+--- !u!95 &1867496389800315899
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ebc86aadb0d37147b95393180ea3363, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8030921395048199364
 GameObject:
   m_ObjectHideFlags: 0
