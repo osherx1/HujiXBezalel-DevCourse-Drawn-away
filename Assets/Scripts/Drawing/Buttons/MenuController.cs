@@ -1,4 +1,6 @@
 ﻿using System;
+using CustomInspector;
+using Drawing.Managers;
 
 namespace Drawing.Buttons
 {
@@ -12,21 +14,27 @@ namespace Drawing.Buttons
 
         [Header("Time Settings")] 
         [Tooltip("If true, time will stop completely (target scale 0).")] 
+        [Hook(nameof(IgnoreSlowMotionSettings))]
         [SerializeField] private bool pauseGameOnOpen = true;
 
         [Tooltip("If true (and pause is false), time will slow down to the factor below.")] 
+        [ShowIfNot(nameof(pauseGameOnOpen))] 
+        
         [SerializeField] private bool slowTimeOnOpen;
 
         [Tooltip("The time scale value when slowed down (0.0 to 1.0).")] 
+        
+        [ShowIfNot(nameof(pauseGameOnOpen))] [ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
         [SerializeField, Range(0f, 1f)] private float slowMotionFactor = 0.5f;
 
         [Header("Transition Settings")]
         [Tooltip("How long (in real seconds) the transition to/from slow motion takes.")]
+        [ShowIfNot(nameof(pauseGameOnOpen))][ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
         [SerializeField] private float transitionDuration = 0.5f;
 
         // Event to notify the effects manager that the state has changed.
         // The boolean parameter indicates: Are we entering slow motion/pause?
-        public Action<bool> onTimeStateChanged; 
+        //public Action<bool> onTimeStateChanged; 
 
         private Coroutine _timeCoroutine;
         private float _defaultFixedDeltaTime; // To maintain physics stability
@@ -51,9 +59,11 @@ namespace Drawing.Buttons
             
             // Update the time scale
             UpdateTimeScale(newState);
-            
+            EventManager.Instance.TriggerSlowMotion(newState&&slowTimeOnOpen);
+            EventManager.Instance.TriggerGamePaused(newState&&pauseGameOnOpen);
+
             // Trigger effects (connect to Effects Manager)
-            onTimeStateChanged?.Invoke(newState);
+            //onTimeStateChanged?.Invoke(newState);
         }
 
         private void UpdateTimeScale(bool isMenuOpen)
@@ -63,7 +73,11 @@ namespace Drawing.Buttons
             if (isMenuOpen)
             {
                 if (pauseGameOnOpen) targetTimeScale = 0f;
-                else if (slowTimeOnOpen) targetTimeScale = slowMotionFactor;
+                else if (slowTimeOnOpen)
+                {
+                    targetTimeScale = slowMotionFactor;
+
+                }
             }
 
             // If a time transition is already running, stop it and start a new one
@@ -98,8 +112,19 @@ namespace Drawing.Buttons
             // Ensure we reach the exact final value
             Time.timeScale = targetScale;
             Time.fixedDeltaTime = _defaultFixedDeltaTime * Time.timeScale;
+            
         }
+        public void IgnoreSlowMotionSettings()
+        {
+            if(pauseGameOnOpen)
+            {
+                slowTimeOnOpen = false;
+            }
+        }
+        //if pause is true, slow motion settings are ignored
+        
     }
+
 }
 
 

@@ -19,8 +19,23 @@ namespace Drawing.Managers
         public event Action<object> OnConfigButtonSelected;
         public event Action OnGameFinished;
         
-        
+        public event Action<bool> OnSlowMotionChanged;
+        public event Action<bool> OnGamePausedChanged;
 
+        /// <summary>
+        /// Triggers the slow motion state.
+        /// </summary>
+        /// <param name="active">True to enter slow motion, False to return to normal.</param>
+        public void TriggerSlowMotion(bool active)
+        {
+            OnSlowMotionChanged?.Invoke(active);
+        }
+        
+        
+        public void TriggerGamePaused(bool active) 
+        {
+            OnGamePausedChanged?.Invoke(active);
+        }
         public void TriggerEraserActive() => OnEraserActive?.Invoke();
         
         public event Action OnEraserInactive;
