@@ -1879,14 +1879,6 @@ PrefabInstance:
       propertyPath: curserSpriteRenderer
       value: 
       objectReference: {fileID: 719797242}
-    - target: {fileID: 5944365242924627156, guid: e8063938d3e8b01438e935e12e803424, type: 3}
-      propertyPath: slowTimeOnOpen
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5944365242924627156, guid: e8063938d3e8b01438e935e12e803424, type: 3}
-      propertyPath: pauseGameOnOpen
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6543514099429129699, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.80222
@@ -3315,17 +3307,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!114 &1003637926 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7251735075093949718, guid: e8063938d3e8b01438e935e12e803424, type: 3}
-  m_PrefabInstance: {fileID: 697928901}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 321c90a45698b7848acbb9ff6f029abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
 --- !u!1 &1035846059
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,7 +5131,7 @@ PrefabInstance:
     - target: {fileID: 1959339671015974043, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: defaultButton
       value: 
-      objectReference: {fileID: 1003637926}
+      objectReference: {fileID: 0}
     - target: {fileID: 2320167678442860604, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: m_Name
       value: DrawingManager
