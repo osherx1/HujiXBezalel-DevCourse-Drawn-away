@@ -47,7 +47,7 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
+      lineWidth: 1.327
       material: {fileID: 2100000, guid: 1bf0f2967c4f54511b8f9a7a51f6d604, type: 2}
       endCapVertices: 6
       cornerVertices: 12
