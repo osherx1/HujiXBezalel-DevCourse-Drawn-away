@@ -170,7 +170,7 @@ MonoBehaviour:
       collisionSound: 22
       useReleaseSound: 0
       releaseSound: -1
-      baseVolume: 1
+      baseVolume: 0.1
       useCameraShake: 1
   - id: Static
     settings:
