@@ -8,6 +8,175 @@ using Utilities.UI;
 
 namespace Drawing
 {
+    public class DrawingConfigButton : MonoBehaviour
+    {
+        [Header("UI References")]
+        [SerializeField] private Button targetButton;
+
+        [Header("Values to Apply")] 
+        [SerializeField] private LineSettingsCollection lineSettingsCollection;
+        [SerializeField] private string settingID = "Default";
+        
+        [Header("Visual Feedback State")] 
+        [SerializeField] private Color selectedColor = Color.green;
+        [SerializeField] private int maxFillAmount = 1000;
+        [SerializeField] private ResourceBarTracker resourceBarTracker;
+
+        private LineSettings _valuesToApply;
+        private Color _normalColor;
+        private Image _targetButtonImage;
+        private bool _isSelected = false;
+        private int _currentFillAmount;
+
+        private void Awake()
+        {
+            if (targetButton == null)
+            {
+                Debug.LogError($"Target Button is missing in {name}");
+                enabled = false;
+                return;
+            }
+
+            _targetButtonImage = targetButton.GetComponent<Image>();
+            
+            if (_targetButtonImage != null)
+            {
+                _normalColor = _targetButtonImage.color;
+            }
+
+            _currentFillAmount = maxFillAmount;
+            
+            if(resourceBarTracker != null)
+            {
+                resourceBarTracker.ChangeMaxAmountTo(maxFillAmount);
+                resourceBarTracker.ChangeResourceByAmount(_currentFillAmount);
+            }
+
+            InitializeFromCollection();
+        }
+
+        private void InitializeFromCollection()
+        {
+            LineSettings settings = lineSettingsCollection.GetSettingsByID(settingID);
+            if (settings != null)
+            {
+                _valuesToApply = settings;
+            }
+            else
+            {
+                Debug.LogWarningFormat("Setting '{0}' does not exist.", settingID);
+            }
+        }
+
+        private void OnEnable()
+        {
+            if (targetButton != null)
+                targetButton.onClick.AddListener(OnButtonClicked);
+
+            EventManager.Instance.OnConfigButtonSelected += OnGlobalConfigChanged;
+            Line.onLineDestroyed += HandleRefundInk;
+            
+            if (resourceBarTracker != null)
+            {
+                resourceBarTracker.SetBarVisibility(true);
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (targetButton != null)
+                targetButton.onClick.RemoveListener(OnButtonClicked);
+
+            EventManager.Instance.OnConfigButtonSelected -= OnGlobalConfigChanged;
+            Line.onLineDestroyed -= HandleRefundInk;
+
+            if (resourceBarTracker != null)
+            {
+                resourceBarTracker.SetBarVisibility(false);
+            }
+        }
+
+        private void HandleRefundInk(string lineName, int amount)
+        {
+            if (lineName != settingID) return;
+            RefundInk(amount);
+        }
+        
+        public bool TryConsumeInk(float amount)
+        {
+            if (_currentFillAmount >= amount)
+            {
+                _currentFillAmount -= (int)amount;
+                
+                if (resourceBarTracker != null)
+                {
+                    resourceBarTracker.ChangeResourceByAmount(-(int)amount);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public void RefundInk(float amount)
+        {
+            _currentFillAmount = Mathf.Clamp(_currentFillAmount + (int)amount, 0, maxFillAmount);
+            
+            if (resourceBarTracker != null)
+            {
+                resourceBarTracker.ChangeResourceByAmount((int)amount);
+            }
+        }
+
+        private void OnButtonClicked()
+        {
+            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
+            
+            if (_isSelected) return;
+
+            SetSelectionState(true);
+            ApplySettings();
+            EventManager.Instance.TriggerConfigButtonSelected(this);
+        }
+
+        private void OnGlobalConfigChanged(object sender)
+        {
+            if (sender != this)
+            {
+                SetSelectionState(false);
+            }
+        }
+
+        private void SetSelectionState(bool isSelected)
+        {
+            _isSelected = isSelected;
+
+            if (_targetButtonImage != null)
+            {
+                _targetButtonImage.color = isSelected ? selectedColor : _normalColor;
+            }
+        }
+
+        private void ApplySettings()
+        {
+            if (DrawingConfigController.Instance == null) return;
+
+            var controller = DrawingConfigController.Instance;
+            controller.SetLineSetting(_valuesToApply);
+            controller.SetButton(this);
+        }
+    }
+}
+
+/*using Drawing.Data;
+using Drawing.LineControl;
+using Drawing.Managers;
+using Drawing.Managers.Core.Managers;
+using UnityEngine;
+using UnityEngine.UI;
+using Utilities.UI;
+
+namespace Drawing
+{
     [RequireComponent(typeof(Button))]
     public class DrawingConfigButton : MonoBehaviour
     {
@@ -194,4 +363,4 @@ namespace Drawing
             controller.SetButton(this);
         }
     }
-}
+}*/
