@@ -9,8 +9,10 @@ namespace Prototype1
     [RequireComponent(typeof(Collider2D))]
     public class SpikeHazard : MonoBehaviour
     {
-        [Tooltip("Only objects with this tag are affected. Leave empty to allow any collider with a PlayerController.")]
+        [Tooltip("Only objects with this tag are affected. Leave empty to allow any collider with a characterHurt component.")]
         [SerializeField] private string requiredTag = "Player";
+        [Tooltip("When true the player's velocity is cleared before respawning.")]
+        [SerializeField] private bool zeroVelocityOnHit = true;
 
         private void Reset()
         {
@@ -43,10 +45,10 @@ namespace Prototype1
                 return;
             }
 
-            var controller = other.GetComponent<PlayerController>() ?? other.GetComponentInParent<PlayerController>();
-            if (controller != null)
+            var hurt = other.GetComponent<characterHurt>() ?? other.GetComponentInParent<characterHurt>();
+            if (hurt != null)
             {
-                controller.ResetToRespawnPoint();
+                hurt.TriggerHazardHit(zeroVelocityOnHit);
             }
         }
     }

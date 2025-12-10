@@ -1056,8 +1056,8 @@ MonoBehaviour:
   useGradient: 1
   barGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0, g: 1, b: 0.116336346, a: 1}
+    key0: {r: 0.5752492, g: 0.8773585, b: 0.7040313, a: 0.84313726}
+    key1: {r: 0.4968405, g: 0.7264151, b: 0.6497604, a: 0.84313726}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1245,8 +1245,8 @@ MonoBehaviour:
   useGradient: 1
   barGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0, g: 1, b: 0.116336346, a: 1}
+    key0: {r: 0.5752492, g: 0.8773585, b: 0.7040313, a: 0.84313726}
+    key1: {r: 0.4968405, g: 0.7264151, b: 0.6497604, a: 0.84313726}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1597,8 +1597,8 @@ MonoBehaviour:
   useGradient: 1
   barGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0, g: 1, b: 0.116336346, a: 1}
+    key0: {r: 0.5752492, g: 0.8773585, b: 0.7040313, a: 0.84313726}
+    key1: {r: 0.4968405, g: 0.7264151, b: 0.6497604, a: 0.84313726}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1869,8 +1869,8 @@ MonoBehaviour:
   useGradient: 1
   barGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0, g: 1, b: 0.116336346, a: 1}
+    key0: {r: 0.5752492, g: 0.8773585, b: 0.7040313, a: 0.84313726}
+    key1: {r: 0.4968405, g: 0.7264151, b: 0.6497604, a: 0.84313726}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2011,8 +2011,8 @@ MonoBehaviour:
   menuPanel: {fileID: 6904369176371066325}
   pauseGameOnOpen: 0
   slowTimeOnOpen: 1
-  slowMotionFactor: 0.15
-  transitionDuration: 0.2
+  slowMotionFactor: 0
+  transitionDuration: 3.3
 --- !u!114 &1071242266725409703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,6 +2027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.Buttons.MenuInputListener
   menuController: {fileID: 5944365242924627156}
   toggleActionReference: {fileID: 2959925963639424555, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  isHoldToOpen: 0
 --- !u!1 &8571839906821946831
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,8 +2346,8 @@ MonoBehaviour:
   useGradient: 1
   barGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0, g: 1, b: 0.116336346, a: 1}
+    key0: {r: 0.5752492, g: 0.8773585, b: 0.7040313, a: 0.84313726}
+    key1: {r: 0.4968405, g: 0.7264151, b: 0.6497604, a: 0.84313726}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2370,7 +2371,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
+    m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   barIsFilledUp:
@@ -2486,6 +2487,14 @@ PrefabInstance:
     - target: {fileID: 7887970227945715910, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2611,6 +2620,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4980392
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2734,6 +2751,14 @@ PrefabInstance:
     - target: {fileID: 7887970227945715910, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2859,6 +2884,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4980392
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2982,6 +3015,14 @@ PrefabInstance:
     - target: {fileID: 7887970227945715910, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701873838106569962, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
