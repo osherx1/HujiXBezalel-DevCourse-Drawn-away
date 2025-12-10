@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 6397cc54748154866ad01159213765bd
+guid: b00b27d24570b43bf831dc1f293c0870
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3326489858170326605
-    second: "\u05DE\u05D2\u05E8\u05E9 \u05EA\u05D7\u05E8\u05D5\u05EA_0"
-  - first:
-      213: 4912857206873672445
-    second: "\u05DE\u05D2\u05E8\u05E9 \u05EA\u05D7\u05E8\u05D5\u05EA_1"
+      213: -7087357898696029623
+    second: Untitled_Artwork 39_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,18 +37,18 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -99,52 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u05DE\u05D2\u05E8\u05E9 \u05EA\u05D7\u05E8\u05D5\u05EA_0"
-      rect:
-        serializedVersion: 2
-        x: 392
-        y: 484
-        width: 15
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b171d6391fe5d1d0800000000000000
-      internalID: -3326489858170326605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u05DE\u05D2\u05E8\u05E9 \u05EA\u05D7\u05E8\u05D5\u05EA_1"
+      name: Untitled_Artwork 39_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 431
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfa4ce7a999fd2440800000000000000
-      internalID: 4912857206873672445
+      spriteID: 94a0a24aa85a4ad90800000000000000
+      internalID: -7087357898696029623
       vertices: []
       indices: 
       edges: []
@@ -173,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u05DE\u05D2\u05E8\u05E9 \u05EA\u05D7\u05E8\u05D5\u05EA_0": -3326489858170326605
-      "\u05DE\u05D2\u05E8\u05E9 \u05EA\u05D7\u05E8\u05D5\u05EA_1": 4912857206873672445
+      Untitled_Artwork 39_0: -7087357898696029623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
