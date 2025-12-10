@@ -1,10 +1,11 @@
 ﻿using System;
+using CustomInspector;
+using Drawing.Managers;
+using UnityEngine;
+using System.Collections;
 
 namespace Drawing.Buttons
 {
-    using UnityEngine;
-    using System.Collections;
-
     public class MenuController : MonoBehaviour
     {
         [Header("UI References")] 
@@ -12,21 +13,21 @@ namespace Drawing.Buttons
 
         [Header("Time Settings")] 
         [Tooltip("If true, time will stop completely (target scale 0).")] 
+        [Hook(nameof(IgnoreSlowMotionSettings))]
         [SerializeField] private bool pauseGameOnOpen = true;
 
         [Tooltip("If true (and pause is false), time will slow down to the factor below.")] 
+        [ShowIfNot(nameof(pauseGameOnOpen))] 
         [SerializeField] private bool slowTimeOnOpen;
 
         [Tooltip("The time scale value when slowed down (0.0 to 1.0).")] 
+        [ShowIfNot(nameof(pauseGameOnOpen))] [ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
         [SerializeField, Range(0f, 1f)] private float slowMotionFactor = 0.5f;
 
         [Header("Transition Settings")]
         [Tooltip("How long (in real seconds) the transition to/from slow motion takes.")]
+        [ShowIfNot(nameof(pauseGameOnOpen))][ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
         [SerializeField] private float transitionDuration = 0.5f;
-
-        // Event to notify the effects manager that the state has changed.
-        // The boolean parameter indicates: Are we entering slow motion/pause?
-        public Action<bool> onTimeStateChanged; 
 
         private Coroutine _timeCoroutine;
         private float _defaultFixedDeltaTime; // To maintain physics stability
@@ -40,20 +41,49 @@ namespace Drawing.Buttons
             _defaultFixedDeltaTime = Time.fixedDeltaTime;
         }
 
+        /// <summary>
+        /// Explicitly opens the menu.
+        /// </summary>
+        public void OpenMenu()
+        {
+            SetMenuState(true);
+        }
+
+        /// <summary>
+        /// Explicitly closes the menu.
+        /// </summary>
+        public void CloseMenu()
+        {
+            SetMenuState(false);
+        }
+
+        /// <summary>
+        /// Toggles the menu state based on current status.
+        /// </summary>
         public void ToggleMenu()
         {
             if (menuPanel == null) return;
+            SetMenuState(!menuPanel.activeSelf);
+        }
 
-            bool isCurrentlyActive = menuPanel.activeSelf;
-            bool newState = !isCurrentlyActive; // The new state we are transitioning to
+        /// <summary>
+        /// Centralized logic for setting menu state to avoid code duplication.
+        /// </summary>
+        private void SetMenuState(bool isOpen)
+        {
+            if (menuPanel == null) return;
 
-            menuPanel.SetActive(newState);
+            // Optimization: If the state is not changing, do nothing
+            if (menuPanel.activeSelf == isOpen) return;
+
+            menuPanel.SetActive(isOpen);
             
             // Update the time scale
-            UpdateTimeScale(newState);
+            UpdateTimeScale(isOpen);
             
-            // Trigger effects (connect to Effects Manager)
-            onTimeStateChanged?.Invoke(newState);
+            // Trigger Events
+            EventManager.Instance.TriggerSlowMotion(isOpen && slowTimeOnOpen);
+            EventManager.Instance.TriggerGamePaused(isOpen && pauseGameOnOpen);
         }
 
         private void UpdateTimeScale(bool isMenuOpen)
@@ -63,7 +93,10 @@ namespace Drawing.Buttons
             if (isMenuOpen)
             {
                 if (pauseGameOnOpen) targetTimeScale = 0f;
-                else if (slowTimeOnOpen) targetTimeScale = slowMotionFactor;
+                else if (slowTimeOnOpen)
+                {
+                    targetTimeScale = slowMotionFactor;
+                }
             }
 
             // If a time transition is already running, stop it and start a new one
@@ -99,8 +132,171 @@ namespace Drawing.Buttons
             Time.timeScale = targetScale;
             Time.fixedDeltaTime = _defaultFixedDeltaTime * Time.timeScale;
         }
+
+        public void IgnoreSlowMotionSettings()
+        {
+            if(pauseGameOnOpen)
+            {
+                slowTimeOnOpen = false;
+            }
+        }
     }
 }
+
+
+
+/*
+using System;
+using CustomInspector;
+using Drawing.Managers;
+
+namespace Drawing.Buttons
+{
+    using UnityEngine;
+    using System.Collections;
+
+    public class MenuController : MonoBehaviour
+    {
+        [Header("UI References")] 
+        [SerializeField] private GameObject menuPanel;
+
+        [Header("Time Settings")] 
+        [Tooltip("If true, time will stop completely (target scale 0).")] 
+        [Hook(nameof(IgnoreSlowMotionSettings))]
+        [SerializeField] private bool pauseGameOnOpen = true;
+
+        [Tooltip("If true (and pause is false), time will slow down to the factor below.")] 
+        [ShowIfNot(nameof(pauseGameOnOpen))] 
+        
+        [SerializeField] private bool slowTimeOnOpen;
+
+        [Tooltip("The time scale value when slowed down (0.0 to 1.0).")] 
+        
+        [ShowIfNot(nameof(pauseGameOnOpen))] [ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
+        [SerializeField, Range(0f, 1f)] private float slowMotionFactor = 0.5f;
+
+        [Header("Transition Settings")]
+        [Tooltip("How long (in real seconds) the transition to/from slow motion takes.")]
+        [ShowIfNot(nameof(pauseGameOnOpen))][ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
+        [SerializeField] private float transitionDuration = 0.5f;
+
+        // Event to notify the effects manager that the state has changed.
+        // The boolean parameter indicates: Are we entering slow motion/pause?
+        //public Action<bool> onTimeStateChanged; 
+
+        private Coroutine _timeCoroutine;
+        private float _defaultFixedDeltaTime; // To maintain physics stability
+
+        private void Awake()
+        {
+            if (menuPanel != null) menuPanel.SetActive(false);
+            
+            // Ensure time is running normally at start
+            Time.timeScale = 1f;
+            _defaultFixedDeltaTime = Time.fixedDeltaTime;
+        }
+
+        public void ToggleMenu()
+        {
+            if (menuPanel == null) return;
+
+            bool isCurrentlyActive = menuPanel.activeSelf;
+            bool newState = !isCurrentlyActive; // The new state we are transitioning to
+
+            menuPanel.SetActive(newState);
+            
+            // Update the time scale
+            UpdateTimeScale(newState);
+            EventManager.Instance.TriggerSlowMotion(newState&&slowTimeOnOpen);
+            EventManager.Instance.TriggerGamePaused(newState&&pauseGameOnOpen);
+
+            // Trigger effects (connect to Effects Manager)
+            //onTimeStateChanged?.Invoke(newState);
+        }
+
+        private void UpdateTimeScale(bool isMenuOpen)
+        {
+            float targetTimeScale = 1f;
+
+            if (isMenuOpen)
+            {
+                if (pauseGameOnOpen) targetTimeScale = 0f;
+                else if (slowTimeOnOpen)
+                {
+                    targetTimeScale = slowMotionFactor;
+
+                }
+            }
+
+            // If a time transition is already running, stop it and start a new one
+            if (_timeCoroutine != null) StopCoroutine(_timeCoroutine);
+            _timeCoroutine = StartCoroutine(SmoothTimeTransition(targetTimeScale));
+        }
+
+        private IEnumerator SmoothTimeTransition(float targetScale)
+        {
+            float startScale = Time.timeScale;
+            float timer = 0f;
+
+            while (timer < transitionDuration)
+            {
+                // Important: Use unscaledDeltaTime because if time stops, 
+                // normal deltaTime becomes 0 and the loop will freeze.
+                timer += Time.unscaledDeltaTime;
+                
+                float t = timer / transitionDuration;
+                
+                // Use SmoothStep for a smoother transition than standard linear interpolation
+                t = Mathf.SmoothStep(0f, 1f, t); 
+
+                Time.timeScale = Mathf.Lerp(startScale, targetScale, t);
+                
+                // Adjust physics to prevent jittering in slow motion
+                Time.fixedDeltaTime = _defaultFixedDeltaTime * Time.timeScale;
+
+                yield return null;
+            }
+
+            // Ensure we reach the exact final value
+            Time.timeScale = targetScale;
+            Time.fixedDeltaTime = _defaultFixedDeltaTime * Time.timeScale;
+            
+        }
+        public void IgnoreSlowMotionSettings()
+        {
+            if(pauseGameOnOpen)
+            {
+                slowTimeOnOpen = false;
+            }
+        }
+        //if pause is true, slow motion settings are ignored
+
+        public void OpenMenu()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CloseMenu()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    */
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 
 
 /*namespace Drawing.Buttons

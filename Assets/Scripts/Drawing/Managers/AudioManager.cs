@@ -136,6 +136,15 @@ namespace Drawing.Managers
                     // Debug.LogWarning($"Sound {audioType} not found!");
                 }
             }
+            
+            
+            public void SetMusicPitch(float pitch)
+            {
+                if (backgroundMusic != null)
+                {
+                    backgroundMusic.pitch = pitch;
+                }
+            }
 
             /// <summary>
             /// Plays a given AudioSource with optional volume control.

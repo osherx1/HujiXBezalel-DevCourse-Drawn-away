@@ -7,16 +7,18 @@ namespace Drawing
     {
         public static DrawingConfigController Instance { get; private set; }
 
-        [Header("Configuration")]
-        [SerializeField] private LineSettingsCollection lineSettingsCollection;
+        [Header("Configuration")] [SerializeField]
+        private LineSettingsCollection lineSettingsCollection;
+
         [SerializeField] private string _defaultSettingID = "Default";
 
-        [Header("Debug")]
-        [Tooltip("Toggle to enable/disable console logs for setting changes.")]
-        [SerializeField] private bool showDebugLogs = true;
+        [Header("Debug")] [Tooltip("Toggle to enable/disable console logs for setting changes.")] [SerializeField]
+        private bool showDebugLogs = true;
 
         private LineSettings defaultSettings;
         public LineSettings currentSettings = new LineSettings();
+        private DrawingConfigButton _currentButton;
+        [SerializeField] private DrawingConfigButton defaultButton;
 
         public LineSettings DefaultSettings => defaultSettings;
 
@@ -27,6 +29,7 @@ namespace Drawing
                 Destroy(gameObject);
                 return;
             }
+
             Instance = this;
 
             // Initialize Defaults
@@ -39,7 +42,9 @@ namespace Drawing
             else
             {
                 // Critical error - always log this, regardless of the bool
-                Debug.LogWarning($"DrawingConfigController: Default settings with ID '{_defaultSettingID}' not found! Using hardcoded defaults.", this);
+                Debug.LogWarning(
+                    $"DrawingConfigController: Default settings with ID '{_defaultSettingID}' not found! Using hardcoded defaults.",
+                    this);
                 defaultSettings = new LineSettings(); // Prevent null reference
             }
 
@@ -48,10 +53,10 @@ namespace Drawing
 
         public void ResetToDefaults()
         {
-            if(currentSettings == null) currentSettings = new LineSettings();
+            if (currentSettings == null) currentSettings = new LineSettings();
             Log("Resetting all settings to defaults.");
             currentSettings.SetLineSetting(defaultSettings);
-                
+
             /*
             currentSettings.lineWidth = defaultSettings.lineWidth;
             currentSettings.lineColor = defaultSettings.lineColor;
@@ -66,21 +71,22 @@ namespace Drawing
             currentSettings.collisionSound = defaultSettings.collisionSound;
             currentSettings.releaseSound = defaultSettings.releaseSound;
             */
-            
         }
 
         // --- SETTERS WITH LOGIC ---
 
         public void SetColor(Gradient newColor, bool overrideValue = false)
         {
-            currentSettings.lineColor = overrideValue ? newColor : defaultSettings.lineColor; 
+            currentSettings.lineColor = overrideValue ? newColor : defaultSettings.lineColor;
             //LogStateChange("Color", overrideValue, currentSettings.lineColor);
         }
+
         public void SetMassMult(float massMult, bool overrideValue = false)
         {
-            currentSettings.massMult = overrideValue ? massMult : defaultSettings.massMult; 
+            currentSettings.massMult = overrideValue ? massMult : defaultSettings.massMult;
             //LogStateChange("Color", overrideValue, currentSettings.lineColor);
         }
+
         public void SetMaterial(Material material, bool applyMaterial)
         {
             currentSettings.material = applyMaterial ? material : defaultSettings.material;
@@ -115,8 +121,15 @@ namespace Drawing
             {
                 currentSettings.gravityScaleOverride = defaultSettings.gravityScaleOverride;
             }
+
             LogStateChange("Gravity", overrideValue, currentSettings.gravityScaleOverride);
         }
+
+        public void SetButton(DrawingConfigButton drawingConfigButton)
+        {
+            _currentButton = drawingConfigButton;
+        }
+
 
         public LineSettings GetCurrentSettings() => currentSettings;
 
@@ -148,13 +161,13 @@ namespace Drawing
         public void SetCapVertices(int endCapVertices, bool overrideValue = false)
         {
             currentSettings.endCapVertices = overrideValue ? endCapVertices : defaultSettings.endCapVertices;
-
         }
 
         public void SetCornerVertices(int cornerVertices, bool overrideValue = false)
         {
             currentSettings.cornerVertices = overrideValue ? cornerVertices : defaultSettings.cornerVertices;
         }
+
         public void SetSoundSettings(GameSoundsSo.AudioType drawSound,
             GameSoundsSo.AudioType collisionSound,
             GameSoundsSo.AudioType releaseSound)
@@ -162,12 +175,20 @@ namespace Drawing
             currentSettings.drawSound = drawSound;
             currentSettings.collisionSound = collisionSound;
             currentSettings.releaseSound = releaseSound;
-            
         }
 
         public void SetLineSetting(LineSettings valuesToApply)
         {
             currentSettings.SetLineSetting(valuesToApply);
+        }
+
+        public bool TryConsumeInk(float amount)
+        {
+            if (_currentButton != null)
+            {
+                return _currentButton.TryConsumeInk(amount);
+            }
+            return false;
         }
     }
 }

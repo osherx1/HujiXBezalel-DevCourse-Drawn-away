@@ -291,5 +291,34 @@ namespace Utilities.UI
                 this.shapeOfBar,
                 this.howToDisplayValueText, this.useGradient, this.barGradient);
         }
+
+        private void OnDisable()
+        {
+            if (_fillRoutine != null)
+            {
+                StopCoroutine(_fillRoutine);
+                _fillRoutine = null;
+            }
+            UpdateBarAndResourceText();
+            if (useGradient)
+
+            {
+                UseGradient();
+            }
+        }
+        
+        // --- NEW: Toggle Visibility Function ---
+        /// <summary>
+        /// Sets the visibility of the bar image.
+        /// Does not affect the text or logic, only the main bar sprite.
+        /// </summary>
+        /// <param name="isVisible">True to show, False to hide.</param>
+        public void SetBarVisibility(bool isVisible)
+        {
+            if (bar != null)
+            {
+                bar.enabled = isVisible;
+            }
+        }
     }
 }
