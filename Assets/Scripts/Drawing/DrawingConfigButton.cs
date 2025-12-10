@@ -1,8 +1,10 @@
 using Drawing.Data;
+using Drawing.LineControl;
 using Drawing.Managers;
 using Drawing.Managers.Core.Managers;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities.UI;
 
 namespace Drawing
 {
@@ -20,6 +22,9 @@ namespace Drawing
         private Button _button;
         private bool _isSelected = false;
         private Image _buttonImage;
+        [SerializeField] private int maxFillAmount = 1000;
+        private int _currentFillAmount;
+        [SerializeField] private ResourceBarTracker resourceBarTracker;
 
         private void Awake()
         {
@@ -27,6 +32,22 @@ namespace Drawing
             _button = GetComponent<Button>();
             _buttonImage = GetComponent<Image>();
             normalColor = _buttonImage.color;
+            _currentFillAmount = maxFillAmount;
+            
+            if(resourceBarTracker!= null)
+
+            {
+
+                resourceBarTracker.ChangeMaxAmountTo((int)
+                maxFillAmount);
+
+                resourceBarTracker.ChangeResourceByAmount((int)_currentFillAmount);
+
+            }
+
+
+
+   
             //_buttonImage.color = normalColor;
             InitializeFromCollection();
         }
@@ -52,6 +73,18 @@ namespace Drawing
 
             // Subscribe to the global event to know when OTHER buttons are clicked
             EventManager.Instance.OnConfigButtonSelected += OnGlobalConfigChanged;
+            Line.onLineDestroyed += HandleRefundInk;
+            if (resourceBarTracker != null)
+            {
+                resourceBarTracker.SetBarVisibility(true);
+            }
+            
+        }
+
+        private void HandleRefundInk(string lineName, int amount)
+        {
+            if (lineName != settingID) return;
+            RefundInk(amount);
         }
 
         private void OnDisable()
@@ -61,6 +94,45 @@ namespace Drawing
                 _button.onClick.RemoveListener(OnButtonClicked);
 
             EventManager.Instance.OnConfigButtonSelected -= OnGlobalConfigChanged;
+            Line.onLineDestroyed -= HandleRefundInk;
+            if (resourceBarTracker != null)
+            {
+                resourceBarTracker.SetBarVisibility(false);
+            }
+        }
+        
+        
+        /// <summary>
+        /// Attempts to subtract ink. Returns true if successful.
+        /// </summary>
+        public bool TryConsumeInk(float amount)
+        {
+            if (_currentFillAmount >= amount)
+            {
+                //TODO - Maybe use upperbound on the amount of ink 
+                _currentFillAmount -= (int)amount;
+                if (resourceBarTracker != null)
+                {
+                    resourceBarTracker.ChangeResourceByAmount(-(int)amount);
+                }
+                return true;
+            }
+            return false;
+        }
+
+ 
+        /// <summary>
+        /// Restores ink to this button (e.g. when line is deleted).
+        /// </summary>
+        public void RefundInk(float amount)
+        {
+            //TODO - Maybe use upperbound on the amount of ink refunded
+            _currentFillAmount = Mathf.Clamp(_currentFillAmount + (int)amount, 0, maxFillAmount);
+            if (resourceBarTracker != null)
+            {
+                resourceBarTracker.ChangeResourceByAmount((int)amount);
+            }
+            
         }
 
 
@@ -119,6 +191,7 @@ namespace Drawing
 
             var controller = DrawingConfigController.Instance;
             controller.SetLineSetting(valuesToApply);
+            controller.SetButton(this);
         }
     }
 }

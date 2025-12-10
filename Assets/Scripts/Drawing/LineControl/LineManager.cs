@@ -20,64 +20,79 @@ namespace Drawing.LineControl
     /// </summary>
     public class LineManager : MonoBehaviour
     {
-        [Header("Appearance")]
-        public float lineWidth = 0.2f;
+        [Header("Appearance")] public float lineWidth = 0.2f;
         public float minDistance = 0.05f;
 
-        [Header("Physics")]
-        public PhysicsMaterial2D physicsMaterial2D;
+        [Header("Physics")] public PhysicsMaterial2D physicsMaterial2D;
         public bool usePolygonCollider = true;
-        [Tooltip("If true, maintain an EdgeCollider2D while drawing (more expensive). If false, create collider only at finalize.")]
+
+        [Tooltip(
+            "If true, maintain an EdgeCollider2D while drawing (more expensive). If false, create collider only at finalize.")]
         public bool collideWhileDrawing = false;
+
         [Header("Optimization")]
-        [Tooltip("Simplification tolerance (world units) used before baking colliders. Higher = fewer points, faster physics.")]
+        [Tooltip(
+            "Simplification tolerance (world units) used before baking colliders. Higher = fewer points, faster physics.")]
         public float colliderSimplifyTolerance = 0.03f;
+
         [Tooltip("Clamp the number of points used to bake the collider. Lower = faster. 128 is a good default.")]
         public int maxColliderPoints = 128;
 
-        [Header("Collision")]
-        [Tooltip("Lines on these layers will block drawing (finish line) while drawing.")]
+        [Header("Collision")] [Tooltip("Lines on these layers will block drawing (finish line) while drawing.")]
         public LayerMask cantDrawOverLayer;
-        [Tooltip("Multiplier applied to the line width when checking for overlap.")]
-        [Range(0.05f, 1f)] public float drawOverlapPadding = 0.3f;
-        [Tooltip("Seconds to wait before moving a finished line to the CantDrawOver layer.")]
-        [Min(0f)] public float cantDrawLayerDelay = 0.1f;
 
-        [Header("Draw Area Limit")]
-        [Tooltip("Restrict drawing to an area around the selected center.")]
+        [Tooltip("Multiplier applied to the line width when checking for overlap.")] [Range(0.05f, 1f)]
+        public float drawOverlapPadding = 0.3f;
+
+        [Tooltip("Seconds to wait before moving a finished line to the CantDrawOver layer.")] [Min(0f)]
+        public float cantDrawLayerDelay = 0.1f;
+
+        [Header("Draw Area Limit")] [Tooltip("Restrict drawing to an area around the selected center.")]
         public bool limitDrawingArea = false;
+
         [Tooltip("Center point used when limiting drawing (e.g., the player).")]
         public Transform drawAreaCenter;
+
         public DrawAreaShape drawAreaShape = DrawAreaShape.Circle;
         [Min(0.1f)] public float circleRadius = 5f;
         public Vector2 rectangleSize = new Vector2(8f, 4f);
+
         [Tooltip("Render a visible area in Game view to preview the drawing limit.")]
         public bool showDrawAreaVisual = true;
-        [Tooltip("Optional LineRenderer used to display the drawing limit. If empty, one will be created automatically.")]
+
+        [Tooltip(
+            "Optional LineRenderer used to display the drawing limit. If empty, one will be created automatically.")]
         public LineRenderer drawAreaRenderer;
+
         [Tooltip("Color used by the runtime draw-area visualization.")]
         public Color drawAreaLineColor = new Color(0.1f, 1f, 1f, 0.6f);
+
         [Min(0.001f)] public float drawAreaLineWidth = 0.05f;
         [Range(8, 128)] public int circleSegments = 48;
 
-        [Header("Input")]
-        [Tooltip("If tip isn't reported by the pen, use pressure >= this to treat as pressed.")]
+        [Header("Input")] [Tooltip("If tip isn't reported by the pen, use pressure >= this to treat as pressed.")]
         public float penPressureThreshold = 0.15f;
+
         [Tooltip("Log pen press state changes for debugging.")]
         public bool logPenDebug = false;
+
         [Tooltip("Log mouse press state changes for debugging.")]
         public bool logMouseDebug = false;
+
         [Tooltip("Log touch press state changes for debugging.")]
         public bool logTouchDebug = false;
 
-        [Header("Optional Prefab")]
-        public GameObject linePrefab; // optional prefab with Line component already
+        [Header("Optional Prefab")] public GameObject linePrefab; // optional prefab with Line component already
+
         [Header("World Parenting")]
         public Transform linesRoot; // parent for lines (null = world root, recommended to keep lines out of Canvas)
+
         [FormerlySerializedAs("creationEffect")]
         [Header("Visual Effects")]
         [Tooltip("Particle system to play when the line is finished.")]
-        [SerializeField] private ParticleSystem releaseEffect;
+        [SerializeField]
+        private ParticleSystem releaseEffect;
+
         private Line currentLine;
         private bool isDrawing;
         private bool _penPressed;
@@ -85,6 +100,9 @@ namespace Drawing.LineControl
         private bool _warnedMissingDrawCenter;
         private bool _isGameFinished;
         private Material _drawAreaMaterial;
+        private float _currentFillAmount;
+        private float _previousLineLength;
+        private float _inkBuffer;
 
         void Awake()
         {
@@ -134,21 +152,70 @@ namespace Drawing.LineControl
                 ButtonControl barrel2 = null;
                 ButtonControl eraserBtn = null;
 #endif
-                try { tip = pen.tip.isPressed; } catch { tip = false; }
-                try { pressure = pen.pressure.ReadValue(); } catch { pressure = 0f; }
-                try { penPos = pen.position.ReadValue(); } catch { penPos = Vector2.zero; }
+                try
+                {
+                    tip = pen.tip.isPressed;
+                }
+                catch
+                {
+                    tip = false;
+                }
+
+                try
+                {
+                    pressure = pen.pressure.ReadValue();
+                }
+                catch
+                {
+                    pressure = 0f;
+                }
+
+                try
+                {
+                    penPos = pen.position.ReadValue();
+                }
+                catch
+                {
+                    penPos = Vector2.zero;
+                }
 #if ENABLE_INPUT_SYSTEM
-                try { barrel1 = pen.TryGetChildControl<ButtonControl>("firstBarrelButton") ?? pen.TryGetChildControl<ButtonControl>("barrelButton") ?? pen.TryGetChildControl<ButtonControl>("barrel"); } catch { barrel1 = null; }
-                try { barrel2 = pen.TryGetChildControl<ButtonControl>("secondBarrelButton") ?? pen.TryGetChildControl<ButtonControl>("barrelButton2") ; } catch { barrel2 = null; }
-                try { eraserBtn = pen.TryGetChildControl<ButtonControl>("eraser"); } catch { eraserBtn = null; }
+                try
+                {
+                    barrel1 = pen.TryGetChildControl<ButtonControl>("firstBarrelButton") ??
+                              pen.TryGetChildControl<ButtonControl>("barrelButton") ??
+                              pen.TryGetChildControl<ButtonControl>("barrel");
+                }
+                catch
+                {
+                    barrel1 = null;
+                }
+
+                try
+                {
+                    barrel2 = pen.TryGetChildControl<ButtonControl>("secondBarrelButton") ??
+                              pen.TryGetChildControl<ButtonControl>("barrelButton2");
+                }
+                catch
+                {
+                    barrel2 = null;
+                }
+
+                try
+                {
+                    eraserBtn = pen.TryGetChildControl<ButtonControl>("eraser");
+                }
+                catch
+                {
+                    eraserBtn = null;
+                }
 #endif
                 bool pressed = tip || pressure >= penPressureThreshold
 #if ENABLE_INPUT_SYSTEM
-                                || (barrel1 != null && barrel1.isPressed)
-                                || (barrel2 != null && barrel2.isPressed)
-                                || (eraserBtn != null && eraserBtn.isPressed)
+                                   || (barrel1 != null && barrel1.isPressed)
+                                   || (barrel2 != null && barrel2.isPressed)
+                                   || (eraserBtn != null && eraserBtn.isPressed)
 #endif
-                                ;
+                    ;
 
                 if (pressed && !_penPressed)
                 {
@@ -159,6 +226,7 @@ namespace Drawing.LineControl
                     // if (logPenDebug) Debug.Log($"LineManager: Pen down (tip={tip}, pressure={pressure:F2}).", this);
                     return; // Prefer pen over others this frame
                 }
+
                 if (pressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
@@ -169,9 +237,11 @@ namespace Drawing.LineControl
                         // if (logPenDebug) Debug.Log("LineManager: Pen blocked by overlap; finishing line.", this);
                         return;
                     }
-                    currentLine.AddWorldPoint(wp);
+                    TryAddPoint(wp);
+                    //currentLine.AddWorldPoint(wp);
                     return;
                 }
+
                 if (!pressed && _penPressed)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
@@ -185,7 +255,7 @@ namespace Drawing.LineControl
             // Mouse
             if (mouse != null)
             {
-                
+
                 if (mouse.leftButton.wasPressedThisFrame)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
@@ -193,6 +263,7 @@ namespace Drawing.LineControl
                     isDrawing = true;
                     // if (logMouseDebug) Debug.Log("LineManager: Mouse down.", this);
                 }
+
                 if (mouse.leftButton.isPressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
@@ -205,9 +276,11 @@ namespace Drawing.LineControl
                     }
                     else
                     {
-                        currentLine.AddWorldPoint(wp);
+                        TryAddPoint(wp);
+                        //currentLine.AddWorldPoint(wp);
                     }
                 }
+
                 if (mouse.leftButton.wasReleasedThisFrame)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
@@ -230,6 +303,7 @@ namespace Drawing.LineControl
                     isDrawing = true;
                     // if (logTouchDebug) Debug.Log("LineManager: Touch down.", this);
                 }
+
                 if (primary.press.isPressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
@@ -245,6 +319,7 @@ namespace Drawing.LineControl
                         currentLine.AddWorldPoint(wp);
                     }
                 }
+
                 if (primary.press.wasReleasedThisFrame)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
@@ -255,7 +330,7 @@ namespace Drawing.LineControl
             }
 #endif
 
-                UpdateDrawAreaVisualization();
+            UpdateDrawAreaVisualization();
         }
 
         void StartLine(Vector2 worldPos)
@@ -264,9 +339,10 @@ namespace Drawing.LineControl
             {
                 return;
             }
+
             var conf = DrawingConfigController.Instance.currentSettings;
             GameObject lineToInstantiate;
-            if(conf.usePrefab&& conf.linePrefab!=null)
+            if (conf.usePrefab && conf.linePrefab != null)
             {
                 lineToInstantiate = conf.linePrefab;
             }
@@ -274,7 +350,7 @@ namespace Drawing.LineControl
             {
                 lineToInstantiate = linePrefab;
             }
-             
+
             GameObject go;
             if (lineToInstantiate != null)
             {
@@ -290,12 +366,15 @@ namespace Drawing.LineControl
             if (ln == null) ln = go.AddComponent<Line>();
 
             // Initialize so Awake-created components get proper settings
-            ln.Initialize(conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing, colliderSimplifyTolerance, maxColliderPoints, 
-                conf.lineColor,conf.material,conf.endCapVertices,conf.cornerVertices, conf.lineTextureMode);
-            ln.InitializeSound(conf.collisionSound,conf.baseVolume,conf.useCameraShake);
+            ln.Initialize(
+                conf.SettingID,conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing,
+                colliderSimplifyTolerance, maxColliderPoints,
+                conf.lineColor, conf.material, conf.endCapVertices, conf.cornerVertices, conf.lineTextureMode);
+            ln.InitializeSound(conf.collisionSound, conf.baseVolume, conf.useCameraShake);
 
             currentLine = ln;
-            currentLine.AddWorldPoint(worldPos);
+            TryAddPoint(worldPos);
+            //currentLine.AddWorldPoint(worldPos);
         }
 
         void FinishLine(Vector2 wp)
@@ -304,7 +383,7 @@ namespace Drawing.LineControl
             {
                 return;
             }
-            
+
             var conf = DrawingConfigController.Instance.currentSettings;
             isDrawing = false;
             // If too short, discard
@@ -318,7 +397,8 @@ namespace Drawing.LineControl
 
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
-                if(conf.releaseSound!= GameSoundsSo.AudioType.None) AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
+                if (conf.releaseSound != GameSoundsSo.AudioType.None)
+                    AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
                 // Trigger Particle System at the final position
                 if (releaseEffect != null)
                 {
@@ -326,13 +406,16 @@ namespace Drawing.LineControl
                     releaseEffect.Play();
                 }
             }
+
             currentLine = null;
         }
 
         // Compute the overlap radius used to stop drawing when we hit existing lines
         float GetOverlapRadius()
         {
-            var conf = DrawingConfigController.Instance != null ? DrawingConfigController.Instance.currentSettings : null;
+            var conf = DrawingConfigController.Instance != null
+                ? DrawingConfigController.Instance.currentSettings
+                : null;
             float width = conf != null ? conf.lineWidth : lineWidth;
             float padding = Mathf.Clamp(drawOverlapPadding, 0.01f, 1f);
             return Mathf.Max(0.001f, width * padding);
@@ -347,8 +430,10 @@ namespace Drawing.LineControl
                     // Debug.LogWarning("LineManager: 'cantDrawOverLayer' is not set. Overlap blocking will not work.", this);
                     _warnedCantDrawMaskOnce = true;
                 }
+
                 return false;
             }
+
             return Physics2D.OverlapCircle(worldPoint, GetOverlapRadius(), cantDrawOverLayer);
         }
 
@@ -412,9 +497,11 @@ namespace Drawing.LineControl
             {
                 if (!_warnedMissingDrawCenter)
                 {
-                    Debug.LogWarning("LineManager: limitDrawingArea is enabled but no drawAreaCenter is assigned.", this);
+                    Debug.LogWarning("LineManager: limitDrawingArea is enabled but no drawAreaCenter is assigned.",
+                        this);
                     _warnedMissingDrawCenter = true;
                 }
+
                 return worldPos;
             }
 
@@ -434,6 +521,7 @@ namespace Drawing.LineControl
                     {
                         return worldPos;
                     }
+
                     return center + offset.normalized * maxDistance;
             }
         }
@@ -469,7 +557,9 @@ namespace Drawing.LineControl
             if (_drawAreaMaterial == null)
             {
                 Shader spriteShader = Shader.Find("Sprites/Default");
-                _drawAreaMaterial = spriteShader != null ? new Material(spriteShader) : new Material(Shader.Find("Legacy Shaders/Particles/Additive"));
+                _drawAreaMaterial = spriteShader != null
+                    ? new Material(spriteShader)
+                    : new Material(Shader.Find("Legacy Shaders/Particles/Additive"));
             }
 
             drawAreaRenderer.material = _drawAreaMaterial;
@@ -491,6 +581,7 @@ namespace Drawing.LineControl
                 {
                     drawAreaRenderer.enabled = false;
                 }
+
                 return;
             }
 
@@ -500,6 +591,7 @@ namespace Drawing.LineControl
                 {
                     drawAreaRenderer.enabled = false;
                 }
+
                 return;
             }
 
@@ -537,6 +629,47 @@ namespace Drawing.LineControl
                     float y = Mathf.Sin(t) * radius;
                     drawAreaRenderer.SetPosition(i, new Vector3(center.x + x, center.y + y, center.z));
                 }
+            }
+        }
+
+        void TryAddPoint(Vector2 worldPos)
+        {
+
+            if (currentLine == null) return;
+
+            Vector2 lastPointWorld = currentLine.transform.TransformPoint(currentLine.GetLastPoint());
+            float dist = Vector2.Distance(lastPointWorld, worldPos);
+
+            if (dist < minDistance) return;
+            var drawingConfigController = DrawingConfigController.Instance;
+            float inkMultiplier =
+                drawingConfigController != null ? drawingConfigController.currentSettings.fillMult : 1f;
+            // 2. Ask Controller to consume ink from the Active Button
+            
+            float ink = (currentLine.LastSegmentLength * inkMultiplier);
+            int inkCost;
+             _inkBuffer += ink;
+             if(_inkBuffer>1f)
+             {
+                 inkCost = Mathf.FloorToInt(_inkBuffer);
+                 _inkBuffer =0f;
+             }
+             else
+             {
+                 inkCost = 0;
+             }
+            if (drawingConfigController.TryConsumeInk(inkCost))
+            {
+                // Success: Button updated its UI, we update the line
+                currentLine.AddWorldPoint(worldPos);
+                currentLine.AddInkCost(inkCost);
+                    // Debug.Log("LineManager: Consumed " + inkCost + " ink for line segment. Total line length: " +
+                        //        currentLine.LineLength);
+            }
+            else
+            {
+                // Fail: Not enough ink
+                FinishLine(worldPos);
             }
         }
     }

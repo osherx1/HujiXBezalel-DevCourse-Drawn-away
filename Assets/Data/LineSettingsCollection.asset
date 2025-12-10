@@ -15,12 +15,14 @@ MonoBehaviour:
   settingsList:
   - id: Default
     settings:
+      SettingID: Default
+      fillMult: 1
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
-        key0: {r: 0, g: 0, b: 0, a: 1}
-        key1: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -44,11 +46,11 @@ MonoBehaviour:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
-      material: {fileID: 2100000, guid: 1bf0f2967c4f54511b8f9a7a51f6d604, type: 2}
+      lineWidth: 0.91
+      material: {fileID: 2100000, guid: d7bd99492bc3abf4ab9eff800fdfe127, type: 2}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 1
@@ -66,6 +68,8 @@ MonoBehaviour:
       useCameraShake: 0
   - id: Spring
     settings:
+      SettingID: Spring
+      fillMult: 1
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -117,6 +121,8 @@ MonoBehaviour:
       useCameraShake: 0
   - id: Iron
     settings:
+      SettingID: Iron
+      fillMult: 1
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -168,6 +174,8 @@ MonoBehaviour:
       useCameraShake: 1
   - id: Static
     settings:
+      SettingID: Static
+      fillMult: 1
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -219,6 +227,8 @@ MonoBehaviour:
       useCameraShake: 0
   - id: Ice
     settings:
+      SettingID: Ice
+      fillMult: 1
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -270,6 +280,8 @@ MonoBehaviour:
       useCameraShake: 0
   - id: Balloon
     settings:
+      SettingID: Balloon
+      fillMult: 1
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -321,6 +333,8 @@ MonoBehaviour:
       useCameraShake: 0
   - id: PaintingPencil
     settings:
+      SettingID: PaintingPencil
+      fillMult: 1
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: fb34705c405037c439a3fa7ff13c74ff, type: 3}
       lineColor:
@@ -372,6 +386,8 @@ MonoBehaviour:
       useCameraShake: 0
   - id: GlueCopy
     settings:
+      SettingID: GlueCopy
+      fillMult: 1
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: abe1edfebdfcc8a449556c743391f375, type: 3}
       lineColor:
@@ -423,6 +439,8 @@ MonoBehaviour:
       useCameraShake: 0
   - id: Glue
     settings:
+      SettingID: Glue
+      fillMult: 1
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: abe1edfebdfcc8a449556c743391f375, type: 3}
       lineColor:

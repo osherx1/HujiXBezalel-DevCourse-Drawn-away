@@ -68,6 +68,7 @@ namespace Drawing.Data
 
                 if (!_lookupTable.ContainsKey(item.id))
                 {
+                    item.settings.SettingID = item.id;
                     _lookupTable.Add(item.id, item.settings);
                 }
                 else

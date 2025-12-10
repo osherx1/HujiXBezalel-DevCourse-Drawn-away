@@ -9,6 +9,10 @@ namespace Drawing
     [System.Serializable]
     public class LineSettings
     {
+        [HideInInspector]public string SettingID;
+        public int fillMult = 1;
+        
+        
         [Tooltip("If true, use a specific Line prefab. If false, configure manually.")]
         public bool usePrefab;
 
@@ -124,6 +128,8 @@ namespace Drawing
         {
             usePrefab = otherSettings.usePrefab;
             linePrefab = otherSettings.linePrefab;
+            fillMult = otherSettings.fillMult;
+            SettingID = otherSettings.SettingID;
             SetAppearance(otherSettings);
             SetPhysics(otherSettings);
             SetSound(otherSettings);
