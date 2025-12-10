@@ -815,7 +815,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3870392469390202461, guid: 68c421c52c5c22648bb1a7ec14a9def8, type: 3}
       insertIndex: 4
       addedObject: {fileID: 989947093}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4651890082613567197, guid: 68c421c52c5c22648bb1a7ec14a9def8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1907250538}
   m_SourcePrefab: {fileID: 100100000, guid: 68c421c52c5c22648bb1a7ec14a9def8, type: 3}
 --- !u!4 &617577342 stripped
 Transform:
@@ -2252,6 +2255,120 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1907250535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4651890082613567197, guid: 68c421c52c5c22648bb1a7ec14a9def8, type: 3}
+  m_PrefabInstance: {fileID: 617577341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &1907250538
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907250535}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 24.5, y: 10.15}
+    newSize: {x: 24.5, y: 10.15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 8, y: -3.925}
+      - {x: 9.1, y: -4.375}
+      - {x: 10.05, y: -4.525}
+      - {x: 11.1, y: -4.3250003}
+      - {x: 12, y: -4.0750003}
+      - {x: 12.25, y: -3.875}
+      - {x: 12.25, y: -3.275}
+      - {x: 11.95, y: -2.525}
+      - {x: 11.7, y: -1.375}
+      - {x: 11, y: 0.075}
+      - {x: 10.95, y: 0.725}
+      - {x: 10.25, y: 2.125}
+      - {x: 9.7, y: 2.675}
+      - {x: 9.35, y: 2.775}
+      - {x: 7.4, y: 3.4750001}
+      - {x: 6.4500003, y: 3.825}
+      - {x: 5.4500003, y: 4.225}
+      - {x: 4.15, y: 4.3250003}
+      - {x: 2.3, y: 4.625}
+      - {x: 1.15, y: 4.8250003}
+      - {x: 0.5, y: 4.875}
+      - {x: -0.05, y: 4.925}
+      - {x: -2.1000001, y: 4.975}
+      - {x: -2.8500001, y: 5.025}
+      - {x: -4.9, y: 5.025}
+      - {x: -4.9, y: 5.0750003}
+      - {x: -6.05, y: 5.0750003}
+      - {x: -6.4500003, y: 4.8250003}
+      - {x: -7.1, y: 4.275}
+      - {x: -8.5, y: 3.025}
+      - {x: -9.05, y: 2.025}
+      - {x: -9.05, y: 1.4250001}
+      - {x: -8.6, y: 1.025}
+      - {x: -9.75, y: 0.475}
+      - {x: -10.8, y: -0.575}
+      - {x: -11.400001, y: -1.575}
+      - {x: -11.900001, y: -2.575}
+      - {x: -12.150001, y: -3.275}
+      - {x: -12.150001, y: -3.575}
+      - {x: -11.400001, y: -4.175}
+      - {x: -10.85, y: -4.375}
+      - {x: -10.05, y: -4.475}
+      - {x: -8.75, y: -4.425}
+      - {x: -8.25, y: -4.275}
+      - {x: -6.65, y: -4.3250003}
+      - {x: -6, y: -4.475}
+      - {x: -4.4, y: -4.8250003}
+      - {x: -3.95, y: -4.8250003}
+      - {x: -3, y: -4.425}
+      - {x: -2.6000001, y: -4.175}
+      - {x: -1.4, y: -4.175}
+      - {x: 0.05, y: -4.025}
+      - {x: 2.2, y: -3.675}
+      - {x: 3.3500001, y: -3.425}
+      - {x: 3.3500001, y: -3.625}
+      - {x: 3.5, y: -4.0750003}
+      - {x: 4.3, y: -4.925}
+      - {x: 4.4, y: -5.025}
+      - {x: 6.05, y: -5.025}
+      - {x: 6.55, y: -4.975}
+      - {x: 6.85, y: -4.875}
+      - {x: 7.35, y: -4.5750003}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &2143021925
 PrefabInstance:
   m_ObjectHideFlags: 0
