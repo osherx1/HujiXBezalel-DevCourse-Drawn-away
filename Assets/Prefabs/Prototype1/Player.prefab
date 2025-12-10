@@ -326,8 +326,8 @@ MonoBehaviour:
   body: {fileID: 9013898741706573847}
   velocity: {x: 0, y: 0}
   moveLimit: {fileID: 7387025864371424899}
-  jumpHeight: 7.57
-  timeToJumpApex: 0.47
+  jumpHeight: 11.94
+  timeToJumpApex: 0.75
   upwardMovementMultiplier: 3
   downwardMovementMultiplier: 2.44
   maxAirJumps: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   speedLimit: 0
   coyoteTime: 0.15
   jumpBuffer: 0.15
-  jumpSpeed: 32.21277
+  jumpSpeed: 31.839998
   gravMultiplier: 1
   canJumpAgain: 0
   onGround: 1
