@@ -15,6 +15,16 @@ GameObject:
   - component: {fileID: 1185081031527145602}
   - component: {fileID: 3901147994053592755}
   - component: {fileID: 1867496389800315899}
+  - component: {fileID: 9033156634267894668}
+  - component: {fileID: 6814082069620413964}
+  - component: {fileID: 3644888911553562330}
+  - component: {fileID: 1150787518092409315}
+  - component: {fileID: 1166014180015966385}
+  - component: {fileID: 5081876298336607299}
+  - component: {fileID: 7387025864371424899}
+  - component: {fileID: 5013836684333417363}
+  - component: {fileID: 1880683775415602555}
+  - component: {fileID: 1208936241842356235}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -130,7 +140,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4874740186246839847}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -157,8 +167,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.4930725}
-  m_Size: {x: 2.5649998, y: 2.9861445}
+  m_Offset: {x: -0.07521987, y: 3.216363}
+  m_Size: {x: 3.2172747, y: 6.5381823}
   m_Direction: 0
 --- !u!114 &1185081031527145602
 MonoBehaviour:
@@ -167,7 +177,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4874740186246839847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02b9cbb09ebb45038680958196cf8ed7, type: 3}
   m_Name: 
@@ -208,7 +218,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4874740186246839847}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -259,6 +269,231 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9033156634267894668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8807aa2a0407b1e4f9bfdf36e5fac721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::characterGround
+  groundLength: 0.95
+  groundSearchRange: 1
+  colliderOffset: {x: 0, y: 0, z: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 72
+--- !u!114 &6814082069620413964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02264dc5bf94e93499b651385915003d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::characterHurt
+  checkpointFlag: {x: 0, y: 0, z: 0}
+  myAnim: {fileID: 1867496389800315899}
+  myLimit: {fileID: 7387025864371424899}
+  optionsScript: {fileID: 5013836684333417363}
+  hurtSFX: {fileID: 0}
+  labStatus: {fileID: 1880683775415602555}
+  spriteRenderer: {fileID: 7972707761806087618}
+  respawnTime: 0
+  flashDuration: 0
+  onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3644888911553562330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bef9a31c785e2a46a7d85eafd1c8802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::characterJump
+  body: {fileID: 9013898741706573847}
+  velocity: {x: 0, y: 0}
+  moveLimit: {fileID: 7387025864371424899}
+  jumpHeight: 7.57
+  timeToJumpApex: 0.47
+  upwardMovementMultiplier: 3
+  downwardMovementMultiplier: 2.44
+  maxAirJumps: 0
+  maxJumpLaunchSpeed: 36.9
+  variablejumpHeight: 0
+  jumpCutOff: 3.07
+  speedLimit: 0
+  coyoteTime: 0.15
+  jumpBuffer: 0.15
+  jumpSpeed: 32.21277
+  gravMultiplier: 1
+  canJumpAgain: 0
+  onGround: 1
+--- !u!114 &1150787518092409315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0886f8cbe58272d4993a3f4a6596c0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::characterMovement
+  moveLimit: {fileID: 7387025864371424899}
+  maxSpeed: 30
+  maxAcceleration: 52
+  maxDecceleration: 52
+  maxTurnSpeed: 80
+  maxAirAcceleration: 0
+  maxAirDeceleration: 0
+  maxAirTurnSpeed: 80
+  friction: 0
+  useAcceleration: 0
+  itsTheIntro: 1
+  directionX: 0
+  velocity: {x: 0, y: 0}
+  onGround: 0
+  pressingKey: 0
+--- !u!114 &1166014180015966385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4a0f90a23d42cbb16a3bab696648cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::characterInputRelay
+  moveAction: {fileID: 0}
+  jumpAction: {fileID: 0}
+  enableKeyboardFallback: 1
+  leftKey: 15
+  rightKey: 18
+  jumpKeyPrimary: 1
+  jumpKeySecondary: 37
+--- !u!114 &5081876298336607299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1040cd713a7618047bdb024728351b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::characterJuice
+  myAnimator: {fileID: 1867496389800315899}
+  characterSprite: {fileID: 4874740186246839847}
+  moveParticles: {fileID: 0}
+  jumpParticles: {fileID: 0}
+  landParticles: {fileID: 0}
+  jumpSFX: {fileID: 0}
+  landSFX: {fileID: 0}
+  squashAndStretch: 0
+  jumpSquashSettings: {x: 0, y: 0, z: 0}
+  landSquashSettings: {x: 0, y: 0, z: 0}
+  landSqueezeMultiplier: 0
+  jumpSqueezeMultiplier: 0
+  landDrop: 1
+  leanForward: 0
+  maxTilt: 0
+  tiltSpeed: 0
+  runSpeedParameter: runSpeed
+  includeVerticalSpeedInRunParameter: 0
+  jumpTriggerParameter: Jump
+  landedTriggerParameter: Landed
+  debugCurrentSpeed: 0
+  logSpeedChanges: 0
+  maxSpeed: 0
+  runningSpeed: 0
+  squeezing: 0
+  jumpSqueezing: 0
+  landSqueezing: 0
+  playerGrounded: 0
+  showJumpLine: 0
+  jumpLine: {fileID: 1208936241842356235}
+  cameraFalling: 0
+  earlyLandDistance: 1
+  ground: {fileID: 9033156634267894668}
+--- !u!114 &7387025864371424899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e7a834c1fb4a1a9c5a9bd7c7c64f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::movementLimiter
+  startLocked: 0
+  characterCanMove: 1
+  onMovementLocked:
+    m_PersistentCalls:
+      m_Calls: []
+  onMovementUnlocked:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5013836684333417363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8af02b565354d7290cf7a61eec0c4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::optionsManagement
+  screenShake: 1
+--- !u!114 &1880683775415602555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdb8fd0d7bc4b519d2ce274235a491f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::labOpener
+  labIsOpen: 0
+  labIsTransitioning: 0
+--- !u!114 &1208936241842356235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874740186246839847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3573dcb20df64f7faabd6ccb88d1825b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::jumpTester
+  characterY: 0
+  jumpSFX: {fileID: 0}
+  landSFX: {fileID: 0}
 --- !u!1 &8030921395048199364
 GameObject:
   m_ObjectHideFlags: 0

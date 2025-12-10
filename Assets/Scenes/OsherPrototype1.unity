@@ -1837,6 +1837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6814082069620413964, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
+      propertyPath: hurtSFX
+      value: 
+      objectReference: {fileID: 853551037}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2596,6 +2600,11 @@ PrefabInstance:
 --- !u!4 &853551035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 707923080626910114, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
+  m_PrefabInstance: {fileID: 853551034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &853551037 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4568474827926979531, guid: 0aad717fe961c3e4da32c237960b2022, type: 3}
   m_PrefabInstance: {fileID: 853551034}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &875850191
