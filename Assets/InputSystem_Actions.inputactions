@@ -1011,6 +1011,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Cheatsheet",
+            "id": "bf7b20b4-1d28-4796-8661-414131a5c9ae",
+            "actions": [
+                {
+                    "name": "LaunchAction",
+                    "type": "Button",
+                    "id": "99d25ee5-b897-4313-b657-878ed6aa657e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dcbee4e3-8ad5-43ae-8ac6-3e039d967e0a",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LaunchAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
