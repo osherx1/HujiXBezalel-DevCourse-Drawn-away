@@ -50,6 +50,7 @@ namespace Drawing.Data
             GameOver = 1,
             VictoryScreen = 2,
             ButtonClick = 3,
+            LevelComplete = 4,
             
             
             PencilDraw = 10,
@@ -68,15 +69,8 @@ namespace Drawing.Data
             SpringRelease = 31,
             IronRelease = 32,
             BalloonRelease = 33,
-            
-            
-            
-            
-            
-            
-            
-            
-
+            RockHit = 40,
+            RockShatter = 41
         }
     }
 }
