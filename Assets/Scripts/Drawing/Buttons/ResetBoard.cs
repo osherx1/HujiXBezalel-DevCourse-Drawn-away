@@ -26,14 +26,27 @@ namespace Drawing.Buttons
         private void OnResetButtonClicked()
         {
             AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
+            ResetLines();
+        }
+
+        public void ResetLines()
+        {
+            if (lineroot == null)
+            {
+                return;
+            }
+
             foreach (Transform child in lineroot.transform)
             {
-                if (!string.IsNullOrEmpty(tagToIgnore) && child.CompareTag(tagToIgnore))
+                if (!string.IsNullOrEmpty(tagToIgnore) && child != null && child.CompareTag(tagToIgnore))
                 {
                     continue;
                 }
 
-                Destroy(child.gameObject);
+                if (child != null)
+                {
+                    Destroy(child.gameObject);
+                }
             }
         }
     }

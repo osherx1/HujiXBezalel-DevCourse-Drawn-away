@@ -300,14 +300,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::characterHurt
   checkpointFlag: {x: 0, y: 0, z: 0}
+  initialCheckpoint: {fileID: 0}
   myAnim: {fileID: 1867496389800315899}
   myLimit: {fileID: 7387025864371424899}
   optionsScript: {fileID: 5013836684333417363}
   hurtSFX: {fileID: 0}
   labStatus: {fileID: 1880683775415602555}
   spriteRenderer: {fileID: 7972707761806087618}
-  respawnTime: 0
-  flashDuration: 0
+  resetBoard: {fileID: 0}
+  linesRoot: {fileID: 0}
+  resetLinesOnRespawn: 1
+  deathOverlayCanvasGroup: {fileID: 0}
+  deathOverlay: {fileID: 0}
+  showDeathOverlayOnDeath: 1
+  enableRespawnCheat: 1
+  respawnTime: 0.2
+  overlayDuration: 1
+  freezeRigidbodyDuringDeath: 1
+  flashDuration: 1
   onHurt:
     m_PersistentCalls:
       m_Calls: []
@@ -358,15 +368,15 @@ MonoBehaviour:
   maxAcceleration: 52
   maxDecceleration: 52
   maxTurnSpeed: 80
-  maxAirAcceleration: 0
-  maxAirDeceleration: 0
+  maxAirAcceleration: 51.5
+  maxAirDeceleration: 50.7
   maxAirTurnSpeed: 80
   friction: 0
   useAcceleration: 0
   itsTheIntro: 1
   directionX: 0
   velocity: {x: 0, y: 0}
-  onGround: 0
+  onGround: 1
   pressingKey: 0
 --- !u!114 &1166014180015966385
 MonoBehaviour:

@@ -2994,6 +2994,7 @@ GameObject:
   - component: {fileID: 227566125104936975}
   - component: {fileID: 1451391733227265404}
   - component: {fileID: 1263602055148294865}
+  - component: {fileID: 2798415563694609257}
   m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
@@ -3124,6 +3125,20 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &2798415563694609257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720525090256044334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce364fe63d72ed24f81b6838be575e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Prototype1.SpikeHazard
+  requiredTag: Player
+  zeroVelocityOnHit: 1
 --- !u!1 &6073690109455033876
 GameObject:
   m_ObjectHideFlags: 0
