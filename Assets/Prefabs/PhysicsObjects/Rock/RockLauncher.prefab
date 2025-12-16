@@ -971,6 +971,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Physics.Rock.RockLauncher
   launchAction: {fileID: -1550427229862251691, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  enableAutoLaunch: 1
+  autoLaunchInterval: 5
+  useTrapdoor: 1
+  simpleCooldown: 0.5
   rockPrefab: {fileID: 5142003619445851086, guid: afa475e5129d3a243a3b254b92e96347, type: 3}
   spawnPoint: {fileID: 1343231559536044863}
   trapdoor: {fileID: 2876252623611234702}

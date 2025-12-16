@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8313565158953058644}
   - component: {fileID: 507881642068966599}
   - component: {fileID: 7104629584351664011}
+  - component: {fileID: 7611666371191829474}
   m_Layer: 6
   m_Name: SmallRock  (2)
   m_TagString: Untagged
@@ -155,6 +156,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.6917046}
   m_Radius: 12.077185
+--- !u!114 &7611666371191829474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177234357552907838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda43f6f7d8b43d79fea8d5eb8e83b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhysicsObjects.Rock.BrokenRock
+  maxLifeTime: 5
 --- !u!1 &1090254052783448685
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +181,7 @@ GameObject:
   - component: {fileID: 3420014924932014077}
   - component: {fileID: 2329931842493408361}
   - component: {fileID: 7291791463816479142}
+  - component: {fileID: 4606740642542657562}
   m_Layer: 6
   m_Name: 'SmallRock '
   m_TagString: Untagged
@@ -311,6 +326,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.13843267, y: -0.5351986}
   m_Size: {x: 30.239475, y: 23.998209}
   m_Direction: 1
+--- !u!114 &4606740642542657562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090254052783448685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda43f6f7d8b43d79fea8d5eb8e83b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhysicsObjects.Rock.BrokenRock
+  maxLifeTime: 5
 --- !u!1 &4674892025988665624
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +351,7 @@ GameObject:
   - component: {fileID: 6543796681656918714}
   - component: {fileID: 8272293910487724908}
   - component: {fileID: 9019284623888823866}
+  - component: {fileID: 1817725218951304508}
   m_Layer: 6
   m_Name: SmallRock  (3)
   m_TagString: Untagged
@@ -466,6 +495,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.7425721, y: -0.9311151}
   m_Radius: 13.247892
+--- !u!114 &1817725218951304508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674892025988665624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda43f6f7d8b43d79fea8d5eb8e83b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhysicsObjects.Rock.BrokenRock
+  maxLifeTime: 5
 --- !u!1 &5065958477286043024
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +675,7 @@ GameObject:
   - component: {fileID: 929185688626956410}
   - component: {fileID: 7729927793647731464}
   - component: {fileID: 3603361346553268079}
+  - component: {fileID: 5815915353304287080}
   m_Layer: 6
   m_Name: SmallRock  (6)
   m_TagString: Untagged
@@ -777,6 +820,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.13843267, y: -0.5351986}
   m_Size: {x: 30.239475, y: 23.998209}
   m_Direction: 1
+--- !u!114 &5815915353304287080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6377193019848759770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda43f6f7d8b43d79fea8d5eb8e83b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhysicsObjects.Rock.BrokenRock
+  maxLifeTime: 5
 --- !u!1 &6923230070278923405
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3187865306974355503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BrokenRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,6 +1190,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3187865306974355503}
     m_Modifications:
+    - target: {fileID: 2137339406155174229, guid: 755da38a258f7844c998855d7d2ddc79, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2638623340146415849, guid: 755da38a258f7844c998855d7d2ddc79, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1185,6 +1245,22 @@ PrefabInstance:
     - target: {fileID: 3093686862157207432, guid: 755da38a258f7844c998855d7d2ddc79, type: 3}
       propertyPath: m_Name
       value: SmallRockHit 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093686862157207432, guid: 755da38a258f7844c998855d7d2ddc79, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655613446171298792, guid: 755da38a258f7844c998855d7d2ddc79, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093138326271464575, guid: 755da38a258f7844c998855d7d2ddc79, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966762013384038098, guid: 755da38a258f7844c998855d7d2ddc79, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

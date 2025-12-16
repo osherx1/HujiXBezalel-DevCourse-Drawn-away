@@ -134,8 +134,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Physics.Rock.RockPhysicsController
   hardImpactThreshold: 40
   shatterThreshold: 80
+  detectionLayers:
+    serializedVersion: 2
+    m_Bits: 576
+  maxDetectionDistance: 6
+  minDetectionDistance: 5
   impactParticlePrefab: {fileID: 3093686862157207432, guid: 9c7bf19a2ec49fd4180a27209b65c109, type: 3}
   brokenRockPrefab: {fileID: 6923230070278923405, guid: 13f2fed7948c1d04497e6ae6833b0087, type: 3}
+  impactSound: 40
+  impactVolume: 0.2
+  shatterSound: 41
+  shatterVolume: 1
+  explosionForce: 5
+  spinForce: 10
 --- !u!60 &1957670709067462739
 PolygonCollider2D:
   m_ObjectHideFlags: 0

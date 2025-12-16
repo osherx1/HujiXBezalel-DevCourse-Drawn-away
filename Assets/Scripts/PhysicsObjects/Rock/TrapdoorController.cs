@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Physics.Rock
+namespace PhysicsObjects.Rock
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class TrapdoorController : MonoBehaviour
