@@ -196,7 +196,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7071430275075324106}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4025836214667683321}
+        m_TargetAssemblyTypeName: Drawing.Buttons.EraserButton, Assembly-CSharp
+        m_MethodName: ForceStopEraser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &348219798718202323
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +436,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 78545302714235446}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4025836214667683321}
+        m_TargetAssemblyTypeName: Drawing.Buttons.EraserButton, Assembly-CSharp
+        m_MethodName: ForceStopEraser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1364559023831249310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,7 +1438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3098338192026140427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4025836214667683321}
+        m_TargetAssemblyTypeName: Drawing.Buttons.EraserButton, Assembly-CSharp
+        m_MethodName: ForceStopEraser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6255918627887271321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1570,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1231739812042670166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4025836214667683321}
+        m_TargetAssemblyTypeName: Drawing.Buttons.EraserButton, Assembly-CSharp
+        m_MethodName: ForceStopEraser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6396234936660247294
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,7 +2195,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 251032639455667072}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4025836214667683321}
+        m_TargetAssemblyTypeName: Drawing.Buttons.EraserButton, Assembly-CSharp
+        m_MethodName: ForceStopEraser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8873137706529916788
 GameObject:
   m_ObjectHideFlags: 0
