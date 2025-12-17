@@ -88,10 +88,21 @@ namespace PhysicsObjects.Rock
             float impactMagnitude =
                 _hasCapturedVelocity ? _capturedVelocity.magnitude : collision.relativeVelocity.magnitude;
             ContactPoint2D contact = collision.GetContact(0);
+            /*if(collision.collider.CompareTag("Line"))
+            {
+                Debug.Log("Rock collided with Line, impactMagnitude: " + impactMagnitude);
+            }*/
+            /*
+            if(collision.collider.CompareTag("Player"))
+            {
+                Debug.Log("Rock collided with Player, impactMagnitude: " + impactMagnitude);
+            }
+            */
 
             if (_impactCalculator.IsShatterImpact(impactMagnitude) &&
-                (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Line")))
+                (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Line")||collision.collider.CompareTag("Player")))
             {
+                Debug.Log("Shatter Impact Detected");
                 PlaySound(shatterSound, shatterVolume);
                 HandleShatter(contact.point);
                 return; 
@@ -238,6 +249,22 @@ namespace PhysicsObjects.Rock
             Gizmos.DrawWireSphere(transform.position, minDetectionDistance);
             Gizmos.color = new Color(1, 1, 1, 0.3f);
             Gizmos.DrawWireSphere(transform.position, maxDetectionDistance);
+        }
+
+
+
+
+        public void AddTorqueForces( float launchTorque, ForceMode2D forceMode)
+        {
+            if (_rb != null)
+            {
+                Debug.Log("AddTorqueForces");
+                _rb.AddTorque(launchTorque, forceMode);
+            }
+            else
+            {
+                Debug.LogWarning("RockPhysicsController: Rigidbody2D is null, cannot apply torque.");
+            }
         }
     }
 }
