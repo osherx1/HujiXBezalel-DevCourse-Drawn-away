@@ -108,5 +108,12 @@ namespace Drawing.Buttons
             if (_buttonImage == null) return;
             _buttonImage.color = isSelected ? selectedColor : normalColor;
         }
+        
+        // Add this new method to EraserButton.cs
+        public void ForceStopEraser()
+        {
+            // We pass 'this' or 'null' just to satisfy the CancelEraser signature
+            CancelEraser(this);
+        }
     }
 }
