@@ -322,7 +322,7 @@ MonoBehaviour:
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
       gravityScaleOverride: -1.5
-      massMult: 0.4
+      massMult: 0.8
       useDrawSound: 1
       drawSound: 13
       useCollisionSound: 0
