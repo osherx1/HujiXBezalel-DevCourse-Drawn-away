@@ -522,6 +522,11 @@ namespace Drawing.LineControl
                 return false;
             }
 
+            if (other.gameObject.CompareTag("Player"))
+            {
+                return false;
+            }
+
             // Handle Line-to-Line collision priority (prevent double audio)
             if (other.gameObject.CompareTag("Line"))
             {
@@ -534,6 +539,7 @@ namespace Drawing.LineControl
                     }
                 }
             }
+            
 
             return true;
         }
