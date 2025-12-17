@@ -942,7 +942,7 @@ Transform:
   m_GameObject: {fileID: 463643153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.63067, y: -11.86, z: -10}
+  m_LocalPosition: {x: -35.637848, y: -11.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1209,7 +1209,7 @@ Transform:
   m_GameObject: {fileID: 549910340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.63067, y: -26.349998, z: -10}
+  m_LocalPosition: {x: -35.637848, y: -26.349998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1381,6 +1381,14 @@ PrefabInstance:
       propertyPath: hurtSFX
       value: 
       objectReference: {fileID: 853551037}
+    - target: {fileID: 6814082069620413964, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
+      propertyPath: deathOverlay
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814082069620413964, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
+      propertyPath: deathOverlayCanvasGroup
+      value: 
+      objectReference: {fileID: 1658461364}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2046,7 +2054,7 @@ Transform:
   m_GameObject: {fileID: 960488332}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.63067, y: -11.86, z: -10}
+  m_LocalPosition: {x: -35.637848, y: -11.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2530,6 +2538,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 249046305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1658461364 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 2962508410036851571, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
+  m_PrefabInstance: {fileID: 875850191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1686575937
 GameObject:
   m_ObjectHideFlags: 0
