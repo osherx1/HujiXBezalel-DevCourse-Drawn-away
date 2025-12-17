@@ -97,11 +97,11 @@ Material:
     - _WindQuality: 0.13
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0.5876398, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0.66460484, g: 0.90092, b: 0.9716981, a: 0}
+    - _OutlineColor: {r: 0.3820755, g: 0.74179125, b: 1, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShineColor: {r: 0.4464667, g: 0.65103316, b: 0.745283, a: 1}
     - _col: {r: 0.03586687, g: 0.5849056, b: 0.5849056, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
