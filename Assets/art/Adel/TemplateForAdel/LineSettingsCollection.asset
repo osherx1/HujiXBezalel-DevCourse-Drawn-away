@@ -314,11 +314,11 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.5
+      lineWidth: 1.46
       material: {fileID: 2100000, guid: 888556c7ffbfa488183e950af2223c83, type: 2}
       endCapVertices: 90
       cornerVertices: 90
-      lineTextureMode: 0
+      lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
       gravityScaleOverride: -1.5
@@ -473,8 +473,8 @@ MonoBehaviour:
         m_ColorSpace: 0
         m_NumColorKeys: 3
         m_NumAlphaKeys: 4
-      lineWidth: 0.25
-      material: {fileID: 2100000, guid: a0bbe6aecade0b94f80a39c46d876c8a, type: 2}
+      lineWidth: 0.72
+      material: {fileID: 2100000, guid: e3ae9d8ce5404498db3889fe89e30195, type: 2}
       endCapVertices: 7
       cornerVertices: 7
       lineTextureMode: 0

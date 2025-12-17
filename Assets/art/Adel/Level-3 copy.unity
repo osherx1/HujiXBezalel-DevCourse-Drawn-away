@@ -1448,6 +1448,10 @@ PrefabInstance:
       propertyPath: lineroot
       value: 
       objectReference: {fileID: 1361999895}
+    - target: {fileID: 3545638014098864249, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: lineSettingsCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 4025836214667683321, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: lineManager
       value: 
@@ -1516,6 +1520,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 636762044}
+    - target: {fileID: 8088869714677991546, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: lineSettingsCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3315,6 +3323,7 @@ MonoBehaviour:
   autoLaunchInterval: 8
   useTrapdoor: 0
   simpleCooldown: 0.5
+  launchTorque: 10
   rockPrefab: {fileID: 5142003619445851086, guid: afa475e5129d3a243a3b254b92e96347, type: 3}
   spawnPoint: {fileID: 1829314261}
   trapdoor: {fileID: 1068426834}
