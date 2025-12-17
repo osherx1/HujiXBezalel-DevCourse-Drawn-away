@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 64585657824118061}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3899, y: 26.475, z: 0}
-  m_LocalScale: {x: 5.2728977, y: 3.7808385, z: 1}
+  m_LocalPosition: {x: -4.9659, y: 26.475, z: 0}
+  m_LocalScale: {x: 8.12079, y: 3.7808385, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3506348320334190336}
@@ -164,8 +164,8 @@ Transform:
   m_GameObject: {fileID: 68958640631252689}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.4654, y: 23.7, z: 0}
-  m_LocalScale: {x: 7.371088, y: 4.6508403, z: 1}
+  m_LocalPosition: {x: 34.3084, y: 23.7, z: 0}
+  m_LocalScale: {x: 9.684873, y: 4.6508403, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2685780481445977352}
@@ -767,8 +767,8 @@ Transform:
   m_GameObject: {fileID: 3626173839076340825}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.8, y: -0.3, z: 0}
-  m_LocalScale: {x: 27.629934, y: 11.021595, z: 1}
+  m_LocalPosition: {x: -16.1814, y: -0.3, z: 0}
+  m_LocalScale: {x: 30.39293, y: 11.021595, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3506348320334190336}
@@ -1333,7 +1333,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype1.LevelIntroInstructionsUI
   instructionsGroup: {fileID: 0}
+  pressAnyButtonObject: {fileID: 0}
+  pressAnyButtonCanvasGroup: {fileID: 0}
+  pressAnyButtonGraphic: {fileID: 0}
+  blinkPressAnyButton: 1
+  blinkPeriodSeconds: 0.8
+  blinkMinAlpha: 1
+  blinkMaxAlpha: 0.238
+  dismissMode: 1
   showSeconds: 5.5
+  minSecondsBeforeInput: 5
   fadeOutSeconds: 0.6
   useUnscaledTime: 1
   movementGate: {fileID: 0}
