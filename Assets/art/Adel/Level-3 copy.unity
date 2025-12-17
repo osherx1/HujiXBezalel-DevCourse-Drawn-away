@@ -1440,10 +1440,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1470891205735820885, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: lineSettingsCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 2237930631574646350, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: maxFillAmount
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 2237930631574646350, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: lineSettingsCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 3398851658249021414, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: lineroot
       value: 
@@ -1464,6 +1472,10 @@ PrefabInstance:
       propertyPath: curserSpriteRenderer
       value: 
       objectReference: {fileID: 719797242}
+    - target: {fileID: 4630521987879741165, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: lineSettingsCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 5944365242924627156, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: slowTimeOnOpen
       value: 0

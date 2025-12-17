@@ -50,7 +50,7 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       lineWidth: 0.91
-      material: {fileID: 2100000, guid: d7bd99492bc3abf4ab9eff800fdfe127, type: 2}
+      material: {fileID: 2100000, guid: 4c2870785ba16439e8487d1f81d9f2ec, type: 2}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 1
@@ -102,8 +102,8 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
-      material: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
+      lineWidth: 0.45
+      material: {fileID: 2100000, guid: 6b85d6bf2f8074f10ac57a092402d48f, type: 2}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
-      material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
+      lineWidth: 0.54
+      material: {fileID: 2100000, guid: 7e7ce71f55c3c42118412bcd2be0d760, type: 2}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       lineWidth: 1.46
-      material: {fileID: 2100000, guid: 888556c7ffbfa488183e950af2223c83, type: 2}
+      material: {fileID: 2100000, guid: c1dd6f0df0a2e43929363b5c602ce2e0, type: 2}
       endCapVertices: 90
       cornerVertices: 90
       lineTextureMode: 1
@@ -367,8 +367,8 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
-      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      lineWidth: 0.18
+      material: {fileID: 2100000, guid: 4c2870785ba16439e8487d1f81d9f2ec, type: 2}
       endCapVertices: 90
       cornerVertices: 90
       lineTextureMode: 0
@@ -473,11 +473,11 @@ MonoBehaviour:
         m_ColorSpace: 0
         m_NumColorKeys: 3
         m_NumAlphaKeys: 4
-      lineWidth: 0.72
-      material: {fileID: 2100000, guid: e3ae9d8ce5404498db3889fe89e30195, type: 2}
+      lineWidth: 0.73
+      material: {fileID: 2100000, guid: 9b76b173ddf14461d89ed37f805c6377, type: 2}
       endCapVertices: 7
       cornerVertices: 7
-      lineTextureMode: 0
+      lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 913b79e3fbb3e74419996a295271f043, type: 2}
       gravityScaleOverride: 0.1
