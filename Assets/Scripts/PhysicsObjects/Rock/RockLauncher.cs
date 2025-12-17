@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Physics.Rock;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,24 +6,31 @@ namespace PhysicsObjects.Rock
 {
     public class RockLauncher : MonoBehaviour
     {
-        [Header("Input Settings")]
-        [SerializeField] private InputActionReference launchAction;
+        [Header("Input Settings")] [SerializeField]
+        private InputActionReference launchAction;
 
-        [Header("Auto Launch Settings")]
-        [SerializeField] private bool enableAutoLaunch = false;
+        [Header("Auto Launch Settings")] [SerializeField]
+        private bool enableAutoLaunch = false;
+
         [SerializeField] private float autoLaunchInterval = 3.0f;
 
-        [Header("Configuration")]
-        [SerializeField] private bool useTrapdoor = true; 
+        [Header("Configuration")] [SerializeField]
+        private bool useTrapdoor = true;
+
         [SerializeField] private float simpleCooldown = 0.5f;
 
-        [Header("References")]
-        [SerializeField] private GameObject rockPrefab;
+        [Header("Physics Settings")] [SerializeField]
+        private float launchTorque = 10f;
+
+        [Header("References")] [SerializeField]
+        private GameObject rockPrefab;
+
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private TrapdoorController trapdoor;
 
-        [Header("Trapdoor Timing")]
-        [SerializeField] private float delayBeforeOpening = 1.0f;
+        [Header("Trapdoor Timing")] [SerializeField]
+        private float delayBeforeOpening = 1.0f;
+
         [SerializeField] private float openDuration = 2.0f;
 
         private bool _isLaunching;
@@ -38,7 +44,6 @@ namespace PhysicsObjects.Rock
                 launchAction.action.performed += OnLaunchPerformed;
             }
 
-            // Start automatically only if the bool is checked in Inspector
             if (enableAutoLaunch)
             {
                 StartAutoLaunch();
@@ -56,7 +61,6 @@ namespace PhysicsObjects.Rock
             StopAutoLaunch();
         }
 
-        // --- Public API for Triggers ---
         public void SetAutoLaunch(bool isActive)
         {
             enableAutoLaunch = isActive;
@@ -83,7 +87,6 @@ namespace PhysicsObjects.Rock
                 _autoLaunchCoroutine = null;
             }
         }
-        // -------------------------------
 
         private void OnLaunchPerformed(InputAction.CallbackContext context)
         {
@@ -92,8 +95,7 @@ namespace PhysicsObjects.Rock
 
         private IEnumerator AutoLaunchLoop()
         {
-            // Initial delay (optional) or immediate start
-            yield return null; 
+            yield return null;
 
             while (enableAutoLaunch)
             {
@@ -137,11 +139,25 @@ namespace PhysicsObjects.Rock
         {
             if (rockPrefab != null && spawnPoint != null)
             {
-                Instantiate(rockPrefab, spawnPoint.position, spawnPoint.rotation);
+                GameObject rockInstance = Instantiate(rockPrefab, spawnPoint.position, spawnPoint.rotation);
+                //find the rock in the children and apply torque
+                //with RockPhysicsController component
+                var rock = rockInstance.GetComponentInChildren<RockPhysicsController>();
+                if (rock != null)
+                {
+                    float torque = launchTorque * Random.insideUnitCircle.x;
+                    rock.AddTorqueForces(torque, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    Debug.LogWarning(
+                        $"[{nameof(RockLauncher)}] Spawned rock is missing RockPhysicsController component.");
+                }
             }
         }
     }
 }
+
 /*using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -158,7 +174,7 @@ namespace Physics.Rock
         [SerializeField] private float autoLaunchInterval = 3.0f;
 
         [Header("Configuration")]
-        [SerializeField] private bool useTrapdoor = true; 
+        [SerializeField] private bool useTrapdoor = true;
         [Tooltip("Cooldown time when trapdoor is disabled")]
         [SerializeField] private float simpleCooldown = 0.5f;
 
@@ -280,7 +296,7 @@ namespace Physics.Rock
         [SerializeField] private InputActionReference launchAction;
 
         [Header("Configuration")]
-        [SerializeField] private bool useTrapdoor = true; 
+        [SerializeField] private bool useTrapdoor = true;
         [Tooltip("Cooldown time when trapdoor is disabled")]
         [SerializeField] private float simpleCooldown = 0.5f;
 

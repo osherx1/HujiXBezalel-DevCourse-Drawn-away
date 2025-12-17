@@ -24,7 +24,7 @@ namespace art.Dev.Shaders.Cloud
         [SerializeField] private Transform startPositionTransform;
 
         private Vector3 _startPoint;
-        private _Local.Shaders.Cloud.CloudShaderAdapter _shaderAdapter;
+        private CloudShaderAdapter _shaderAdapter;
 
         // 2. Logic to convert Enum to Vector3
         private Vector3 CurrentDirectionVector
@@ -46,7 +46,7 @@ namespace art.Dev.Shaders.Cloud
             renderer.material = instanceMat;
             
             // Assuming CloudShaderAdapter is defined in your project based on previous context
-            _shaderAdapter = new _Local.Shaders.Cloud.CloudShaderAdapter(instanceMat);
+            _shaderAdapter = new CloudShaderAdapter(instanceMat);
         }
 
         private void Start()
@@ -83,5 +83,6 @@ namespace art.Dev.Shaders.Cloud
         {
             return currentPosition + (direction * moveSpeed * deltaTime);
         }
+        
     }
 }

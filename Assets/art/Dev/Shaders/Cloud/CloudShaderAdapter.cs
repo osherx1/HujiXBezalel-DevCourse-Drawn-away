@@ -22,4 +22,5 @@ namespace art.Dev.Shaders.Cloud
             _material.SetFloat(SpeedProp, intensity * 2.0f);
         }
     }
+    
 }
