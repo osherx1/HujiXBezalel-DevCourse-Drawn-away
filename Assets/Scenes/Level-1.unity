@@ -702,10 +702,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3644888911553562330, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
-      propertyPath: variablejumpHeight
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4874740186246839847, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: m_Name
       value: Player
@@ -722,10 +718,6 @@ PrefabInstance:
       propertyPath: resetBoard
       value: 
       objectReference: {fileID: 875850193}
-    - target: {fileID: 6814082069620413964, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
-      propertyPath: overlayDuration
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6814082069620413964, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: initialCheckpoint
       value: 

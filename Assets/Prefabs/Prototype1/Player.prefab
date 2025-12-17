@@ -315,7 +315,7 @@ MonoBehaviour:
   showDeathOverlayOnDeath: 1
   enableRespawnCheat: 1
   respawnTime: 0.2
-  overlayDuration: 1
+  overlayDuration: 0.5
   freezeRigidbodyDuringDeath: 1
   flashDuration: 1
   onHurt:
