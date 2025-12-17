@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.LineControl.GlueHandler
   linearDrag: 5
   angularDrag: 5
-  breakForce: 500
+  breakForce: 5000
   stickyTags:
   - Line
   stickToTriggers: 0
