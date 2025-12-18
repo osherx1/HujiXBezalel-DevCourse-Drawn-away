@@ -2451,7 +2451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 5467407162658143603}
-  lineSettingsCollection: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
+  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
   settingID: Iron
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   maxFillAmount: 50
