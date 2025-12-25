@@ -49,10 +49,10 @@ MonoBehaviour:
         m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.91
+      lineWidth: 1
       material: {fileID: 2100000, guid: d7bd99492bc3abf4ab9eff800fdfe127, type: 2}
       endCapVertices: 0
-      cornerVertices: 0
+      cornerVertices: 26
       lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
@@ -102,9 +102,9 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
+      lineWidth: 0.63
       material: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
-      endCapVertices: 0
+      endCapVertices: 90
       cornerVertices: 0
       lineTextureMode: 0
       usePhysics: 1
@@ -155,7 +155,7 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
+      lineWidth: 1.05
       material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
       endCapVertices: 0
       cornerVertices: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
       collisionSound: 22
       useReleaseSound: 0
       releaseSound: -1
-      baseVolume: 0.1
+      baseVolume: 0.34
       useCameraShake: 1
   - id: Static
     settings:
@@ -314,15 +314,15 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.5
+      lineWidth: 2
       material: {fileID: 2100000, guid: 888556c7ffbfa488183e950af2223c83, type: 2}
       endCapVertices: 90
-      cornerVertices: 90
-      lineTextureMode: 0
+      cornerVertices: 69
+      lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
       gravityScaleOverride: -1.5
-      massMult: 0.7
+      massMult: 0.4
       useDrawSound: 1
       drawSound: 13
       useCollisionSound: 0
@@ -367,8 +367,8 @@ MonoBehaviour:
         m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
-      lineWidth: 0.2
-      material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      lineWidth: 0.18
+      material: {fileID: 2100000, guid: 4c2870785ba16439e8487d1f81d9f2ec, type: 2}
       endCapVertices: 90
       cornerVertices: 90
       lineTextureMode: 0
@@ -376,59 +376,6 @@ MonoBehaviour:
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 0
       massMult: 1
-      useDrawSound: 1
-      drawSound: 10
-      useCollisionSound: 0
-      collisionSound: -1
-      useReleaseSound: 0
-      releaseSound: -1
-      baseVolume: 1
-      useCameraShake: 0
-  - id: GlueCopy
-    settings:
-      SettingID: GlueCopy
-      fillMult: 1
-      usePrefab: 1
-      linePrefab: {fileID: 5247383489900493533, guid: abe1edfebdfcc8a449556c743391f375, type: 3}
-      lineColor:
-        serializedVersion: 2
-        key0: {r: 1, g: 0.91696715, b: 0.4584905, a: 0}
-        key1: {r: 0.9566294, g: 1, b: 0.4009434, a: 0.32941177}
-        key2: {r: 1, g: 1, b: 0.7764706, a: 0.5803922}
-        key3: {r: 0, g: 0, b: 0, a: 0.49411765}
-        key4: {r: 0, g: 0, b: 0, a: 0.62352943}
-        key5: {r: 0, g: 0, b: 0, a: 0}
-        key6: {r: 0, g: 0, b: 0, a: 0}
-        key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 58195
-        ctime2: 64631
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
-        ctime6: 0
-        ctime7: 0
-        atime0: 0
-        atime1: 209
-        atime2: 5426
-        atime3: 56734
-        atime4: 65535
-        atime5: 0
-        atime6: 0
-        atime7: 0
-        m_Mode: 0
-        m_ColorSpace: 0
-        m_NumColorKeys: 3
-        m_NumAlphaKeys: 5
-      lineWidth: 0.25
-      material: {fileID: 2100000, guid: 1d7fd350b2b54fa40b2822d50d4848bf, type: 2}
-      endCapVertices: 7
-      cornerVertices: 7
-      lineTextureMode: 0
-      usePhysics: 1
-      physicsMaterial: {fileID: 6200000, guid: 913b79e3fbb3e74419996a295271f043, type: 2}
-      gravityScaleOverride: 0.1
-      massMult: 0.2
       useDrawSound: 1
       drawSound: 10
       useCollisionSound: 0
@@ -473,11 +420,11 @@ MonoBehaviour:
         m_ColorSpace: 0
         m_NumColorKeys: 3
         m_NumAlphaKeys: 4
-      lineWidth: 0.25
-      material: {fileID: 2100000, guid: a0bbe6aecade0b94f80a39c46d876c8a, type: 2}
+      lineWidth: 0.61
+      material: {fileID: 2100000, guid: f69b43fd32440cf4e994f8db39df95c0, type: 2}
       endCapVertices: 7
       cornerVertices: 7
-      lineTextureMode: 0
+      lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 913b79e3fbb3e74419996a295271f043, type: 2}
       gravityScaleOverride: 0.1
