@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8879789859113547381
+--- !u!114 &-8110229993646890521
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlueSlimeMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 1c9083cc2a5063147a810d879daed9b6, type: 3}
+  m_Name: GlueTemplate
+  m_Shader: {fileID: -6465566751694194690, guid: b377a3b9dfb15ed4b9c8bd7d1acc9136, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlueTexture:
-        m_Texture: {fileID: 2800000, guid: 570c83d894f27e24f95e9e72eb1c817b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -72,16 +72,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _FillAmount: 33.5
+    - _FillAmount: 0.7
     - _Float: 0
-    - _FlowSpeed: 0.01
-    - _NoiseScale: 25.53
+    - _FlowSpeed: 0.05
+    - _NoiseScale: 20
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _GlueColor: {r: 0.55084586, g: 0.7490196, b: 0.5186607, a: 1}
+    - _GlueColor: {r: 0.5807189, g: 0.6415094, b: 0.3843004, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
