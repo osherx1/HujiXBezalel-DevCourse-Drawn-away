@@ -282,14 +282,14 @@ MonoBehaviour:
     settings:
       SettingID: Balloon
       fillMult: 1
-      usePrefab: 0
-      linePrefab: {fileID: 0}
+      usePrefab: 1
+      linePrefab: {fileID: 5247383489900493533, guid: 36bb7d01be5661b46bcb22d9251bccb9, type: 3}
       lineColor:
         serializedVersion: 2
-        key0: {r: 0.9546869, g: 1, b: 0, a: 1}
-        key1: {r: 1, g: 0.92556876, b: 0.28773582, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 0.40392157}
+        key1: {r: 1, g: 1, b: 1, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 1}
+        key3: {r: 0, g: 0, b: 0, a: 0.23921569}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -303,31 +303,31 @@ MonoBehaviour:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65500
-        atime2: 0
-        atime3: 0
+        atime1: 348
+        atime2: 64839
+        atime3: 65500
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
-      lineWidth: 2
-      material: {fileID: 2100000, guid: 888556c7ffbfa488183e950af2223c83, type: 2}
-      endCapVertices: 90
-      cornerVertices: 69
+        m_NumAlphaKeys: 4
+      lineWidth: 1.248
+      material: {fileID: 2100000, guid: 8db46a6b21aefd84f9a17d809c06ffad, type: 2}
+      endCapVertices: 36
+      cornerVertices: 3
       lineTextureMode: 1
       usePhysics: 1
-      physicsMaterial: {fileID: 6200000, guid: dbabc7c13a4574240b7f3be91154383f, type: 2}
-      gravityScaleOverride: -1.5
-      massMult: 0.4
-      useDrawSound: 1
+      physicsMaterial: {fileID: 6200000, guid: 85cd5cd4ad3bd674480507b265d09655, type: 2}
+      gravityScaleOverride: -0.97
+      massMult: 1
+      useDrawSound: 0
       drawSound: 13
       useCollisionSound: 0
       collisionSound: -1
-      useReleaseSound: 1
+      useReleaseSound: 0
       releaseSound: 33
       baseVolume: 1
       useCameraShake: 0
