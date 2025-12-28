@@ -337,13 +337,13 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   moveLimit: {fileID: 7387025864371424899}
   jumpHeight: 15
-  timeToJumpApex: 1.021
+  timeToJumpApex: 0.799
   upwardMovementMultiplier: 1.86
-  downwardMovementMultiplier: 5.7
+  downwardMovementMultiplier: 3.96
   maxAirJumps: 0
   maxJumpLaunchSpeed: 36.9
-  variablejumpHeight: 0
-  jumpCutOff: 3.07
+  variablejumpHeight: 1
+  jumpCutOff: 1.98
   speedLimit: 0
   coyoteTime: 0.15
   jumpBuffer: 0.15
@@ -365,13 +365,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::characterMovement
   moveLimit: {fileID: 7387025864371424899}
   maxSpeed: 30
-  maxAcceleration: 52
+  maxAcceleration: 28.1
   maxDecceleration: 52
   maxTurnSpeed: 80
   maxAirAcceleration: 51.5
   maxAirDeceleration: 50.7
   maxAirTurnSpeed: 80
-  friction: 0
+  friction: 1
   useAcceleration: 0
   itsTheIntro: 1
   directionX: 0
