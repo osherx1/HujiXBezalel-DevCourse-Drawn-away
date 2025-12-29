@@ -94,6 +94,9 @@ public class BrushPickupToUI : MonoBehaviour
     [Tooltip("World Z plane for playing/spawning the spark when converting from UI screen position (2D usually uses 0).")]
     [SerializeField] private float sparkWorldZ = 0f;
 
+    [Tooltip("How many real seconds the spark should last. 0 = use the particle system's own duration/lifetime.")]
+    [SerializeField, Min(0f)] private float sparkLifetimeSecondsOverride = 0f;
+
     [Header("Events")]
     public UnityEvent onPickupStarted;
     public UnityEvent onPickupFinished;
@@ -102,6 +105,8 @@ public class BrushPickupToUI : MonoBehaviour
     private bool _wasMovementEnabled;
     private bool _wasJumpEnabled;
     private bool _bodyWasSimulated;
+
+    private Coroutine _stopInWorldSparkCoroutine;
 
     private void Reset()
     {
@@ -482,7 +487,7 @@ public class BrushPickupToUI : MonoBehaviour
             sparkDetachFromPickup.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             sparkDetachFromPickup.Play(true);
 
-            float ttl = Mathf.Max(0.5f, sparkDetachFromPickup.main.duration + sparkDetachFromPickup.main.startLifetime.constantMax);
+            float ttl = GetSparkLifetimeSeconds(sparkDetachFromPickup);
             Destroy(go, ttl);
             return;
         }
@@ -496,6 +501,14 @@ public class BrushPickupToUI : MonoBehaviour
             }
             sparkEffectInWorld.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             sparkEffectInWorld.Play(true);
+
+            if (_stopInWorldSparkCoroutine != null)
+            {
+                StopCoroutine(_stopInWorldSparkCoroutine);
+            }
+
+            float ttl = GetSparkLifetimeSeconds(sparkEffectInWorld);
+            _stopInWorldSparkCoroutine = StartCoroutine(StopSparkAfterSeconds(sparkEffectInWorld, ttl));
             return;
         }
 
@@ -503,7 +516,51 @@ public class BrushPickupToUI : MonoBehaviour
         ps.gameObject.SetActive(true);
         ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         ps.Play(true);
-        Destroy(ps.gameObject, Mathf.Max(0.5f, ps.main.duration + ps.main.startLifetime.constantMax));
+        Destroy(ps.gameObject, GetSparkLifetimeSeconds(ps));
+    }
+
+    private float GetSparkLifetimeSeconds(ParticleSystem ps)
+    {
+        if (sparkLifetimeSecondsOverride > 0f)
+        {
+            return sparkLifetimeSecondsOverride;
+        }
+
+        if (ps == null)
+        {
+            return 0.5f;
+        }
+
+        // Best-effort: duration + max start lifetime.
+        float lifetime = ps.main.duration;
+        try
+        {
+            lifetime += ps.main.startLifetime.constantMax;
+        }
+        catch
+        {
+            // Some lifetime modules may not support constantMax in older settings; ignore.
+        }
+
+        return Mathf.Max(0.1f, lifetime);
+    }
+
+    private IEnumerator StopSparkAfterSeconds(ParticleSystem ps, float seconds)
+    {
+        if (ps == null)
+        {
+            yield break;
+        }
+
+        if (seconds > 0f)
+        {
+            yield return new WaitForSecondsRealtime(seconds);
+        }
+
+        if (ps != null)
+        {
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        }
     }
 
     private void PrepareSparkForSequence()
