@@ -221,7 +221,6 @@ namespace Drawing.LineControl
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
                     StartLine(wp);
-                    isDrawing = true;
                     _penPressed = true;
                     // if (logPenDebug) Debug.Log($"LineManager: Pen down (tip={tip}, pressure={pressure:F2}).", this);
                     return; // Prefer pen over others this frame
@@ -260,7 +259,6 @@ namespace Drawing.LineControl
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
                     StartLine(wp);
-                    isDrawing = true;
                     // if (logMouseDebug) Debug.Log("LineManager: Mouse down.", this);
                 }
 
@@ -300,7 +298,7 @@ namespace Drawing.LineControl
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
 
                     StartLine(wp);
-                    isDrawing = true;
+                    
                     // if (logTouchDebug) Debug.Log("LineManager: Touch down.", this);
                 }
 
@@ -340,7 +338,16 @@ namespace Drawing.LineControl
                 return;
             }
 
-            var conf = DrawingConfigController.Instance.currentSettings;
+            var drawing = DrawingConfigController.Instance;
+            
+            if (drawing.CheckInk()<=1)
+            {
+                // Not enough ink to start a line
+                Debug.Log("LineManager: Not enough ink to start a new line.");
+                return;
+            }
+
+            var conf = drawing.currentSettings;
             GameObject lineToInstantiate;
             if (conf.usePrefab && conf.linePrefab != null)
             {
@@ -374,6 +381,7 @@ namespace Drawing.LineControl
 
             currentLine = ln;
             TryAddPoint(worldPos);
+            isDrawing = true;
             //currentLine.AddWorldPoint(worldPos);
         }
 
@@ -405,9 +413,22 @@ namespace Drawing.LineControl
                     releaseEffect.transform.position = wp;
                     releaseEffect.Play();
                 }
+
+                if (!DrawingConfigController.Instance.TryConsumeInk(1f))
+                {
+                    DrawingConfigController.Instance.ResetInk();
+
+                }
+                currentLine.AddInkCost(1f);
+                
+
             }
 
+            
+            
+
             currentLine = null;
+            
         }
 
         // Compute the overlap radius used to stop drawing when we hit existing lines
@@ -658,7 +679,7 @@ namespace Drawing.LineControl
              {
                  inkCost = 0;
              }
-            if (drawingConfigController.TryConsumeInk(inkCost))
+            if ( drawingConfigController.TryConsumeInk(inkCost))
             {
                 // Success: Button updated its UI, we update the line
                 currentLine.AddWorldPoint(worldPos);

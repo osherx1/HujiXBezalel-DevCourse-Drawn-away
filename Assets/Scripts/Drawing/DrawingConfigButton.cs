@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Drawing.Data;
 using Drawing.LineControl;
 using Drawing.Managers;
@@ -10,23 +12,35 @@ namespace Drawing
 {
     public class DrawingConfigButton : MonoBehaviour
     {
-        [Header("UI References")]
-        [SerializeField] private Button targetButton;
+        [Header("UI References")] [SerializeField]
+        private Button targetButton;
 
-        [Header("Values to Apply")] 
-        [SerializeField] private LineSettingsCollection lineSettingsCollection;
+        [Header("Values to Apply")] [SerializeField]
+        private LineSettingsCollection lineSettingsCollection;
+
         [SerializeField] private string settingID = "Default";
-        
-        [Header("Visual Feedback State")] 
-        [SerializeField] private Color selectedColor = Color.green;
+
+        [Header("Visual Feedback State")] [SerializeField]
+        private Color selectedColor = Color.green;
+
         [SerializeField] private int maxFillAmount = 1000;
+        [SerializeField] private ResourceBarTracker previewSelectToolBar;
         [SerializeField] private ResourceBarTracker resourceBarTracker;
+        [SerializeField] private GameObject previewSelectToolIcon;
+        //[SerializeField] private UIVisualFeedback feedbackEffects;
 
         private LineSettings _valuesToApply;
         private Color _normalColor;
         private Image _targetButtonImage;
         private bool _isSelected = false;
         private int _currentFillAmount;
+        
+        public event Action<int,int, int> OnInkChanged;
+        public int CurrentInk => _currentFillAmount;
+        public int MaxInk => maxFillAmount;
+        
+
+
 
         private void Awake()
         {
@@ -38,21 +52,38 @@ namespace Drawing
             }
 
             _targetButtonImage = targetButton.GetComponent<Image>();
-            
+
             if (_targetButtonImage != null)
             {
                 _normalColor = _targetButtonImage.color;
             }
 
             _currentFillAmount = maxFillAmount;
-            
-            if(resourceBarTracker != null)
+
+            if (resourceBarTracker != null)
             {
                 resourceBarTracker.ChangeMaxAmountTo(maxFillAmount);
                 resourceBarTracker.ChangeResourceByAmount(_currentFillAmount);
             }
 
+      
+            if(previewSelectToolIcon != null)
+            {
+                previewSelectToolIcon.SetActive(false);
+            }
+
             InitializeFromCollection();
+        }
+
+        private void Start()
+        {
+            if (previewSelectToolBar != null)
+            {
+                previewSelectToolBar.ChangeMaxAmountTo(maxFillAmount, false);
+                previewSelectToolBar.ChangeResourceByAmount(_currentFillAmount, false);
+                //selectToolBar.ResetWithoutAnimation(_currentFillAmount, maxFillAmount, 1000);
+                previewSelectToolBar.SetBarVisibility(false);
+            }
         }
 
         private void InitializeFromCollection()
@@ -75,11 +106,12 @@ namespace Drawing
 
             EventManager.Instance.OnConfigButtonSelected += OnGlobalConfigChanged;
             Line.onLineDestroyed += HandleRefundInk;
-            
-            if (resourceBarTracker != null)
+
+            /*if (resourceBarTracker != null && resourceBarTracker.gameObject.activeInHierarchy) 
             {
                 resourceBarTracker.SetBarVisibility(true);
-            }
+            }*/
+            
         }
 
         private void OnDisable()
@@ -90,10 +122,18 @@ namespace Drawing
             EventManager.Instance.OnConfigButtonSelected -= OnGlobalConfigChanged;
             Line.onLineDestroyed -= HandleRefundInk;
 
-            if (resourceBarTracker != null)
+            /*if (resourceBarTracker != null)
             {
                 resourceBarTracker.SetBarVisibility(false);
             }
+            if (selectToolBar != null)
+            {
+                selectToolBar.SetBarVisibility(false);
+            }*/
+            /*if(previewSelectToolIcon!= null)
+            {
+                previewSelectToolIcon.SetActive(false);
+            }*/
         }
 
         private void HandleRefundInk(string lineName, int amount)
@@ -101,36 +141,57 @@ namespace Drawing
             if (lineName != settingID) return;
             RefundInk(amount);
         }
-        
+
         public bool TryConsumeInk(float amount)
         {
+            
+            //TODO - Maybe use > on the amount of ink
             if (_currentFillAmount >= amount)
             {
-                _currentFillAmount -= (int)amount;
-                
-                if (resourceBarTracker != null)
+                if (amount != 0)
                 {
-                    resourceBarTracker.ChangeResourceByAmount(-(int)amount);
+                    _currentFillAmount -= (int)amount;
+                    NotifyInkChanged(-(int) amount, true, _isSelected);
                 }
+
                 return true;
             }
+
             return false;
         }
+
+        public void ResetInk()
+        {
+            var tempAmount = _currentFillAmount;
+            _currentFillAmount = 0;
+            NotifyInkChanged(-tempAmount, true, _isSelected);
+
+        }
+        /*if (_currentFillAmount >= amount)
+        {
+            _currentFillAmount -= (int)amount;
+
+            if (resourceBarTracker != null)
+            {
+                resourceBarTracker.ChangeResourceByAmount(-(int)amount);
+            }
+            return true;
+        }
+        return false;*/
+
 
         public void RefundInk(float amount)
         {
             _currentFillAmount = Mathf.Clamp(_currentFillAmount + (int)amount, 0, maxFillAmount);
-            
-            if (resourceBarTracker != null)
-            {
-                resourceBarTracker.ChangeResourceByAmount((int)amount);
-            }
+
+            NotifyInkChanged((int) amount,true, _isSelected);
+ 
         }
 
         private void OnButtonClicked()
         {
             AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
-            
+
             if (_isSelected) return;
 
             SetSelectionState(true);
@@ -154,6 +215,21 @@ namespace Drawing
             {
                 _targetButtonImage.color = isSelected ? selectedColor : _normalColor;
             }
+
+            if (previewSelectToolBar != null)
+            {
+                previewSelectToolBar.SetBarVisibility(isSelected);
+            }
+
+            if (previewSelectToolIcon != null)
+            { 
+                previewSelectToolIcon.SetActive(isSelected);
+            }
+            /*if(feedbackEffects!= null)
+            {
+                feedbackEffects.gameObject.SetActive(isSelected);
+            }*/
+            
         }
 
         private void ApplySettings()
@@ -163,7 +239,56 @@ namespace Drawing
             var controller = DrawingConfigController.Instance;
             controller.SetLineSetting(_valuesToApply);
             controller.SetButton(this);
+            if (previewSelectToolBar != null)
+            {
+                previewSelectToolBar.SetBarVisibility(true);
+            }
         }
+
+        public Image GetTargetButtonImage()
+        {
+            if (_targetButtonImage == null)
+            {
+                Debug.LogError($"Target Button is missing in {name}");
+            }
+            return _targetButtonImage;
+
+        }
+        private void NotifyInkChanged(int delta,bool animatePopBar, bool animateSelectBar )
+        {
+            //OnInkChanged?.Invoke(delta, _currentFillAmount, maxFillAmount);
+            
+            if (resourceBarTracker != null)
+                resourceBarTracker.ChangeResourceByAmount(delta, animatePopBar);
+                
+            if (previewSelectToolBar != null)
+                previewSelectToolBar.ChangeResourceByAmount(delta, animateSelectBar);
+            //TriggerJuice(delta);
+        }
+
+        
+
+        /*private void TriggerJuice(int delta)
+        {
+            // FIX: Ensure feedback object exists and is enabled before calling
+            if (!_isSelected || feedbackEffects == null || !feedbackEffects.isActiveAndEnabled) return;
+
+            if (delta < 0)
+            {
+                // SPENDING INK: Shake and Flash
+                feedbackEffects.PlayShake();
+                //feedbackEffects.PlayFlash();
+            }
+            else if (delta > 0)
+            {
+                // REGAINING INK: Pulse
+                feedbackEffects.PlayPulse();
+            }*/
+        
+        
+        
+        
+
     }
 }
 
@@ -202,7 +327,7 @@ namespace Drawing
             _buttonImage = GetComponent<Image>();
             normalColor = _buttonImage.color;
             _currentFillAmount = maxFillAmount;
-            
+
             if(resourceBarTracker!= null)
 
             {
@@ -216,7 +341,7 @@ namespace Drawing
 
 
 
-   
+
             //_buttonImage.color = normalColor;
             InitializeFromCollection();
         }
@@ -247,7 +372,7 @@ namespace Drawing
             {
                 resourceBarTracker.SetBarVisibility(true);
             }
-            
+
         }
 
         private void HandleRefundInk(string lineName, int amount)
@@ -269,8 +394,8 @@ namespace Drawing
                 resourceBarTracker.SetBarVisibility(false);
             }
         }
-        
-        
+
+
         /// <summary>
         /// Attempts to subtract ink. Returns true if successful.
         /// </summary>
@@ -278,7 +403,7 @@ namespace Drawing
         {
             if (_currentFillAmount >= amount)
             {
-                //TODO - Maybe use upperbound on the amount of ink 
+                //TODO - Maybe use upperbound on the amount of ink
                 _currentFillAmount -= (int)amount;
                 if (resourceBarTracker != null)
                 {
@@ -289,7 +414,7 @@ namespace Drawing
             return false;
         }
 
- 
+
         /// <summary>
         /// Restores ink to this button (e.g. when line is deleted).
         /// </summary>
@@ -301,7 +426,7 @@ namespace Drawing
             {
                 resourceBarTracker.ChangeResourceByAmount((int)amount);
             }
-            
+
         }
 
 

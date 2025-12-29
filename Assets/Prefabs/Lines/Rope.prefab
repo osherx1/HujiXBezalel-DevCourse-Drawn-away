@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 4193962718934532835}
   - component: {fileID: 8541051740542230168}
   - component: {fileID: 2180012859660155668}
-  - component: {fileID: 8666590724848827172}
-  - component: {fileID: -3772531523333618763}
-  m_Layer: 9
-  m_Name: Glue
-  m_TagString: Line
+  - component: {fileID: 3429379585942509056}
+  m_Layer: 12
+  m_Name: Rope
+  m_TagString: Rope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,94 +120,13 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.6684492
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.093787715
-        value: 0.54545385
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.19897848
-        value: 0.65508133
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.37514517
-        value: 0.49999946
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.51709974
-        value: 0.6684492
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.64513093
-        value: 0.55080265
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.69455093
-        value: 0.6336905
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.8313846
-        value: 0.54812795
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.9277718
-        value: 0.6684492
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0.6176464
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -308,7 +226,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.2
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -323,7 +241,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &8666590724848827172
+--- !u!114 &3429379585942509056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,32 +250,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5247383489900493533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273ea3101c4c44a39bf591206e51c990, type: 3}
+  m_Script: {fileID: 11500000, guid: 25963b1b3304486c9c2b8e5b7576af30, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drawing.LineControl.GlueHandler
-  linearDrag: 0.5
-  angularDrag: 0.05
-  breakForce: 300
-  ropeBreakForce: 200
-  stickyTags:
-  - Line
-  - Rope
---- !u!114 &-3772531523333618763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247383489900493533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63951ac4ae664dd6a34902fc3f016312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drawing.LineControl.GlueDebugger
-  showConnections: 1
-  showStressLevels: 1
-  anchorColor: {r: 0, g: 1, b: 0, a: 1}
-  connectionLineColor: {r: 0, g: 1, b: 1, a: 1}
-  highStressColor: {r: 1, g: 0, b: 0, a: 1}
-  lowStressColor: {r: 0, g: 1, b: 0, a: 1}
-  stressLineScale: 0.01
+  m_EditorClassIdentifier: Assembly-CSharp::Drawing.LineControl.RopeHandler
+  settings:
+    segmentLength: 1.5
+    segmentMass: 1
+    ropeWidth: 1
+    physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
+    freezeRotation: 0
+    anchorIsStatic: 1
+  minMovementThreshold: 0.001
