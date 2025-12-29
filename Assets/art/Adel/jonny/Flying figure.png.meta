@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 59e854fc4d0f147378e164d1ac7b5b6b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3231284206303791035
+    second: Flying figure_0
+  - first:
+      213: 4958850024801362459
+    second: Flying figure_1
+  - first:
+      213: -307354987927675025
+    second: Flying figure_2
+  - first:
+      213: 5526713012562370986
+    second: Flying figure_3
+  - first:
+      213: 2127238771511965475
+    second: Flying figure_4
+  - first:
+      213: -5331322298149272255
+    second: Flying figure_5
+  - first:
+      213: -5569445833701220185
+    second: Flying figure_6
+  - first:
+      213: 7549196948124250126
+    second: Flying figure_7
+  - first:
+      213: 5400452584791602491
+    second: Flying figure_8
+  - first:
+      213: -6557019246362235852
+    second: Flying figure_9
+  - first:
+      213: -7073765118067103944
+    second: Flying figure_10
+  - first:
+      213: 7988056905387849726
+    second: Flying figure_11
+  - first:
+      213: 7826227765295088756
+    second: Flying figure_12
+  - first:
+      213: 2428468483015860415
+    second: Flying figure_13
+  - first:
+      213: 5148197120651162652
+    second: Flying figure_14
+  - first:
+      213: -1877117885408019173
+    second: Flying figure_15
+  - first:
+      213: 8738937276756431483
+    second: Flying figure_16
+  - first:
+      213: 5640542205907663195
+    second: Flying figure_17
+  - first:
+      213: -3623848930810610161
+    second: Flying figure_18
+  - first:
+      213: 6850618665867016132
+    second: Flying figure_19
+  - first:
+      213: 1191378558650210631
+    second: Flying figure_20
+  - first:
+      213: 1800882231274168695
+    second: Flying figure_21
+  - first:
+      213: -1095329507840415931
+    second: Flying figure_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Flying figure_2
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 2239
+        width: 442
+        height: 534
+      alignment: 9
+      pivot: {x: 0.6974161, y: 0.1568512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f50a4544e0cbbf0800000000000000
+      internalID: -307354987927675025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_4
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2239
+        width: 473
+        height: 521
+      alignment: 9
+      pivot: {x: 0.66602993, y: 0.18178496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327b8606468758d10800000000000000
+      internalID: 2127238771511965475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_5
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 2239
+        width: 522
+        height: 543
+      alignment: 9
+      pivot: {x: 0.6838767, y: 0.19467765}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14581bbcd965306b0800000000000000
+      internalID: -5331322298149272255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_6
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 2284
+        width: 616
+        height: 350
+      alignment: 9
+      pivot: {x: 0.627487, y: 0.30055386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0a57eb58a55b2b0800000000000000
+      internalID: -5569445833701220185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_11
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1400
+        width: 547
+        height: 404
+      alignment: 9
+      pivot: {x: 0.659521, y: 0.53239816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef7bf33de674bde60800000000000000
+      internalID: 7988056905387849726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_13
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1364
+        width: 450
+        height: 480
+      alignment: 9
+      pivot: {x: 0.6357343, y: 0.7090556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0646ef737a3b120800000000000000
+      internalID: 2428468483015860415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_14
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 1382
+        width: 401
+        height: 443
+      alignment: 9
+      pivot: {x: 0.63056046, y: 0.61818224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14f9124102127740800000000000000
+      internalID: 5148197120651162652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_15
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 1454
+        width: 461
+        height: 352
+      alignment: 9
+      pivot: {x: 0.6608876, y: 0.35126495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1df8b68a3323f5e0800000000000000
+      internalID: -1877117885408019173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_21
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 586
+        width: 466
+        height: 412
+      alignment: 9
+      pivot: {x: 0.6497991, y: 0.2246716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771e86d09d40ef810800000000000000
+      internalID: 1800882231274168695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flying figure_22
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 568
+        width: 409
+        height: 488
+      alignment: 9
+      pivot: {x: 0.59600484, y: 0.19602767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5472b2dad9b9cc0f0800000000000000
+      internalID: -1095329507840415931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fc47dfe35678943feb80fb01bbbf9b52
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Flying figure_0: -3231284206303791035
+      Flying figure_1: 4958850024801362459
+      Flying figure_10: -7073765118067103944
+      Flying figure_11: 7988056905387849726
+      Flying figure_12: 7826227765295088756
+      Flying figure_13: 2428468483015860415
+      Flying figure_14: 5148197120651162652
+      Flying figure_15: -1877117885408019173
+      Flying figure_16: 8738937276756431483
+      Flying figure_17: 5640542205907663195
+      Flying figure_18: -3623848930810610161
+      Flying figure_19: 6850618665867016132
+      Flying figure_2: -307354987927675025
+      Flying figure_20: 1191378558650210631
+      Flying figure_21: 1800882231274168695
+      Flying figure_22: -1095329507840415931
+      Flying figure_3: 5526713012562370986
+      Flying figure_4: 2127238771511965475
+      Flying figure_5: -5331322298149272255
+      Flying figure_6: -5569445833701220185
+      Flying figure_7: 7549196948124250126
+      Flying figure_8: 5400452584791602491
+      Flying figure_9: -6557019246362235852
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
