@@ -82,19 +82,17 @@ public class BrushPickupToUI : MonoBehaviour
     [SerializeField] private GameObject uiObjectToActivate;
 
     [Header("Effects")]
-    [Tooltip("Optional particle system prefab to spawn when the icon reaches the UI slot.")]
-    [SerializeField] private ParticleSystem sparkEffectPrefab;
+    [Tooltip("Optional: ParticleSystem that is attached to this pickup (or a child). It will be detached and played so it won't turn off when the pickup is deactivated.")]
+    [SerializeField] private ParticleSystem sparkDetachFromPickup;
 
-    [Tooltip("Optional: existing ParticleSystem in the scene to play (instead of instantiating a prefab).")]
+    [Tooltip("Optional: existing ParticleSystem in the scene to move + play.")]
     [SerializeField] private ParticleSystem sparkEffectInWorld;
 
-    [Tooltip("World Z plane for spawning the spark when converting from UI screen position (2D usually uses 0).")]
+    [Tooltip("Optional: prefab ParticleSystem to spawn in the world and auto-destroy.")]
+    [SerializeField] private ParticleSystem sparkEffectPrefab;
+
+    [Tooltip("World Z plane for playing/spawning the spark when converting from UI screen position (2D usually uses 0).")]
     [SerializeField] private float sparkWorldZ = 0f;
-
-    [Tooltip("Optional UI prefab (RectTransform) to spawn on the canvas at the UI slot when the icon arrives. Useful if world particles are not visible.")]
-    [SerializeField] private GameObject uiSparkPrefab;
-
-    [SerializeField, Min(0.01f)] private float uiSparkLifetimeSeconds = 0.6f;
 
     [Header("Events")]
     public UnityEvent onPickupStarted;
@@ -199,6 +197,8 @@ public class BrushPickupToUI : MonoBehaviour
     {
         float startTime = Time.unscaledTime;
         onPickupStarted?.Invoke();
+
+        PrepareSparkForSequence();
 
         if (movementController != null)
         {
@@ -352,14 +352,7 @@ public class BrushPickupToUI : MonoBehaviour
             flyingVisual.transform.position = endWorld;
         }
 
-        if (sparkEffectPrefab != null)
-        {
-            SpawnSparkAtUiSlot();
-        }
-        else if (uiSparkPrefab != null)
-        {
-            SpawnUiSparkAtSlot();
-        }
+        PlaySparkAtUiSlotWorld();
 
         if (delayAfterFlySeconds > 0f)
         {
@@ -449,9 +442,14 @@ public class BrushPickupToUI : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void SpawnSparkAtUiSlot()
+    private void PlaySparkAtUiSlotWorld()
     {
-        if ((sparkEffectPrefab == null && sparkEffectInWorld == null) || uiTargetSlot == null)
+        if (sparkDetachFromPickup == null && sparkEffectInWorld == null && sparkEffectPrefab == null)
+        {
+            return;
+        }
+
+        if (uiTargetSlot == null)
         {
             return;
         }
@@ -462,10 +460,32 @@ public class BrushPickupToUI : MonoBehaviour
             return;
         }
 
-        Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(null, uiTargetSlot.position);
+        Camera canvasCam = targetCanvas != null ? GetCanvasCamera(targetCanvas) : null;
+        Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(canvasCam, uiTargetSlot.position);
         float depth = Mathf.Abs(cam.transform.position.z - sparkWorldZ);
         Vector3 worldPos = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, depth));
         worldPos.z = sparkWorldZ;
+
+        // 1) If the spark is attached to the pickup, detach it so it survives after this pickup disables itself.
+        if (sparkDetachFromPickup != null)
+        {
+            Transform t = sparkDetachFromPickup.transform;
+            t.SetParent(null, worldPositionStays: true);
+            t.position = worldPos;
+
+            GameObject go = sparkDetachFromPickup.gameObject;
+            if (!go.activeSelf)
+            {
+                go.SetActive(true);
+            }
+
+            sparkDetachFromPickup.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            sparkDetachFromPickup.Play(true);
+
+            float ttl = Mathf.Max(0.5f, sparkDetachFromPickup.main.duration + sparkDetachFromPickup.main.startLifetime.constantMax);
+            Destroy(go, ttl);
+            return;
+        }
 
         if (sparkEffectInWorld != null)
         {
@@ -474,68 +494,37 @@ public class BrushPickupToUI : MonoBehaviour
             {
                 sparkEffectInWorld.gameObject.SetActive(true);
             }
+            sparkEffectInWorld.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             sparkEffectInWorld.Play(true);
             return;
         }
 
         ParticleSystem ps = Instantiate(sparkEffectPrefab, worldPos, Quaternion.identity);
         ps.gameObject.SetActive(true);
+        ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         ps.Play(true);
         Destroy(ps.gameObject, Mathf.Max(0.5f, ps.main.duration + ps.main.startLifetime.constantMax));
     }
 
-    private void SpawnUiSparkAtSlot()
+    private void PrepareSparkForSequence()
     {
-        if (uiSparkPrefab == null || targetCanvas == null || uiTargetSlot == null)
+        // Prevent "Play On Awake" sparks from firing at the pickup's original position.
+        if (sparkDetachFromPickup != null)
         {
-            return;
-        }
-
-        RectTransform canvasRect = targetCanvas.transform as RectTransform;
-        if (canvasRect == null)
-        {
-            return;
-        }
-
-        // If this prefab is UI (RectTransform), spawn it under the canvas.
-        // If it's a world prefab (e.g., ParticleSystem), spawn it in world at the UI slot screen position.
-        if (uiSparkPrefab.GetComponent<RectTransform>() != null)
-        {
-            GameObject spark = Instantiate(uiSparkPrefab, targetCanvas.transform);
-            spark.SetActive(true);
-
-            RectTransform sparkRect = spark.GetComponent<RectTransform>();
-            if (sparkRect != null)
+            sparkDetachFromPickup.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            // Keep it inactive until we actually want to play it.
+            if (sparkDetachFromPickup.gameObject.activeSelf)
             {
-                Camera canvasCam = GetCanvasCamera(targetCanvas);
-                Vector2 endScreen = RectTransformUtility.WorldToScreenPoint(canvasCam, uiTargetSlot.position);
-                sparkRect.anchoredPosition = ScreenToCanvasAnchoredPosition(endScreen, targetCanvas, canvasRect);
+                sparkDetachFromPickup.gameObject.SetActive(false);
             }
-
-            Destroy(spark, uiSparkLifetimeSeconds);
-            return;
         }
 
-        Camera cam = Camera.main;
-        if (cam == null)
+        if (sparkEffectInWorld != null)
         {
-            return;
+            sparkEffectInWorld.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
-        Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(null, uiTargetSlot.position);
-        float depth = Mathf.Abs(cam.transform.position.z - sparkWorldZ);
-        Vector3 worldPos = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, depth));
-        worldPos.z = sparkWorldZ;
-
-        GameObject worldSpark = Instantiate(uiSparkPrefab, worldPos, Quaternion.identity);
-        worldSpark.SetActive(true);
-        ParticleSystem ps = worldSpark.GetComponentInChildren<ParticleSystem>();
-        if (ps != null)
-        {
-            ps.Play(true);
-        }
-
-        Destroy(worldSpark, uiSparkLifetimeSeconds);
+        // Prefab doesn't exist in-scene yet, nothing to prepare.
     }
 
     private static void ApplySpriteToVisual(GameObject visual, Sprite sprite)
