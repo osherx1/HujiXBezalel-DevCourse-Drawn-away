@@ -51,7 +51,7 @@ namespace Drawing.LineControl
         float pointsMinDistance = 0.1f; // configurable via setter
         float circleColliderRadius; // updated when SetLineWidth is called
         public event Action OnLineFinalized;
-        public static event Action<string, int> onLineDestroyed; 
+        public static event Action<string, int> onLineDestroyed;
 
 
         private PhysicsMaterial2D _physicsMat;
@@ -61,11 +61,11 @@ namespace Drawing.LineControl
         private float _baseVolume = 1f;
         private const float MaxVolumeVelocity = 15f;
         private const float MaxVolumeMass = 5;
-        
+
         private const float MinVelocityThresholdSqr = 0.01f;
         private const float MinVolumeThreshold = 0.01f;
-        
-        
+
+
         private const float CameraShakeVolumeThreshold = 0.1f;
         [SerializeField] private float minShakeIntensity = 0.1f; // Minimum shake magnitude
         [SerializeField] private float maxShakeIntensity = 0.5f; // Maximum shake magnitude
@@ -73,16 +73,16 @@ namespace Drawing.LineControl
         private float _maxDistanceFromStart;
         private float _lastSegmentLength;
         public float LastSegmentLength => _lastSegmentLength; // Expose line length
-        
 
 
         /// <summary>
         /// Initialize visual/physics parameters when a new line is spawned.
         /// Material is expected to be set on the prefab/LineRenderer; we don't reassign it here.
         /// </summary>
-        public void Initialize(string lineID,float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon,
+        public void Initialize(string lineID, float width, float minDist, PhysicsMaterial2D physicsMat, bool usePolygon,
             bool collideWhileDrawing = false, float simplifyTolerance = -1f, int maxPoints = -1,
-            Gradient colorGradient = null, Material material = null, int endCapVertices = 0, int cornerVertices = 0,LineTextureMode textureMode = LineTextureMode.Stretch)
+            Gradient colorGradient = null, Material material = null, int endCapVertices = 0, int cornerVertices = 0,
+            LineTextureMode textureMode = LineTextureMode.Stretch)
         {
             // Ensure required components
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
@@ -91,6 +91,7 @@ namespace Drawing.LineControl
             {
                 lineRenderer.colorGradient = colorGradient;
             }
+
             _lineLength = 0f;
             _pendingLengthBuffer = 0f;
 
@@ -131,7 +132,8 @@ namespace Drawing.LineControl
             usePolygonCollider = usePolygon;
         }
 
-        private void SetLineShape(float width, int endCapVertices, int cornerVertices, LineTextureMode textureMode /*= LineTextureMode.Stretch*/)
+        private void SetLineShape(float width, int endCapVertices, int cornerVertices,
+            LineTextureMode textureMode /*= LineTextureMode.Stretch*/)
         {
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
             SetLineWidth(width);
@@ -154,25 +156,24 @@ namespace Drawing.LineControl
             //TODO - save the distance between last point and new point to line length
             /*if (pointsCount > 0)
             {
-               
+
                 float dist = Vector2.Distance(GetLastPoint(), newPoint);
                 dist = MathF.Max(dist, 0.01f); // safety
                 _pendingLengthBuffer += dist; // accumulate in buffer to reduce frequent additions
 
                 if (_pendingLengthBuffer >= ACCUMULATION_THRESHOLD)
                 {
-                   
+
 
                     _lineLength += _pendingLengthBuffer;
-                    _pendingLengthBuffer = 0f; 
+                    _pendingLengthBuffer = 0f;
                     Debug.Log("Adding segment length, Line Length: " + _lineLength);
                 }*/
             if (pointsCount >= 2)
             {
-               
                 Vector2 currentPoint = points[pointsCount - 1];
-                
-                
+
+
                 Vector2 previousPoint = points[pointsCount - 2];
 
                 _lastSegmentLength = Vector2.Distance(previousPoint, currentPoint);
@@ -184,8 +185,6 @@ namespace Drawing.LineControl
                 {
                     _maxDistanceFromStart = distFromStart;
                 }
-     
-               
             }
 
             // Optional: add small circle collider at this point (offset already local)
@@ -255,7 +254,7 @@ namespace Drawing.LineControl
             if (!lineRenderer) lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.startWidth = width;
             lineRenderer.endWidth = width;
-            
+
             circleColliderRadius = width * 0.5f;
             if (!edgeCollider) edgeCollider = GetComponent<EdgeCollider2D>();
             if (edgeCollider)
@@ -350,7 +349,6 @@ namespace Drawing.LineControl
             {
                 _lineLength += _pendingLengthBuffer;
                 _pendingLengthBuffer = 0f;
-
             }
 
             var ratio = GetReachRatio();
@@ -486,7 +484,7 @@ namespace Drawing.LineControl
         }
 
 
-        public void InitializeSound(GameSoundsSo.AudioType collisionSoundType, float baseVolume,bool useCameraShake)
+        public void InitializeSound(GameSoundsSo.AudioType collisionSoundType, float baseVolume, bool useCameraShake)
         {
             _collisionSound = collisionSoundType;
             _baseVolume = baseVolume;
@@ -500,7 +498,7 @@ namespace Drawing.LineControl
             if (!ShouldProcessCollision(other)) return;
 
             float impactSpeed = other.relativeVelocity.magnitude;
-                //Debug.Log("Impact Speed: " + impactSpeed);
+            //Debug.Log("Impact Speed: " + impactSpeed);
             if (impactSpeed < _minImpactVelocity)
             {
                 //Debug.Log("Impact speed below minimum threshold.");
@@ -508,10 +506,9 @@ namespace Drawing.LineControl
             }
 
             ProcessCollision(impactSpeed, other.gameObject.CompareTag("Line"));
-            
-            }
+        }
 
-        
+
         private bool ShouldProcessCollision(Collision2D other)
         {
             // Check my own speed
@@ -539,11 +536,11 @@ namespace Drawing.LineControl
                     }
                 }
             }
-            
+
 
             return true;
         }
-        
+
         private void ProcessCollision(float impactSpeed, bool isTargetLine)
         {
             float volume = CalculateVolume(impactSpeed);
@@ -552,20 +549,23 @@ namespace Drawing.LineControl
             {
                 AudioManager.Instance.PlaySoundByAudioType(_collisionSound, volume);
             }
+
             // Camera shake for non-line collisions
-            if (volume > CameraShakeVolumeThreshold && _useCameraShake/*&& !isTargetLine*/)
+            if (volume > CameraShakeVolumeThreshold && _useCameraShake /*&& !isTargetLine*/)
             {
                 float finalShakeMagnitude = Mathf.Lerp(minShakeIntensity, maxShakeIntensity, volume);
                 //Debug.Log("Camera Shake Magnitude: " + finalShakeMagnitude);
                 CameraShaker.Instance.Shake(0.1f, finalShakeMagnitude);
-            }  
+            }
         }
+
         private float CalculateVolume(float impactSpeed)
         {
             float velocityFactor = Mathf.InverseLerp(_minImpactVelocity, MaxVolumeVelocity, impactSpeed);
             float massFactor = Mathf.Clamp01(rigidBody.mass / MaxVolumeMass);
             return velocityFactor * _baseVolume * massFactor;
         }
+
         /// <summary>
         /// Adds to the accumulated ink cost of this line.
         /// </summary>
@@ -573,6 +573,7 @@ namespace Drawing.LineControl
         {
             _inkCost += cost;
         }
+
         public void SetInkCost(float cost)
         {
             _inkCost = cost;
@@ -580,12 +581,12 @@ namespace Drawing.LineControl
 
         private void OnDisable()
         {
-            onLineDestroyed?.Invoke(settingID,(int)_inkCost);
+            onLineDestroyed?.Invoke(settingID, (int)_inkCost);
         }
-        
+
         public float GetStraightnessRatio()
         {
-            if (pointsCount < 2 || _lineLength <= 0.0001f) 
+            if (pointsCount < 2 || _lineLength <= 0.0001f)
                 return 1f;
 
             Vector2 startPoint = points[0];
@@ -595,6 +596,7 @@ namespace Drawing.LineControl
 
             return directDistance / _lineLength;
         }
+
         /// <summary>
         /// Calculates the ratio between the Farthest Point Reached and the Total Length.
         /// Useful to determine if the line is efficient (straight) or wasteful (coiled/winding).
@@ -607,16 +609,14 @@ namespace Drawing.LineControl
         public float GetReachRatio()
         {
             // Safety check to avoid division by zero
-            if (pointsCount < 2 || _lineLength <= 0.0001f) 
+            if (pointsCount < 2 || _lineLength <= 0.0001f)
                 return 1f;
 
             // Ratio: Max Reach / Actual Path Taken
-            Debug.Log("Max Distance From Start: " + _maxDistanceFromStart.ToString("F3") + ", Line Length: " + _lineLength.ToString("F3"));
-            Debug.Log("Reach Ratio: " + (_maxDistanceFromStart / _lineLength).ToString("F3"));
+            //Debug.Log("Max Distance From Start: " + _maxDistanceFromStart.ToString("F3") + ", Line Length: " +
+            //          _lineLength.ToString("F3"));
+            //Debug.Log("Reach Ratio: " + (_maxDistanceFromStart / _lineLength).ToString("F3"));
             return _maxDistanceFromStart / _lineLength;
         }
-    
-        
-        
     }
 }

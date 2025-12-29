@@ -171,7 +171,7 @@ MonoBehaviour:
       useReleaseSound: 0
       releaseSound: -1
       baseVolume: 0.34
-      useCameraShake: 1
+      useCameraShake: 0
   - id: Static
     settings:
       SettingID: Static

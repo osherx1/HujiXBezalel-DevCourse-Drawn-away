@@ -184,11 +184,30 @@ namespace Drawing
 
         public bool TryConsumeInk(float amount)
         {
+            //Debug.Log("DrawingConfig TryConsumeInk called with amount: " + amount);
             if (_currentButton != null)
             {
                 return _currentButton.TryConsumeInk(amount);
             }
             return false;
         }
+        public int CheckInk()
+        {
+            if (_currentButton != null)
+            {
+                return _currentButton.CurrentInk;
+            }
+            return 0;
+        }
+        public void ResetInk()
+        {
+            if (_currentButton != null)
+            {
+                 _currentButton.ResetInk();
+            }
+
+        }
+        
+        
     }
 }
