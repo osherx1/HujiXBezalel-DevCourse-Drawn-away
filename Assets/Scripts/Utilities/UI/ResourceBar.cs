@@ -113,7 +113,7 @@ namespace Utilities.UI
         // The "Consumer" Loop - Only runs when animating
         private void Update()
         {
-            if (!_animate || !_isInitialized) return;
+            if (!_animate || !_isInitialized||!bar.enabled) return;
             // 1. Move Visual towards Target
             _visualFillAmount = Mathf.SmoothDamp(
                 _visualFillAmount,
@@ -150,7 +150,7 @@ namespace Utilities.UI
             _targetFillAmount = CalculateTargetFill();
             UpdateText(); // Text updates instantly (gameplay accurate), bar lags slightly (visual feel)
 
-            if (animate && Application.isPlaying&&bar.enabled)
+            if (animate && Application.isPlaying/*&&bar.enabled*/)
             {
                 _animate = true; // Wake up the Update loop
             }

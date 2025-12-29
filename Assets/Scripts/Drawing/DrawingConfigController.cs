@@ -1,4 +1,6 @@
+using System;
 using Drawing.Data;
+using Drawing.Managers;
 using UnityEngine;
 
 namespace Drawing
@@ -19,6 +21,8 @@ namespace Drawing
         public LineSettings currentSettings = new LineSettings();
         private DrawingConfigButton _currentButton;
         [SerializeField] private DrawingConfigButton defaultButton;
+        
+        private bool _eraserActive = false;
 
         public LineSettings DefaultSettings => defaultSettings;
 
@@ -57,20 +61,6 @@ namespace Drawing
             Log("Resetting all settings to defaults.");
             currentSettings.SetLineSetting(defaultSettings);
 
-            /*
-            currentSettings.lineWidth = defaultSettings.lineWidth;
-            currentSettings.lineColor = defaultSettings.lineColor;
-            currentSettings.material = defaultSettings.material;
-            currentSettings.usePhysics = defaultSettings.usePhysics;
-            currentSettings.physicsMaterial = defaultSettings.physicsMaterial;
-            currentSettings.gravityScaleOverride = defaultSettings.gravityScaleOverride;
-            currentSettings.massMult = defaultSettings.massMult;
-            currentSettings.endCapVertices = defaultSettings.endCapVertices;
-            currentSettings.cornerVertices = defaultSettings.cornerVertices;
-            currentSettings.drawSound = defaultSettings.drawSound;
-            currentSettings.collisionSound = defaultSettings.collisionSound;
-            currentSettings.releaseSound = defaultSettings.releaseSound;
-            */
         }
 
         // --- SETTERS WITH LOGIC ---
@@ -205,9 +195,31 @@ namespace Drawing
             {
                  _currentButton.ResetInk();
             }
-
         }
-        
-        
+
+        private void OnEnable()
+        {
+            EventManager.Instance.OnEraserActive += EraserActive;
+            EventManager.Instance.OnEraserInactive += EraserInactive;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.Instance.OnEraserActive -= EraserActive;
+            EventManager.Instance.OnEraserInactive -= EraserInactive;
+        }
+        public bool IsEraserActive()
+        {
+            return _eraserActive;
+        }
+
+        public void EraserActive()
+        {
+            _eraserActive = true;
+        }
+        public void EraserInactive()
+        {
+            _eraserActive = false;
+        }
     }
 }

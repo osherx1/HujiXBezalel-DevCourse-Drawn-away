@@ -242,6 +242,7 @@ namespace Drawing
             if (previewSelectToolBar != null)
             {
                 previewSelectToolBar.SetBarVisibility(true);
+                previewSelectToolBar.ChangeResourceByAmount(0, false);
             }
         }
 

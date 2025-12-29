@@ -16,11 +16,13 @@ namespace Drawing.Buttons
         [SerializeField] private Sprite pencilSprite;
         [SerializeField] private CircleCollider2D cursorCollider;
         [SerializeField] private LineManager lineManager;
-        
+
         private Image _buttonImage;
         private Color normalColor;
         [SerializeField] private Color selectedColor = Color.green;
         private bool _isEraserActive;
+        [SerializeField] private bool stayActiveOnDisable = true;
+
 
         private void Awake()
         {
@@ -34,9 +36,29 @@ namespace Drawing.Buttons
             {
                 button.onClick.AddListener(OnEraserButtonClicked);
             }
+
             if (EventManager.Instance != null)
             {
                 EventManager.Instance.OnConfigButtonSelected += CancelEraser;
+            }
+
+            if (stayActiveOnDisable && DrawingConfigController.Instance != null)
+            {
+                bool temp = _isEraserActive;
+                _isEraserActive = DrawingConfigController.Instance.IsEraserActive();
+                if (_isEraserActive != temp)
+                {
+                    //Debug.Log("Eraser state change from " + _isEraserActive + " to " + temp);
+                    if (_isEraserActive)
+                    {
+                        ActivateEraserMode();
+                    }
+                    else
+                    {
+                        CancelEraser(this);
+                    }
+                }
+                
             }
         }
 
@@ -46,14 +68,15 @@ namespace Drawing.Buttons
             {
                 button.onClick.RemoveListener(OnEraserButtonClicked);
             }
+
             if (EventManager.Instance != null)
             {
                 EventManager.Instance.OnConfigButtonSelected -= CancelEraser;
             }
 
-            if (_isEraserActive)
+            if (_isEraserActive && !stayActiveOnDisable)
             {
-                RestoreCursorVisibility();
+                Cursor.visible = false;
                 _isEraserActive = false;
                 EventManager.Instance?.TriggerEraserInactive();
             }
@@ -69,7 +92,7 @@ namespace Drawing.Buttons
 
             ActivateEraserMode();
         }
-        
+
         private void CancelEraser(object sender)
         {
             if (!_isEraserActive) return;
@@ -108,7 +131,7 @@ namespace Drawing.Buttons
             if (_buttonImage == null) return;
             _buttonImage.color = isSelected ? selectedColor : normalColor;
         }
-        
+
         // Add this new method to EraserButton.cs
         public void ForceStopEraser()
         {
