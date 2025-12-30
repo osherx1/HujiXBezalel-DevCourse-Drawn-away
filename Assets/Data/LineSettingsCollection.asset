@@ -17,47 +17,47 @@ MonoBehaviour:
     settings:
       SettingID: Default
       fillMult: 1
-      usePrefab: 0
-      linePrefab: {fileID: 0}
+      usePrefab: 1
+      linePrefab: {fileID: 5247383489900493533, guid: 744aeb4530b27b946a10eca28f17e607, type: 3}
       lineColor:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.4188679, g: 0.19321367, b: 0, a: 0.9882353}
         key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key2: {r: 1, g: 1, b: 1, a: 1}
+        key3: {r: 0.5999999, g: 0.37458786, b: 0.15735842, a: 0.99607843}
+        key4: {r: 0.3660378, g: 0.20752731, b: 0.051797748, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
+        ctime1: 297
+        ctime2: 65099
+        ctime3: 65273
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
+        atime1: 87
+        atime2: 65029
+        atime3: 65378
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumColorKeys: 5
+        m_NumAlphaKeys: 4
       lineWidth: 1
-      material: {fileID: 2100000, guid: d7bd99492bc3abf4ab9eff800fdfe127, type: 2}
+      material: {fileID: 2100000, guid: bcf9e67415bcb3c49ae8a276080935d8, type: 2}
       endCapVertices: 0
       cornerVertices: 26
       lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: d59c237acc09cf2498280ee523895b47, type: 2}
       gravityScaleOverride: 1
-      massMult: 1
+      massMult: 1.2
       useDrawSound: 1
       drawSound: 10
       useCollisionSound: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 28ac6c32b7001b246a3e73d354080f02, type: 2}
       gravityScaleOverride: 2.3
-      massMult: 3
+      massMult: 2.5
       useDrawSound: 0
       drawSound: -1
       useCollisionSound: 1
