@@ -16,6 +16,7 @@ namespace Drawing.Buttons
         [SerializeField] private Sprite pencilSprite;
         [SerializeField] private CircleCollider2D cursorCollider;
         [SerializeField] private LineManager lineManager;
+        [SerializeField] private Image selectedButtonImage;
 
         private Image _buttonImage;
         private Color normalColor;
@@ -130,6 +131,10 @@ namespace Drawing.Buttons
         {
             if (_buttonImage == null) return;
             _buttonImage.color = isSelected ? selectedColor : normalColor;
+            if (selectedButtonImage != null)
+            {
+                selectedButtonImage.enabled = isSelected;
+            }
         }
 
         // Add this new method to EraserButton.cs

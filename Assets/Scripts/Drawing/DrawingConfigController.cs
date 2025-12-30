@@ -221,5 +221,15 @@ namespace Drawing
         {
             _eraserActive = false;
         }
+
+        public int FinishLineInkCost()
+        {
+            if (_currentButton != null)
+            {
+                return _currentButton.FinishLineCost;
+            }
+
+            return 1;
+        }
     }
 }

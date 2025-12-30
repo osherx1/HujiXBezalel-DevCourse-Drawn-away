@@ -22,11 +22,17 @@ namespace Drawing
 
         [Header("Visual Feedback State")] [SerializeField]
         private Color selectedColor = Color.green;
-
+        [SerializeField] private Image markingToolImage;
+        
+        [Header("Fill Capacity Settings")]
         [SerializeField] private int maxFillAmount = 1000;
-        [SerializeField] private ResourceBarTracker previewSelectToolBar;
+        [SerializeField] private int finishLineCost = 1;
         [SerializeField] private ResourceBarTracker resourceBarTracker;
-        [SerializeField] private GameObject previewSelectToolIcon;
+
+        [Header("Preview UI References")]
+        [SerializeField] private ResourceBarTracker previewSelectedToolBar;
+        [SerializeField] private GameObject previewSelectedToolIcon;
+
         //[SerializeField] private UIVisualFeedback feedbackEffects;
 
         private LineSettings _valuesToApply;
@@ -37,6 +43,7 @@ namespace Drawing
         
         public event Action<int,int, int> OnInkChanged;
         public int CurrentInk => _currentFillAmount;
+        public int FinishLineCost => finishLineCost;
         public int MaxInk => maxFillAmount;
         
 
@@ -67,9 +74,9 @@ namespace Drawing
             }
 
       
-            if(previewSelectToolIcon != null)
+            if(previewSelectedToolIcon != null)
             {
-                previewSelectToolIcon.SetActive(false);
+                previewSelectedToolIcon.SetActive(false);
             }
 
             InitializeFromCollection();
@@ -77,12 +84,17 @@ namespace Drawing
 
         private void Start()
         {
-            if (previewSelectToolBar != null)
+            if (previewSelectedToolBar != null)
             {
-                previewSelectToolBar.ChangeMaxAmountTo(maxFillAmount, false);
-                previewSelectToolBar.ChangeResourceByAmount(_currentFillAmount, false);
+                previewSelectedToolBar.ChangeMaxAmountTo(maxFillAmount, false);
+                previewSelectedToolBar.ChangeResourceByAmount(_currentFillAmount, false);
                 //selectToolBar.ResetWithoutAnimation(_currentFillAmount, maxFillAmount, 1000);
-                previewSelectToolBar.SetBarVisibility(false);
+                previewSelectedToolBar.SetBarVisibility(false);
+            }
+
+            if (markingToolImage != null)
+            {
+                markingToolImage.enabled = false;
             }
         }
 
@@ -216,14 +228,18 @@ namespace Drawing
                 _targetButtonImage.color = isSelected ? selectedColor : _normalColor;
             }
 
-            if (previewSelectToolBar != null)
+            if (previewSelectedToolBar != null)
             {
-                previewSelectToolBar.SetBarVisibility(isSelected);
+                previewSelectedToolBar.SetBarVisibility(isSelected);
             }
 
-            if (previewSelectToolIcon != null)
+            if (previewSelectedToolIcon != null)
             { 
-                previewSelectToolIcon.SetActive(isSelected);
+                previewSelectedToolIcon.SetActive(isSelected);
+            }
+            if(markingToolImage != null)
+            {
+                markingToolImage.enabled = isSelected;
             }
             /*if(feedbackEffects!= null)
             {
@@ -239,10 +255,14 @@ namespace Drawing
             var controller = DrawingConfigController.Instance;
             controller.SetLineSetting(_valuesToApply);
             controller.SetButton(this);
-            if (previewSelectToolBar != null)
+            if (previewSelectedToolBar != null)
             {
-                previewSelectToolBar.SetBarVisibility(true);
-                previewSelectToolBar.ChangeResourceByAmount(0, false);
+                previewSelectedToolBar.SetBarVisibility(true);
+                previewSelectedToolBar.ChangeResourceByAmount(0, false);
+            }
+            if(markingToolImage != null)
+            {
+                markingToolImage.enabled = true;
             }
         }
 
@@ -262,8 +282,8 @@ namespace Drawing
             if (resourceBarTracker != null)
                 resourceBarTracker.ChangeResourceByAmount(delta, animatePopBar);
                 
-            if (previewSelectToolBar != null)
-                previewSelectToolBar.ChangeResourceByAmount(delta, animateSelectBar);
+            if (previewSelectedToolBar != null)
+                previewSelectedToolBar.ChangeResourceByAmount(delta, animateSelectBar);
             //TriggerJuice(delta);
         }
 

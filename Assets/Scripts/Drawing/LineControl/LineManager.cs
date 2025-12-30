@@ -414,12 +414,13 @@ namespace Drawing.LineControl
                     releaseEffect.Play();
                 }
 
-                if (!DrawingConfigController.Instance.TryConsumeInk(1f))
+                int finishInkCost = DrawingConfigController.Instance.FinishLineInkCost();
+                if (!DrawingConfigController.Instance.TryConsumeInk(finishInkCost))
                 {
                     DrawingConfigController.Instance.ResetInk();
 
                 }
-                currentLine.AddInkCost(1f);
+                currentLine.AddInkCost(finishInkCost);
                 
 
             }
