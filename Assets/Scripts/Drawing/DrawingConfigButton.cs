@@ -5,6 +5,7 @@ using Drawing.LineControl;
 using Drawing.Managers;
 using Drawing.Managers.Core.Managers;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Utilities.UI;
 
@@ -15,23 +16,29 @@ namespace Drawing
         [Header("UI References")] [SerializeField]
         private Button targetButton;
 
-        [Header("Values to Apply")] [SerializeField]
-        private LineSettingsCollection lineSettingsCollection;
+        [FormerlySerializedAs("lineSettingsCollection")] [Header("Values to Apply")] [SerializeField]
+        private LineSettingsCollection toolSettingsDatabase;
 
-        [SerializeField] private string settingID = "Default";
+        [FormerlySerializedAs("settingID")] [SerializeField] private string toolID = "Default";
 
         [Header("Visual Feedback State")] [SerializeField]
         private Color selectedColor = Color.green;
-        [SerializeField] private Image markingToolImage;
+        [FormerlySerializedAs("markingToolImage")] [SerializeField] private Image selectionOverlayIcon;
         
+        [FormerlySerializedAs("maxFillAmount")]
         [Header("Fill Capacity Settings")]
-        [SerializeField] private int maxFillAmount = 1000;
+        [SerializeField] private int maxInkCapacity = 1000;
         [SerializeField] private int finishLineCost = 1;
-        [SerializeField] private ResourceBarTracker resourceBarTracker;
+        [Header("Player Overhead UI (Pop-up)")]
+        [Tooltip("The bar that appears above the player head along with other tools")]
+        [FormerlySerializedAs("resourceBarTracker")] [SerializeField] private ResourceBarTracker overheadResourceBar;
 
-        [Header("Preview UI References")]
-        [SerializeField] private ResourceBarTracker previewSelectedToolBar;
-        [SerializeField] private GameObject previewSelectedToolIcon;
+        [FormerlySerializedAs("previewSelectedToolBar")]
+        [Header("UI (Side Panel)")]
+        [Tooltip("The bar in the side panel showing the active tool's ink")]
+        [SerializeField] private ResourceBarTracker activeToolBar;
+        [Tooltip("The icon in the side panel for the active tool")]
+        [FormerlySerializedAs("previewSelectedToolIcon")] [SerializeField] private GameObject activeToolIcon;
 
         //[SerializeField] private UIVisualFeedback feedbackEffects;
 
@@ -39,12 +46,12 @@ namespace Drawing
         private Color _normalColor;
         private Image _targetButtonImage;
         private bool _isSelected = false;
-        private int _currentFillAmount;
+        private int _currentInkAmount;
         
         public event Action<int,int, int> OnInkChanged;
-        public int CurrentInk => _currentFillAmount;
+        public int CurrentInk => _currentInkAmount;
         public int FinishLineCost => finishLineCost;
-        public int MaxInk => maxFillAmount;
+        public int MaxInk => maxInkCapacity;
         
 
 
@@ -65,18 +72,18 @@ namespace Drawing
                 _normalColor = _targetButtonImage.color;
             }
 
-            _currentFillAmount = maxFillAmount;
+            _currentInkAmount = maxInkCapacity;
 
-            if (resourceBarTracker != null)
+            if (overheadResourceBar != null)
             {
-                resourceBarTracker.ChangeMaxAmountTo(maxFillAmount);
-                resourceBarTracker.ChangeResourceByAmount(_currentFillAmount);
+                overheadResourceBar.ChangeMaxAmountTo(maxInkCapacity);
+                overheadResourceBar.ChangeResourceByAmount(_currentInkAmount);
             }
 
       
-            if(previewSelectedToolIcon != null)
+            if(activeToolIcon != null)
             {
-                previewSelectedToolIcon.SetActive(false);
+                activeToolIcon.SetActive(false);
             }
 
             InitializeFromCollection();
@@ -84,30 +91,30 @@ namespace Drawing
 
         private void Start()
         {
-            if (previewSelectedToolBar != null)
+            if (activeToolBar != null)
             {
-                previewSelectedToolBar.ChangeMaxAmountTo(maxFillAmount, false);
-                previewSelectedToolBar.ChangeResourceByAmount(_currentFillAmount, false);
+                activeToolBar.ChangeMaxAmountTo(maxInkCapacity, false);
+                activeToolBar.ChangeResourceByAmount(_currentInkAmount, false);
                 //selectToolBar.ResetWithoutAnimation(_currentFillAmount, maxFillAmount, 1000);
-                previewSelectedToolBar.SetBarVisibility(false);
+                activeToolBar.SetBarVisibility(false);
             }
 
-            if (markingToolImage != null)
+            if (selectionOverlayIcon != null)
             {
-                markingToolImage.enabled = false;
+                selectionOverlayIcon.enabled = false;
             }
         }
 
         private void InitializeFromCollection()
         {
-            LineSettings settings = lineSettingsCollection.GetSettingsByID(settingID);
+            LineSettings settings = toolSettingsDatabase.GetSettingsByID(toolID);
             if (settings != null)
             {
                 _valuesToApply = settings;
             }
             else
             {
-                Debug.LogWarningFormat("Setting '{0}' does not exist.", settingID);
+                Debug.LogWarningFormat("Setting '{0}' does not exist.", toolID);
             }
         }
 
@@ -150,7 +157,7 @@ namespace Drawing
 
         private void HandleRefundInk(string lineName, int amount)
         {
-            if (lineName != settingID) return;
+            if (lineName != toolID) return;
             RefundInk(amount);
         }
 
@@ -158,11 +165,11 @@ namespace Drawing
         {
             
             //TODO - Maybe use > on the amount of ink
-            if (_currentFillAmount >= amount)
+            if (_currentInkAmount >= amount)
             {
                 if (amount != 0)
                 {
-                    _currentFillAmount -= (int)amount;
+                    _currentInkAmount -= (int)amount;
                     NotifyInkChanged(-(int) amount, true, _isSelected);
                 }
 
@@ -174,8 +181,8 @@ namespace Drawing
 
         public void ResetInk()
         {
-            var tempAmount = _currentFillAmount;
-            _currentFillAmount = 0;
+            var tempAmount = _currentInkAmount;
+            _currentInkAmount = 0;
             NotifyInkChanged(-tempAmount, true, _isSelected);
 
         }
@@ -194,7 +201,7 @@ namespace Drawing
 
         public void RefundInk(float amount)
         {
-            _currentFillAmount = Mathf.Clamp(_currentFillAmount + (int)amount, 0, maxFillAmount);
+            _currentInkAmount = Mathf.Clamp(_currentInkAmount + (int)amount, 0, maxInkCapacity);
 
             NotifyInkChanged((int) amount,true, _isSelected);
  
@@ -228,18 +235,18 @@ namespace Drawing
                 _targetButtonImage.color = isSelected ? selectedColor : _normalColor;
             }
 
-            if (previewSelectedToolBar != null)
+            if (activeToolBar != null)
             {
-                previewSelectedToolBar.SetBarVisibility(isSelected);
+                activeToolBar.SetBarVisibility(isSelected);
             }
 
-            if (previewSelectedToolIcon != null)
+            if (activeToolIcon != null)
             { 
-                previewSelectedToolIcon.SetActive(isSelected);
+                activeToolIcon.SetActive(isSelected);
             }
-            if(markingToolImage != null)
+            if(selectionOverlayIcon != null)
             {
-                markingToolImage.enabled = isSelected;
+                selectionOverlayIcon.enabled = isSelected;
             }
             /*if(feedbackEffects!= null)
             {
@@ -255,14 +262,14 @@ namespace Drawing
             var controller = DrawingConfigController.Instance;
             controller.SetLineSetting(_valuesToApply);
             controller.SetButton(this);
-            if (previewSelectedToolBar != null)
+            if (activeToolBar != null)
             {
-                previewSelectedToolBar.SetBarVisibility(true);
-                previewSelectedToolBar.ChangeResourceByAmount(0, false);
+                activeToolBar.SetBarVisibility(true);
+                activeToolBar.ChangeResourceByAmount(0, false);
             }
-            if(markingToolImage != null)
+            if(selectionOverlayIcon != null)
             {
-                markingToolImage.enabled = true;
+                selectionOverlayIcon.enabled = true;
             }
         }
 
@@ -279,11 +286,11 @@ namespace Drawing
         {
             //OnInkChanged?.Invoke(delta, _currentFillAmount, maxFillAmount);
             
-            if (resourceBarTracker != null)
-                resourceBarTracker.ChangeResourceByAmount(delta, animatePopBar);
+            if (overheadResourceBar != null)
+                overheadResourceBar.ChangeResourceByAmount(delta, animatePopBar);
                 
-            if (previewSelectedToolBar != null)
-                previewSelectedToolBar.ChangeResourceByAmount(delta, animateSelectBar);
+            if (activeToolBar != null)
+                activeToolBar.ChangeResourceByAmount(delta, animateSelectBar);
             //TriggerJuice(delta);
         }
 

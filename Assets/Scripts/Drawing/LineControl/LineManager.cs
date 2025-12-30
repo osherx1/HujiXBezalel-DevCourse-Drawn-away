@@ -92,6 +92,7 @@ namespace Drawing.LineControl
         [Tooltip("Particle system to play when the line is finished.")]
         [SerializeField]
         private ParticleSystem releaseEffect;
+        [SerializeField]private ParticleSystem drawEffect;
 
         private Line currentLine;
         private bool isDrawing;
@@ -229,6 +230,7 @@ namespace Drawing.LineControl
                 if (pressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
+                    UpdateDrawEffectPos(wp);
                     if (IsBlocked(wp))
                     {
                         FinishLine(wp);
@@ -265,7 +267,7 @@ namespace Drawing.LineControl
                 if (mouse.leftButton.isPressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
-
+                    UpdateDrawEffectPos(wp);
                     // Prevent drawing over existing finalized lines
                     if (IsBlocked(wp))
                     {
@@ -305,7 +307,7 @@ namespace Drawing.LineControl
                 if (primary.press.isPressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
-
+                    UpdateDrawEffectPos(wp);
                     // Prevent drawing over existing finalized lines
                     if (IsBlocked(wp))
                     {
@@ -380,6 +382,11 @@ namespace Drawing.LineControl
             ln.InitializeSound(conf.collisionSound, conf.baseVolume, conf.useCameraShake);
 
             currentLine = ln;
+            if (drawEffect != null)
+            {
+                drawEffect.transform.position = worldPos;
+                drawEffect.Play();
+            }
             TryAddPoint(worldPos);
             isDrawing = true;
             //currentLine.AddWorldPoint(worldPos);
@@ -391,6 +398,11 @@ namespace Drawing.LineControl
             {
                 return;
             }
+            if (drawEffect != null)
+            {
+                drawEffect.Stop();
+            }
+            
 
             var conf = DrawingConfigController.Instance.currentSettings;
             isDrawing = false;
@@ -694,6 +706,13 @@ namespace Drawing.LineControl
                 FinishLine(worldPos);
             }
         }
+        void UpdateDrawEffectPos(Vector2 pos)
+        {
+            if (drawEffect != null)
+            {
+                drawEffect.transform.position = pos;
+            }
+        }
     }
 
     public enum DrawAreaShape
@@ -701,4 +720,5 @@ namespace Drawing.LineControl
         Circle,
         Rectangle
     }
+  
 }
