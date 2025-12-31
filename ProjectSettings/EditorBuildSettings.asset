@@ -29,6 +29,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level-4.unity
     guid: b835281e010f2e942a767ff8814bdb32
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Wood.unity
+    guid: d10a8a09430302842a4db67c38ccef47
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Iron.unity
+    guid: f7aca75188e935647aa8f8b80737bc27
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Cloud.unity
+    guid: e961ea0ccc7daca4f8161a1185885b3b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
