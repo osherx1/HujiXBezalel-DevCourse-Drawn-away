@@ -26,6 +26,18 @@ public class characterMovement : MonoBehaviour
     [Tooltip("When false, the charcter will skip acceleration and deceleration and instantly move and stop")] public bool useAcceleration;
     public bool itsTheIntro = true;
 
+    [Header("Push Reduction")]
+    [Tooltip("If true, uses a Tag check (recommended if floor shares the same layer).")]
+    [SerializeField] private bool usePushReductionTag = true;
+
+    [Tooltip("Tag (e.g., 'Line') that should reduce the player's push strength while colliding.")]
+    [SerializeField] private string pushReductionTag = "Line";
+
+    [Tooltip("Layers (optional) that should reduce the player's push strength while colliding when 'Use Push Reduction Tag' is false.")]
+    [SerializeField] private LayerMask pushReductionLayers;
+    [Tooltip("Multiplier applied to target speed while colliding with Push Reduction Layers. 0.5 = 50% speed.")]
+    [SerializeField, Range(0.05f, 1f)] private float pushReductionSpeedMultiplier = 0.6f;
+
     [Header("Calculations")]
     public float directionX;
     private Vector2 desiredVelocity;
@@ -38,6 +50,8 @@ public class characterMovement : MonoBehaviour
     [Header("Current State")]
     public bool onGround;
     public bool pressingKey;
+
+    private int _pushContacts;
 
     private void Awake()
     {
@@ -86,8 +100,50 @@ public class characterMovement : MonoBehaviour
 
         //Calculate's the character's desired velocity - which is the direction you are facing, multiplied by the character's maximum speed
         //Friction is not used in this game
-        desiredVelocity = new Vector2(directionX, 0f) * Mathf.Max(maxSpeed - friction, 0f);
+        float targetSpeed = Mathf.Max(maxSpeed - friction, 0f);
+        if (_pushContacts > 0)
+        {
+            targetSpeed *= pushReductionSpeedMultiplier;
+        }
 
+        desiredVelocity = new Vector2(directionX, 0f) * targetSpeed;
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (ShouldApplyPushReduction(collision.collider))
+        {
+            _pushContacts++;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (ShouldApplyPushReduction(collision.collider))
+        {
+            _pushContacts = Mathf.Max(0, _pushContacts - 1);
+        }
+    }
+
+    private bool ShouldApplyPushReduction(Collider2D col)
+    {
+        if (col == null)
+        {
+            return false;
+        }
+
+        if (usePushReductionTag)
+        {
+            return !string.IsNullOrWhiteSpace(pushReductionTag) && col.CompareTag(pushReductionTag);
+        }
+
+        return IsInLayerMask(col.gameObject.layer, pushReductionLayers);
+    }
+
+    private static bool IsInLayerMask(int layer, LayerMask mask)
+    {
+        return (mask.value & (1 << layer)) != 0;
     }
 
     private void FixedUpdate()

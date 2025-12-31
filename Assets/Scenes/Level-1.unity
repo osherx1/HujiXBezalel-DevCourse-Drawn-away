@@ -427,6 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
+  pointGizmoRadius: 0.15
   waitForPlayerDistance: 0
   requiredPlayerDistance: 30
   onArriveTrigger: Walk
@@ -555,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
+  pointGizmoRadius: 0.15
   waitForPlayerDistance: 0
   requiredPlayerDistance: 20
   onArriveTrigger: 
@@ -756,6 +758,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1844366054}
     m_Modifications:
+    - target: {fileID: 1150787518092409315, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
+      propertyPath: pushReductionLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1185081031527145602, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: respawnPoint
       value: 
@@ -1059,6 +1065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
+  pointGizmoRadius: 0.15
   waitForPlayerDistance: 0
   requiredPlayerDistance: 3
   onArriveTrigger: 
@@ -1113,6 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
+  pointGizmoRadius: 0.15
   waitForPlayerDistance: 1
   requiredPlayerDistance: 30
   onArriveTrigger: 
@@ -2718,6 +2726,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 927813665318117505, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4267028182877191557, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: m_Name
       value: BrushPickup
