@@ -1,4 +1,4 @@
-﻿Shader "Custom/Cloud_DomainWarp_LineRenderer"
+﻿Shader "Custom/CloudShader"
 {
     Properties
     {

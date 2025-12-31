@@ -63,58 +63,6 @@ namespace Drawing
 
         }
 
-        // --- SETTERS WITH LOGIC ---
-
-        public void SetColor(Gradient newColor, bool overrideValue = false)
-        {
-            currentSettings.lineColor = overrideValue ? newColor : defaultSettings.lineColor;
-            //LogStateChange("Color", overrideValue, currentSettings.lineColor);
-        }
-
-        public void SetMassMult(float massMult, bool overrideValue = false)
-        {
-            currentSettings.massMult = overrideValue ? massMult : defaultSettings.massMult;
-            //LogStateChange("Color", overrideValue, currentSettings.lineColor);
-        }
-
-        public void SetMaterial(Material material, bool applyMaterial)
-        {
-            currentSettings.material = applyMaterial ? material : defaultSettings.material;
-        }
-
-        public void SetWidth(float newWidth, bool overrideValue = false)
-        {
-            currentSettings.lineWidth = overrideValue ? newWidth : defaultSettings.lineWidth;
-            LogStateChange("Width", overrideValue, currentSettings.lineWidth);
-        }
-
-        public void SetUsePhysics(bool usePhysics, bool overrideValue = false)
-        {
-            currentSettings.usePhysics = overrideValue ? usePhysics : defaultSettings.usePhysics;
-            LogStateChange("UsePhysics", overrideValue, currentSettings.usePhysics);
-        }
-
-        public void SetPhysicsMaterial(PhysicsMaterial2D newMat, bool overrideValue = false)
-        {
-            currentSettings.physicsMaterial = overrideValue ? newMat : defaultSettings.physicsMaterial;
-            string matName = currentSettings.physicsMaterial != null ? currentSettings.physicsMaterial.name : "None";
-            LogStateChange("PhysicsMaterial", overrideValue, matName);
-        }
-
-        public void SetGravity(float scale, bool overrideValue = false)
-        {
-            if (overrideValue)
-            {
-                currentSettings.gravityScaleOverride = scale;
-            }
-            else
-            {
-                currentSettings.gravityScaleOverride = defaultSettings.gravityScaleOverride;
-            }
-
-            LogStateChange("Gravity", overrideValue, currentSettings.gravityScaleOverride);
-        }
-
         public void SetButton(DrawingConfigButton drawingConfigButton)
         {
             _currentButton = drawingConfigButton;
@@ -147,25 +95,7 @@ namespace Drawing
             Log($"{settingName} -> {status}. New Value: <b>{value}</b>");
         }
 
-
-        public void SetCapVertices(int endCapVertices, bool overrideValue = false)
-        {
-            currentSettings.endCapVertices = overrideValue ? endCapVertices : defaultSettings.endCapVertices;
-        }
-
-        public void SetCornerVertices(int cornerVertices, bool overrideValue = false)
-        {
-            currentSettings.cornerVertices = overrideValue ? cornerVertices : defaultSettings.cornerVertices;
-        }
-
-        public void SetSoundSettings(GameSoundsSo.AudioType drawSound,
-            GameSoundsSo.AudioType collisionSound,
-            GameSoundsSo.AudioType releaseSound)
-        {
-            currentSettings.drawSound = drawSound;
-            currentSettings.collisionSound = collisionSound;
-            currentSettings.releaseSound = releaseSound;
-        }
+        
 
         public void SetLineSetting(LineSettings valuesToApply)
         {
