@@ -3,6 +3,9 @@ using UnityEngine.Serialization;
 
 public class NpcWaypoint : MonoBehaviour
 {
+    [Header("Gizmos")]
+    [SerializeField, Min(0.01f)] private float pointGizmoRadius = 0.15f;
+
     [Header("Behavior")]
     [Tooltip("If enabled, NPC will wait at this waypoint until the player is within the distance below.")]
     [SerializeField] private bool waitForPlayerDistance = true;
@@ -27,6 +30,12 @@ public class NpcWaypoint : MonoBehaviour
     public string OnArriveTrigger => onArriveTrigger;
     public string OnDepartTrigger => onDepartTrigger;
     public bool DeactivateNpcOnArrive => deactivateNpcOnArrive;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawSphere(transform.position, pointGizmoRadius);
+    }
 
     private void OnDrawGizmosSelected()
     {
