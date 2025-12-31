@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6678110300232647552, guid: 4ef7d1920db0b42f0b25791d64c83422, type: 3}
       propertyPath: nextSceneName
-      value: Tutorial Cloud
+      value: Level-3
       objectReference: {fileID: 0}
     - target: {fileID: 7233379466432317181, guid: 4ef7d1920db0b42f0b25791d64c83422, type: 3}
       propertyPath: m_LocalPosition.y
