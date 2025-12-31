@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4193962718934532835}
   - component: {fileID: 8541051740542230168}
   - component: {fileID: 2180012859660155668}
-  - component: {fileID: 1928965258730668113}
   m_Layer: 6
   m_Name: Cloud
   m_TagString: Line
@@ -336,15 +335,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &1928965258730668113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5247383489900493533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c635b92572b040118b28af4b2e120d99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Prefabs.PhysicsObjects.Cloud
