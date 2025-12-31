@@ -815,7 +815,7 @@ Transform:
   m_GameObject: {fileID: 463643153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -57.751347, y: -39.508743, z: -10}
+  m_LocalPosition: {x: -57.895203, y: -39.508743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -915,8 +915,8 @@ Transform:
   m_GameObject: {fileID: 603216687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 75.6, y: 5.3, z: 0}
-  m_LocalScale: {x: 4.72, y: 3.0030997, z: 5.6043715}
+  m_LocalPosition: {x: 76.7, y: 5.3, z: 0}
+  m_LocalScale: {x: 3.71, y: 2.3604875, z: 4.4051313}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1718960360}
@@ -969,7 +969,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -2.247614}
+  m_Offset: {x: -0.39079094, y: 1.3984854}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5007803, y: 0.0005370683}
@@ -979,7 +979,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 126.14001, y: 25.007248}
+  m_Size: {x: 15.006712, y: 3.7774835}
   m_EdgeRadius: 0
 --- !u!212 &603216691
 SpriteRenderer:
@@ -1741,7 +1741,7 @@ Transform:
   m_GameObject: {fileID: 960488332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.751347, y: -39.508743, z: -10}
+  m_LocalPosition: {x: -57.895203, y: -39.508743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2401,19 +2401,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 942878076644262431, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.72
+      value: 3.67
       objectReference: {fileID: 0}
     - target: {fileID: 942878076644262431, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.0030997
+      value: 2.3350375
       objectReference: {fileID: 0}
     - target: {fileID: 942878076644262431, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.6043715
+      value: 4.3576365
       objectReference: {fileID: 0}
     - target: {fileID: 942878076644262431, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.3
+      value: 24.9
       objectReference: {fileID: 0}
     - target: {fileID: 942878076644262431, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2421,7 +2421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 942878076644262431, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2372503303944885450, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_Name
@@ -2511,6 +2511,22 @@ PrefabInstance:
       propertyPath: pressAnyButtonObject
       value: 
       objectReference: {fileID: 1819927420}
+    - target: {fileID: 8672454566841044725, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      propertyPath: m_Size.x
+      value: 14.494911
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672454566841044725, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      propertyPath: m_Size.y
+      value: 4.44946
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672454566841044725, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.10767245
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672454566841044725, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.8607421
+      objectReference: {fileID: 0}
     - target: {fileID: 8672454566841044725, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5007803
