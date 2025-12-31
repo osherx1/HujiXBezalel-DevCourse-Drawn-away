@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4113205342797784675}
   - component: {fileID: 3274462089396258265}
   m_Layer: 5
-  m_Name: PreviewPanel
+  m_Name: SidePanel-PreviewCurrentTool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1038,7 +1038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7604463494955732070}
   m_Layer: 0
-  m_Name: UI-CurrentMaterailPanel
+  m_Name: UI-ToolsBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1532,7 +1532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1364559023831249310, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: m_Name
-      value: UIPlayer (1)
+      value: PlayerPopBar
       objectReference: {fileID: 0}
     - target: {fileID: 1391415672638219216, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: m_FillMethod
