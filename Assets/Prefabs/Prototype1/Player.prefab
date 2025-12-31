@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::characterGround
   groundLength: 0.95
-  groundSearchRange: 1
+  groundSearchRange: 2
   colliderOffset: {x: 0, y: 0, z: 0}
   groundLayer:
     serializedVersion: 2
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::characterMovement
   moveLimit: {fileID: 7387025864371424899}
   maxSpeed: 30
-  maxAcceleration: 28.1
+  maxAcceleration: 0
   maxDecceleration: 52
   maxTurnSpeed: 80
   maxAirAcceleration: 51.5
