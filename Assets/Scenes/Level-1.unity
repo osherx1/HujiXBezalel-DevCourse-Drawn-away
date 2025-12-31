@@ -991,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6679689902953280534, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7647147680881320855, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: target
@@ -2150,6 +2150,10 @@ PrefabInstance:
       propertyPath: nextSceneName
       value: Tutorial Iron
       objectReference: {fileID: 0}
+    - target: {fileID: 5122996975523229000, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6799563523954816650, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2733,6 +2737,10 @@ PrefabInstance:
     - target: {fileID: 4267028182877191557, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: m_Name
       value: BrushPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267028182877191557, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5509103912426254922, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: m_LocalScale.x
