@@ -52,6 +52,13 @@ public class BrushPickupToUI : MonoBehaviour
     [SerializeField] private bool openMenuOnPickup = true;
     [SerializeField] private bool closeMenuOnFinish;
 
+    [Header("Input Lock (E)")]
+    [Tooltip("If true, temporarily disables MenuInputListener (E toggle) during the pickup sequence.")]
+    [SerializeField] private bool disableMenuToggleWhileLocked = true;
+
+    [Tooltip("Optional: assign the MenuInputListener that listens to E. If empty, will try to find one.")]
+    [SerializeField] private MenuInputListener menuInputListener;
+
     [Header("World Visuals")]
     [SerializeField] private SpriteRenderer worldSprite;
     [Tooltip("Optional: glow object around the pickup (will be disabled on pickup).")]
@@ -105,6 +112,8 @@ public class BrushPickupToUI : MonoBehaviour
     private bool _wasMovementEnabled;
     private bool _wasJumpEnabled;
     private bool _bodyWasSimulated;
+
+    private bool _menuInputWasEnabled;
 
     private Coroutine _stopInWorldSparkCoroutine;
 
@@ -184,6 +193,11 @@ public class BrushPickupToUI : MonoBehaviour
             menuController = FindObjectOfType<MenuController>(true);
         }
 
+        if (menuInputListener == null)
+        {
+            menuInputListener = FindObjectOfType<MenuInputListener>(true);
+        }
+
         _pickedUp = true;
         StartCoroutine(PickupRoutine());
     }
@@ -204,6 +218,8 @@ public class BrushPickupToUI : MonoBehaviour
         onPickupStarted?.Invoke();
 
         PrepareSparkForSequence();
+
+        DisableMenuInputIfNeeded();
 
         if (movementController != null)
         {
@@ -442,9 +458,54 @@ public class BrushPickupToUI : MonoBehaviour
             menuController.CloseMenu();
         }
 
+        RestoreMenuInputIfNeeded();
+
         onPickupFinished?.Invoke();
 
         gameObject.SetActive(false);
+    }
+
+    private void DisableMenuInputIfNeeded()
+    {
+        if (!disableMenuToggleWhileLocked)
+        {
+            return;
+        }
+
+        if (menuInputListener == null)
+        {
+            menuInputListener = FindObjectOfType<MenuInputListener>(true);
+        }
+
+        if (menuInputListener == null)
+        {
+            return;
+        }
+
+        _menuInputWasEnabled = menuInputListener.enabled;
+        menuInputListener.enabled = false;
+    }
+
+    private void RestoreMenuInputIfNeeded()
+    {
+        if (!disableMenuToggleWhileLocked)
+        {
+            return;
+        }
+
+        if (menuInputListener == null)
+        {
+            return;
+        }
+
+        menuInputListener.enabled = _menuInputWasEnabled;
+
+        // If the menu is hold-to-open, we may have missed the "canceled" event while disabled.
+        // Sync so that if E is not currently held, the menu closes immediately.
+        if (_menuInputWasEnabled)
+        {
+            menuInputListener.SyncMenuToHoldState();
+        }
     }
 
     private void PlaySparkAtUiSlotWorld()

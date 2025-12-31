@@ -694,7 +694,7 @@ Transform:
   m_GameObject: {fileID: 463643153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -57.751347, y: -39.508743, z: -10}
+  m_LocalPosition: {x: -57.895203, y: -39.508743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -879,6 +879,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e7a834c1fb4a1a9c5a9bd7c7c64f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::movementLimiter
+--- !u!114 &638198430 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 670302644726080948, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+  m_PrefabInstance: {fileID: 1710148650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9005a8424d45ca891934dd58923694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drawing.Buttons.MenuInputListener
 --- !u!1 &661200985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6567289553493783045, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
@@ -1326,7 +1337,7 @@ Transform:
   m_GameObject: {fileID: 960488332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.751347, y: -39.508743, z: -10}
+  m_LocalPosition: {x: -57.895203, y: -39.508743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2793,6 +2804,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 636762044}
+    - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
+      propertyPath: menuInputListener
+      value: 
+      objectReference: {fileID: 638198430}
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: sparkEffectPrefab
       value: 

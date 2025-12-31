@@ -13,6 +13,42 @@ namespace Drawing.Buttons
         [Tooltip("If true, the menu opens while holding the button and closes on release. If false, it toggles on press.")]
         [SerializeField] private bool isHoldToOpen = false;
 
+        public bool IsHoldToOpen => isHoldToOpen;
+
+        public bool IsToggleActionPressed
+        {
+            get
+            {
+                if (toggleActionReference == null || toggleActionReference.action == null)
+                {
+                    return false;
+                }
+
+                return toggleActionReference.action.IsPressed();
+            }
+        }
+
+        /// <summary>
+        /// If using Hold-to-open, force the menu state to match the current input (pressed = open, not pressed = closed).
+        /// Useful after temporarily disabling this component (which can miss the canceled event).
+        /// </summary>
+        public void SyncMenuToHoldState()
+        {
+            if (!isHoldToOpen || menuController == null)
+            {
+                return;
+            }
+
+            if (IsToggleActionPressed)
+            {
+                menuController.OpenMenu();
+            }
+            else
+            {
+                menuController.CloseMenu();
+            }
+        }
+
         private void OnEnable()
         {
             if (toggleActionReference != null && toggleActionReference.action != null)
