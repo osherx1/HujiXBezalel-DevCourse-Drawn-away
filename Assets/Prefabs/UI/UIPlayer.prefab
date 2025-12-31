@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 3891734558059116548}
   - component: {fileID: 2537731465897204843}
   - component: {fileID: 520291233878840165}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background Image - Version 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,15 +1431,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 1797128458700285597}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Spring
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Spring
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  markingToolImage: {fileID: 5349571178176450479}
-  maxFillAmount: 100
+  selectionOverlayIcon: {fileID: 5349571178176450479}
+  maxInkCapacity: 100
   finishLineCost: 1
-  resourceBarTracker: {fileID: 1213787480139719928}
-  previewSelectedToolBar: {fileID: 0}
-  previewSelectedToolIcon: {fileID: 0}
+  overheadResourceBar: {fileID: 1213787480139719928}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &4763067406143331773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,15 +1625,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 2748574951730642119}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Balloon
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Balloon
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  markingToolImage: {fileID: 360360649966342390}
-  maxFillAmount: 100
+  selectionOverlayIcon: {fileID: 360360649966342390}
+  maxInkCapacity: 100
   finishLineCost: 1
-  resourceBarTracker: {fileID: 4933759882601234604}
-  previewSelectedToolBar: {fileID: 0}
-  previewSelectedToolIcon: {fileID: 0}
+  overheadResourceBar: {fileID: 4933759882601234604}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &5506293000481891528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2231,15 +2231,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 848874156883074679}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Glue
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Glue
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  markingToolImage: {fileID: 1211960446743930439}
-  maxFillAmount: 100
+  selectionOverlayIcon: {fileID: 1211960446743930439}
+  maxInkCapacity: 100
   finishLineCost: 1
-  resourceBarTracker: {fileID: 6251773380007784144}
-  previewSelectedToolBar: {fileID: 0}
-  previewSelectedToolIcon: {fileID: 0}
+  overheadResourceBar: {fileID: 6251773380007784144}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &6516849649588133383
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2403,7 @@ GameObject:
   - component: {fileID: 6231054655653555260}
   - component: {fileID: 6996721506278475607}
   - component: {fileID: 6435476814596380873}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background Image - Version 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2478,7 +2478,7 @@ GameObject:
   - component: {fileID: 4284096453140805524}
   - component: {fileID: 9081946125945778603}
   - component: {fileID: 4039028413213808947}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DrawimgMaterialsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2563,7 +2563,7 @@ GameObject:
   - component: {fileID: 770774058853549833}
   - component: {fileID: 860309520944532857}
   - component: {fileID: 1789106331839825830}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background Image - Version 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2885,15 +2885,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 3341017586929495122}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Default
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Default
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  markingToolImage: {fileID: 5542785167563591886}
-  maxFillAmount: 100
+  selectionOverlayIcon: {fileID: 5542785167563591886}
+  maxInkCapacity: 100
   finishLineCost: 1
-  resourceBarTracker: {fileID: 1400231678411600040}
-  previewSelectedToolBar: {fileID: 0}
-  previewSelectedToolIcon: {fileID: 0}
+  overheadResourceBar: {fileID: 1400231678411600040}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &7486959050737459639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,15 +3829,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 5467407162658143603}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Iron
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Iron
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  markingToolImage: {fileID: 348267511839869594}
-  maxFillAmount: 100
+  selectionOverlayIcon: {fileID: 348267511839869594}
+  maxInkCapacity: 100
   finishLineCost: 1
-  resourceBarTracker: {fileID: 5223980736726422173}
-  previewSelectedToolBar: {fileID: 0}
-  previewSelectedToolIcon: {fileID: 0}
+  overheadResourceBar: {fileID: 5223980736726422173}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1001 &42822803733667998
 PrefabInstance:
   m_ObjectHideFlags: 0

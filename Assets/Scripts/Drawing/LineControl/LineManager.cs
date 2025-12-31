@@ -5,6 +5,7 @@ using System.Collections;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
 using Drawing.Managers;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.Rendering;
 #if ENABLE_INPUT_SYSTEM
@@ -20,6 +21,8 @@ namespace Drawing.LineControl
     /// </summary>
     public class LineManager : MonoBehaviour
     {
+        public event Action<Line> OnLineStarted;
+        public event Action<Line> OnLineFinished;
         [Header("Appearance")] public float lineWidth = 0.2f;
         public float minDistance = 0.05f;
 
@@ -92,7 +95,8 @@ namespace Drawing.LineControl
         [Tooltip("Particle system to play when the line is finished.")]
         [SerializeField]
         private ParticleSystem releaseEffect;
-        [SerializeField]private ParticleSystem drawEffect;
+
+        [SerializeField] private ParticleSystem drawEffect;
 
         private Line currentLine;
         private bool isDrawing;
@@ -220,6 +224,10 @@ namespace Drawing.LineControl
 
                 if (pressed && !_penPressed)
                 {
+                    if (IsPointerOverUI())
+                    {
+                        return;
+                    }
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
                     StartLine(wp);
                     _penPressed = true;
@@ -230,7 +238,6 @@ namespace Drawing.LineControl
                 if (pressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(penPos));
-                    UpdateDrawEffectPos(wp);
                     if (IsBlocked(wp))
                     {
                         FinishLine(wp);
@@ -238,6 +245,7 @@ namespace Drawing.LineControl
                         // if (logPenDebug) Debug.Log("LineManager: Pen blocked by overlap; finishing line.", this);
                         return;
                     }
+
                     TryAddPoint(wp);
                     //currentLine.AddWorldPoint(wp);
                     return;
@@ -256,9 +264,12 @@ namespace Drawing.LineControl
             // Mouse
             if (mouse != null)
             {
-
                 if (mouse.leftButton.wasPressedThisFrame)
                 {
+                    if (IsPointerOverUI())
+                    {
+                        return;
+                    }
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
                     StartLine(wp);
                     // if (logMouseDebug) Debug.Log("LineManager: Mouse down.", this);
@@ -267,7 +278,6 @@ namespace Drawing.LineControl
                 if (mouse.leftButton.isPressed && currentLine != null)
                 {
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(mouse.position.ReadValue()));
-                    UpdateDrawEffectPos(wp);
                     // Prevent drawing over existing finalized lines
                     if (IsBlocked(wp))
                     {
@@ -297,10 +307,14 @@ namespace Drawing.LineControl
 
                 if (primary.press.wasPressedThisFrame)
                 {
+                    if (IsPointerOverUI(primary.touchId.ReadValue()))
+                    {
+                        return;
+                    }
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
 
                     StartLine(wp);
-                    
+
                     // if (logTouchDebug) Debug.Log("LineManager: Touch down.", this);
                 }
 
@@ -341,8 +355,8 @@ namespace Drawing.LineControl
             }
 
             var drawing = DrawingConfigController.Instance;
-            
-            if (drawing.CheckInk()<=1)
+
+            if (drawing.CheckInk() <= 1)
             {
                 // Not enough ink to start a line
                 Debug.Log("LineManager: Not enough ink to start a new line.");
@@ -376,39 +390,40 @@ namespace Drawing.LineControl
 
             // Initialize so Awake-created components get proper settings
             ln.Initialize(
-                conf.SettingID,conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider, collideWhileDrawing,
+                conf.SettingID, conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider,
+                collideWhileDrawing,
                 colliderSimplifyTolerance, maxColliderPoints,
                 conf.lineColor, conf.material, conf.endCapVertices, conf.cornerVertices, conf.lineTextureMode);
             ln.InitializeSound(conf.collisionSound, conf.baseVolume, conf.useCameraShake);
 
             currentLine = ln;
-            if (drawEffect != null)
-            {
-                drawEffect.transform.position = worldPos;
-                drawEffect.Play();
-            }
+
             TryAddPoint(worldPos);
+
+
             isDrawing = true;
             //currentLine.AddWorldPoint(worldPos);
         }
 
         void FinishLine(Vector2 wp)
         {
+            if (drawEffect != null && drawEffect.isPlaying)
+            {
+                drawEffect.Stop();
+            }
+
             if (currentLine == null)
             {
                 return;
             }
-            if (drawEffect != null)
-            {
-                drawEffect.Stop();
-            }
-            
+
 
             var conf = DrawingConfigController.Instance.currentSettings;
             isDrawing = false;
             // If too short, discard
             if (currentLine.pointsCount < 2)
             {
+                
                 Destroy(currentLine.gameObject);
             }
             else
@@ -430,18 +445,13 @@ namespace Drawing.LineControl
                 if (!DrawingConfigController.Instance.TryConsumeInk(finishInkCost))
                 {
                     DrawingConfigController.Instance.ResetInk();
-
                 }
-                currentLine.AddInkCost(finishInkCost);
-                
 
+                currentLine.AddInkCost(finishInkCost);
             }
 
-            
-            
 
             currentLine = null;
-            
         }
 
         // Compute the overlap radius used to stop drawing when we hit existing lines
@@ -668,7 +678,6 @@ namespace Drawing.LineControl
 
         void TryAddPoint(Vector2 worldPos)
         {
-
             if (currentLine == null) return;
 
             Vector2 lastPointWorld = currentLine.transform.TransformPoint(currentLine.GetLastPoint());
@@ -679,26 +688,34 @@ namespace Drawing.LineControl
             float inkMultiplier =
                 drawingConfigController != null ? drawingConfigController.currentSettings.fillMult : 1f;
             // 2. Ask Controller to consume ink from the Active Button
-            
+
             float ink = (currentLine.LastSegmentLength * inkMultiplier);
             int inkCost;
-             _inkBuffer += ink;
-             if(_inkBuffer>1f)
-             {
-                 inkCost = Mathf.FloorToInt(_inkBuffer);
-                 _inkBuffer =0f;
-             }
-             else
-             {
-                 inkCost = 0;
-             }
-            if ( drawingConfigController.TryConsumeInk(inkCost))
+            _inkBuffer += ink;
+            if (_inkBuffer > 1f)
+            {
+                inkCost = Mathf.FloorToInt(_inkBuffer);
+                _inkBuffer = 0f;
+            }
+            else
+            {
+                inkCost = 0;
+            }
+
+            if (drawingConfigController.TryConsumeInk(inkCost))
             {
                 // Success: Button updated its UI, we update the line
                 currentLine.AddWorldPoint(worldPos);
                 currentLine.AddInkCost(inkCost);
-                    // Debug.Log("LineManager: Consumed " + inkCost + " ink for line segment. Total line length: " +
-                        //        currentLine.LineLength);
+                // Debug.Log("LineManager: Consumed " + inkCost + " ink for line segment. Total line length: " +
+                //        currentLine.LineLength);
+                if (drawEffect != null&& !drawEffect.isPlaying)
+                {
+                    drawEffect.transform.position = worldPos;
+                    drawEffect.Play();
+                }
+                UpdateDrawEffectPos(worldPos);
+     
             }
             else
             {
@@ -706,12 +723,26 @@ namespace Drawing.LineControl
                 FinishLine(worldPos);
             }
         }
+
         void UpdateDrawEffectPos(Vector2 pos)
         {
-            if (drawEffect != null)
+            if (drawEffect != null&& drawEffect.isPlaying)
             {
                 drawEffect.transform.position = pos;
             }
+        }
+        private bool IsPointerOverUI(int pointerId = -1)
+        {
+            if (EventSystem.current == null) return false;
+
+            
+            if (pointerId == -1)
+            {
+                return EventSystem.current.IsPointerOverGameObject();
+            }
+            
+           
+            return EventSystem.current.IsPointerOverGameObject(pointerId);
         }
     }
 
@@ -720,5 +751,4 @@ namespace Drawing.LineControl
         Circle,
         Rectangle
     }
-  
 }

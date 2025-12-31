@@ -27,9 +27,14 @@ namespace Drawing
         public Gradient lineColor;
 
         //[ShowIfNot(nameof(usePrefab))]
-        [Tab("Appearance")] [Range(0.1f, 2f)]
+        [Tab("Appearance")] [Range(0.1f, 5f)]
         // Kept Unity's Range, could use [DynamicSlider] if you want adjustable limits
         public float lineWidth = 0.2f;
+        /*
+        [Tab("Appearance")]
+        [Tooltip("Controls the width of the line along its length.")]
+        public AnimationCurve widthCurve = AnimationCurve.Linear(0, 1, 1, 1);
+        */
 
 
         //[ShowIfNot(nameof(usePrefab))]
@@ -203,6 +208,20 @@ namespace Drawing
                 lineColor.SetKeys(otherSettings.lineColor.colorKeys, otherSettings.lineColor.alphaKeys);
                 lineColor.mode = otherSettings.lineColor.mode;
             }
+            /*if (otherSettings.widthCurve != null)
+            {
+                // Create a new curve using the keys from the other one to avoid reference linking
+                widthCurve = new AnimationCurve(otherSettings.widthCurve.keys);
+                
+                // Copy wrapping mode settings (Loop, PingPong, etc.)
+                widthCurve.preWrapMode = otherSettings.widthCurve.preWrapMode;
+                widthCurve.postWrapMode = otherSettings.widthCurve.postWrapMode;
+            }
+            else
+            {
+                // Reset to default linear if source is null
+                widthCurve = AnimationCurve.Linear(0, 1, 1, 1);
+            }*/
 
             lineTextureMode = otherSettings.lineTextureMode;
         }
