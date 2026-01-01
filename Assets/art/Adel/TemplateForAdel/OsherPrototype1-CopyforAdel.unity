@@ -1899,6 +1899,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4244925534955085057, guid: 498859ead97efd64eb96e0067089367d, type: 3}
   m_PrefabInstance: {fileID: 510394350}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &569757944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6703250321131892297, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_Name
+      value: CFXR4 Sword Trail PLAIN (360 Thin Spiral)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892298, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.906624
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.049792
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703250321131892300, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b987d41506d172419fa18578f6ac380, type: 3}
 --- !u!1001 &636762043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1977,8 +2038,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1470891205735820885, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: toolSettingsDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 1584401163718512303, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: lineSettingsCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
+    - target: {fileID: 2237930631574646350, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: toolSettingsDatabase
       value: 
       objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 2374066183871698081, guid: e8063938d3e8b01438e935e12e803424, type: 3}
@@ -1989,6 +2058,10 @@ PrefabInstance:
       propertyPath: lineroot
       value: 
       objectReference: {fileID: 1361999895}
+    - target: {fileID: 3545638014098864249, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: toolSettingsDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 4025836214667683321, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: lineManager
       value: 
@@ -2001,6 +2074,10 @@ PrefabInstance:
       propertyPath: curserSpriteRenderer
       value: 
       objectReference: {fileID: 719797242}
+    - target: {fileID: 4630521987879741165, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: toolSettingsDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 5944365242924627156, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: slowTimeOnOpen
       value: 1
@@ -2057,6 +2134,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 636762044}
+    - target: {fileID: 8088869714677991546, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: toolSettingsDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fe3d4ff0259ab042bc01c267d6a92b0, type: 2}
     - target: {fileID: 8271085806328521677, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: lineSettingsCollection
       value: 
@@ -5801,3 +5882,4 @@ SceneRoots:
   - {fileID: 723577833}
   - {fileID: 4517901900970037}
   - {fileID: 356168892}
+  - {fileID: 569757944}
