@@ -4934,6 +4934,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 8633899356181122665, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+      propertyPath: maxInkCapacity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8810763853715850543, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_IsActive
       value: 0
