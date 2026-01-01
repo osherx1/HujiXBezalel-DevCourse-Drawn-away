@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
-  pointGizmoRadius: 0.15
+  pointGizmoRadius: 1
   waitForPlayerDistance: 0
   requiredPlayerDistance: 30
   onArriveTrigger: Walk
@@ -442,7 +442,7 @@ Transform:
   m_GameObject: {fileID: 342392848}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.8, y: -4, z: 0}
+  m_LocalPosition: {x: 62.8, y: 2.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
-  pointGizmoRadius: 0.15
+  pointGizmoRadius: 1
   waitForPlayerDistance: 1
   requiredPlayerDistance: 10
   onArriveTrigger: 
@@ -571,7 +571,7 @@ Transform:
   m_GameObject: {fileID: 426195203}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.4, y: -1.4, z: 0}
+  m_LocalPosition: {x: 25.4, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -815,7 +815,7 @@ Transform:
   m_GameObject: {fileID: 463643153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -57.751347, y: -39.508743, z: -10}
+  m_LocalPosition: {x: -57.751183, y: -39.508743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
-  pointGizmoRadius: 0.15
+  pointGizmoRadius: 1
   waitForPlayerDistance: 0
   requiredPlayerDistance: 3
   onArriveTrigger: 
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66eda32582d9dd34bb89b04e1570cfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
-  pointGizmoRadius: 0.15
+  pointGizmoRadius: 1
   waitForPlayerDistance: 1
   requiredPlayerDistance: 30
   onArriveTrigger: 
@@ -1428,7 +1428,7 @@ Transform:
   m_GameObject: {fileID: 807813657}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.7, y: -3.5, z: 0}
+  m_LocalPosition: {x: 54.7, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1745,7 +1745,7 @@ Transform:
   m_GameObject: {fileID: 960488332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.751347, y: -39.508743, z: -10}
+  m_LocalPosition: {x: -57.751183, y: -39.508743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2545,8 +2545,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 30028945517445485, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.08121
+      objectReference: {fileID: 0}
+    - target: {fileID: 30028945517445485, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.64
+      value: 38.0067
       objectReference: {fileID: 0}
     - target: {fileID: 30028945517445485, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2575,14 +2579,6 @@ PrefabInstance:
     - target: {fileID: 942878076644262431, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 30028945517445485, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 17.08121
-      objectReference: {fileID: 0}
-    - target: {fileID: 30028945517445485, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 38.0067
       objectReference: {fileID: 0}
     - target: {fileID: 2372503303944885450, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_Name
@@ -2644,6 +2640,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5553125657098932965, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3356837773014537050, guid: 3073463d8ff68492988444bca962d603, type: 3}
     - target: {fileID: 6599989434727746239, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2705,9 +2705,13 @@ PrefabInstance:
       value: 5.38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: [{fileID: 64585657824118061, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3},
-      {fileID: 68958640631252689, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}]
-    m_AddedGameObjects: [{targetCorrespondingSourceObject: {fileID: 1801125589237986971, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}, insertIndex: -1, addedObject: {fileID: 603216688}}]
+    m_RemovedGameObjects:
+    - {fileID: 64585657824118061, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+    - {fileID: 68958640631252689, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1801125589237986971, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 603216688}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d1fb45df0b78ea4c8633227893320c4, type: 3}
 --- !u!1 &1686575937
