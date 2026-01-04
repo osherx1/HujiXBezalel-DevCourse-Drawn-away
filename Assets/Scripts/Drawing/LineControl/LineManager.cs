@@ -467,6 +467,15 @@ namespace Drawing.LineControl
 
         bool IsBlocked(Vector2 worldPoint)
         {
+            // Some tools (e.g. Glue) should be drawable even on surfaces that normally block drawing.
+            var conf = DrawingConfigController.Instance != null
+                ? DrawingConfigController.Instance.currentSettings
+                : null;
+            if (conf != null && conf.ignoreCantDrawOverLayer)
+            {
+                return false;
+            }
+
             if (cantDrawOverLayer.value == 0)
             {
                 if (!_warnedCantDrawMaskOnce)

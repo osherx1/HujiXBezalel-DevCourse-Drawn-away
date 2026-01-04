@@ -17,6 +17,7 @@ MonoBehaviour:
     settings:
       SettingID: Default
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: 744aeb4530b27b946a10eca28f17e607, type: 3}
       lineColor:
@@ -50,30 +51,6 @@ MonoBehaviour:
         m_NumColorKeys: 5
         m_NumAlphaKeys: 4
       lineWidth: 1
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 2100000, guid: bcf9e67415bcb3c49ae8a276080935d8, type: 2}
       endCapVertices: 0
       cornerVertices: 26
@@ -94,6 +71,7 @@ MonoBehaviour:
     settings:
       SettingID: Spring
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -127,30 +105,6 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       lineWidth: 0.63
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
       endCapVertices: 90
       cornerVertices: 0
@@ -171,6 +125,7 @@ MonoBehaviour:
     settings:
       SettingID: Iron
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -204,30 +159,6 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       lineWidth: 1.05
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
       endCapVertices: 0
       cornerVertices: 0
@@ -248,6 +179,7 @@ MonoBehaviour:
     settings:
       SettingID: Static
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -281,30 +213,6 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       lineWidth: 0.2
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 2100000, guid: 287020c5e8b8f42e4923671f51f9c05a, type: 2}
       endCapVertices: 0
       cornerVertices: 0
@@ -325,6 +233,7 @@ MonoBehaviour:
     settings:
       SettingID: Ice
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -358,30 +267,6 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       lineWidth: 0.2
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
       endCapVertices: 0
       cornerVertices: 0
@@ -402,6 +287,7 @@ MonoBehaviour:
     settings:
       SettingID: Balloon
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: 36bb7d01be5661b46bcb22d9251bccb9, type: 3}
       lineColor:
@@ -435,30 +321,6 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 4
       lineWidth: 1.248
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 2100000, guid: 8db46a6b21aefd84f9a17d809c06ffad, type: 2}
       endCapVertices: 36
       cornerVertices: 3
@@ -479,6 +341,7 @@ MonoBehaviour:
     settings:
       SettingID: PaintingPencil
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: fb34705c405037c439a3fa7ff13c74ff, type: 3}
       lineColor:
@@ -512,30 +375,6 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       lineWidth: 0.18
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 2100000, guid: 4c2870785ba16439e8487d1f81d9f2ec, type: 2}
       endCapVertices: 90
       cornerVertices: 90
@@ -556,6 +395,7 @@ MonoBehaviour:
     settings:
       SettingID: Glue
       fillMult: 1
+      ignoreCantDrawOverLayer: 1
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: abe1edfebdfcc8a449556c743391f375, type: 3}
       lineColor:
@@ -589,30 +429,6 @@ MonoBehaviour:
         m_NumColorKeys: 3
         m_NumAlphaKeys: 4
       lineWidth: 0.61
-      widthCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
       material: {fileID: 2100000, guid: f69b43fd32440cf4e994f8db39df95c0, type: 2}
       endCapVertices: 7
       cornerVertices: 7

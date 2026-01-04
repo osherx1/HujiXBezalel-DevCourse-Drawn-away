@@ -11,6 +11,12 @@ namespace Drawing
     {
         [HideInInspector]public string SettingID;
         public int fillMult = 1;
+
+
+        // ----------------- TAB: DRAWING -----------------
+        [Tab("Drawing")]
+        [Tooltip("If true, this tool ignores LineManager.cantDrawOverLayer while drawing (useful for Glue so it can be drawn on 'non-drawable' surfaces).")]
+        public bool ignoreCantDrawOverLayer = false;
         
         
         [Tooltip("If true, use a specific Line prefab. If false, configure manually.")]
@@ -135,6 +141,7 @@ namespace Drawing
             linePrefab = otherSettings.linePrefab;
             fillMult = otherSettings.fillMult;
             SettingID = otherSettings.SettingID;
+            ignoreCantDrawOverLayer = otherSettings.ignoreCantDrawOverLayer;
             SetAppearance(otherSettings);
             SetPhysics(otherSettings);
             SetSound(otherSettings);
