@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3541709334774499552, guid: 49473ff59fc22423ca83fcc46c0b79af, type: 3}
+  m_Sprite: {fileID: 7477851407203662870, guid: 775f2373939134c8fb45783e683f0b24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -270,11 +270,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 0}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Spring
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Spring
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  maxFillAmount: 1000
-  resourceBarTracker: {fileID: 0}
+  selectionOverlayIcon: {fileID: 0}
+  maxInkCapacity: 1000
+  finishLineCost: 1
+  overheadResourceBar: {fileID: 0}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &1486887976892425613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,7 +1051,9 @@ MonoBehaviour:
   pencilSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   cursorCollider: {fileID: 0}
   lineManager: {fileID: 0}
+  selectedButtonImage: {fileID: 0}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
+  stayActiveOnDisable: 1
 --- !u!1 &4007877053995441679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,11 +1188,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 0}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Balloon
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Balloon
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  maxFillAmount: 1000
-  resourceBarTracker: {fileID: 0}
+  selectionOverlayIcon: {fileID: 0}
+  maxInkCapacity: 1000
+  finishLineCost: 1
+  overheadResourceBar: {fileID: 0}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &4468133044502048380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,8 +1263,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -6691392700018894035, guid: da29fb29e93ba41dc9f7b111bb38eca3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1579,11 +1589,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 0}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Default
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Default
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  maxFillAmount: 1000
-  resourceBarTracker: {fileID: 0}
+  selectionOverlayIcon: {fileID: 0}
+  maxInkCapacity: 1000
+  finishLineCost: 1
+  overheadResourceBar: {fileID: 0}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &7109773688356386738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,11 +2021,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 0}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Glue
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Glue
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  maxFillAmount: 1000
-  resourceBarTracker: {fileID: 0}
+  selectionOverlayIcon: {fileID: 0}
+  maxInkCapacity: 1000
+  finishLineCost: 1
+  overheadResourceBar: {fileID: 0}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &7549697451720069285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,11 +2546,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 0}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Ice
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Ice
   selectedColor: {r: 1, g: 0, b: 0, a: 1}
-  maxFillAmount: 1000
-  resourceBarTracker: {fileID: 0}
+  selectionOverlayIcon: {fileID: 0}
+  maxInkCapacity: 1000
+  finishLineCost: 1
+  overheadResourceBar: {fileID: 0}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
 --- !u!1 &9152558096141380264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,8 +2689,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawing.DrawingConfigButton
   targetButton: {fileID: 0}
-  lineSettingsCollection: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
-  settingID: Iron
+  toolSettingsDatabase: {fileID: 11400000, guid: 371c58895ced80e42b7aa2e21a046999, type: 2}
+  toolID: Iron
   selectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-  maxFillAmount: 1000
-  resourceBarTracker: {fileID: 0}
+  selectionOverlayIcon: {fileID: 0}
+  maxInkCapacity: 1000
+  finishLineCost: 1
+  overheadResourceBar: {fileID: 0}
+  activeToolBar: {fileID: 0}
+  activeToolIcon: {fileID: 0}
