@@ -50,6 +50,15 @@ namespace Drawing
         // Ensures you don't accidentally drag a scene material
         public Material material;
 
+        [Tab("Appearance")] public bool useDifferentMaterialBeforePhysics;
+        [ShowIf(nameof(useDifferentMaterialBeforePhysics))]
+        [Tab("Appearance")]
+        [AssetsOnly]
+        // Ensures you don't accidentally drag a scene material
+        public Material materialBeforePhysics;
+
+
+
         //[ShowIfNot(nameof(usePrefab))]
         [Tab("Appearance")]
         [HorizontalLine("Vertex Settings", 1, FixedColor.Gray)] // Visual separator
@@ -207,6 +216,16 @@ namespace Drawing
             // Appearance
             lineWidth = otherSettings.lineWidth;
             material = otherSettings.material;
+            useDifferentMaterialBeforePhysics = otherSettings.useDifferentMaterialBeforePhysics;
+            if (useDifferentMaterialBeforePhysics&& otherSettings.materialBeforePhysics != null)
+            {
+                materialBeforePhysics = otherSettings.materialBeforePhysics;
+            }
+            else
+            {
+                materialBeforePhysics = otherSettings.material;
+            }
+            
             endCapVertices = otherSettings.endCapVertices;
             cornerVertices = otherSettings.cornerVertices;
             if (otherSettings.lineColor != null)

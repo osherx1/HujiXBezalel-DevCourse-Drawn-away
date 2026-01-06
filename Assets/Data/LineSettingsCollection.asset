@@ -52,6 +52,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 4
       lineWidth: 1
       material: {fileID: 2100000, guid: bcf9e67415bcb3c49ae8a276080935d8, type: 2}
+      useDifferentMaterialBeforePhysics: 1
+      materialBeforePhysics: {fileID: 2100000, guid: 346a324557c2aab4181343f7f33ced25, type: 2}
       endCapVertices: 0
       cornerVertices: 26
       lineTextureMode: 1
@@ -106,6 +108,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.63
       material: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 90
       cornerVertices: 0
       lineTextureMode: 0
@@ -160,6 +164,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 1.05
       material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
+      useDifferentMaterialBeforePhysics: 1
+      materialBeforePhysics: {fileID: 2100000, guid: fe143e6b794409a41a187665ae780ee7, type: 2}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -214,6 +220,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.2
       material: {fileID: 2100000, guid: 287020c5e8b8f42e4923671f51f9c05a, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -268,6 +276,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.2
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -322,6 +332,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 4
       lineWidth: 1.248
       material: {fileID: 2100000, guid: 8db46a6b21aefd84f9a17d809c06ffad, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 2100000, guid: 730671d214ec88f45add594607a8f93d, type: 2}
       endCapVertices: 36
       cornerVertices: 3
       lineTextureMode: 1
@@ -376,6 +388,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.18
       material: {fileID: 2100000, guid: 4c2870785ba16439e8487d1f81d9f2ec, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
       endCapVertices: 90
       cornerVertices: 90
       lineTextureMode: 0
@@ -430,6 +444,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 4
       lineWidth: 0.61
       material: {fileID: 2100000, guid: f69b43fd32440cf4e994f8db39df95c0, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 2100000, guid: 3c3a15e98c683c94e8192a22316cd545, type: 2}
       endCapVertices: 7
       cornerVertices: 7
       lineTextureMode: 1

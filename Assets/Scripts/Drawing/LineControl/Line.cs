@@ -12,6 +12,10 @@ namespace Drawing.LineControl
     public class Line : MonoBehaviour
     {
         private string settingID;
+        /// <summary>
+        /// Public property to expose the setting ID for analytics and debugging.
+        /// </summary>
+        public string SettingID => settingID;
         public LineRenderer lineRenderer;
 
         [Tooltip("Used only while drawing; disabled after FinalizeLine when polygonCollider is created.")]
@@ -271,10 +275,19 @@ namespace Drawing.LineControl
             // Ensure width is set (safety if Initialize skipped)
             if (lineRenderer && lineRenderer.positionCount == 0 && pointsCount > 0)
             {
+                
                 lineRenderer.positionCount = pointsCount;
                 for (int i = 0; i < pointsCount; i++)
                     lineRenderer.SetPosition(i, new Vector3(points[i].x, points[i].y, 0f));
             }
+
+            List<Material> materials = new List<Material>();
+            materials.Add(config.material);
+            lineRenderer.SetMaterials(materials);
+            
+     
+
+          
 
             // Prepare a simplified copy of points for physics (work in LOCAL space)
             List<Vector2> physicsPts = points;

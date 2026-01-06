@@ -393,7 +393,7 @@ namespace Drawing.LineControl
                 conf.SettingID, conf.lineWidth, minDistance, conf.physicsMaterial, usePolygonCollider,
                 collideWhileDrawing,
                 colliderSimplifyTolerance, maxColliderPoints,
-                conf.lineColor, conf.material, conf.endCapVertices, conf.cornerVertices, conf.lineTextureMode);
+                conf.lineColor, conf.materialBeforePhysics, conf.endCapVertices, conf.cornerVertices, conf.lineTextureMode);
             ln.InitializeSound(conf.collisionSound, conf.baseVolume, conf.useCameraShake);
 
             currentLine = ln;
