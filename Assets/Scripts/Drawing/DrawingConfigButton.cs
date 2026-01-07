@@ -282,6 +282,32 @@ namespace Drawing
             return _targetButtonImage;
 
         }
+
+        /// <summary>
+        /// Selects/activates this tool programmatically (same effect as clicking its UI button).
+        /// Useful for pickups that should auto-equip a tool without requiring the menu/PopBar to be opened.
+        /// </summary>
+        public void SelectTool(bool playClickSound = false)
+        {
+            if (playClickSound && AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.ButtonClick);
+            }
+
+            if (_isSelected)
+            {
+                return;
+            }
+
+            SetSelectionState(true);
+            ApplySettings();
+
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.TriggerConfigButtonSelected(this);
+            }
+        }
+
         private void NotifyInkChanged(int delta,bool animatePopBar, bool animateSelectBar )
         {
             //OnInkChanged?.Invoke(delta, _currentFillAmount, maxFillAmount);
