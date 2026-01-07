@@ -286,7 +286,7 @@ MonoBehaviour:
       linePrefab: {fileID: 5247383489900493533, guid: 36bb7d01be5661b46bcb22d9251bccb9, type: 3}
       lineColor:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0.40392157}
+        key0: {r: 0.030838395, g: 0.7399343, b: 0.9339623, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0.23921569}
@@ -303,7 +303,7 @@ MonoBehaviour:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 348
+        atime1: 65535
         atime2: 64839
         atime3: 65500
         atime4: 0
@@ -313,12 +313,12 @@ MonoBehaviour:
         m_Mode: 0
         m_ColorSpace: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 4
+        m_NumAlphaKeys: 2
       lineWidth: 5
-      material: {fileID: 2100000, guid: 8db46a6b21aefd84f9a17d809c06ffad, type: 2}
-      endCapVertices: 36
-      cornerVertices: 60
-      lineTextureMode: 3
+      material: {fileID: 2100000, guid: 06b0d34f1b84349e3ae8ebcd84d55581, type: 2}
+      endCapVertices: 18
+      cornerVertices: 17
+      lineTextureMode: 2
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 85cd5cd4ad3bd674480507b265d09655, type: 2}
       gravityScaleOverride: -0.97

@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 616afd1e4bfd84d6bbca00155660b533
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1337333641905694797
+    second: broken leaves_0
+  - first:
+      213: -6416464052805807135
+    second: broken leaves_1
+  - first:
+      213: 5684689537618509705
+    second: broken leaves_2
+  - first:
+      213: -8345539879355308533
+    second: broken leaves_3
+  - first:
+      213: -8105756043536148801
+    second: broken leaves_4
+  - first:
+      213: 3913296182678064618
+    second: broken leaves_5
+  - first:
+      213: -4751755510822758934
+    second: broken leaves_6
+  - first:
+      213: 8723933450787286063
+    second: broken leaves_7
+  - first:
+      213: 8960029950344008113
+    second: broken leaves_8
+  - first:
+      213: 1418374228337200213
+    second: broken leaves_9
+  - first:
+      213: 7722578970120998445
+    second: broken leaves_10
+  - first:
+      213: -3178889000739932094
+    second: broken leaves_11
+  - first:
+      213: -2408705282934174139
+    second: broken leaves_12
+  - first:
+      213: -1017094402311577487
+    second: broken leaves_13
+  - first:
+      213: 7088766672204450589
+    second: broken leaves_14
+  - first:
+      213: 2620745868124981614
+    second: broken leaves_15
+  - first:
+      213: -1405206142327881291
+    second: broken leaves_16
+  - first:
+      213: -2874757439317234698
+    second: broken leaves_17
+  - first:
+      213: -3149252024356684103
+    second: broken leaves_18
+  - first:
+      213: 3589303782789052927
+    second: broken leaves_19
+  - first:
+      213: -2482986746253587255
+    second: broken leaves_20
+  - first:
+      213: -3867840271828805568
+    second: broken leaves_21
+  - first:
+      213: -447399687927020332
+    second: broken leaves_22
+  - first:
+      213: 5674335710045771112
+    second: broken leaves_23
+  - first:
+      213: -8925103693757892418
+    second: broken leaves_24
+  - first:
+      213: -1093794983458950441
+    second: broken leaves_25
+  - first:
+      213: 2975140673769205135
+    second: broken leaves_26
+  - first:
+      213: -4278384360794711966
+    second: broken leaves_27
+  - first:
+      213: 2387302278817700719
+    second: broken leaves_28
+  - first:
+      213: -2988302762006136373
+    second: broken leaves_29
+  - first:
+      213: -583020666797437900
+    second: broken leaves_30
+  - first:
+      213: -4218194798578133089
+    second: broken leaves_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: broken leaves_0
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 138
+        width: 241
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b718006326d07de0800000000000000
+      internalID: -1337333641905694797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_1
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 105
+        width: 250
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3527a90f324f6a0800000000000000
+      internalID: -6416464052805807135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_2
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 76
+        width: 322
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f7124040314ee40800000000000000
+      internalID: 5684689537618509705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_3
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 85
+        width: 228
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06ab2042bfae2c80800000000000000
+      internalID: -8345539879355308533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_4
+      rect:
+        serializedVersion: 2
+        x: 2576
+        y: 143
+        width: 238
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb65d0513d1928f80800000000000000
+      internalID: -8105756043536148801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_20
+      rect:
+        serializedVersion: 2
+        x: 3309
+        y: 129
+        width: 95
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc4d8fa5b8aa8dd0800000000000000
+      internalID: -2482986746253587255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_21
+      rect:
+        serializedVersion: 2
+        x: 3324
+        y: 46
+        width: 157
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04891b5f3cba25ac0800000000000000
+      internalID: -3867840271828805568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_30
+      rect:
+        serializedVersion: 2
+        x: 3307
+        y: 119
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43cc3d2eac1b8e7f0800000000000000
+      internalID: -583020666797437900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken leaves_31
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 38
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97995dfd26f575c0800000000000000
+      internalID: -4218194798578133089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e0f9f089a37164d709c31e707cd6810c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      broken leaves_0: -1337333641905694797
+      broken leaves_1: -6416464052805807135
+      broken leaves_10: 7722578970120998445
+      broken leaves_11: -3178889000739932094
+      broken leaves_12: -2408705282934174139
+      broken leaves_13: -1017094402311577487
+      broken leaves_14: 7088766672204450589
+      broken leaves_15: 2620745868124981614
+      broken leaves_16: -1405206142327881291
+      broken leaves_17: -2874757439317234698
+      broken leaves_18: -3149252024356684103
+      broken leaves_19: 3589303782789052927
+      broken leaves_2: 5684689537618509705
+      broken leaves_20: -2482986746253587255
+      broken leaves_21: -3867840271828805568
+      broken leaves_22: -447399687927020332
+      broken leaves_23: 5674335710045771112
+      broken leaves_24: -8925103693757892418
+      broken leaves_25: -1093794983458950441
+      broken leaves_26: 2975140673769205135
+      broken leaves_27: -4278384360794711966
+      broken leaves_28: 2387302278817700719
+      broken leaves_29: -2988302762006136373
+      broken leaves_3: -8345539879355308533
+      broken leaves_30: -583020666797437900
+      broken leaves_31: -4218194798578133089
+      broken leaves_4: -8105756043536148801
+      broken leaves_5: 3913296182678064618
+      broken leaves_6: -4751755510822758934
+      broken leaves_7: 8723933450787286063
+      broken leaves_8: 8960029950344008113
+      broken leaves_9: 1418374228337200213
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
