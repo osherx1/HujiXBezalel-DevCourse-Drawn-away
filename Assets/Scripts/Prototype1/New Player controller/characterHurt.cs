@@ -78,6 +78,13 @@ public class characterHurt : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
 
+        // Ensure our cached simulated state is valid even if the player hasn't died yet.
+        // This prevents Ctrl+Q (ForceRespawnToCheckpoint) from restoring the default bool value (false).
+        if (body != null)
+        {
+            _bodyWasSimulated = body.simulated;
+        }
+
         if (spriteRenderer != null)
         {
             _flashRendererOriginalEnabled = spriteRenderer.enabled;
@@ -300,7 +307,7 @@ public class characterHurt : MonoBehaviour
 
         if (body != null)
         {
-            body.simulated = _bodyWasSimulated;
+            body.simulated = true;
             body.linearVelocity = Vector2.zero;
         }
 
@@ -395,7 +402,7 @@ public class characterHurt : MonoBehaviour
 
         if (body != null)
         {
-            body.simulated = _bodyWasSimulated;
+            body.simulated = true;
             body.linearVelocity = Vector2.zero;
         }
 
