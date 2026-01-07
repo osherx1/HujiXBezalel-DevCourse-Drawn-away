@@ -1,5 +1,4 @@
 using Drawing.Data;
-using Drawing.Managers;
 using Drawing.Managers.Core.Managers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,13 +47,6 @@ namespace Drawing.Buttons
                 {
                     Destroy(child.gameObject);
                 }
-            }
-
-            // Trigger event to notify analytics that board was reset
-            // Note: Historical data should be preserved in analytics
-            if (EventManager.Instance != null)
-            {
-                EventManager.Instance.TriggerBoardReset();
             }
         }
     }

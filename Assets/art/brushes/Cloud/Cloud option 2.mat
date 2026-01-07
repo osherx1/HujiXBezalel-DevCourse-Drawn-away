@@ -30,7 +30,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 3a02a92c6ac17734f9342df3606ffb53, type: 3}
-        m_Scale: {x: 0.02, y: 1}
+        m_Scale: {x: 0.85, y: 0.73}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
         m_Texture: {fileID: 0}
@@ -42,17 +42,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudDensity: 0.363
+    - _CloudDensity: 0.3
     - _Density1: 2.34
     - _Density2: 2.77
-    - _Distortion: 0.542
+    - _Distortion: 0.34
     - _EnableExternalAlpha: 0
     - _GlobalRot: 5.46
-    - _NoiseScale: 1.15
+    - _NoiseScale: 0.6
     - _NoiseSpeed: 4.14
     - _Rotation: 176
     - _Scale: 0.3
-    - _Softness: 0.64
+    - _Softness: 0.01
     - _Speed: 5.07
     - _Thickness: 1.55
     - _UseMask: 1
@@ -73,6 +73,6 @@ Material:
     - _Layer1Color: {r: 0.5660378, g: 0.17499697, b: 0.1254895, a: 1}
     - _Layer2Color: {r: 0.42653078, g: 0.6698113, b: 0.6034621, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
+    - _TintColor: {r: 0.26713246, g: 0.4980267, b: 0.6509434, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -1,10 +1,7 @@
-using Drawing.Data;
-using Drawing.Managers;
+﻿using Drawing.Data;
 using Drawing.Managers.Core.Managers;
 using Physics.Rock;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Utilities.Camera.CameraShake;
 
 namespace PhysicsObjects.Rock
 {
@@ -46,12 +43,6 @@ namespace PhysicsObjects.Rock
         [Range(0f, 1f)] [SerializeField] private float shatterVolume = 1.0f;
         [SerializeField] private float explosionForce = 5f;
         [SerializeField] private float spinForce = 10f;
-        
-        [FormerlySerializedAs("rockShakeProfile")]
-        [Header("Settings")]
-        [SerializeField] private ShakeProfile heavyCameraShake;
-        [SerializeField] private ShakeProfile shatterCameraShake;
-        
 
         #endregion
 
@@ -114,10 +105,6 @@ namespace PhysicsObjects.Rock
                 Debug.Log("Shatter Impact Detected");
                 PlaySound(shatterSound, shatterVolume);
                 HandleShatter(contact.point);
-                if (heavyCameraShake != null&&!collision.collider.CompareTag("Player"))
-                {
-                    EventManager.Instance.TriggerCameraShake(heavyCameraShake);
-                }
                 return; 
             }
 
@@ -126,11 +113,6 @@ namespace PhysicsObjects.Rock
                 PlaySound(impactSound, impactVolume);
                 SpawnImpactParticles(contact.point);
                 _hasCapturedVelocity = false;
-                if (shatterCameraShake != null)
-                {
-                    EventManager.Instance.TriggerCameraShake(shatterCameraShake);
-                }
-                
             }
         }
 

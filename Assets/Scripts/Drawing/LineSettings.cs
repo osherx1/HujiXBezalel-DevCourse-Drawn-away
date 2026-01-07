@@ -11,12 +11,6 @@ namespace Drawing
     {
         [HideInInspector]public string SettingID;
         public int fillMult = 1;
-
-
-        // ----------------- TAB: DRAWING -----------------
-        [Tab("Drawing")]
-        [Tooltip("If true, this tool ignores LineManager.cantDrawOverLayer while drawing (useful for Glue so it can be drawn on 'non-drawable' surfaces).")]
-        public bool ignoreCantDrawOverLayer = false;
         
         
         [Tooltip("If true, use a specific Line prefab. If false, configure manually.")]
@@ -49,15 +43,6 @@ namespace Drawing
         [AssetsOnly]
         // Ensures you don't accidentally drag a scene material
         public Material material;
-
-        [Tab("Appearance")] public bool useDifferentMaterialBeforePhysics;
-        [ShowIf(nameof(useDifferentMaterialBeforePhysics))]
-        [Tab("Appearance")]
-        [AssetsOnly]
-        // Ensures you don't accidentally drag a scene material
-        public Material materialBeforePhysics;
-
-
 
         //[ShowIfNot(nameof(usePrefab))]
         [Tab("Appearance")]
@@ -150,7 +135,6 @@ namespace Drawing
             linePrefab = otherSettings.linePrefab;
             fillMult = otherSettings.fillMult;
             SettingID = otherSettings.SettingID;
-            ignoreCantDrawOverLayer = otherSettings.ignoreCantDrawOverLayer;
             SetAppearance(otherSettings);
             SetPhysics(otherSettings);
             SetSound(otherSettings);
@@ -216,16 +200,6 @@ namespace Drawing
             // Appearance
             lineWidth = otherSettings.lineWidth;
             material = otherSettings.material;
-            useDifferentMaterialBeforePhysics = otherSettings.useDifferentMaterialBeforePhysics;
-            if (useDifferentMaterialBeforePhysics&& otherSettings.materialBeforePhysics != null)
-            {
-                materialBeforePhysics = otherSettings.materialBeforePhysics;
-            }
-            else
-            {
-                materialBeforePhysics = otherSettings.material;
-            }
-            
             endCapVertices = otherSettings.endCapVertices;
             cornerVertices = otherSettings.cornerVertices;
             if (otherSettings.lineColor != null)

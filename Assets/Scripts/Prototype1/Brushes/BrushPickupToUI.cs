@@ -4,12 +4,11 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
 using Drawing.Buttons;
-using Drawing;
 
 /// <summary>
 /// World pickup that, on player trigger, locks movement, animates an icon into a UI slot,
 /// optionally unlocks a UI button, activates a UI object, plays a spark effect, and then unlocks movement.
-/// Uses unscaled time so it works even if the menu pauses time. 
+/// Uses unscaled time so it works even if the menu pauses time.
 /// </summary>
 public class BrushPickupToUI : MonoBehaviour
 {
@@ -88,13 +87,6 @@ public class BrushPickupToUI : MonoBehaviour
     [SerializeField] private Button buttonToUnlock;
     [Tooltip("If assigned, this UI object will be activated at the end (e.g., the brush icon in the bar).")]
     [SerializeField] private GameObject uiObjectToActivate;
-
-    [Header("Auto Select (Use Immediately)")]
-    [Tooltip("If true, the collected brush/tool will be selected as the active tool automatically (no need to open the PopBar and click it).")]
-    [SerializeField] private bool autoSelectUnlockedToolOnPickup = true;
-
-    [Tooltip("Optional: explicitly assign the DrawingConfigButton to select. If empty, will try to find it on/under buttonToUnlock.")]
-    [SerializeField] private DrawingConfigButton toolConfigToAutoSelect;
 
     [Header("Effects")]
     [Tooltip("Optional: ParticleSystem that is attached to this pickup (or a child). It will be detached and played so it won't turn off when the pickup is deactivated.")]
@@ -295,7 +287,6 @@ public class BrushPickupToUI : MonoBehaviour
         {
             if (worldSprite != null) worldSprite.enabled = false;
             ApplyUnlocks();
-            TryAutoSelectUnlockedTool();
             yield return WaitRemainingLockTime(startTime);
             FinishAndCleanup();
             yield break;
@@ -392,46 +383,8 @@ public class BrushPickupToUI : MonoBehaviour
         Destroy(flyingVisual);
 
         ApplyUnlocks();
-        TryAutoSelectUnlockedTool();
         yield return WaitRemainingLockTime(startTime);
         FinishAndCleanup();
-    }
-
-    private void TryAutoSelectUnlockedTool()
-    {
-        if (!autoSelectUnlockedToolOnPickup)
-        {
-            return;
-        }
-
-        DrawingConfigButton config = toolConfigToAutoSelect;
-
-        if (config == null && buttonToUnlock != null)
-        {
-            // Try to find a DrawingConfigButton associated with the unlocked UI.
-            config = buttonToUnlock.GetComponent<DrawingConfigButton>();
-            if (config == null)
-            {
-                config = buttonToUnlock.GetComponentInParent<DrawingConfigButton>();
-            }
-            if (config == null)
-            {
-                config = buttonToUnlock.GetComponentInChildren<DrawingConfigButton>(true);
-            }
-        }
-
-        if (config != null)
-        {
-            // Select without requiring the menu/PopBar to be open.
-            config.SelectTool(false);
-            return;
-        }
-
-        // Fallback: invoke the UI button click if no config button was found.
-        if (buttonToUnlock != null)
-        {
-            buttonToUnlock.onClick?.Invoke();
-        }
     }
 
     private IEnumerator WaitRemainingLockTime(float startUnscaledTime)

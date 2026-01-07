@@ -167,8 +167,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.01798439, y: 3.2831323}
-  m_Size: {x: 2.7593803, y: 6.4046435}
+  m_Offset: {x: -0.07521987, y: 3.216363}
+  m_Size: {x: 3.2172747, y: 6.5381823}
   m_Direction: 0
 --- !u!114 &1185081031527145602
 MonoBehaviour:
@@ -281,9 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8807aa2a0407b1e4f9bfdf36e5fac721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::characterGround
-  bodyCollider: {fileID: 0}
-  useColliderCast: 1
-  maxCastHits: 8
   groundLength: 0.95
   groundSearchRange: 2
   colliderOffset: {x: 0, y: 0, z: 0}
@@ -371,20 +368,15 @@ MonoBehaviour:
   maxAcceleration: 0
   maxDecceleration: 52
   maxTurnSpeed: 80
-  maxAirAcceleration: 52.7
-  maxAirDeceleration: 69.7
-  maxAirTurnSpeed: 52.7
-  friction: 2
+  maxAirAcceleration: 51.5
+  maxAirDeceleration: 50.7
+  maxAirTurnSpeed: 80
+  friction: 1
   useAcceleration: 0
   itsTheIntro: 1
-  usePushReductionTag: 1
-  pushReductionTag: Line
-  pushReductionLayers:
-    serializedVersion: 2
-    m_Bits: 0
   pushReductionSpeedMultiplier: 0.85
   directionX: 0
-  velocity: {x: 0, y: -0.000000059604645}
+  velocity: {x: 0, y: 0}
   onGround: 1
   pressingKey: 0
 --- !u!114 &1166014180015966385
