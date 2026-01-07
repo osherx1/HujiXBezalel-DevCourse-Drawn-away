@@ -1,4 +1,5 @@
 using System;
+using Utilities.Camera.CameraShake;
 
 namespace Drawing.Managers
 {
@@ -18,10 +19,11 @@ namespace Drawing.Managers
         public event Action OnEraserActive;
         public event Action<object> OnConfigButtonSelected;
         public event Action OnGameFinished;
+        public event Action OnBoardReset; // Triggered when ResetBoard clears all lines
         
         public event Action<bool> OnSlowMotionChanged;
         public event Action<bool> OnGamePausedChanged;
-
+        public event Action<ShakeProfile> OnCameraShakeRequested;
         /// <summary>
         /// Triggers the slow motion state.
         /// </summary>
@@ -45,10 +47,23 @@ namespace Drawing.Managers
         {
             OnConfigButtonSelected?.Invoke(senderButton);
         }
+        public void TriggerCameraShake(ShakeProfile profile)
+        {
+            OnCameraShakeRequested?.Invoke(profile);
+        }
 
         public void TriggerGameFinished()
         {
             OnGameFinished?.Invoke();
+        }
+
+        /// <summary>
+        /// Triggers when the board is reset (all lines are cleared).
+        /// Analytics should preserve historical data even after lines are destroyed.
+        /// </summary>
+        public void TriggerBoardReset()
+        {
+            OnBoardReset?.Invoke();
         }
     }
 }

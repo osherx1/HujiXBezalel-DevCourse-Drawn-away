@@ -1,4 +1,149 @@
 ﻿using System;
+using System.Collections;
+using CustomInspector;
+using Drawing.Managers;
+using UnityEngine;
+
+namespace Drawing.Buttons
+{
+    public class MenuController : MonoBehaviour
+    {
+        [Header("UI References")] 
+        [SerializeField] private GameObject menuPanel;
+
+        [Header("Time Settings")] 
+        [Tooltip("If true, time will stop completely (target scale 0).")] 
+        [Hook(nameof(IgnoreSlowMotionSettings))]
+        [SerializeField] private bool pauseGameOnOpen = true;
+
+        [Tooltip("If true (and pause is false), time will slow down to the factor below.")] 
+        [ShowIfNot(nameof(pauseGameOnOpen))] 
+        [SerializeField] private bool slowTimeOnOpen;
+
+        [Tooltip("The time scale value when slowed down (0.0 to 1.0).")] 
+        [ShowIfNot(nameof(pauseGameOnOpen))] [ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
+        [SerializeField, Range(0f, 1f)] private float slowMotionFactor = 0.5f;
+
+        [Header("Transition Settings")]
+        [Tooltip("How long (in real seconds) the transition to/from slow motion takes.")]
+        [ShowIfNot(nameof(pauseGameOnOpen))][ShowIf(nameof(slowTimeOnOpen))] [Indent(1)]
+        [SerializeField] private float transitionDuration = 0.5f;
+
+        private Coroutine _timeCoroutine;
+        private Coroutine _closeSequenceCoroutine; // Reference to the delayed close routine
+        private float _defaultFixedDeltaTime; 
+
+        private void Awake()
+        {
+            if (menuPanel != null) menuPanel.SetActive(false);
+            
+            Time.timeScale = 1f;
+            _defaultFixedDeltaTime = Time.fixedDeltaTime;
+        }
+
+        public void OpenMenu() => SetMenuState(true);
+
+        public void CloseMenu() => SetMenuState(false);
+
+        /// <summary>
+        /// Closes the menu after a specific delay (useful for button animations/sounds).
+        /// Assign this to a UI Button OnClick event.
+        /// </summary>
+        /// <param name="delay">Time in real seconds to wait before closing.</param>
+        public void CloseMenuWithDelay(float delay)
+        {
+            // If no delay, close immediately
+            if (delay <= 0f)
+            {
+                CloseMenu();
+                return;
+            }
+
+            // Stop any existing close sequence to avoid conflicts
+            if (_closeSequenceCoroutine != null) StopCoroutine(_closeSequenceCoroutine);
+            
+            _closeSequenceCoroutine = StartCoroutine(WaitAndCloseRoutine(delay));
+        }
+
+        public void ToggleMenu()
+        {
+            if (menuPanel == null) return;
+            SetMenuState(!menuPanel.activeSelf);
+        }
+
+        private void SetMenuState(bool isOpen)
+        {
+            if (menuPanel == null) return;
+
+            // If we are forcing a state change, cancel any pending delayed close
+            if (_closeSequenceCoroutine != null)
+            {
+                StopCoroutine(_closeSequenceCoroutine);
+                _closeSequenceCoroutine = null;
+            }
+
+            if (menuPanel.activeSelf == isOpen) return;
+
+            menuPanel.SetActive(isOpen);
+            
+            UpdateTimeScale(isOpen);
+            
+            EventManager.Instance.TriggerSlowMotion(isOpen && slowTimeOnOpen);
+            EventManager.Instance.TriggerGamePaused(isOpen && pauseGameOnOpen);
+        }
+
+        private IEnumerator WaitAndCloseRoutine(float delay)
+        {
+            // Use Realtime because the game might be paused (Time.timeScale = 0)
+            yield return new WaitForSecondsRealtime(delay);
+            
+            CloseMenu();
+            _closeSequenceCoroutine = null;
+        }
+
+        private void UpdateTimeScale(bool isMenuOpen)
+        {
+            float targetTimeScale = 1f;
+
+            if (isMenuOpen)
+            {
+                if (pauseGameOnOpen) targetTimeScale = 0f;
+                else if (slowTimeOnOpen) targetTimeScale = slowMotionFactor;
+            }
+
+            if (_timeCoroutine != null) StopCoroutine(_timeCoroutine);
+            _timeCoroutine = StartCoroutine(SmoothTimeTransition(targetTimeScale));
+        }
+
+        private IEnumerator SmoothTimeTransition(float targetScale)
+        {
+            float startScale = Time.timeScale;
+            float timer = 0f;
+
+            while (timer < transitionDuration)
+            {
+                timer += Time.unscaledDeltaTime;
+                float t = Mathf.SmoothStep(0f, 1f, timer / transitionDuration); 
+
+                Time.timeScale = Mathf.Lerp(startScale, targetScale, t);
+                Time.fixedDeltaTime = _defaultFixedDeltaTime * Time.timeScale;
+
+                yield return null;
+            }
+
+            Time.timeScale = targetScale;
+            Time.fixedDeltaTime = _defaultFixedDeltaTime * Time.timeScale;
+        }
+
+        public void IgnoreSlowMotionSettings()
+        {
+            if(pauseGameOnOpen) slowTimeOnOpen = false;
+        }
+    }
+}
+
+/*
+using System;
 using CustomInspector;
 using Drawing.Managers;
 using UnityEngine;
@@ -142,6 +287,7 @@ namespace Drawing.Buttons
         }
     }
 }
+*/
 
 
 

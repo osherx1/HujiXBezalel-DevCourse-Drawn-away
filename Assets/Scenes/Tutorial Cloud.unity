@@ -1200,7 +1200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 670302644726080948, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: isHoldToOpen
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 708498354828297681, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_IsActive
