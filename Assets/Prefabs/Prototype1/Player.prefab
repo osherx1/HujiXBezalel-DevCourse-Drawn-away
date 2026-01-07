@@ -382,7 +382,7 @@ MonoBehaviour:
   pushReductionLayers:
     serializedVersion: 2
     m_Bits: 0
-  pushReductionSpeedMultiplier: 0.6
+  pushReductionSpeedMultiplier: 0.85
   directionX: 0
   velocity: {x: 0, y: -0.000000059604645}
   onGround: 1
