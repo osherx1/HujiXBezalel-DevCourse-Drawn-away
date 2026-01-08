@@ -7,6 +7,7 @@ public class BasicTutorialManager : MonoBehaviour
     [Header("Dependencies")]
     [SerializeField] private TutorialOverlay uiOverlay;
     [SerializeField] private GameObject roomDoor;
+    [SerializeField] private DoorTeleport doorTeleport;
     
     [Header("Input References (Drag from Project)")]
     // Drag the SAME .inputactions references here that you use in characterInputRelay
@@ -79,7 +80,9 @@ public class BasicTutorialManager : MonoBehaviour
         uiOverlay.ShowFocus(materialPickupItem.transform, "Walk over to the material to pick it up.");
 
         // Wait for user to acknowledge (Left Click to continue)
-        yield return WaitForMouseClick(); 
+        // yield return WaitForMouseClick(); 
+        yield return new WaitForSeconds(0.5f);
+
 
         GamePause(false);
         uiOverlay.Hide();
@@ -129,7 +132,8 @@ public class BasicTutorialManager : MonoBehaviour
         GamePause(true);
         uiOverlay.ShowFocus(drawingWallTarget, "Hold <b>Left Click</b> to draw lines.");
         
-        yield return WaitForMouseClick(); // Acknowledge text
+        // yield return WaitForMouseClick(); // Acknowledge text
+        yield return new WaitForSeconds(0.5f);
 
         GamePause(false);
         uiOverlay.Hide();
@@ -158,6 +162,7 @@ public class BasicTutorialManager : MonoBehaviour
     {
         Debug.Log("Tutorial Complete");
         roomDoor.SetActive(false); // Open Door visually (optional)
+        doorTeleport.UnlockDoor();
         
         // Trigger the Fade and Teleport
         if(transitionManager != null)
