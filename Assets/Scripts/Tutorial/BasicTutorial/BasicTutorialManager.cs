@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for New Input System
 
@@ -6,7 +7,7 @@ public class BasicTutorialManager : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private TutorialOverlay uiOverlay;
-    [SerializeField] private GameObject roomDoor;
+    [SerializeField] private SpriteRenderer roomDoor;
     [SerializeField] private DoorTeleport doorTeleport;
     
     [Header("Input References (Drag from Project)")]
@@ -31,7 +32,6 @@ public class BasicTutorialManager : MonoBehaviour
 
     private void Start()
     {
-        roomDoor.SetActive(true);
         StartCoroutine(MovementState());
     }
 
@@ -80,8 +80,8 @@ public class BasicTutorialManager : MonoBehaviour
         uiOverlay.ShowFocus(materialPickupItem.transform, "Walk over to the material to pick it up.");
 
         // Wait for user to acknowledge (Left Click to continue)
-        // yield return WaitForMouseClick(); 
-        yield return new WaitForSeconds(0.5f);
+        yield return WaitForMouseClick(); 
+        // yield return new WaitForSeconds(0.5f);
 
 
         GamePause(false);
@@ -154,14 +154,14 @@ public class BasicTutorialManager : MonoBehaviour
              while (!Mouse.current.leftButton.isPressed) yield return null;
         }
 
-        yield return new WaitForSeconds(2.0f); // Let them draw a bit
+        // yield return new WaitForSeconds(2.0f); // Let them draw a bit
         FinishTutorial();
     }
 
     private void FinishTutorial()
     {
         Debug.Log("Tutorial Complete");
-        roomDoor.SetActive(false); // Open Door visually (optional)
+        roomDoor.sprite = null;
         doorTeleport.UnlockDoor();
         
         // Trigger the Fade and Teleport
