@@ -2,21 +2,14 @@ using UnityEngine;
 using DG.Tweening; // Required for DOTween
 using System.Collections;
 
-public class SceneTransitionManager : MonoBehaviour
+public class SceneTransitionManager : MonoSingleton<SceneTransitionManager>
 {
-    // Singleton instance so any door can find it easily
-    public static SceneTransitionManager Instance;
-
     [Header("UI Settings")]
     [SerializeField] private CanvasGroup fadePanel; // Assign the Panel with CanvasGroup here
     [SerializeField] private float fadeDuration = 1.0f;
 
     private void Awake()
     {
-        // specific singleton setup
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
-        
         // Ensure screen starts clear
         fadePanel.alpha = 0; 
         fadePanel.blocksRaycasts = false;

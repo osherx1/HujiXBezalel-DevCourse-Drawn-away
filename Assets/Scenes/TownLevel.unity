@@ -946,8 +946,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2594345, y: 0}
-  m_Size: {x: 1.481132, y: 4.1115284}
+  m_Offset: {x: -0.067932345, y: 0}
+  m_Size: {x: 2.1358657, y: 4.1115284}
   m_Direction: 0
 --- !u!114 &212341421
 MonoBehaviour:
@@ -1147,7 +1147,7 @@ Transform:
   m_GameObject: {fileID: 363968816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -63.6953, y: -34.328, z: -10}
+  m_LocalPosition: {x: -63.551346, y: -34.328, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 536563125}
   - component: {fileID: 536563127}
   - component: {fileID: 536563126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground5_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicTutorialManager
   uiOverlay: {fileID: 1522159706}
-  roomDoor: {fileID: 212341417}
+  roomDoor: {fileID: 212341418}
   doorTeleport: {fileID: 212341421}
   moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
@@ -3080,7 +3080,7 @@ GameObject:
   - component: {fileID: 936943818}
   - component: {fileID: 936943820}
   - component: {fileID: 936943819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground5_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3372,7 +3372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 981269787}
-  - component: {fileID: 981269786}
+  - component: {fileID: 981269788}
   m_Layer: 0
   m_Name: TransitionManager
   m_TagString: Untagged
@@ -3380,21 +3380,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &981269786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981269785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed5ba2c7c204ab6ba382e00ddfc08e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drawing.Utilities.SceneTransitionManager
-  fadeCanvasGroup: {fileID: 1459838729}
-  fadeDuration: 1
-  waitBeforeLoad: 0.5
 --- !u!4 &981269787
 Transform:
   m_ObjectHideFlags: 0
@@ -3410,6 +3395,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &981269788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981269785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0ec2fb7eaf47609990c8dfe07b23e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransitionManager
+  fadePanel: {fileID: 1459838729}
+  fadeDuration: 1
 --- !u!1 &985283154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5826,7 +5825,7 @@ Transform:
   m_GameObject: {fileID: 1390876105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -63.6953, y: -34.328, z: -10}
+  m_LocalPosition: {x: -63.551346, y: -34.328, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7883,7 +7882,7 @@ Transform:
   m_GameObject: {fileID: 2127579848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.1234, y: -48.5915, z: 0}
+  m_LocalPosition: {x: -59.1234, y: -50.1, z: 0}
   m_LocalScale: {x: 72.91323, y: 3.7829, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

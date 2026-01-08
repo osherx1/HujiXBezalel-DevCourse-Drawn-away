@@ -14,6 +14,10 @@ public class DoorTeleport : MonoBehaviour
         // Make sure your Player object has the tag "Player"
         if (!isLocked && other.CompareTag("Player"))
         {
+            Debug.Log("Teleporting player!");
+            Debug.Log(other.transform);
+            Debug.Log(destinationPoint);
+            Debug.Log(SceneTransitionManager.Instance);
             SceneTransitionManager.Instance.TeleportPlayer(other.transform, destinationPoint);
         }
     }
