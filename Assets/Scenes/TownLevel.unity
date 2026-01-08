@@ -787,7 +787,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -127.799225, y: 0, z: -133.88548, w: -45.642586}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2528,17 +2528,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 25193486824459550, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
   m_PrefabInstance: {fileID: 652030365}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &652030368 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4874740186246839847, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
-  m_PrefabInstance: {fileID: 652030365}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &652030369 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3644888911553562330, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
   m_PrefabInstance: {fileID: 652030365}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652030368}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bef9a31c785e2a46a7d85eafd1c8802, type: 3}
@@ -2549,7 +2544,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1150787518092409315, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
   m_PrefabInstance: {fileID: 652030365}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652030368}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0886f8cbe58272d4993a3f4a6596c0d1, type: 3}
@@ -2565,7 +2560,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7387025864371424899, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
   m_PrefabInstance: {fileID: 652030365}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652030368}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5e7a834c1fb4a1a9c5a9bd7c7c64f02, type: 3}
@@ -2601,10 +2596,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicTutorialManager
   uiOverlay: {fileID: 1522159706}
-  player: {fileID: 652030368}
   roomDoor: {fileID: 212341417}
+  moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  jumpAction: {fileID: -2099379676528639254, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  drawAction: {fileID: 3001919216989983466, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  toolbarAction: {fileID: -4090225696740746782, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   materialPickupItem: {fileID: 2114254631}
   drawingWallTarget: {fileID: 1095665775}
+  transitionManager: {fileID: 0}
+  nextRoomSpawnPoint: {fileID: 0}
 --- !u!4 &680635934
 Transform:
   m_ObjectHideFlags: 0
@@ -6955,7 +6955,7 @@ RectTransform:
   m_GameObject: {fileID: 1738852759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.143781, y: 3.143781, z: 3.143781}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1113618994}
@@ -6991,7 +6991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5245282, g: 0.26424345, b: 0.26424345, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.105882354}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

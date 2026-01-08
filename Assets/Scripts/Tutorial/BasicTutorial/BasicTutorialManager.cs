@@ -1,67 +1,90 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem; // Required for New Input System
 
 public class BasicTutorialManager : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private TutorialOverlay uiOverlay;
-    [SerializeField] private GameObject player;
     [SerializeField] private GameObject roomDoor;
     
+    [Header("Input References (Drag from Project)")]
+    // Drag the SAME .inputactions references here that you use in characterInputRelay
+    [SerializeField] private InputActionReference moveAction; 
+    [SerializeField] private InputActionReference jumpAction;
+    
+    // You likely have actions for "Fire" (Left Click) and "Secondary" (Right Click)
+    // If not, we can fall back to Mouse.current, but Actions are better.
+    [SerializeField] private InputActionReference drawAction;    // Left Click
+    [SerializeField] private InputActionReference toolbarAction; // Right Click
+
     [Header("Step 2: Pickup")]
-    [SerializeField] private GameObject materialPickupItem; // The item in the room
+    [SerializeField] private GameObject materialPickupItem; 
     
     [Header("Step 4: Drawing")]
-    [SerializeField] private Transform drawingWallTarget; // Where you want them to draw
+    [SerializeField] private Transform drawingWallTarget;
+    
+    [Header("Transition")]
+    [SerializeField] private SceneTransitionManager transitionManager;
+    [SerializeField] private Transform nextRoomSpawnPoint;
 
     private void Start()
     {
-        // Close the door initially
-        roomDoor.SetActive(true); 
-        
+        roomDoor.SetActive(true);
         StartCoroutine(MovementState());
     }
 
     // --- STATE 1: MOVEMENT (WAD) ---
     private IEnumerator MovementState()
     {
-        // We don't pause here so they can actually move
-        uiOverlay.ShowFocus(null, "Use <b>A</b> and <b>D</b> to move, and <b>W</b> to jump.");
+        uiOverlay.ShowFocus(null, "Use <b>A</b> and <b>D</b> to move, and <b>W</b> (or Space) to jump.");
 
         bool movedLeft = false;
         bool movedRight = false;
         bool jumped = false;
 
+        // 1. Define Callbacks
+        System.Action<InputAction.CallbackContext> onMove = (ctx) =>
+        {
+            float xValue = ctx.ReadValue<Vector2>().x;
+            if (xValue < -0.1f) movedLeft = true;
+            if (xValue > 0.1f) movedRight = true;
+        };
+
+        System.Action<InputAction.CallbackContext> onJump = (ctx) => { jumped = true; };
+
+        // 2. Subscribe to the Action References
+        // We use the 'action' property of the Reference
+        moveAction.action.performed += onMove;
+        jumpAction.action.started += onJump; // Matching your relay script which uses 'started'
+
+        // 3. Wait until task complete
         while (!movedLeft || !movedRight || !jumped)
         {
-            // Check for inputs (Replace with your InputSystem calls if needed)
-            if (Input.GetKeyDown(KeyCode.A)) movedLeft = true;
-            if (Input.GetKeyDown(KeyCode.D)) movedRight = true;
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) jumped = true;
-
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.5f); // Small delay for pacing
+        // 4. Unsubscribe (Cleanup)
+        moveAction.action.performed -= onMove;
+        jumpAction.action.started -= onJump;
+
+        yield return new WaitForSeconds(0.5f);
         StartCoroutine(PickupState());
     }
 
     // --- STATE 2: PICK UP MATERIAL ---
     private IEnumerator PickupState()
     {
-        // 1. Pause and Highlight the item
         GamePause(true);
-        uiOverlay.ShowFocus(materialPickupItem.transform, "There is a material here. Walk over to pick it up.");
+        uiOverlay.ShowFocus(materialPickupItem.transform, "Walk over to the material to pick it up.");
 
-        // 2. Wait for player to acknowledge (click to continue) OR just unpause after a moment
-        // Let's unpause on click so they can go get it
-        yield return WaitForKeyClick(); 
+        // Wait for user to acknowledge (Left Click to continue)
+        yield return WaitForMouseClick(); 
 
-        // 3. Unpause and let them play
         GamePause(false);
         uiOverlay.Hide();
 
-        // 4. Wait until the item is gone (picked up)
+        // Wait until the item is destroyed/disabled (picked up)
         while (materialPickupItem != null && materialPickupItem.activeInHierarchy)
         {
             yield return null;
@@ -70,27 +93,32 @@ public class BasicTutorialManager : MonoBehaviour
         StartCoroutine(ToolbarState());
     }
 
-    // --- STATE 3: OPEN TOOLBAR (Right Click) ---
+    // --- STATE 3: TOOLBAR (Right Click) ---
     private IEnumerator ToolbarState()
     {
         yield return new WaitForSeconds(0.5f);
-
-        // Pause and Darken
         GamePause(true);
-        // No specific world target, just general instruction
         uiOverlay.ShowFocus(null, "Hold <b>Right Click</b> to open your Material Toolbar.");
 
-        while (!Input.GetMouseButtonDown(1)) // 1 is Right Click
+        // Wait specifically for Right Click
+        bool rightClicked = false;
+        
+        // Use Input Action if assigned, otherwise fallback to direct Mouse check
+        if (toolbarAction != null)
         {
-            yield return null;
+             System.Action<InputAction.CallbackContext> onRightClick = (ctx) => rightClicked = true;
+             toolbarAction.action.performed += onRightClick;
+             while(!rightClicked) yield return null;
+             toolbarAction.action.performed -= onRightClick;
+        }
+        else
+        {
+            // Fallback if you haven't set up a "Toolbar" action yet
+            while (!Mouse.current.rightButton.wasPressedThisFrame) yield return null;
         }
 
-        // Optional: Wait for them to actually select the item? 
-        // For now, we assume opening the menu is enough to see the new item.
-        
         uiOverlay.Hide();
         GamePause(false);
-
         StartCoroutine(DrawingState());
     }
 
@@ -98,54 +126,63 @@ public class BasicTutorialManager : MonoBehaviour
     private IEnumerator DrawingState()
     {
         yield return new WaitForSeconds(0.5f);
-
         GamePause(true);
-        uiOverlay.ShowFocus(drawingWallTarget, "Hold <b>Left Click</b> to draw lines using your selected material.");
+        uiOverlay.ShowFocus(drawingWallTarget, "Hold <b>Left Click</b> to draw lines.");
         
-        yield return WaitForKeyClick(); // Wait for click to resume
+        yield return WaitForMouseClick(); // Acknowledge text
 
         GamePause(false);
         uiOverlay.Hide();
 
-        // Wait for player to actually draw something
-        while (!Input.GetMouseButton(0)) // 0 is Left Click
+        // Wait for Drawing (Left Click)
+        bool drewLine = false;
+
+        if (drawAction != null)
         {
-            yield return null;
+             System.Action<InputAction.CallbackContext> onDraw = (ctx) => drewLine = true;
+             drawAction.action.performed += onDraw;
+             while(!drewLine) yield return null;
+             drawAction.action.performed -= onDraw;
+        }
+        else
+        {
+             // Fallback
+             while (!Mouse.current.leftButton.isPressed) yield return null;
         }
 
-        // Give them a second to enjoy drawing
-        yield return new WaitForSeconds(2.0f);
-
+        yield return new WaitForSeconds(2.0f); // Let them draw a bit
         FinishTutorial();
     }
 
     private void FinishTutorial()
     {
-        Debug.Log("Tutorial Complete - Opening Door");
+        Debug.Log("Tutorial Complete");
+        roomDoor.SetActive(false); // Open Door visually (optional)
         
-        // Open the door
-        roomDoor.SetActive(false); 
+        // Trigger the Fade and Teleport
+        if(transitionManager != null)
+        {
+            transitionManager.TeleportPlayer(GameObject.FindGameObjectWithTag("Player").transform, nextRoomSpawnPoint);
+        }
         
-        // Optional: Show "Good Job" text
-        uiOverlay.ShowFocus(roomDoor.transform, "Great job! Proceed to the next room.");
-        Destroy(uiOverlay.gameObject, 3f); // Clean up UI after 3 seconds
+        Destroy(uiOverlay.gameObject); 
     }
 
-    // --- HELPER FUNCTIONS ---
-
+    // --- HELPERS ---
+    
     private void GamePause(bool isPaused)
     {
-        // If your game uses physics, TimeScale 0 stops it.
-        // If you want them to be able to look around but not move, you'd disable the PlayerController script instead.
         Time.timeScale = isPaused ? 0 : 1;
     }
 
-    private IEnumerator WaitForKeyClick()
+    private IEnumerator WaitForMouseClick()
     {
-        // Waits for a left click to "Close" the dialog and resume gameplay
-        while (!Input.GetMouseButtonDown(0))
+        // Simple loop waiting for left click to advance text
+        while (!Mouse.current.leftButton.wasPressedThisFrame)
         {
             yield return null;
         }
+        // Small delay to prevent clicking through everything instantly
+        yield return new WaitForSecondsRealtime(0.2f);
     }
 }
