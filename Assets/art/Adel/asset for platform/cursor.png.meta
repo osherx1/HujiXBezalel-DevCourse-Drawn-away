@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 57c2ee08cae314ba9878adea5946a338
+guid: 15a2167ebe1b64681b30f2aa9da226ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7539660610363501632
-    second: joony jumping_0
-  - first:
-      213: 1516816142148924238
-    second: joony jumping_1
+      213: 6554736390298987251
+    second: cursor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 140
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: joony jumping_0
+      name: cursor_0
       rect:
         serializedVersion: 2
-        x: 758
-        y: 350
-        width: 490
-        height: 964
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 241
+        y: 125
+        width: 1567
+        height: 1801
+      alignment: 9
+      pivot: {x: 0.053024672, y: 0.982237}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c357482f9ebd5790800000000000000
-      internalID: -7539660610363501632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: joony jumping_1
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 378
-        width: 562
-        height: 882
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e437d5eae30dc0510800000000000000
-      internalID: 1516816142148924238
+      spriteID: 3fae81cb40a17fa50800000000000000
+      internalID: 6554736390298987251
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e1663da6ca8674a7eb672ee77f89663d
+    spriteID: 3591a99e140f44192801ee06c5fc6359
     internalID: 0
     vertices: []
     indices: 
@@ -158,12 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      joony jumping_0: -7539660610363501632
-      joony jumping_1: 1516816142148924238
+      cursor_0: 6554736390298987251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

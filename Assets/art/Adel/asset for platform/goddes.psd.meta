@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 57c2ee08cae314ba9878adea5946a338
+guid: c542b66a4ea7d45ce84880316d79b647
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7539660610363501632
-    second: joony jumping_0
+      213: -8706875557376318398
+    second: goddes_0
   - first:
-      213: 1516816142148924238
-    second: joony jumping_1
+      213: 5931671104767381753
+    second: goddes_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,10 +51,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 140
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,45 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: joony jumping_0
+      name: goddes_0
       rect:
         serializedVersion: 2
-        x: 758
-        y: 350
-        width: 490
-        height: 964
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 434
+        y: 1981
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c357482f9ebd5790800000000000000
-      internalID: -7539660610363501632
+      spriteID: 244ad03cfc6fa2780800000000000000
+      internalID: -8706875557376318398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: joony jumping_1
+      name: goddes_1
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 378
-        width: 562
-        height: 882
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 12
+        y: 8
+        width: 1945
+        height: 1732
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e437d5eae30dc0510800000000000000
-      internalID: 1516816142148924238
+      spriteID: 9f0db144177815250800000000000000
+      internalID: 5931671104767381753
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e1663da6ca8674a7eb672ee77f89663d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -158,12 +158,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      joony jumping_0: -7539660610363501632
-      joony jumping_1: 1516816142148924238
+      goddes_0: -8706875557376318398
+      goddes_1: 5931671104767381753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
