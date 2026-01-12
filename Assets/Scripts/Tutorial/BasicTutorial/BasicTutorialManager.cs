@@ -77,7 +77,11 @@ public class BasicTutorialManager : MonoBehaviour
 
     private void OnEnable()
     {
-        if (lineManager != null) lineManager.OnLineFinished += HandleLineDrawn;
+        if (lineManager != null)
+        {
+            Debug.Log("Line Manager is not null.");
+            lineManager.OnLineFinished += HandleLineDrawn;
+        }
         Line.onLineDestroyed += HandleLineDestroyed;
     }
 
@@ -95,7 +99,12 @@ public class BasicTutorialManager : MonoBehaviour
     // }
 
     // --- EVENT LISTENERS ---
-    private void HandleLineDrawn(Line line) => _lineDrawn = true;
+    private void HandleLineDrawn(Line line)
+    {
+        Debug.Log("Line Drawn!");
+        _lineDrawn = true;
+    }
+
     private void HandleLineDestroyed(string id, int cost) => _lineDestroyed = true;
 
     // --- MAIN SEQUENCE ---

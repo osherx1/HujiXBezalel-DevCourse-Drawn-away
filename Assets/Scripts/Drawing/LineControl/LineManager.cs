@@ -448,6 +448,9 @@ namespace Drawing.LineControl
                 }
 
                 currentLine.AddInkCost(finishInkCost);
+                
+                // Notify listeners (like the TutorialManager) that a valid line was drawn
+                OnLineFinished?.Invoke(currentLine);
             }
 
 
