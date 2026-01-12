@@ -6,10 +6,13 @@ namespace Game.Core.Tutorial
 {
     public class TutorialTextRenderer : MonoBehaviour
     {
-        [Header("Tutorial UI Settings")] [SerializeField]
-        private float blurDuration = 0.5f;
-
+        [Header("Tutorial UI Settings")] 
+        [SerializeField] private float blurDuration = 0.5f;
         [SerializeField] private float imageFadeDuration = 0.5f;
+        
+        [Tooltip("How dark the background becomes. 0 = Invisible, 1 = Pitch Black.")]
+        [Range(0f, 1f)] 
+        [SerializeField] private float maxOpacity = 0.85f; // Default to 85% opacity
 
         private Coroutine blurCoroutine;
         private Coroutine imageCoroutine;
@@ -45,7 +48,9 @@ namespace Game.Core.Tutorial
         {
             if (blurCoroutine != null) StopCoroutine(blurCoroutine);
             if (imageCoroutine != null) StopCoroutine(imageCoroutine);
-            blurCoroutine = StartCoroutine(BlurInCoroutine(blurPanel, 1f, blurDuration,
+            
+            // CHANGED: Uses 'maxOpacity' instead of hardcoded '1f'
+            blurCoroutine = StartCoroutine(BlurInCoroutine(blurPanel, maxOpacity, blurDuration,
                 () =>
                 {
                     imageCoroutine = StartCoroutine(ShowImagesCoroutine(imagesToShow, imageFadeDuration, onComplete));
@@ -63,15 +68,14 @@ namespace Game.Core.Tutorial
             if (imageCoroutine != null) StopCoroutine(imageCoroutine);
             StartCoroutine(BlurOutAndHideImagesCoroutine(blurPanel, imagesToHide, onComplete));
         }
-
-        public void TransitionImages(Image blurPanelToHide, Image[] imagesToHide, Image blurPanelToShow, Image[] imagesToShow, System.Action onComplete = null)
+        
+        public void TransitionImages(Image blurPanelToHide, Image[] imagesToHide, Image blurPanelToShow, Image[] imagesToShow, System.Action onComplete)
         {
             if (imageCoroutine != null) StopCoroutine(imageCoroutine);
             imageCoroutine = StartCoroutine(TransitionImagesCoroutine(blurPanelToHide, imagesToHide, blurPanelToShow, imagesToShow, onComplete));
         }
 
-        private IEnumerator BlurInCoroutine(Image blurPanel, float targetAlpha, float duration,
-            System.Action onComplete)
+        private IEnumerator BlurInCoroutine(Image blurPanel, float targetAlpha, float duration, System.Action onComplete)
         {
             if (blurPanel == null) yield break;
             blurPanel.gameObject.SetActive(true);
@@ -113,8 +117,7 @@ namespace Game.Core.Tutorial
             onComplete?.Invoke();
         }
 
-        private IEnumerator BlurOutAndHideImagesCoroutine(Image blurPanel, Image[] images,
-            System.Action onComplete = null)
+        private IEnumerator BlurOutAndHideImagesCoroutine(Image blurPanel, Image[] images, System.Action onComplete = null)
         {
             // Fade out images
             float startAlpha = 1f;
@@ -155,13 +158,14 @@ namespace Game.Core.Tutorial
 
             onComplete?.Invoke();
         }
-
+        
         private IEnumerator TransitionImagesCoroutine(Image blurPanelToHide, Image[] imagesToHide, Image blurPanelToShow, Image[] imagesToShow, System.Action onComplete)
         {
             // Hide current blur and images
             yield return StartCoroutine(BlurOutAndHideImagesCoroutine(blurPanelToHide, imagesToHide));
             // Show new blur and images
-            yield return StartCoroutine(BlurInCoroutine(blurPanelToShow, 1f, blurDuration, () =>
+            // CHANGED: Uses 'maxOpacity' instead of '1f'
+            yield return StartCoroutine(BlurInCoroutine(blurPanelToShow, maxOpacity, blurDuration, () =>
             {
                 imageCoroutine = StartCoroutine(ShowImagesCoroutine(imagesToShow, imageFadeDuration, onComplete));
             }));

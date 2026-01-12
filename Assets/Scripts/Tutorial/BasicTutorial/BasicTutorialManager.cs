@@ -2,42 +2,40 @@ using System.Collections;
 using Drawing.Buttons;
 using Drawing.LineControl;
 using Drawing.Managers;
+using Game.Core.Tutorial; // Namespace for TutorialTextRenderer
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class BasicTutorialManager : MonoBehaviour
 {
-    [Header("--- TUTORIAL UI ---")]
-    [SerializeField] private TutorialOverlay uiOverlay;
-    
+    [Header("--- RENDERER INTEGRATION ---")]
+    [SerializeField] private TutorialTextRenderer tutorialRenderer;
+    [Tooltip("The full-screen dark panel (Image) to fade in/out.")]
+    [SerializeField] private Image blurPanel;
+    [Tooltip("The UI Image component that will display the Instruction Sprites.")]
+    [SerializeField] private Image instructionImage;
+    [Tooltip("The Object with the Mask component (Spotlight). Moves to highlight targets.")]
+    [SerializeField] private RectTransform spotlightTransform;
+    [SerializeField] private Camera mainCamera;
+
     [Header("--- INSTRUCTION SPRITES ---")]
-    [Tooltip("W/A/D/Space")]
     [SerializeField] private Sprite spriteMovement;
-    [Tooltip("Walk to material")]
     [SerializeField] private Sprite spritePickup;
-    [Tooltip("Right Click to Open")]
     [SerializeField] private Sprite spriteOpenToolbar;
-    [Tooltip("Select Material Icon")]
     [SerializeField] private Sprite spriteSelectMaterial;
-    [Tooltip("Hold Left Click to Draw")]
     [SerializeField] private Sprite spriteDraw;
-    [Tooltip("Select Broom Icon")]
     [SerializeField] private Sprite spriteSelectBroom;
-    [Tooltip("Drag over lines")]
     [SerializeField] private Sprite spriteEraseAction;
-    [Tooltip("Draw more lines (if board is empty)")]
-    [SerializeField] private Sprite spriteDrawAgain; 
-    [Tooltip("Select Reset Icon")]
+    [SerializeField] private Sprite spriteDrawAgain;
     [SerializeField] private Sprite spriteSelectReset;
-    [Tooltip("Close the menu")]
     [SerializeField] private Sprite spriteCloseMenu;
 
     [Header("--- GAME OBJECT REFERENCES ---")]
-    [SerializeField] private GameObject toolbarPanelObject; 
+    [SerializeField] private GameObject toolbarPanelObject;
     [SerializeField] private LineManager lineManager;
-    [SerializeField] private Transform linesRoot; 
-    [SerializeField] private GameObject materialPickupItem; 
+    [SerializeField] private Transform linesRoot;
+    [SerializeField] private GameObject materialPickupItem;
     [SerializeField] private SpriteRenderer roomDoor;
     [SerializeField] private DoorTeleport doorTeleport;
 
@@ -47,11 +45,11 @@ public class BasicTutorialManager : MonoBehaviour
     [SerializeField] private Button resetButton;
 
     [Header("--- LOCATIONS ---")]
-    [SerializeField] private Transform drawingWallTarget;   
-    [SerializeField] private Transform eraseTarget;         
+    [SerializeField] private Transform drawingWallTarget;
+    [SerializeField] private Transform eraseTarget;
 
     [Header("--- INPUT REFERENCES ---")]
-    [SerializeField] private InputActionReference moveAction; 
+    [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference jumpAction;
 
     // State Flags
@@ -63,60 +61,57 @@ public class BasicTutorialManager : MonoBehaviour
 
     private void Start()
     {
-        // Start with all buttons locked to prevent early clicking
+        // 1. Setup Direct Listeners
+        if (materialButton != null) materialButton.onClick.AddListener(() => _materialSelected = true);
+        if (broomButton != null) broomButton.onClick.AddListener(() => _eraserActive = true);
+        if (resetButton != null) resetButton.onClick.AddListener(() => _boardReset = true);
+
+        // 2. Lock all buttons initially
         SetButtonsActive(false, false, false);
+        
+        // 3. Ensure Camera reference
+        if (mainCamera == null) mainCamera = Camera.main;
+
         StartCoroutine(TutorialSequence());
     }
 
     private void OnEnable()
     {
-        if (EventManager.Instance != null)
-        {
-            EventManager.Instance.OnConfigButtonSelected += HandleMaterialSelected;
-            EventManager.Instance.OnEraserActive += HandleEraserActive;
-            EventManager.Instance.OnBoardReset += HandleBoardReset;
-        }
-
         if (lineManager != null)
         {
+            Debug.Log("Line Manager is not null.");
             lineManager.OnLineFinished += HandleLineDrawn;
         }
-
         Line.onLineDestroyed += HandleLineDestroyed;
     }
 
     private void OnDisable()
     {
-        if (EventManager.Instance != null)
-        {
-            EventManager.Instance.OnConfigButtonSelected -= HandleMaterialSelected;
-            EventManager.Instance.OnEraserActive -= HandleEraserActive;
-            EventManager.Instance.OnBoardReset -= HandleBoardReset;
-        }
-
-        if (lineManager != null)
-        {
-            lineManager.OnLineFinished -= HandleLineDrawn;
-        }
-
+        if (lineManager != null) lineManager.OnLineFinished -= HandleLineDrawn;
         Line.onLineDestroyed -= HandleLineDestroyed;
     }
 
+    // private void OnDestroy()
+    // {
+    //     if (materialButton != null) materialButton.onClick.RemoveAllListeners();
+    //     if (broomButton != null) broomButton.onClick.RemoveAllListeners();
+    //     if (resetButton != null) resetButton.onClick.RemoveAllListeners();
+    // }
+
     // --- EVENT LISTENERS ---
-    private void HandleMaterialSelected(object sender) => _materialSelected = true;
-    private void HandleEraserActive() => _eraserActive = true;
-    private void HandleBoardReset() => _boardReset = true;
-    private void HandleLineDrawn(Line line) => _lineDrawn = true;
+    private void HandleLineDrawn(Line line)
+    {
+        Debug.Log("Line Drawn!");
+        _lineDrawn = true;
+    }
+
     private void HandleLineDestroyed(string id, int cost) => _lineDestroyed = true;
 
     // --- MAIN SEQUENCE ---
     private IEnumerator TutorialSequence()
     {
-        // 1. MOVEMENT
-        yield return MovementState();
-
-        // 2. PICKUP
-        yield return PickupState();
+        // 1. MOVEMENT & PICKUP
+        yield return MovementAndPickupPhase();
 
         // 3. TOOLBAR & MATERIALS
         yield return MaterialTutorialState();
@@ -127,7 +122,7 @@ public class BasicTutorialManager : MonoBehaviour
         // 5. BROOM (ERASER)
         yield return BroomState();
 
-        // 6. PREPARE FOR RESET (Ensure lines exist)
+        // 6. PREPARE FOR RESET
         yield return PrepareResetState();
 
         // 7. RESET
@@ -139,15 +134,16 @@ public class BasicTutorialManager : MonoBehaviour
 
     // --- STEPS ---
 
-    private IEnumerator MovementState()
+    private IEnumerator MovementAndPickupPhase()
     {
-        // Show instruction immediately. No pause.
-        uiOverlay.ShowFocus(null, spriteMovement);
+        // Start Instruction: Movement
+        ShowInstruction(spriteMovement, null);
 
         bool movedLeft = false;
         bool movedRight = false;
         bool jumped = false;
 
+        // Input monitoring
         System.Action<InputAction.CallbackContext> onMove = (ctx) =>
         {
             float x = ctx.ReadValue<Vector2>().x;
@@ -156,12 +152,15 @@ public class BasicTutorialManager : MonoBehaviour
         };
         System.Action<InputAction.CallbackContext> onJump = (ctx) => jumped = true;
 
-        if(moveAction != null) moveAction.action.performed += onMove;
-        if(jumpAction != null) jumpAction.action.started += onJump;
+        if (moveAction != null) moveAction.action.performed += onMove;
+        if (jumpAction != null) jumpAction.action.started += onJump;
 
-        // Wait strictly for actions
-        while (!movedLeft || !movedRight || !jumped)
+        // Wait for movement OR item pickup (skip if player rushes)
+        while (!IsItemPickedUp())
         {
+            if (movedLeft && movedRight && jumped) break;
+
+            // Keyboard Fallback
             if (Keyboard.current != null)
             {
                 if (Keyboard.current.aKey.wasPressedThisFrame) movedLeft = true;
@@ -171,123 +170,121 @@ public class BasicTutorialManager : MonoBehaviour
             yield return null;
         }
 
-        if(moveAction != null) moveAction.action.performed -= onMove;
-        if(jumpAction != null) jumpAction.action.started -= onJump;
+        if (moveAction != null) moveAction.action.performed -= onMove;
+        if (jumpAction != null) jumpAction.action.started -= onJump;
 
-        // Transition: Hide overlay briefly or keep it for next step?
-        // Usually good to hide briefly to show success, or just swap instantly.
-        uiOverlay.Hide(); 
-        yield return new WaitForSeconds(0.2f);
-    }
-
-    private IEnumerator PickupState()
-    {
-        uiOverlay.ShowFocus(materialPickupItem.transform, spritePickup);
-
-        // Wait until item is gone
-        while (materialPickupItem != null && materialPickupItem.activeInHierarchy)
+        // --- PICKUP PHASE ---
+        if (!IsItemPickedUp())
         {
-            yield return null;
+            // Transition visual to Pickup
+            // We hide briefly or just swap. Let's swap via ShowInstruction directly for smoothness
+            ShowInstruction(spritePickup, materialPickupItem.transform);
+
+            while (!IsItemPickedUp())
+            {
+                // Update spotlight position dynamically in case player pushes item
+                UpdateSpotlightPosition(materialPickupItem.transform);
+                yield return null;
+            }
         }
-        
-        uiOverlay.Hide();
+
+        HideInstruction();
         yield return new WaitForSeconds(0.2f);
     }
 
     private IEnumerator MaterialTutorialState()
     {
         // A. Open Toolbar
-        uiOverlay.ShowFocus(null, spriteOpenToolbar);
+        ShowInstruction(spriteOpenToolbar, null);
 
-        // Wait for toolbar to open
-        while (!IsToolbarOpen())
-        {
-            yield return null;
-        }
-        
-        // LOCK: Only Material
+        while (!IsToolbarOpen()) yield return null;
+
+        // UNLOCK: Material Button
         SetButtonsActive(true, false, false);
 
         // B. Select Material
-        uiOverlay.ShowFocus(null, spriteSelectMaterial);
+        // Note: No specific target for the button unless we have its RectTransform, so null target
+        ShowInstruction(spriteSelectMaterial, null);
 
         _materialSelected = false;
         while (!_materialSelected)
         {
+            if (!IsToolbarOpen())
+            {
+                // Re-prompt if they closed it
+                ShowInstruction(spriteOpenToolbar, null);
+                while (!IsToolbarOpen()) yield return null;
+                ShowInstruction(spriteSelectMaterial, null);
+            }
             yield return null;
         }
-        
-        uiOverlay.Hide();
 
-        // Wait for auto-close (handled by your UI logic)
+        HideInstruction();
+        // Wait for auto-close
         while (IsToolbarOpen()) yield return null;
     }
 
     private IEnumerator DrawingState()
     {
-        uiOverlay.ShowFocus(drawingWallTarget, spriteDraw);
+        ShowInstruction(spriteDraw, drawingWallTarget);
 
         _lineDrawn = false;
-        while (!_lineDrawn)
-        {
-            yield return null;
-        }
-        
-        uiOverlay.Hide();
+        while (!_lineDrawn) yield return null;
+
+        HideInstruction();
         yield return new WaitForSeconds(0.5f);
     }
 
     private IEnumerator BroomState()
     {
         // A. Open Toolbar
-        uiOverlay.ShowFocus(null, spriteOpenToolbar);
+        ShowInstruction(spriteOpenToolbar, null);
         while (!IsToolbarOpen()) yield return null;
-        
+
         // LOCK: Only Broom
         SetButtonsActive(false, true, false);
 
         // B. Select Broom
-        uiOverlay.ShowFocus(null, spriteSelectBroom);
-        
+        ShowInstruction(spriteSelectBroom, null);
+
         _eraserActive = false;
-        while (!_eraserActive) yield return null;
-        
-        uiOverlay.Hide();
+        while (!_eraserActive)
+        {
+            if (!IsToolbarOpen())
+            {
+                ShowInstruction(spriteOpenToolbar, null);
+                while (!IsToolbarOpen()) yield return null;
+                ShowInstruction(spriteSelectBroom, null);
+            }
+            yield return null;
+        }
+
+        HideInstruction();
         while (IsToolbarOpen()) yield return null;
 
         // C. Erase Action
-        uiOverlay.ShowFocus(eraseTarget, spriteEraseAction);
-        
+        ShowInstruction(spriteEraseAction, eraseTarget);
+
         _lineDestroyed = false;
-        while (!_lineDestroyed)
-        {
-            yield return null;
-        }
-        
-        uiOverlay.Hide();
+        while (!_lineDestroyed) yield return null;
+
+        HideInstruction();
         yield return new WaitForSeconds(0.5f);
     }
 
     private IEnumerator PrepareResetState()
     {
-        // Ensure there is something to reset
+        // Check if we need lines
         if (GetLineCount() == 0)
         {
-            // Unlock Material button again so they can draw
+            // Unlock Material button again
             SetButtonsActive(true, false, false);
-            
-            // Show "Draw Again" instruction
-            uiOverlay.ShowFocus(drawingWallTarget, spriteDrawAgain);
-            
-            // Wait until lines exist. 
-            // Note: If the toolbar is closed, the player needs to open it. 
-            // We trust the player remembers how to open it, or the sprite implies it.
-            while (GetLineCount() == 0)
-            {
-                yield return null;
-            }
-            
-            uiOverlay.Hide();
+
+            ShowInstruction(spriteDrawAgain, drawingWallTarget);
+
+            while (GetLineCount() == 0) yield return null;
+
+            HideInstruction();
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -295,52 +292,109 @@ public class BasicTutorialManager : MonoBehaviour
     private IEnumerator ResetState()
     {
         // A. Open Toolbar
-        uiOverlay.ShowFocus(null, spriteOpenToolbar);
+        ShowInstruction(spriteOpenToolbar, null);
         while (!IsToolbarOpen()) yield return null;
 
         // LOCK: Only Reset
         SetButtonsActive(false, false, true);
 
         // B. Click Reset
-        uiOverlay.ShowFocus(null, spriteSelectReset);
-        
+        ShowInstruction(spriteSelectReset, null);
+
         _boardReset = false;
         while (!_boardReset)
         {
+            if (!IsToolbarOpen())
+            {
+                ShowInstruction(spriteOpenToolbar, null);
+                while (!IsToolbarOpen()) yield return null;
+                ShowInstruction(spriteSelectReset, null);
+            }
             yield return null;
         }
-        
-        uiOverlay.Hide();
+
+        HideInstruction();
         yield return new WaitForSeconds(0.5f);
-        
+
         // C. Close Menu
         if (IsToolbarOpen())
         {
-            uiOverlay.ShowFocus(null, spriteCloseMenu);
-            // Unlock tools so they can click one to close, or right click
-            SetButtonsActive(true, true, true);
-            
+            ShowInstruction(spriteCloseMenu, null);
+            SetButtonsActive(true, true, true); // Unlock all
+
             while (IsToolbarOpen()) yield return null;
-            uiOverlay.Hide();
+            HideInstruction();
         }
     }
 
     private void FinishTutorial()
     {
-        // Final Cleanup
-        SetButtonsActive(true, true, true); // Enable all for gameplay
-        
-        if(roomDoor != null) roomDoor.sprite = null; 
-        if(doorTeleport != null) doorTeleport.UnlockDoor();
-        
-        if(uiOverlay != null) 
+        SetButtonsActive(true, true, true);
+
+        if (roomDoor != null) roomDoor.sprite = null;
+        if (doorTeleport != null) doorTeleport.UnlockDoor();
+
+        // Optional: Hide Renderer one last time just in case
+        if (tutorialRenderer != null)
         {
-            uiOverlay.Hide(); 
-            Destroy(uiOverlay.gameObject);
+            tutorialRenderer.HideBlurAndImages(blurPanel, new Image[] { instructionImage });
         }
     }
 
-    // --- HELPERS ---
+    // --- HELPER FUNCTIONS ---
+
+    private void ShowInstruction(Sprite sprite, Transform target)
+    {
+        // 1. Setup Sprite
+        if (instructionImage != null)
+        {
+            instructionImage.sprite = sprite;
+            instructionImage.preserveAspect = true;
+        }
+
+        // 2. Setup Spotlight (Visual Position)
+        if (spotlightTransform != null)
+        {
+            if (target != null)
+            {
+                spotlightTransform.gameObject.SetActive(true);
+                UpdateSpotlightPosition(target);
+            }
+            else
+            {
+                // If no target, we hide the spotlight (solid blur)
+                spotlightTransform.gameObject.SetActive(false);
+            }
+        }
+
+        // 3. Fade In via Renderer
+        if (tutorialRenderer != null && blurPanel != null)
+        {
+            tutorialRenderer.ShowBlurAndImages(blurPanel, new Image[] { instructionImage });
+        }
+    }
+
+    private void HideInstruction()
+    {
+        if (tutorialRenderer != null && blurPanel != null)
+        {
+            tutorialRenderer.HideBlurAndImages(blurPanel, new Image[] { instructionImage });
+        }
+    }
+
+    private void UpdateSpotlightPosition(Transform target)
+    {
+        if (spotlightTransform != null && target != null && mainCamera != null)
+        {
+            Vector3 screenPos = mainCamera.WorldToScreenPoint(target.position);
+            spotlightTransform.position = screenPos;
+        }
+    }
+
+    private bool IsItemPickedUp()
+    {
+        return materialPickupItem == null || !materialPickupItem.activeInHierarchy;
+    }
 
     private void SetButtonsActive(bool material, bool broom, bool reset)
     {
