@@ -295,7 +295,7 @@ public class BrushPickupToUI : MonoBehaviour
         {
             if (worldSprite != null) worldSprite.enabled = false;
             ApplyUnlocks();
-            TryAutoSelectUnlockedTool();
+            // TryAutoSelectUnlockedTool();
             yield return WaitRemainingLockTime(startTime);
             FinishAndCleanup();
             yield break;
@@ -392,7 +392,7 @@ public class BrushPickupToUI : MonoBehaviour
         Destroy(flyingVisual);
 
         ApplyUnlocks();
-        TryAutoSelectUnlockedTool();
+        // TryAutoSelectUnlockedTool();
         yield return WaitRemainingLockTime(startTime);
         FinishAndCleanup();
     }
