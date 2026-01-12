@@ -1,21 +1,34 @@
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using TMPro; // Assuming you have DOTween based on your previous file
 
 public class TutorialOverlay : MonoBehaviour
 {
     [Header("UI Components")]
     [SerializeField] private GameObject overlayPanel; // The full-screen dark panel
     [SerializeField] private RectTransform spotlightMask; // The object with the Mask component
-    [SerializeField] private TextMeshProUGUI instructionText; // Text to tell player what to do
+    [SerializeField] private Image instructionImageRenderer; // The UI Image that will show your sprite
     [SerializeField] private Camera mainCamera;
 
-    public void ShowFocus(Transform targetWorldObject, string text)
+    [Header("Settings")]
+    [SerializeField] private Vector2 defaultImageOffset = new Vector2(0, 100); // Offset from center if no target
+
+    public void ShowFocus(Transform targetWorldObject, Sprite instructionSprite)
     {
         overlayPanel.SetActive(true);
-        instructionText.text = text;
 
+        // 1. Set the Instruction Sprite
+        if (instructionSprite != null)
+        {
+            instructionImageRenderer.sprite = instructionSprite;
+            instructionImageRenderer.gameObject.SetActive(true);
+            instructionImageRenderer.SetNativeSize(); // Optional: ensures sprite isn't stretched
+        }
+        else
+        {
+            instructionImageRenderer.gameObject.SetActive(false);
+        }
+
+        // 2. Handle Spotlight Position
         if (targetWorldObject != null)
         {
             // Convert world position (the pickup/door) to screen UI position
