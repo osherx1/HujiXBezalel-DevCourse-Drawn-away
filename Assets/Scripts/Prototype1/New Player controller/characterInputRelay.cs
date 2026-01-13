@@ -17,9 +17,12 @@ public class characterInputRelay : MonoBehaviour
     [Header("Fallback Keyboard Controls")]
     [SerializeField] private bool enableKeyboardFallback = true;
     [SerializeField] private Key leftKey = Key.A;
+    [SerializeField] private Key leftKeySecondary = Key.LeftArrow;
     [SerializeField] private Key rightKey = Key.D;
+    [SerializeField] private Key rightKeySecondary = Key.RightArrow;
     [SerializeField] private Key jumpKeyPrimary = Key.Space;
     [SerializeField] private Key jumpKeySecondary = Key.W;
+    [SerializeField] private Key jumpKeyTertiary = Key.UpArrow;
 
     private characterMovement movement;
     private characterJump jump;
@@ -34,8 +37,8 @@ public class characterInputRelay : MonoBehaviour
     {
         if (moveAction != null)
         {
-            moveAction.action.performed += movement.OnMovement;
-            moveAction.action.canceled += movement.OnMovement;
+            moveAction.action.performed += OnMoveAction;
+            moveAction.action.canceled += OnMoveAction;
             moveAction.action.Enable();
         }
 
@@ -60,37 +63,75 @@ public class characterInputRelay : MonoBehaviour
             return;
         }
 
-        float input = 0f;
-        if (keyboard[leftKey].isPressed)
-        {
-            input -= 1f;
-        }
-        if (keyboard[rightKey].isPressed)
-        {
-            input += 1f;
-        }
-        movement.SetDirectionalInput(Mathf.Clamp(input, -1f, 1f));
+        //If Input Actions are assigned/enabled, don't override them with fallback keyboard.
+        bool shouldFallbackMove = moveAction == null || moveAction.action == null || !moveAction.action.enabled;
+        bool shouldFallbackJump = jumpAction == null || jumpAction.action == null || !jumpAction.action.enabled;
 
-        bool jumpPressed = keyboard[jumpKeyPrimary].wasPressedThisFrame || keyboard[jumpKeySecondary].wasPressedThisFrame;
-        bool jumpReleased = keyboard[jumpKeyPrimary].wasReleasedThisFrame || keyboard[jumpKeySecondary].wasReleasedThisFrame;
-
-        if (jumpPressed)
+        if (shouldFallbackMove)
         {
-            jump.StartJumpInput();
+            float input = 0f;
+            if (keyboard[leftKey].isPressed || keyboard[leftKeySecondary].isPressed)
+            {
+                input -= 1f;
+            }
+            if (keyboard[rightKey].isPressed || keyboard[rightKeySecondary].isPressed)
+            {
+                input += 1f;
+            }
+            movement.SetDirectionalInput(Mathf.Clamp(input, -1f, 1f));
         }
 
-        if (jumpReleased)
+        if (shouldFallbackJump)
         {
-            jump.StopJumpInput();
+            bool jumpPressed =
+                keyboard[jumpKeyPrimary].wasPressedThisFrame ||
+                keyboard[jumpKeySecondary].wasPressedThisFrame ||
+                keyboard[jumpKeyTertiary].wasPressedThisFrame;
+
+            bool jumpReleased =
+                keyboard[jumpKeyPrimary].wasReleasedThisFrame ||
+                keyboard[jumpKeySecondary].wasReleasedThisFrame ||
+                keyboard[jumpKeyTertiary].wasReleasedThisFrame;
+
+            if (jumpPressed)
+            {
+                jump.StartJumpInput();
+            }
+
+            if (jumpReleased)
+            {
+                jump.StopJumpInput();
+            }
         }
+    }
+
+    private void OnMoveAction(InputAction.CallbackContext context)
+    {
+        if (movement == null)
+        {
+            return;
+        }
+
+        //Support both float axis actions and Vector2 actions (use X).
+        float x;
+        if (context.valueType == typeof(Vector2))
+        {
+            x = context.ReadValue<Vector2>().x;
+        }
+        else
+        {
+            x = context.ReadValue<float>();
+        }
+
+        movement.SetDirectionalInput(Mathf.Clamp(x, -1f, 1f));
     }
 
     private void OnDisable()
     {
         if (moveAction != null)
         {
-            moveAction.action.performed -= movement.OnMovement;
-            moveAction.action.canceled -= movement.OnMovement;
+            moveAction.action.performed -= OnMoveAction;
+            moveAction.action.canceled -= OnMoveAction;
             moveAction.action.Disable();
         }
 
