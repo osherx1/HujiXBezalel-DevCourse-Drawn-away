@@ -122,7 +122,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ac3f7afa5206f134f8abfab8d07348e2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -167,8 +167,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.01798439, y: 3.2831323}
-  m_Size: {x: 2.7593803, y: 6.4046435}
+  m_Offset: {x: 0.1438837, y: 3.1010284}
+  m_Size: {x: 1.9905033, y: 6.3641815}
   m_Direction: 0
 --- !u!114 &1185081031527145602
 MonoBehaviour:
@@ -340,17 +340,17 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   moveLimit: {fileID: 7387025864371424899}
   jumpHeight: 15
-  timeToJumpApex: 0.799
+  timeToJumpApex: 1.016
   upwardMovementMultiplier: 1.86
   downwardMovementMultiplier: 3.96
   maxAirJumps: 0
   maxJumpLaunchSpeed: 36.9
   variablejumpHeight: 1
-  jumpCutOff: 1.98
+  jumpCutOff: 9
   speedLimit: 0
   coyoteTime: 0.15
-  jumpBuffer: 0.15
-  jumpSpeed: 29.382957
+  jumpBuffer: 0.5
+  jumpSpeed: 36.9
   gravMultiplier: 1
   canJumpAgain: 0
   onGround: 1
@@ -369,12 +369,12 @@ MonoBehaviour:
   moveLimit: {fileID: 7387025864371424899}
   maxSpeed: 30
   maxAcceleration: 0
-  maxDecceleration: 52
+  maxDecceleration: 80
   maxTurnSpeed: 80
   maxAirAcceleration: 52.7
   maxAirDeceleration: 69.7
   maxAirTurnSpeed: 52.7
-  friction: 2
+  friction: 0
   useAcceleration: 0
   itsTheIntro: 1
   usePushReductionTag: 1

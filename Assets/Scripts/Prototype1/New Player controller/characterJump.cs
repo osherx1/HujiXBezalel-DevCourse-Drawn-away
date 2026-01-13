@@ -13,7 +13,7 @@ public class characterJump : MonoBehaviour
     [SerializeField] movementLimiter moveLimit;
 
     [Header("Jumping Stats")]
-    [SerializeField, Range(2f, 15f)][Tooltip("Maximum jump height")] public float jumpHeight = 7.3f;
+    [SerializeField, Range(2f, 20f)][Tooltip("Maximum jump height")] public float jumpHeight = 7.3f;
 
 
 //If you're using your stats from Platformer Toolkit with this character controller, please note that the number on the Jump Duration handle does not match this stat
@@ -33,7 +33,7 @@ public class characterJump : MonoBehaviour
     [SerializeField, Range(1f, 10f)][Tooltip("Gravity multiplier when you let go of jump")] public float jumpCutOff;
     [SerializeField][Tooltip("The fastest speed the character can fall")] public float speedLimit;
     [SerializeField, Range(0f, 0.3f)][Tooltip("How long should coyote time last?")] public float coyoteTime = 0.15f;
-    [SerializeField, Range(0f, 0.3f)][Tooltip("How far from ground should we cache your jump?")] public float jumpBuffer = 0.15f;
+    [SerializeField, Range(0f, 0.5f)][Tooltip("How far from ground should we cache your jump?")] public float jumpBuffer = 0.15f;
 
     [Header("Calculations")]
     public float jumpSpeed;
