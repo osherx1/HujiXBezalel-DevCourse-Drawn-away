@@ -30,6 +30,13 @@ public class characterJump : MonoBehaviour
 
     [Header("Options")]
     [Tooltip("Should the character drop when you let go of jump?")] public bool variablejumpHeight;
+    [Header("Jump Release Cut")]
+    [SerializeField, Tooltip("When you release Jump, immediately cut upward Y velocity (similar to: if key up -> velocity.y = 0). Works best with variable jump height.")]
+    private bool cutUpwardVelocityOnJumpRelease = false;
+    [SerializeField, Range(0f, 1f), Tooltip("Multiplier applied to current upward Y velocity on jump release. 0 = stop upward motion immediately, 1 = no cut.")]
+    private float jumpReleaseYVelocityMultiplier = 0f;
+    [SerializeField, Range(0f, 5f), Tooltip("Only cut if current upward velocity is above this (prevents tiny cuts near the apex).")]
+    private float minUpwardVelocityToCut = 0.01f;
     [SerializeField, Range(1f, 10f)][Tooltip("Gravity multiplier when you let go of jump")] public float jumpCutOff;
     [SerializeField][Tooltip("The fastest speed the character can fall")] public float speedLimit;
     [SerializeField, Range(0f, 0.3f)][Tooltip("How long should coyote time last?")] public float coyoteTime = 0.15f;
@@ -48,6 +55,7 @@ public class characterJump : MonoBehaviour
     private bool pressingJump;
     public bool onGround;
     private bool currentlyJumping;
+    private bool cutJumpRequested;
 
     void Awake()
     {
@@ -93,6 +101,11 @@ public class characterJump : MonoBehaviour
     public void StopJumpInput()
     {
         pressingJump = false;
+
+        if (cutUpwardVelocityOnJumpRelease)
+        {
+            cutJumpRequested = true;
+        }
     }
 
     void Update()
@@ -164,6 +177,45 @@ public class characterJump : MonoBehaviour
     {
         //We change the character's gravity based on her Y direction
         Vector2 currentVelocity = body.linearVelocity;
+
+        //Optional hard cut: on jump release, reduce/zero out upward velocity immediately.
+        //This mimics: if (Input.GetKeyUp(jump)) velocity.y = 0
+        if (cutJumpRequested)
+        {
+            cutJumpRequested = false;
+
+            if (!onGround && currentVelocity.y > minUpwardVelocityToCut)
+            {
+                currentVelocity.y *= jumpReleaseYVelocityMultiplier;
+
+                //If we've effectively stopped rising, treat it like a jump release drop.
+                if (currentVelocity.y <= minUpwardVelocityToCut)
+                {
+                    currentVelocity.y = 0f;
+                    gravMultiplier = Mathf.Max(downwardMovementMultiplier, defaultGravityScale);
+                }
+                else
+                {
+                    gravMultiplier = variablejumpHeight ? jumpCutOff : upwardMovementMultiplier;
+                }
+
+                body.linearVelocity = currentVelocity;
+                velocity = currentVelocity;
+
+                //Skip the normal direction-based gravMultiplier selection this frame.
+                //We already set gravMultiplier above to reflect the cut.
+                if (speedLimit > 0f)
+                {
+                    float maxFallSpeed = -Mathf.Abs(speedLimit);
+                    currentVelocity.y = Mathf.Max(currentVelocity.y, maxFallSpeed);
+                }
+
+                currentVelocity.x = velocity.x;
+                body.linearVelocity = currentVelocity;
+                velocity = currentVelocity;
+                return;
+            }
+        }
 
         //If Kit is going up...
         if (currentVelocity.y > 0.01f)
