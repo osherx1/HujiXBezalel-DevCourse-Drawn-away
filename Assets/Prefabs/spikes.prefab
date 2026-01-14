@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1534158302845953278, guid: 7c82c94e839664cf6984568e791fcded, type: 3}
+  m_Sprite: {fileID: -2521205971797356310, guid: 1ab13cbf24f97404aa3b505a08fc1d16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,8 +129,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.45283, y: 8.289309}
+    pivot: {x: 0.49629197, y: -0.018400405}
+    oldSize: {x: 14.38154, y: 5.7599998}
     newSize: {x: 16.62, y: 13.18}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype1.SpikeHazard
   requiredTag: Player
+  zeroVelocityOnHit: 1
