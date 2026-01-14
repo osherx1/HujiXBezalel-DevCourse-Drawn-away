@@ -2549,16 +2549,17 @@ MonoBehaviour:
   instructionImage: {fileID: 1988859499}
   spotlightTransform: {fileID: 1738852760}
   mainCamera: {fileID: 363968821}
-  spriteMovement: {fileID: 0}
-  spritePickup: {fileID: 0}
-  spriteOpenToolbar: {fileID: 0}
-  spriteSelectMaterial: {fileID: 0}
-  spriteDraw: {fileID: 0}
-  spriteSelectBroom: {fileID: 0}
-  spriteEraseAction: {fileID: 0}
-  spriteDrawAgain: {fileID: 0}
-  spriteSelectReset: {fileID: 0}
-  spriteCloseMenu: {fileID: 0}
+  spriteMovement: {fileID: 21300000, guid: ff96e585346ff4f869832f537f3de6a7, type: 3}
+  spritePickup: {fileID: 21300000, guid: 727558b576293450081e90ce5bc4e2d1, type: 3}
+  spriteOpenToolbar: {fileID: 21300000, guid: f465189a8e60c42a3bf9d3230cbe7bc5, type: 3}
+  spriteSelectMaterial: {fileID: 21300000, guid: 5f86c1f3b3eb5400a9dea849fb492eab, type: 3}
+  spriteMaterialUiExplained: {fileID: 21300000, guid: f5dd6e93d3b724cdba87ab45cd2d3f42, type: 3}
+  spriteDraw: {fileID: 21300000, guid: 5ac4aea3484884ab79791f76ab0d293c, type: 3}
+  spriteSelectBroom: {fileID: 21300000, guid: e2d09f3745c8547c780990cdc91d09de, type: 3}
+  spriteEraseAction: {fileID: 21300000, guid: ce76aeaf534f6400aa1ac9c90c6d1db5, type: 3}
+  spriteDrawAgain: {fileID: 21300000, guid: 5ac4aea3484884ab79791f76ab0d293c, type: 3}
+  spriteSelectReset: {fileID: 21300000, guid: c027bdf0a97e7483aaf1b7de986aab44, type: 3}
+  spriteCloseMenu: {fileID: 21300000, guid: eec51b752ec33493a863ccf743bceed4, type: 3}
   toolbarPanelObject: {fileID: 1708873660}
   lineManager: {fileID: 176294565}
   linesRoot: {fileID: 296961772}
@@ -7407,14 +7408,14 @@ RectTransform:
   m_GameObject: {fileID: 1988859497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.144174, y: 5.144174, z: 5.144174}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1522159710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -3}
+  m_AnchoredPosition: {x: 0, y: 281}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1988859499
@@ -7431,7 +7432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7617,6 +7618,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7440981132975211316, guid: 051e4a7496660457c9502a58cc556427, type: 3}
+    - target: {fileID: 7308517732880457370, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: flyDuration
       value: 1

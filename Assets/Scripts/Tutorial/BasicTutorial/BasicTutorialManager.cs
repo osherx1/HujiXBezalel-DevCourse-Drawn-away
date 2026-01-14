@@ -24,6 +24,7 @@ public class BasicTutorialManager : MonoBehaviour
     [SerializeField] private Sprite spritePickup;
     [SerializeField] private Sprite spriteOpenToolbar;
     [SerializeField] private Sprite spriteSelectMaterial;
+    [SerializeField] private Sprite spriteMaterialUiExplained;
     [SerializeField] private Sprite spriteDraw;
     [SerializeField] private Sprite spriteSelectBroom;
     [SerializeField] private Sprite spriteEraseAction;
@@ -195,8 +196,6 @@ public class BasicTutorialManager : MonoBehaviour
     private IEnumerator MaterialTutorialState()
     {
         // A. Open Toolbar
-        ShowInstruction(spriteOpenToolbar, null);
-
         while (!IsToolbarOpen()) yield return null;
 
         // UNLOCK: Material Button
@@ -231,8 +230,8 @@ public class BasicTutorialManager : MonoBehaviour
         _lineDrawn = false;
         while (!_lineDrawn) yield return null;
 
-        HideInstruction();
-        yield return new WaitForSeconds(0.5f);
+        ShowInstruction(spriteMaterialUiExplained, null);
+        yield return new WaitForSeconds(2.0f);
     }
 
     private IEnumerator BroomState()
