@@ -1,0 +1,1456 @@
+fileFormatVersion: 2
+guid: c027bdf0a97e7483aaf1b7de986aab44
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5587540447589266257
+    second: 9resets and erases screen_0
+  - first:
+      213: 7637535067694090041
+    second: 9resets and erases screen_1
+  - first:
+      213: -4895182257921496881
+    second: 9resets and erases screen_2
+  - first:
+      213: -7190745678293163807
+    second: 9resets and erases screen_3
+  - first:
+      213: -8226465335432471566
+    second: 9resets and erases screen_4
+  - first:
+      213: 3299818877064560142
+    second: 9resets and erases screen_5
+  - first:
+      213: -3123947208540068482
+    second: 9resets and erases screen_6
+  - first:
+      213: 6142920538540843466
+    second: 9resets and erases screen_7
+  - first:
+      213: 1896836965649084728
+    second: 9resets and erases screen_8
+  - first:
+      213: -3665412560366887568
+    second: 9resets and erases screen_9
+  - first:
+      213: -2484735853611528958
+    second: 9resets and erases screen_10
+  - first:
+      213: -6055949100824541831
+    second: 9resets and erases screen_11
+  - first:
+      213: 1090932696420259960
+    second: 9resets and erases screen_12
+  - first:
+      213: 3496643241338363974
+    second: 9resets and erases screen_13
+  - first:
+      213: -4684927584885679142
+    second: 9resets and erases screen_14
+  - first:
+      213: 120285520236535710
+    second: 9resets and erases screen_15
+  - first:
+      213: -3605810034979780385
+    second: 9resets and erases screen_16
+  - first:
+      213: 7288382423734984462
+    second: 9resets and erases screen_17
+  - first:
+      213: -7385570954936640172
+    second: 9resets and erases screen_18
+  - first:
+      213: -7987751846276076099
+    second: 9resets and erases screen_19
+  - first:
+      213: -6078975483719560373
+    second: 9resets and erases screen_20
+  - first:
+      213: 7792360798603713783
+    second: 9resets and erases screen_21
+  - first:
+      213: 7868548071267475945
+    second: 9resets and erases screen_22
+  - first:
+      213: 2647303133901995402
+    second: 9resets and erases screen_23
+  - first:
+      213: -274086348042836843
+    second: 9resets and erases screen_24
+  - first:
+      213: 8959436735500899725
+    second: 9resets and erases screen_25
+  - first:
+      213: -4012491623080246
+    second: 9resets and erases screen_26
+  - first:
+      213: -8755738386382056060
+    second: 9resets and erases screen_27
+  - first:
+      213: -4900993121626702791
+    second: 9resets and erases screen_28
+  - first:
+      213: 7382394314399574854
+    second: 9resets and erases screen_29
+  - first:
+      213: -6888001452625811883
+    second: 9resets and erases screen_30
+  - first:
+      213: -656653102517745587
+    second: 9resets and erases screen_31
+  - first:
+      213: 1239348010257150603
+    second: 9resets and erases screen_32
+  - first:
+      213: 701727474197180673
+    second: 9resets and erases screen_33
+  - first:
+      213: -1571797339249091494
+    second: 9resets and erases screen_34
+  - first:
+      213: 4242424737314477535
+    second: 9resets and erases screen_35
+  - first:
+      213: 7087747186091168568
+    second: 9resets and erases screen_36
+  - first:
+      213: -9154854385016278547
+    second: 9resets and erases screen_37
+  - first:
+      213: 2715463108296147874
+    second: 9resets and erases screen_38
+  - first:
+      213: 5808698170663243690
+    second: 9resets and erases screen_39
+  - first:
+      213: -745886743965343095
+    second: 9resets and erases screen_40
+  - first:
+      213: 3984960434583998168
+    second: 9resets and erases screen_41
+  - first:
+      213: 3641075221796666825
+    second: 9resets and erases screen_42
+  - first:
+      213: 8012174362979008649
+    second: 9resets and erases screen_43
+  - first:
+      213: -4617186709922582822
+    second: 9resets and erases screen_44
+  - first:
+      213: -6183616618900422725
+    second: 9resets and erases screen_45
+  - first:
+      213: -1131735807968272133
+    second: 9resets and erases screen_46
+  - first:
+      213: 526155225605747456
+    second: 9resets and erases screen_47
+  - first:
+      213: 3504380590902286562
+    second: 9resets and erases screen_48
+  - first:
+      213: -6716513304133758892
+    second: 9resets and erases screen_49
+  - first:
+      213: -980029635982217981
+    second: 9resets and erases screen_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 9resets and erases screen_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 191
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1537faade6eea8d40800000000000000
+      internalID: 5587540447589266257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 191
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937ce7dbda9fdf960800000000000000
+      internalID: 7637535067694090041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 191
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc86bc51ca1d01cb0800000000000000
+      internalID: -4895182257921496881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 220
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e0292f57e6553c90800000000000000
+      internalID: -7190745678293163807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_4
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 191
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb9b74fc59b5dd80800000000000000
+      internalID: -8226465335432471566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 191
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ebf8619cf4bcd20800000000000000
+      internalID: 3299818877064560142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_6
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 191
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7565e1b09285a4d0800000000000000
+      internalID: -3123947208540068482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_7
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 191
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1ad27eea9004550800000000000000
+      internalID: 6142920538540843466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_8
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 191
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831f75e9b2be25a10800000000000000
+      internalID: 1896836965649084728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_9
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 191
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d931052b6d12dc0800000000000000
+      internalID: -3665412560366887568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_10
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 191
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20dcec4e7e1748dd0800000000000000
+      internalID: -2484735853611528958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_11
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 191
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 975c18be062f4fba0800000000000000
+      internalID: -6055949100824541831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_12
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 191
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8781df3e185c32f00800000000000000
+      internalID: 1090932696420259960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_13
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 191
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6406e328082968030800000000000000
+      internalID: 3496643241338363974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_14
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 191
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adbd570fe2bcbfeb0800000000000000
+      internalID: -4684927584885679142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_15
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 191
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f52591b075ba100800000000000000
+      internalID: 120285520236535710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_16
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 191
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8cd79a0e695fdc0800000000000000
+      internalID: -3605810034979780385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_17
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 191
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f9ce9e239852560800000000000000
+      internalID: 7288382423734984462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_18
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 191
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d1f8fc85e218990800000000000000
+      internalID: -7385570954936640172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_19
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 191
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd6eb8440ec52190800000000000000
+      internalID: -7987751846276076099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_20
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 135
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43569e510423aba0800000000000000
+      internalID: -6078975483719560373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_21
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 135
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc14725cd6042c60800000000000000
+      internalID: 7792360798603713783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_22
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 135
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e1abfd08c2b23d60800000000000000
+      internalID: 7868548071267475945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_23
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 135
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8db10d9c2c1db420800000000000000
+      internalID: 2647303133901995402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_24
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 135
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5946f1b2bef323cf0800000000000000
+      internalID: -274086348042836843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_25
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 135
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85dd17ed30565c70800000000000000
+      internalID: 8959436735500899725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_26
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 135
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace542ef8aeb1fff0800000000000000
+      internalID: -4012491623080246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_27
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 135
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4851275d35e5d7680800000000000000
+      internalID: -8755738386382056060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_28
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 135
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93cbec2f8bc2cfbb0800000000000000
+      internalID: -4900993121626702791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_29
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 135
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b66ade388837660800000000000000
+      internalID: 7382394314399574854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_30
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 135
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5562ddb4c27e860a0800000000000000
+      internalID: -6888001452625811883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_31
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 135
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4885cb7b7913e6f0800000000000000
+      internalID: -656653102517745587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_32
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 135
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b82f670f27c033110800000000000000
+      internalID: 1239348010257150603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_33
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 135
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101b7ac7b690db900800000000000000
+      internalID: 701727474197180673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_34
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 135
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5c572fc5aadf2ae0800000000000000
+      internalID: -1571797339249091494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_35
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 135
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd595fd32de10ea30800000000000000
+      internalID: 4242424737314477535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_36
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 135
+        width: 16
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8331db4638cbc5260800000000000000
+      internalID: 7087747186091168568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_37
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 135
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de17daaf07c63f080800000000000000
+      internalID: -9154854385016278547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_38
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 111
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a38ba25f434fa520800000000000000
+      internalID: 2715463108296147874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_39
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 135
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf08ddd534ac9050800000000000000
+      internalID: 5808698170663243690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_40
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 79
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982e54f45f316a5f0800000000000000
+      internalID: -745886743965343095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_41
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 79
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8de8d5be66c6d4730800000000000000
+      internalID: 3984960434583998168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_42
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 79
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdbaab7f92b78230800000000000000
+      internalID: 3641075221796666825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_43
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 79
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9800bdff126f03f60800000000000000
+      internalID: 8012174362979008649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_44
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 79
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adee86576257cefb0800000000000000
+      internalID: -4617186709922582822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_45
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 79
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbffc3382716f2aa0800000000000000
+      internalID: -6183616618900422725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_46
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 79
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0267267444b40f0800000000000000
+      internalID: -1131735807968272133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_47
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 79
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00332f6d3674d4700800000000000000
+      internalID: 526155225605747456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_48
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 79
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e81186949f02a030800000000000000
+      internalID: 3504380590902286562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_49
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 79
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4501ce94cb62ac2a0800000000000000
+      internalID: -6716513304133758892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 9resets and erases screen_50
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 79
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30daced0d3c3662f0800000000000000
+      internalID: -980029635982217981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      9resets and erases screen_0: 5587540447589266257
+      9resets and erases screen_1: 7637535067694090041
+      9resets and erases screen_10: -2484735853611528958
+      9resets and erases screen_11: -6055949100824541831
+      9resets and erases screen_12: 1090932696420259960
+      9resets and erases screen_13: 3496643241338363974
+      9resets and erases screen_14: -4684927584885679142
+      9resets and erases screen_15: 120285520236535710
+      9resets and erases screen_16: -3605810034979780385
+      9resets and erases screen_17: 7288382423734984462
+      9resets and erases screen_18: -7385570954936640172
+      9resets and erases screen_19: -7987751846276076099
+      9resets and erases screen_2: -4895182257921496881
+      9resets and erases screen_20: -6078975483719560373
+      9resets and erases screen_21: 7792360798603713783
+      9resets and erases screen_22: 7868548071267475945
+      9resets and erases screen_23: 2647303133901995402
+      9resets and erases screen_24: -274086348042836843
+      9resets and erases screen_25: 8959436735500899725
+      9resets and erases screen_26: -4012491623080246
+      9resets and erases screen_27: -8755738386382056060
+      9resets and erases screen_28: -4900993121626702791
+      9resets and erases screen_29: 7382394314399574854
+      9resets and erases screen_3: -7190745678293163807
+      9resets and erases screen_30: -6888001452625811883
+      9resets and erases screen_31: -656653102517745587
+      9resets and erases screen_32: 1239348010257150603
+      9resets and erases screen_33: 701727474197180673
+      9resets and erases screen_34: -1571797339249091494
+      9resets and erases screen_35: 4242424737314477535
+      9resets and erases screen_36: 7087747186091168568
+      9resets and erases screen_37: -9154854385016278547
+      9resets and erases screen_38: 2715463108296147874
+      9resets and erases screen_39: 5808698170663243690
+      9resets and erases screen_4: -8226465335432471566
+      9resets and erases screen_40: -745886743965343095
+      9resets and erases screen_41: 3984960434583998168
+      9resets and erases screen_42: 3641075221796666825
+      9resets and erases screen_43: 8012174362979008649
+      9resets and erases screen_44: -4617186709922582822
+      9resets and erases screen_45: -6183616618900422725
+      9resets and erases screen_46: -1131735807968272133
+      9resets and erases screen_47: 526155225605747456
+      9resets and erases screen_48: 3504380590902286562
+      9resets and erases screen_49: -6716513304133758892
+      9resets and erases screen_5: 3299818877064560142
+      9resets and erases screen_50: -980029635982217981
+      9resets and erases screen_6: -3123947208540068482
+      9resets and erases screen_7: 6142920538540843466
+      9resets and erases screen_8: 1896836965649084728
+      9resets and erases screen_9: -3665412560366887568
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
