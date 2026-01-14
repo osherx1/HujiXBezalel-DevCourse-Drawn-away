@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 1535b25d34644453aa527fc49d3ccd13
+guid: 8d89f1658e56048a099febaa119c52b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4201960385981155957
-    second: phase 2_0
+      213: 8262216965236084491
+    second: netifim_0
+  - first:
+      213: 5752141963495023647
+    second: netifim_1
+  - first:
+      213: 6079940064164908671
+    second: netifim_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: phase 2_0
+      name: netifim_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 95
-        width: 958
-        height: 648
+        y: 0
+        width: 1233
+        height: 1824
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57a8ba645bc505a30800000000000000
-      internalID: 4201960385981155957
+      spriteID: b0f4a160e8a49a270800000000000000
+      internalID: 8262216965236084491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: netifim_1
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1355
+        width: 561
+        height: 1641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f142dbfb3a6b3df40800000000000000
+      internalID: 5752141963495023647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: netifim_2
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1392
+        width: 909
+        height: 1598
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e07348649406450800000000000000
+      internalID: 6079940064164908671
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 51a70b0744a00462c944d4dbd012bf39
+    spriteID: 0af2c387627854959866894d131a9007
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      phase 2_0: 4201960385981155957
+      netifim_0: 8262216965236084491
+      netifim_1: 5752141963495023647
+      netifim_2: 6079940064164908671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

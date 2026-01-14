@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1535b25d34644453aa527fc49d3ccd13
+guid: 40704cf5f22af4a25bf8f500ed2e67fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4201960385981155957
-    second: phase 2_0
+      213: 7602811120264847247
+    second: fron wall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: phase 2_0
+      name: fron wall_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 95
-        width: 958
-        height: 648
+        y: 0
+        width: 3019
+        height: 1920
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57a8ba645bc505a30800000000000000
-      internalID: 4201960385981155957
+      spriteID: f8f96c5be6c928960800000000000000
+      internalID: 7602811120264847247
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 51a70b0744a00462c944d4dbd012bf39
+    spriteID: efdc12741120848058a9ea17bec2508f
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      phase 2_0: 4201960385981155957
+      fron wall_0: 7602811120264847247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
