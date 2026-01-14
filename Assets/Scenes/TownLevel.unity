@@ -2547,19 +2547,21 @@ MonoBehaviour:
   tutorialRenderer: {fileID: 1249240649}
   blurPanel: {fileID: 1113618995}
   instructionImage: {fileID: 1988859499}
+  instructionBackground: {fileID: 1893840444}
   spotlightTransform: {fileID: 1738852760}
   mainCamera: {fileID: 363968821}
   spriteMovement: {fileID: 21300000, guid: ff96e585346ff4f869832f537f3de6a7, type: 3}
   spritePickup: {fileID: 21300000, guid: 727558b576293450081e90ce5bc4e2d1, type: 3}
   spriteOpenToolbar: {fileID: 21300000, guid: f465189a8e60c42a3bf9d3230cbe7bc5, type: 3}
   spriteSelectMaterial: {fileID: 21300000, guid: 5f86c1f3b3eb5400a9dea849fb492eab, type: 3}
-  spriteMaterialUiExplained: {fileID: 21300000, guid: f5dd6e93d3b724cdba87ab45cd2d3f42, type: 3}
+  spriteMaterialUiInfo: {fileID: 21300000, guid: f5dd6e93d3b724cdba87ab45cd2d3f42, type: 3}
   spriteDraw: {fileID: 21300000, guid: 5ac4aea3484884ab79791f76ab0d293c, type: 3}
   spriteSelectBroom: {fileID: 21300000, guid: e2d09f3745c8547c780990cdc91d09de, type: 3}
   spriteEraseAction: {fileID: 21300000, guid: ce76aeaf534f6400aa1ac9c90c6d1db5, type: 3}
+  spriteSelectMaterialAgain: {fileID: 0}
   spriteDrawAgain: {fileID: 21300000, guid: 5ac4aea3484884ab79791f76ab0d293c, type: 3}
   spriteSelectReset: {fileID: 21300000, guid: c027bdf0a97e7483aaf1b7de986aab44, type: 3}
-  spriteCloseMenu: {fileID: 21300000, guid: eec51b752ec33493a863ccf743bceed4, type: 3}
+  spriteGoToDoor: {fileID: 0}
   toolbarPanelObject: {fileID: 1708873660}
   lineManager: {fileID: 176294565}
   linesRoot: {fileID: 296961772}
@@ -2569,8 +2571,9 @@ MonoBehaviour:
   materialButton: {fileID: 1708873659}
   broomButton: {fileID: 1708873658}
   resetButton: {fileID: 1708873657}
-  drawingWallTarget: {fileID: 1095665775}
-  eraseTarget: {fileID: 0}
+  materialInfoUiTarget: {fileID: 1227829075}
+  doorSlideHeight: 4
+  doorSlideDuration: 2
   moveAction: {fileID: 0}
   jumpAction: {fileID: 0}
 --- !u!4 &680635934
@@ -4862,6 +4865,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &1227829075 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4905275396805037347, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+  m_PrefabInstance: {fileID: 1708873653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1240544440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6288,6 +6296,7 @@ RectTransform:
   - {fileID: 1113618994}
   - {fileID: 1249240648}
   - {fileID: 1988859498}
+  - {fileID: 1893840442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7319,6 +7328,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1893840441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1893840442}
+  - component: {fileID: 1893840443}
+  - component: {fileID: 1893840444}
+  m_Layer: 5
+  m_Name: InstructionBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1893840442
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893840441}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5.6819, y: 3.8634648, z: 5.6819}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1522159710}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 273}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1893840443
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893840441}
+  m_CullTransparentMesh: 1
+--- !u!114 &1893840444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893840441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6028119085637966514, guid: a91c035112bbc4052a2476684eea6bd3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1001 &1913163563
 PrefabInstance:
   m_ObjectHideFlags: 0
