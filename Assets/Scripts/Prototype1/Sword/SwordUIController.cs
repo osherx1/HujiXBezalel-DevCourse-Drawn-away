@@ -171,7 +171,7 @@ namespace Prototype1
                     continue;
                 }
 
-                if (s.minCollectedPieces >= bestMin)
+                if (s.minCollectedPieces > bestMin)
                 {
                     bestMin = s.minCollectedPieces;
                     bestIndex = i;
