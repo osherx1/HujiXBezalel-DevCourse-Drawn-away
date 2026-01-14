@@ -331,7 +331,7 @@ PrefabInstance:
     - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
       propertyPath: uiTargetSlot
       value: 
-      objectReference: {fileID: 1119695306}
+      objectReference: {fileID: 1708873654}
     - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
       propertyPath: jumpController
       value: 
@@ -12956,6 +12956,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+--- !u!224 &1708873654 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8391074459720895813, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+  m_PrefabInstance: {fileID: 1708873653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1709724622
 PrefabInstance:
   m_ObjectHideFlags: 0
