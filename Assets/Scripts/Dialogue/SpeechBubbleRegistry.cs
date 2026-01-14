@@ -15,6 +15,9 @@ public class SpeechBubbleRegistry : MonoBehaviour
         public CharacterId character;
         public GameObject bubble;
 
+        [Tooltip("Optional: secondary speech bubble for this character (variant 1).")]
+        public GameObject bubble2;
+
         [Header("Follow")]
         [Tooltip("Optional: world-space target the bubble should follow (e.g., the NPC head transform).")]
         public Transform followTarget;
@@ -58,6 +61,11 @@ public class SpeechBubbleRegistry : MonoBehaviour
 
     public void Show(CharacterId character, bool hideOthers = true)
     {
+        ShowVariant(character, 0, hideOthers);
+    }
+
+    public void ShowVariant(CharacterId character, int variantIndex, bool hideOthers = true)
+    {
         if (character == CharacterId.None)
         {
             return;
@@ -68,13 +76,35 @@ public class SpeechBubbleRegistry : MonoBehaviour
             HideAll();
         }
 
-        if (!_map.TryGetValue(character, out Entry entry) || entry == null || entry.bubble == null)
+        if (!_map.TryGetValue(character, out Entry entry) || entry == null)
         {
             Debug.LogWarning($"SpeechBubbleRegistry: No bubble assigned for '{character}'.", this);
             return;
         }
 
-        GameObject bubble = entry.bubble;
+        // Always ensure only ONE bubble variant is active per character.
+        if (variantIndex <= 0)
+        {
+            HideBubbleObject(entry.bubble2);
+        }
+        else if (variantIndex == 1)
+        {
+            HideBubbleObject(entry.bubble);
+        }
+        else
+        {
+            HideBubbleObject(entry.bubble);
+            HideBubbleObject(entry.bubble2);
+            Debug.LogWarning($"SpeechBubbleRegistry: No bubble variant {variantIndex} assigned for '{character}'.", this);
+            return;
+        }
+
+        GameObject bubble = GetVariantBubble(entry, variantIndex);
+        if (bubble == null)
+        {
+            Debug.LogWarning($"SpeechBubbleRegistry: No bubble variant {variantIndex} assigned for '{character}'.", this);
+            return;
+        }
 
         if (!bubble.activeSelf)
         {
@@ -103,17 +133,13 @@ public class SpeechBubbleRegistry : MonoBehaviour
             return;
         }
 
-        if (_map.TryGetValue(character, out Entry entry) && entry != null && entry.bubble != null && entry.bubble.activeSelf)
+        if (!_map.TryGetValue(character, out Entry entry) || entry == null)
         {
-            // Optional: disable the follower to stop LateUpdate work while hidden.
-            var follower = entry.bubble.GetComponent<SpeechBubbleFollower>();
-            if (follower != null)
-            {
-                follower.enabled = false;
-            }
-
-            entry.bubble.SetActive(false);
+            return;
         }
+
+        HideBubbleObject(entry.bubble);
+        HideBubbleObject(entry.bubble2);
     }
 
     public void HideAll()
@@ -121,16 +147,50 @@ public class SpeechBubbleRegistry : MonoBehaviour
         foreach (var kv in _map)
         {
             var entry = kv.Value;
-            var bubble = entry != null ? entry.bubble : null;
-            if (bubble != null && bubble.activeSelf)
+            if (entry == null)
             {
-                var follower = bubble.GetComponent<SpeechBubbleFollower>();
-                if (follower != null)
-                {
-                    follower.enabled = false;
-                }
-                bubble.SetActive(false);
+                continue;
             }
+
+            HideBubbleObject(entry.bubble);
+            HideBubbleObject(entry.bubble2);
         }
+    }
+
+    private static GameObject GetVariantBubble(Entry entry, int variantIndex)
+    {
+        if (entry == null)
+        {
+            return null;
+        }
+
+        if (variantIndex <= 0)
+        {
+            return entry.bubble;
+        }
+
+        if (variantIndex == 1)
+        {
+            return entry.bubble2;
+        }
+
+        return null;
+    }
+
+    private static void HideBubbleObject(GameObject bubble)
+    {
+        if (bubble == null || !bubble.activeSelf)
+        {
+            return;
+        }
+
+        // Optional: disable the follower to stop LateUpdate work while hidden.
+        var follower = bubble.GetComponent<SpeechBubbleFollower>();
+        if (follower != null)
+        {
+            follower.enabled = false;
+        }
+
+        bubble.SetActive(false);
     }
 }

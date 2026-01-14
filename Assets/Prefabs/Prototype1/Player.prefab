@@ -340,12 +340,15 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   moveLimit: {fileID: 7387025864371424899}
   jumpHeight: 15
-  timeToJumpApex: 1.016
+  timeToJumpApex: 0.7
   upwardMovementMultiplier: 1.86
   downwardMovementMultiplier: 3.96
   maxAirJumps: 0
   maxJumpLaunchSpeed: 36.9
   variablejumpHeight: 1
+  cutUpwardVelocityOnJumpRelease: 0
+  jumpReleaseYVelocityMultiplier: 0
+  minUpwardVelocityToCut: 0.01
   jumpCutOff: 9
   speedLimit: 0
   coyoteTime: 0.15
@@ -403,9 +406,12 @@ MonoBehaviour:
   jumpAction: {fileID: 0}
   enableKeyboardFallback: 1
   leftKey: 15
+  leftKeySecondary: 61
   rightKey: 18
+  rightKeySecondary: 62
   jumpKeyPrimary: 1
   jumpKeySecondary: 37
+  jumpKeyTertiary: 63
 --- !u!114 &5081876298336607299
 MonoBehaviour:
   m_ObjectHideFlags: 0

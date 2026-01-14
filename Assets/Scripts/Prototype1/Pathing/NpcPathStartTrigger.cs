@@ -45,23 +45,44 @@ public class NpcPathStartTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (player == null || other == null || other.transform != player)
+        {
+            return;
+        }
+
+        TriggerNow(player);
+    }
+
+    public void TriggerNow()
+    {
+        TriggerNow(player);
+    }
+
+    public void TriggerNow(Transform playerTransform)
+    {
         if (triggerOnce && hasTriggered)
         {
             return;
         }
 
-        if (player == null)
+        if (playerTransform == null)
         {
             return;
         }
 
-        if (other.transform != player)
-        {
-            return;
-        }
-
+        player = playerTransform;
         hasTriggered = true;
 
+        StartNpc();
+
+        if (triggerOnce && triggerCollider != null)
+        {
+            triggerCollider.enabled = false;
+        }
+    }
+
+    private void StartNpc()
+    {
         if (path == null || path.Waypoints == null || path.Waypoints.Count == 0)
         {
             return;
@@ -84,10 +105,5 @@ public class NpcPathStartTrigger : MonoBehaviour
 
         npc.gameObject.SetActive(true);
         npc.Begin(path, player);
-
-        if (triggerOnce && triggerCollider != null)
-        {
-            triggerCollider.enabled = false;
-        }
     }
 }
