@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: e2d09f3745c8547c780990cdc91d09de
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2433577612129228226
+    second: 7brrom_0
+  - first:
+      213: -6928763117386784849
+    second: 7brrom_1
+  - first:
+      213: 1414732745436336318
+    second: 7brrom_2
+  - first:
+      213: 5171640541404713097
+    second: 7brrom_3
+  - first:
+      213: -5711756836880621521
+    second: 7brrom_4
+  - first:
+      213: -7725185120110814491
+    second: 7brrom_5
+  - first:
+      213: -8182464817013123181
+    second: 7brrom_6
+  - first:
+      213: -7773268697355474773
+    second: 7brrom_7
+  - first:
+      213: 360130290512454060
+    second: 7brrom_8
+  - first:
+      213: -1876854483038946814
+    second: 7brrom_9
+  - first:
+      213: 2361785044574794119
+    second: 7brrom_10
+  - first:
+      213: -4902097511560213031
+    second: 7brrom_11
+  - first:
+      213: -6017585278952843037
+    second: 7brrom_12
+  - first:
+      213: 5191970360309994609
+    second: 7brrom_13
+  - first:
+      213: 5842247411029300947
+    second: 7brrom_14
+  - first:
+      213: -6008567908415596198
+    second: 7brrom_15
+  - first:
+      213: -1723630424726704926
+    second: 7brrom_16
+  - first:
+      213: -1660003569247577885
+    second: 7brrom_17
+  - first:
+      213: 3253518319278175240
+    second: 7brrom_18
+  - first:
+      213: 3154801191278721169
+    second: 7brrom_19
+  - first:
+      213: 1475224165287929303
+    second: 7brrom_20
+  - first:
+      213: -4607399745101198339
+    second: 7brrom_21
+  - first:
+      213: -2513260063257021253
+    second: 7brrom_22
+  - first:
+      213: 4097213347447964542
+    second: 7brrom_23
+  - first:
+      213: 6353437814630623056
+    second: 7brrom_24
+  - first:
+      213: -2514125949776434885
+    second: 7brrom_25
+  - first:
+      213: -8056967972529804135
+    second: 7brrom_26
+  - first:
+      213: -5829932887397608147
+    second: 7brrom_27
+  - first:
+      213: -3647638406042432711
+    second: 7brrom_28
+  - first:
+      213: 8217705791355854307
+    second: 7brrom_29
+  - first:
+      213: 5718749939407587640
+    second: 7brrom_30
+  - first:
+      213: 843867746549662001
+    second: 7brrom_31
+  - first:
+      213: -3748536478694442670
+    second: 7brrom_32
+  - first:
+      213: 119994301791906683
+    second: 7brrom_33
+  - first:
+      213: 6142520917719108309
+    second: 7brrom_34
+  - first:
+      213: -4683221044214080431
+    second: 7brrom_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 7brrom_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 175
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3aa1bf2e023a3ed0800000000000000
+      internalID: -2433577612129228226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 175
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf1557a7a618df90800000000000000
+      internalID: -6928763117386784849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 175
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb098d7bfe322a310800000000000000
+      internalID: 1414732745436336318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 205
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 980df600cab55c740800000000000000
+      internalID: 5171640541404713097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 175
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2062564b63cbb0b0800000000000000
+      internalID: -5711756836880621521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 175
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea59a32011aac490800000000000000
+      internalID: -7725185120110814491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 175
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3971dcaf99b027e80800000000000000
+      internalID: -8182464817013123181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_7
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 175
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba8a676ed4dcf1490800000000000000
+      internalID: -7773268697355474773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_8
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 175
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca16ad657907ff400800000000000000
+      internalID: 360130290512454060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_9
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 175
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a3d5baac214f5e0800000000000000
+      internalID: -1876854483038946814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_10
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 175
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781f5b91cfeb6c020800000000000000
+      internalID: 2361785044574794119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_11
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 175
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd8021294048fbb0800000000000000
+      internalID: -4902097511560213031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_12
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 175
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e85562421e3d7ca0800000000000000
+      internalID: -6017585278952843037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_13
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 175
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17452a2d8859d0840800000000000000
+      internalID: 5191970360309994609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_14
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 119
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d6d8581115d31150800000000000000
+      internalID: 5842247411029300947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_15
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 119
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59931272574d9ca0800000000000000
+      internalID: -6008567908415596198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_16
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 119
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eceb1ac24f6418e0800000000000000
+      internalID: -1723630424726704926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_17
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 119
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e81e118c8b76f8e0800000000000000
+      internalID: -1660003569247577885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_18
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 119
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8043dca6ca1d62d20800000000000000
+      internalID: 3253518319278175240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_19
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 119
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 198b527f7fa18cb20800000000000000
+      internalID: 3154801191278721169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_20
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 119
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d52f00ff8c097410800000000000000
+      internalID: 1475224165287929303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_21
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 119
+        width: 44
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb8407c75a3f00c0800000000000000
+      internalID: -4607399745101198339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_22
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 119
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4b36dc94b1f1dd0800000000000000
+      internalID: -2513260063257021253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_23
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 119
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7300afd4d93cd830800000000000000
+      internalID: 4097213347447964542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_24
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 119
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 057a79bc702fb2850800000000000000
+      internalID: 6353437814630623056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_25
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 42
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b39ebf2e4c70c1dd0800000000000000
+      internalID: -2514125949776434885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_26
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 63
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c69ae0156ef2090800000000000000
+      internalID: -8056967972529804135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_27
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 63
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d255c4e5deae71fa0800000000000000
+      internalID: -5829932887397608147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_28
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 94
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93bc4ca123cf06dc0800000000000000
+      internalID: -3647638406042432711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_29
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 63
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed9f62c0e72b0270800000000000000
+      internalID: 8217705791355854307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_30
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 63
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8390da945c41d5f40800000000000000
+      internalID: 5718749939407587640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_31
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 63
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13180869e3506bb00800000000000000
+      internalID: 843867746549662001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_32
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 63
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259f2d7eee58afbc0800000000000000
+      internalID: -3748536478694442670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_33
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 63
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ba0658e2e4aa100800000000000000
+      internalID: 119994301791906683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_34
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 63
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dacd0eea3e9e3550800000000000000
+      internalID: 6142520917719108309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7brrom_35
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 63
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c5cf6e54bd10fb0800000000000000
+      internalID: -4683221044214080431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      7brrom_0: -2433577612129228226
+      7brrom_1: -6928763117386784849
+      7brrom_10: 2361785044574794119
+      7brrom_11: -4902097511560213031
+      7brrom_12: -6017585278952843037
+      7brrom_13: 5191970360309994609
+      7brrom_14: 5842247411029300947
+      7brrom_15: -6008567908415596198
+      7brrom_16: -1723630424726704926
+      7brrom_17: -1660003569247577885
+      7brrom_18: 3253518319278175240
+      7brrom_19: 3154801191278721169
+      7brrom_2: 1414732745436336318
+      7brrom_20: 1475224165287929303
+      7brrom_21: -4607399745101198339
+      7brrom_22: -2513260063257021253
+      7brrom_23: 4097213347447964542
+      7brrom_24: 6353437814630623056
+      7brrom_25: -2514125949776434885
+      7brrom_26: -8056967972529804135
+      7brrom_27: -5829932887397608147
+      7brrom_28: -3647638406042432711
+      7brrom_29: 8217705791355854307
+      7brrom_3: 5171640541404713097
+      7brrom_30: 5718749939407587640
+      7brrom_31: 843867746549662001
+      7brrom_32: -3748536478694442670
+      7brrom_33: 119994301791906683
+      7brrom_34: 6142520917719108309
+      7brrom_35: -4683221044214080431
+      7brrom_4: -5711756836880621521
+      7brrom_5: -7725185120110814491
+      7brrom_6: -8182464817013123181
+      7brrom_7: -7773268697355474773
+      7brrom_8: 360130290512454060
+      7brrom_9: -1876854483038946814
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
