@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NpcPathFollower : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class NpcPathFollower : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private Animator animator;
 
+    [Header("Events")]
+    [SerializeField] private UnityEvent onFinished;
+
     [Header("Movement")]
     [SerializeField, Min(0f)] private float moveSpeed = 3f;
     [Tooltip("If enabled, flips localScale.x based on movement direction (2D).")]
@@ -23,6 +27,7 @@ public class NpcPathFollower : MonoBehaviour
     private int waypointIndex;
     private State state = State.Idle;
     private Vector3 baseLocalScale;
+    private bool finishedInvoked;
 
     private const float ArriveEpsilon = 0.02f;
 
@@ -40,10 +45,11 @@ public class NpcPathFollower : MonoBehaviour
     {
         path = npcPath;
         player = playerTransform;
+        finishedInvoked = false;
 
         if (path == null || path.Waypoints == null || path.Waypoints.Count == 0)
         {
-            state = State.Finished;
+            SetFinished();
             return;
         }
 
@@ -55,7 +61,7 @@ public class NpcPathFollower : MonoBehaviour
 
         if (waypointIndex >= path.Waypoints.Count - 1)
         {
-            state = State.Finished;
+            SetFinished();
             return;
         }
 
@@ -71,7 +77,7 @@ public class NpcPathFollower : MonoBehaviour
 
         if (path == null || path.Waypoints == null || path.Waypoints.Count == 0)
         {
-            state = State.Finished;
+            SetFinished();
             return;
         }
 
@@ -84,7 +90,7 @@ public class NpcPathFollower : MonoBehaviour
 
                 if (waypointIndex >= path.Waypoints.Count - 1)
                 {
-                    state = State.Finished;
+                    SetFinished();
                 }
                 else
                 {
@@ -104,7 +110,7 @@ public class NpcPathFollower : MonoBehaviour
         {
             if (waypointIndex >= path.Waypoints.Count - 1)
             {
-                state = State.Finished;
+                SetFinished();
                 break;
             }
 
@@ -143,7 +149,7 @@ public class NpcPathFollower : MonoBehaviour
 
             if (waypointIndex >= path.Waypoints.Count - 1)
             {
-                state = State.Finished;
+                SetFinished();
                 break;
             }
 
@@ -155,6 +161,16 @@ public class NpcPathFollower : MonoBehaviour
         }
 
         transform.position = position;
+    }
+
+    private void SetFinished()
+    {
+        state = State.Finished;
+        if (!finishedInvoked)
+        {
+            finishedInvoked = true;
+            onFinished?.Invoke();
+        }
     }
 
     private void ApplyEndActionsIfNeeded(NpcWaypoint waypoint)

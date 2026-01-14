@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 6943322053938539809}
   - component: {fileID: 7709894211729918057}
   m_Layer: 0
-  m_Name: SpeechBubbleRegistry
+  m_Name: SpeechBubbleRegistryIllana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -549,6 +549,7 @@ MonoBehaviour:
   entries:
   - character: 10
     bubble: {fileID: 5413831394258502183}
+    bubble2: {fileID: 2666375503047912871}
     followTarget: {fileID: 0}
     followOffset: {x: 0, y: 0.1, z: 0}
 --- !u!1 &6539721273060943638
@@ -613,8 +614,8 @@ Transform:
   m_GameObject: {fileID: 8066668099077057119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.054092, y: -0.86764, z: 0}
-  m_LocalScale: {x: 0.79671, y: 0.79671, z: 0.79671}
+  m_LocalPosition: {x: -0.095321, y: 0.31, z: 0}
+  m_LocalScale: {x: 0.6417818, y: 0.6417818, z: 0.6417818}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3998444061344760620}
@@ -739,7 +740,7 @@ MonoBehaviour:
   triggerCollider: {fileID: 2101777327327709398}
   playerTransform: {fileID: 0}
   playerTag: Player
-  character: 10
+  character: 11
   registry: {fileID: 7709894211729918057}
   hideOthersOnEnter: 0
 --- !u!1 &8325893728362873161
