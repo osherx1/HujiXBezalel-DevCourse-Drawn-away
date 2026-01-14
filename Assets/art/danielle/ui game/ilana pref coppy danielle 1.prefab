@@ -547,10 +547,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpeechBubbleRegistry
   entries:
-  - character: 10
+  - character: 11
     bubble: {fileID: 5413831394258502183}
     bubble2: {fileID: 2666375503047912871}
-    followTarget: {fileID: 0}
+    followTarget: {fileID: 3998444061344760620}
     followOffset: {x: 0, y: 0.1, z: 0}
 --- !u!1 &6539721273060943638
 GameObject:
@@ -598,6 +598,9 @@ GameObject:
   - component: {fileID: 1812661692275931933}
   - component: {fileID: 2101777327327709398}
   - component: {fileID: 6280057020848582460}
+  - component: {fileID: 4782473059491385817}
+  - component: {fileID: 764139893951177945}
+  - component: {fileID: 7876795223199672620}
   m_Layer: 0
   m_Name: ilana
   m_TagString: Untagged
@@ -709,11 +712,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.26607132, y: 4.3678513}
+  m_Offset: {x: -0.26607132, y: 1.2996392}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -723,7 +726,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 21.870216, y: 10.598221}
+  m_Size: {x: 21.870216, y: 16.734646}
   m_EdgeRadius: 0
 --- !u!114 &6280057020848582460
 MonoBehaviour:
@@ -732,7 +735,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8066668099077057119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b9acdd63a3f7b84492295e5f153705b, type: 3}
   m_Name: 
@@ -743,6 +746,88 @@ MonoBehaviour:
   character: 11
   registry: {fileID: 7709894211729918057}
   hideOthersOnEnter: 0
+--- !u!114 &4782473059491385817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1378c8d79955444becfc7522341537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcPathFollower
+  animator: {fileID: 0}
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 764139893951177945}
+        m_TargetAssemblyTypeName: IllanaLineQuestController, Assembly-CSharp
+        m_MethodName: OnIllanaFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  moveSpeed: 10
+  flipByLocalScaleX: 1
+--- !u!114 &764139893951177945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab2cce2c67f5ca4d8e56975acd07834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IllanaLineQuestController
+  progress: {fileID: 0}
+  objective: {fileID: 0}
+  requireMeetingIllanaBeforeObjective: 1
+  illanaFollower: {fileID: 4782473059491385817}
+  illanaPath: {fileID: 0}
+  player: {fileID: 0}
+  registry: {fileID: 7709894211729918057}
+  character: 11
+  idleBubbleVariant: 0
+  completedBubbleVariant: 1
+  hideOthersOnShow: 1
+  dudePathTrigger: {fileID: 0}
+  onObjectiveCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  onEscortStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onEscortCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7876795223199672620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f5b48514ea44a4a8e2028e85a65f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IllanaSpeechBubbleTrigger
+  triggerCollider: {fileID: 0}
+  playerTransform: {fileID: 0}
+  playerTag: Player
+  character: 11
+  registry: {fileID: 7709894211729918057}
+  hideOthersOnEnter: 1
+  progress: {fileID: 0}
 --- !u!1 &8325893728362873161
 GameObject:
   m_ObjectHideFlags: 0
