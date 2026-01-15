@@ -317,6 +317,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 495987592}
     - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
+      propertyPath: flyDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
       propertyPath: moveLimiter
       value: 
       objectReference: {fileID: 652030371}
@@ -356,6 +360,18 @@ PrefabInstance:
       propertyPath: movementController
       value: 
       objectReference: {fileID: 652030369}
+    - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
+      propertyPath: delayBeforeFlySeconds
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
+      propertyPath: flyEase.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
+      propertyPath: flyEase.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2373,6 +2389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1053611844895892765, guid: db934b9b71431d04eba308f220ad2fd1, type: 3}
+      propertyPath: moveSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1699645875162652286, guid: db934b9b71431d04eba308f220ad2fd1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 223.7
@@ -2631,7 +2651,7 @@ Transform:
   m_GameObject: {fileID: 363968816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.251347, y: -35.008743, z: -10}
+  m_LocalPosition: {x: -27.354652, y: -35.008743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6836,6 +6856,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 495987592}
     - target: {fileID: 2875991971189135388, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
+      propertyPath: flyDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875991971189135388, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
       propertyPath: moveLimiter
       value: 
       objectReference: {fileID: 652030371}
@@ -6867,6 +6891,18 @@ PrefabInstance:
       propertyPath: movementController
       value: 
       objectReference: {fileID: 652030369}
+    - target: {fileID: 2875991971189135388, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
+      propertyPath: delayBeforeFlySeconds
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875991971189135388, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
+      propertyPath: flyEase.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875991971189135388, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
+      propertyPath: flyEase.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8199,7 +8235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
   pointGizmoRadius: 1
   waitForPlayerDistance: 1
-  requiredPlayerDistance: 13.8
+  requiredPlayerDistance: 31.5
   onArriveTrigger: Walk
   onDepartTrigger: jump
   deactivateNpcOnArrive: 0
@@ -8212,7 +8248,7 @@ Transform:
   m_GameObject: {fileID: 1037338334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 299.7, y: 15.4, z: 0}
+  m_LocalPosition: {x: 288.2, y: 15.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12262,6 +12298,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7498826405907921466, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
+      propertyPath: totalPieces
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498826405907921466, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
       propertyPath: usePlayerPrefs
       value: 0
       objectReference: {fileID: 0}
@@ -12297,7 +12337,7 @@ Transform:
   m_GameObject: {fileID: 1390876105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.251347, y: -35.008743, z: -10}
+  m_LocalPosition: {x: -27.354652, y: -35.008743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15460,7 +15500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NpcWaypoint
   pointGizmoRadius: 1
   waitForPlayerDistance: 1
-  requiredPlayerDistance: 16.13
+  requiredPlayerDistance: 22.32
   onArriveTrigger: 
   onDepartTrigger: Walk
   deactivateNpcOnArrive: 0
@@ -15473,7 +15513,7 @@ Transform:
   m_GameObject: {fileID: 1744223168}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 283.4, y: 11.9, z: 0}
+  m_LocalPosition: {x: 216.9, y: 11.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17152,7 +17192,7 @@ Transform:
   m_GameObject: {fileID: 1878612297}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 271.3, y: 11, z: 0}
+  m_LocalPosition: {x: 179.3, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
