@@ -8607,7 +8607,7 @@ MonoBehaviour:
   autoFindTargetsInChildren: 0
   completionMode: 2
   requiredTouchedCount: 1
-  requiredTouchedPercent: 0.5
+  requiredTouchedPercent: 0.8
   triggerOnce: 1
   onAllTouched:
     m_PersistentCalls:
