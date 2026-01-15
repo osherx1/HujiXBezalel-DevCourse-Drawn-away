@@ -219,9 +219,8 @@ public class BasicTutorialManager : MonoBehaviour
         // Spotlight the Top-Left UI
         // We use the 'materialInfoUiTarget' RectTransform
         ShowInstruction(spriteMaterialUiInfo, materialInfoUiTarget);
-
-        // Wait for user click to acknowledge
-        yield return WaitForMouseClick();
+        
+        yield return new WaitForSeconds(4f);
 
         HideInstruction();
         yield return new WaitForSeconds(0.2f);
@@ -338,7 +337,7 @@ public class BasicTutorialManager : MonoBehaviour
         }
 
         // Show "Go to Door" instruction
-        ShowInstruction(spriteGoToDoor, roomDoor.transform);
+        ShowInstruction(spriteGoToDoor, null);
 
         // Hide instruction after a few seconds or when player leaves
         yield return new WaitForSeconds(4f);
