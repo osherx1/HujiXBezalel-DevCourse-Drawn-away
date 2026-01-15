@@ -15,12 +15,13 @@ namespace Drawing.Managers
         // Example: add your event handling methods here
         // public event Action<MyEventArgs> OnSomething;
         // public void RaiseSomething(MyEventArgs args) => OnSomething?.Invoke(args);
-        
+
         public event Action OnEraserActive;
         public event Action<object> OnConfigButtonSelected;
+        public event Action<bool> OnDropPlayerToTheHole;
         public event Action OnGameFinished;
         public event Action OnBoardReset; // Triggered when ResetBoard clears all lines
-        
+
         public event Action<bool> OnSlowMotionChanged;
         public event Action<bool> OnGamePausedChanged;
         public event Action<ShakeProfile> OnCameraShakeRequested;
@@ -32,18 +33,18 @@ namespace Drawing.Managers
         {
             OnSlowMotionChanged?.Invoke(active);
         }
-        
-        
-        public void TriggerGamePaused(bool active) 
+
+
+        public void TriggerGamePaused(bool active)
         {
             OnGamePausedChanged?.Invoke(active);
         }
         public void TriggerEraserActive() => OnEraserActive?.Invoke();
-        
+
         public event Action OnEraserInactive;
         public void TriggerEraserInactive() => OnEraserInactive?.Invoke();
-        
-        public void TriggerConfigButtonSelected(object senderButton) 
+
+        public void TriggerConfigButtonSelected(object senderButton)
         {
             OnConfigButtonSelected?.Invoke(senderButton);
         }
@@ -64,6 +65,11 @@ namespace Drawing.Managers
         public void TriggerBoardReset()
         {
             OnBoardReset?.Invoke();
+        }
+
+        public void TriggerDropPlayerToTheHole(bool b)
+        {
+            OnDropPlayerToTheHole?.Invoke(b);
         }
     }
 }

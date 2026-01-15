@@ -70,7 +70,8 @@ namespace Drawing.Data
             IronRelease = 32,
             BalloonRelease = 33,
             RockHit = 40,
-            RockShatter = 41
+            RockShatter = 41,
+            GiantRoar = 50
         }
     }
 }
