@@ -124,6 +124,15 @@ public class SpeechBubbleRegistry : MonoBehaviour
             follower.SetOffset(entry.followOffset);
             follower.enabled = true;
         }
+        else
+        {
+            // If we want fixed UI bubbles, ensure any existing follower is disabled.
+            SpeechBubbleFollower follower = bubble.GetComponent<SpeechBubbleFollower>();
+            if (follower != null)
+            {
+                follower.enabled = false;
+            }
+        }
     }
 
     public void Hide(CharacterId character)

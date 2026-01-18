@@ -65,8 +65,8 @@ MonoBehaviour:
   targetCanvas: {fileID: 0}
   uiTargetSlot: {fileID: 0}
   flyingVisualPrefab: {fileID: 0}
-  flyDuration: 0.6
-  delayBeforeFlySeconds: 0
+  flyDuration: 1
+  delayBeforeFlySeconds: 0.2
   delayAfterFlySeconds: 0
   flyEase:
     serializedVersion: 2
@@ -83,8 +83,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0

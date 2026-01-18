@@ -17,6 +17,7 @@ MonoBehaviour:
     settings:
       SettingID: Default
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -51,6 +52,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 1
       material: {fileID: 2100000, guid: d7bd99492bc3abf4ab9eff800fdfe127, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 0
       cornerVertices: 26
       lineTextureMode: 1
@@ -70,6 +73,7 @@ MonoBehaviour:
     settings:
       SettingID: Spring
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -104,6 +108,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.63
       material: {fileID: 2100000, guid: 3d460f6c3ceb94d4c8d838c4fc0ceb77, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 90
       cornerVertices: 0
       lineTextureMode: 0
@@ -123,6 +129,7 @@ MonoBehaviour:
     settings:
       SettingID: Iron
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -157,6 +164,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 1.05
       material: {fileID: 2100000, guid: ee5e0e1fd58e9403c8d1933ee803cbb8, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -176,6 +185,7 @@ MonoBehaviour:
     settings:
       SettingID: Static
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -210,6 +220,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.2
       material: {fileID: 2100000, guid: 287020c5e8b8f42e4923671f51f9c05a, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -229,6 +241,7 @@ MonoBehaviour:
     settings:
       SettingID: Ice
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 0
       linePrefab: {fileID: 0}
       lineColor:
@@ -263,6 +276,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.2
       material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 0
       cornerVertices: 0
       lineTextureMode: 0
@@ -282,12 +297,13 @@ MonoBehaviour:
     settings:
       SettingID: Balloon
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 1
       linePrefab: {fileID: 0}
       lineColor:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0.40392157}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.680782, g: 0.3915094, b: 1, a: 0.40392157}
+        key1: {r: 0.78955996, g: 0.5235849, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0.23921569}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -314,15 +330,17 @@ MonoBehaviour:
         m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 4
-      lineWidth: 3.37
+      lineWidth: 3.28
       material: {fileID: 2100000, guid: 8db46a6b21aefd84f9a17d809c06ffad, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 36
-      cornerVertices: 3
-      lineTextureMode: 1
+      cornerVertices: 4
+      lineTextureMode: 0
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 85cd5cd4ad3bd674480507b265d09655, type: 2}
-      gravityScaleOverride: -0.97
-      massMult: 1
+      gravityScaleOverride: -1.74
+      massMult: 0.03
       useDrawSound: 0
       drawSound: 13
       useCollisionSound: 0
@@ -335,6 +353,7 @@ MonoBehaviour:
     settings:
       SettingID: PaintingPencil
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: fb34705c405037c439a3fa7ff13c74ff, type: 3}
       lineColor:
@@ -369,6 +388,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       lineWidth: 0.18
       material: {fileID: 2100000, guid: 4c2870785ba16439e8487d1f81d9f2ec, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 90
       cornerVertices: 90
       lineTextureMode: 0
@@ -388,6 +409,7 @@ MonoBehaviour:
     settings:
       SettingID: GlueCopy
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: abe1edfebdfcc8a449556c743391f375, type: 3}
       lineColor:
@@ -422,6 +444,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 5
       lineWidth: 0.25
       material: {fileID: 2100000, guid: 1d7fd350b2b54fa40b2822d50d4848bf, type: 2}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 7
       cornerVertices: 7
       lineTextureMode: 0
@@ -441,6 +465,7 @@ MonoBehaviour:
     settings:
       SettingID: Glue
       fillMult: 1
+      ignoreCantDrawOverLayer: 0
       usePrefab: 1
       linePrefab: {fileID: 5247383489900493533, guid: abe1edfebdfcc8a449556c743391f375, type: 3}
       lineColor:
@@ -475,6 +500,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 4
       lineWidth: 0.61
       material: {fileID: -876546973899608171, guid: b377a3b9dfb15ed4b9c8bd7d1acc9136, type: 3}
+      useDifferentMaterialBeforePhysics: 0
+      materialBeforePhysics: {fileID: 0}
       endCapVertices: 7
       cornerVertices: 7
       lineTextureMode: 1

@@ -42,17 +42,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudDensity: 0.363
+    - _CloudDensity: 0
     - _Density1: 2.34
     - _Density2: 2.77
-    - _Distortion: 0.542
+    - _Distortion: 2
     - _EnableExternalAlpha: 0
     - _GlobalRot: 5.46
-    - _NoiseScale: 1.15
-    - _NoiseSpeed: 4.14
+    - _NoiseScale: -1.12
+    - _NoiseSpeed: 0.61
     - _Rotation: 176
     - _Scale: 0.3
-    - _Softness: 0.64
+    - _Softness: 0.01
     - _Speed: 5.07
     - _Thickness: 1.55
     - _UseMask: 1
@@ -73,6 +73,6 @@ Material:
     - _Layer1Color: {r: 0.5660378, g: 0.17499697, b: 0.1254895, a: 1}
     - _Layer2Color: {r: 0.42653078, g: 0.6698113, b: 0.6034621, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
+    - _TintColor: {r: 0.7235047, g: 0.5518868, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

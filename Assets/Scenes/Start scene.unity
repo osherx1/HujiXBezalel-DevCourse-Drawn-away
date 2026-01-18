@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e4dac1d7a1ff045ac0c9542e1d1fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartMenuController
-  playSceneName: TownLevel
+  playSceneName: Tutorial
   menuSceneName: Menu
 --- !u!4 &2028158299
 Transform:
