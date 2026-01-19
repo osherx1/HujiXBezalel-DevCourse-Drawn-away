@@ -57,7 +57,7 @@ MonoBehaviour:
   maxColliderPoints: 128
   cantDrawOverLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   drawOverlapPadding: 0.3
   cantDrawLayerDelay: 0.1
   limitDrawingArea: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   currentSettings:
     SettingID: 
     fillMult: 1
+    ignoreCantDrawOverLayer: 0
     usePrefab: 0
     linePrefab: {fileID: 0}
     lineColor:
@@ -130,6 +131,8 @@ MonoBehaviour:
       m_NumAlphaKeys: 2
     lineWidth: 0.2
     material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    useDifferentMaterialBeforePhysics: 0
+    materialBeforePhysics: {fileID: 0}
     endCapVertices: 0
     cornerVertices: 0
     lineTextureMode: 0
@@ -364,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718994073364508850, guid: 9c2f7c28fd4a42a428f37e9ef9fe585d, type: 3}
       propertyPath: m_SortingOrder
-      value: 110
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4862250708090607599, guid: 9c2f7c28fd4a42a428f37e9ef9fe585d, type: 3}
       propertyPath: m_LocalScale.x

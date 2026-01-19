@@ -825,6 +825,10 @@ PrefabInstance:
       propertyPath: limitDrawingArea
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1388300437868987808, guid: e55d449fee3269349915db3efd37f077, type: 3}
+      propertyPath: cantDrawOverLayer.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
     - target: {fileID: 1959339671015974043, guid: e55d449fee3269349915db3efd37f077, type: 3}
       propertyPath: defaultButton
       value: 
