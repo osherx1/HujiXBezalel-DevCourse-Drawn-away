@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Illana-specific bubble trigger: supports two bubble variants.
@@ -11,7 +12,16 @@ using UnityEngine;
 public class IllanaSpeechBubbleTrigger : MonoBehaviour
 {
     [Header("Trigger")]
-    [SerializeField] private Collider2D triggerCollider;
+
+    [Tooltip("Trigger used before escort is completed (typically further away).")]
+    [SerializeField] private Collider2D beforeEscortTriggerCollider;
+
+    [Tooltip("Trigger used after escort is completed (typically closer).")]
+    [SerializeField] private Collider2D afterEscortTriggerCollider;
+
+    [FormerlySerializedAs("triggerCollider")]
+    [Tooltip("Legacy/fallback trigger collider. If both before/after are empty, this will be used.")]
+    [SerializeField] private Collider2D defaultTriggerCollider;
 
     [Tooltip("Optional: if set, only this Transform can trigger the bubble.")]
     [SerializeField] private Transform playerTransform;
@@ -32,39 +42,89 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
     [Tooltip("Optional: if empty, uses IllanaProgressManager.Instance.")]
     [SerializeField] private IllanaProgressManager progress;
 
+    private void OnEnable()
+    {
+        EnsureProgress();
+
+        if (progress != null)
+        {
+            progress.StateChanged += HandleProgressChanged;
+        }
+
+        UpdateActiveTriggerCollider();
+    }
+
+    private void OnDisable()
+    {
+        if (progress != null)
+        {
+            progress.StateChanged -= HandleProgressChanged;
+        }
+    }
+
     private void Reset()
     {
-        triggerCollider = GetComponent<Collider2D>();
-        if (triggerCollider != null)
+        if (beforeEscortTriggerCollider == null && afterEscortTriggerCollider == null)
         {
-            triggerCollider.isTrigger = true;
+            defaultTriggerCollider = GetComponent<Collider2D>();
+            beforeEscortTriggerCollider = defaultTriggerCollider;
         }
+
+        SetAsTrigger(beforeEscortTriggerCollider);
+        SetAsTrigger(afterEscortTriggerCollider);
+        SetAsTrigger(defaultTriggerCollider);
     }
 
     private void Awake()
     {
-        if (triggerCollider == null)
+        if (beforeEscortTriggerCollider == null && afterEscortTriggerCollider == null)
         {
-            triggerCollider = GetComponent<Collider2D>();
+            if (defaultTriggerCollider == null)
+            {
+                defaultTriggerCollider = GetComponent<Collider2D>();
+            }
+
+            beforeEscortTriggerCollider = defaultTriggerCollider;
         }
 
-        if (triggerCollider != null)
-        {
-            triggerCollider.isTrigger = true;
-        }
+        SetAsTrigger(beforeEscortTriggerCollider);
+        SetAsTrigger(afterEscortTriggerCollider);
+        SetAsTrigger(defaultTriggerCollider);
+
+        EnsureRelay(beforeEscortTriggerCollider);
+        EnsureRelay(afterEscortTriggerCollider);
+        EnsureRelay(defaultTriggerCollider);
 
         if (registry == null)
         {
             registry = FindObjectOfType<SpeechBubbleRegistry>(true);
         }
 
-        if (progress == null)
-        {
-            progress = IllanaProgressManager.Instance;
-        }
+        EnsureProgress();
+        UpdateActiveTriggerCollider();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
+    {
+        HandleTriggerEnter(other);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        HandleTriggerExit(other);
+    }
+
+    public void RelayTriggerEnter(Collider2D other)
+    {
+        HandleTriggerEnter(other);
+    }
+
+    public void RelayTriggerExit(Collider2D other)
+    {
+        HandleTriggerExit(other);
+    }
+
+    private void HandleTriggerEnter(Collider2D other)
     {
         if (!IsPlayer(other))
         {
@@ -76,15 +136,9 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
             registry = FindObjectOfType<SpeechBubbleRegistry>(true);
         }
 
-        if (progress == null)
-        {
-            progress = IllanaProgressManager.Instance;
-        }
+        EnsureProgress();
 
-        if (progress != null)
-        {
-            progress.MarkMet();
-        }
+        progress?.MarkMet();
 
         int variant = (progress != null && progress.EscortCompleted) ? 1 : 0;
 
@@ -94,7 +148,7 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void HandleTriggerExit(Collider2D other)
     {
         if (!IsPlayer(other))
         {
@@ -120,5 +174,82 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
         }
 
         return !string.IsNullOrWhiteSpace(playerTag) && other.CompareTag(playerTag);
+    }
+
+    private void HandleProgressChanged(object sender, IllanaProgressManager.StateChangedEventArgs e)
+    {
+        UpdateActiveTriggerCollider();
+    }
+
+    private void EnsureProgress()
+    {
+        if (progress == null)
+        {
+            progress = IllanaProgressManager.Instance;
+        }
+    }
+
+    private void UpdateActiveTriggerCollider()
+    {
+        bool useAfterEscort = (progress != null && progress.EscortCompleted);
+
+        // If both are assigned, enable exactly one.
+        if (beforeEscortTriggerCollider != null && afterEscortTriggerCollider != null)
+        {
+            beforeEscortTriggerCollider.enabled = !useAfterEscort;
+            afterEscortTriggerCollider.enabled = useAfterEscort;
+            return;
+        }
+
+        // If only one is assigned, keep it enabled.
+        if (beforeEscortTriggerCollider != null)
+        {
+            beforeEscortTriggerCollider.enabled = true;
+        }
+
+        if (afterEscortTriggerCollider != null)
+        {
+            afterEscortTriggerCollider.enabled = true;
+        }
+
+        if (defaultTriggerCollider != null)
+        {
+            defaultTriggerCollider.enabled = true;
+        }
+    }
+
+    private static void SetAsTrigger(Collider2D c)
+    {
+        if (c == null)
+        {
+            return;
+        }
+
+        if (!c.isTrigger)
+        {
+            c.isTrigger = true;
+        }
+    }
+
+    private void EnsureRelay(Collider2D c)
+    {
+        if (c == null)
+        {
+            return;
+        }
+
+        // If the collider is on this GameObject, Unity will invoke our OnTrigger* directly.
+        if (c.gameObject == gameObject)
+        {
+            return;
+        }
+
+        var relay = c.GetComponent<IllanaSpeechBubbleTriggerRelay2D>();
+        if (relay == null)
+        {
+            relay = c.gameObject.AddComponent<IllanaSpeechBubbleTriggerRelay2D>();
+        }
+
+        relay.SetOwner(this);
     }
 }
