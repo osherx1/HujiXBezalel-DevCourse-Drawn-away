@@ -7486,6 +7486,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 912553910}
     m_Modifications:
+    - target: {fileID: 4088160860933674828, guid: 0ff33393ee570364a80dd6ba2335267e, type: 3}
+      propertyPath: m_Size.x
+      value: 18.634216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088160860933674828, guid: 0ff33393ee570364a80dd6ba2335267e, type: 3}
+      propertyPath: m_Offset.x
+      value: -3.0359192
+      objectReference: {fileID: 0}
     - target: {fileID: 7614733475543914302, guid: 0ff33393ee570364a80dd6ba2335267e, type: 3}
       propertyPath: m_Name
       value: spikes (3)
