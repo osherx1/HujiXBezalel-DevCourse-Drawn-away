@@ -29,8 +29,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3a02a92c6ac17734f9342df3606ffb53, type: 3}
-        m_Scale: {x: 0.02, y: 1}
+        m_Texture: {fileID: 2800000, guid: b3abbf60f44814f1ba3493087cdff273, type: 3}
+        m_Scale: {x: 1.18, y: 0.99}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
         m_Texture: {fileID: 0}
@@ -45,10 +45,10 @@ Material:
     - _CloudDensity: 0
     - _Density1: 2.34
     - _Density2: 2.77
-    - _Distortion: 2
+    - _Distortion: 0.778
     - _EnableExternalAlpha: 0
     - _GlobalRot: 5.46
-    - _NoiseScale: -1.12
+    - _NoiseScale: 1.62
     - _NoiseSpeed: 0.61
     - _Rotation: 176
     - _Scale: 0.3
