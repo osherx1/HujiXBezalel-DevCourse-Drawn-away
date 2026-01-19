@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: f465189a8e60c42a3bf9d3230cbe7bc5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5336783468977882071
+    second: 1right click to accesss_0
+  - first:
+      213: 79235648963714101
+    second: 1right click to accesss_1
+  - first:
+      213: -3213034289070101815
+    second: 1right click to accesss_2
+  - first:
+      213: -6823800156161889319
+    second: 1right click to accesss_3
+  - first:
+      213: 6924816049446488381
+    second: 1right click to accesss_4
+  - first:
+      213: -7220207582410742541
+    second: 1right click to accesss_5
+  - first:
+      213: -4284182111644334019
+    second: 1right click to accesss_6
+  - first:
+      213: -5363423743632433900
+    second: 1right click to accesss_7
+  - first:
+      213: -1777489904487785805
+    second: 1right click to accesss_8
+  - first:
+      213: -2197531839047946760
+    second: 1right click to accesss_9
+  - first:
+      213: -8729931514704536518
+    second: 1right click to accesss_10
+  - first:
+      213: -259240560642892931
+    second: 1right click to accesss_11
+  - first:
+      213: 1427739662763297380
+    second: 1right click to accesss_12
+  - first:
+      213: 6392487325652639410
+    second: 1right click to accesss_13
+  - first:
+      213: 8520180356315790476
+    second: 1right click to accesss_14
+  - first:
+      213: 2510328873527799881
+    second: 1right click to accesss_15
+  - first:
+      213: -6768840478126192293
+    second: 1right click to accesss_16
+  - first:
+      213: 2271836074523065927
+    second: 1right click to accesss_17
+  - first:
+      213: 5937734411972867956
+    second: 1right click to accesss_18
+  - first:
+      213: -7165995810220777223
+    second: 1right click to accesss_19
+  - first:
+      213: -8494789359446252286
+    second: 1right click to accesss_20
+  - first:
+      213: 990054976690000528
+    second: 1right click to accesss_21
+  - first:
+      213: 284405256761735005
+    second: 1right click to accesss_22
+  - first:
+      213: 7391537214267951969
+    second: 1right click to accesss_23
+  - first:
+      213: -882927408930582683
+    second: 1right click to accesss_24
+  - first:
+      213: -2374774194013782387
+    second: 1right click to accesss_25
+  - first:
+      213: -5427711273902549079
+    second: 1right click to accesss_26
+  - first:
+      213: -861437906701639214
+    second: 1right click to accesss_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1right click to accesss_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 108
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d38a9f1a40101a40800000000000000
+      internalID: 5336783468977882071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 108
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c97062760891100800000000000000
+      internalID: 79235648963714101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 138
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9caa3d466520963d0800000000000000
+      internalID: -3213034289070101815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 84
+        width: 27
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db27b979edfc41a0800000000000000
+      internalID: -6823800156161889319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_4
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 108
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d398e2af183e91060800000000000000
+      internalID: 6924816049446488381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 108
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f463d5457baccb90800000000000000
+      internalID: -7220207582410742541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 108
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d384b5a61178b84c0800000000000000
+      internalID: -4284182111644334019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_7
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 108
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d94e4958a4195b0800000000000000
+      internalID: -5363423743632433900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_8
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 108
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba992379561557e0800000000000000
+      internalID: -1777489904487785805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_9
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 138
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fdafe67f6cc081e0800000000000000
+      internalID: -2197531839047946760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_10
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 108
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c5c806a8d09d680800000000000000
+      internalID: -8729931514704536518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_11
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 108
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7bd187651ef66cf0800000000000000
+      internalID: -259240560642892931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_12
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 108
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46a0eb6a8a950d310800000000000000
+      internalID: 1427739662763297380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_13
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 108
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be56b49a5da6b850800000000000000
+      internalID: 6392487325652639410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 52
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8cb67864e2cd3670800000000000000
+      internalID: 8520180356315790476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_15
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 52
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 940f7086fca76d220800000000000000
+      internalID: 2510328873527799881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_16
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 52
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b59c000b27f3012a0800000000000000
+      internalID: -6768840478126192293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_17
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 52
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e7dd18fde278f10800000000000000
+      internalID: 2271836074523065927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_18
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 52
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477714cfcf1176250800000000000000
+      internalID: 5937734411972867956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_19
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 52
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f06ad517c44d8c90800000000000000
+      internalID: -7165995810220777223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_20
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 52
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205207cb5127c1a80800000000000000
+      internalID: -8494789359446252286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_21
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 52
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09217b971c16dbd00800000000000000
+      internalID: 990054976690000528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_22
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 52
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57798df21962f300800000000000000
+      internalID: 284405256761735005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_23
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 52
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b85803fe3049660800000000000000
+      internalID: 7391537214267951969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_24
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 52
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f8c3413363fb3f0800000000000000
+      internalID: -882927408930582683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_25
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 52
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e3b00e37b1b0fd0800000000000000
+      internalID: -2374774194013782387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_26
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 82
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7d7a78a55eca4b0800000000000000
+      internalID: -5427711273902549079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1right click to accesss_27
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 52
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d12ef6b9ce8b04f0800000000000000
+      internalID: -861437906701639214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      1right click to accesss_0: 5336783468977882071
+      1right click to accesss_1: 79235648963714101
+      1right click to accesss_10: -8729931514704536518
+      1right click to accesss_11: -259240560642892931
+      1right click to accesss_12: 1427739662763297380
+      1right click to accesss_13: 6392487325652639410
+      1right click to accesss_14: 8520180356315790476
+      1right click to accesss_15: 2510328873527799881
+      1right click to accesss_16: -6768840478126192293
+      1right click to accesss_17: 2271836074523065927
+      1right click to accesss_18: 5937734411972867956
+      1right click to accesss_19: -7165995810220777223
+      1right click to accesss_2: -3213034289070101815
+      1right click to accesss_20: -8494789359446252286
+      1right click to accesss_21: 990054976690000528
+      1right click to accesss_22: 284405256761735005
+      1right click to accesss_23: 7391537214267951969
+      1right click to accesss_24: -882927408930582683
+      1right click to accesss_25: -2374774194013782387
+      1right click to accesss_26: -5427711273902549079
+      1right click to accesss_27: -861437906701639214
+      1right click to accesss_3: -6823800156161889319
+      1right click to accesss_4: 6924816049446488381
+      1right click to accesss_5: -7220207582410742541
+      1right click to accesss_6: -4284182111644334019
+      1right click to accesss_7: -5363423743632433900
+      1right click to accesss_8: -1777489904487785805
+      1right click to accesss_9: -2197531839047946760
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

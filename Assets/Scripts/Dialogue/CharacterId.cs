@@ -12,7 +12,7 @@ public enum CharacterId
     // Example IDs (rename/add as needed)
     Player = 1,
     Old_Man = 10,
-    NPC_2 = 11,
+    Illana = 11,
     NPC_3 = 12,
 }
 

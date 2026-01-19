@@ -726,7 +726,8 @@ public class BrushPickupToUI : MonoBehaviour
 
         if (canvas.renderMode == RenderMode.ScreenSpaceOverlay)
         {
-            return Camera.main;
+            // For Screen Space - Overlay, Unity UI utility methods expect a null camera.
+            return null;
         }
 
         return canvas.worldCamera != null ? canvas.worldCamera : Camera.main;

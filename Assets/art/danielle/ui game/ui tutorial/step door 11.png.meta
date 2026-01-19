@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: a5c80a1bc0e8c486d86edcb96f0ab3d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1360895528845132763
+    second: step door 11_0
+  - first:
+      213: 7910811943428861241
+    second: step door 11_1
+  - first:
+      213: -8667998811263393697
+    second: step door 11_2
+  - first:
+      213: -4170679203720466793
+    second: step door 11_3
+  - first:
+      213: -5589144802774016924
+    second: step door 11_4
+  - first:
+      213: 2636912845881794292
+    second: step door 11_5
+  - first:
+      213: -307332859942630731
+    second: step door 11_6
+  - first:
+      213: 295904195851069243
+    second: step door 11_7
+  - first:
+      213: -6872556528212287177
+    second: step door 11_8
+  - first:
+      213: 2001868291257196461
+    second: step door 11_9
+  - first:
+      213: 8238794189905998228
+    second: step door 11_10
+  - first:
+      213: -7459164920044294001
+    second: step door 11_11
+  - first:
+      213: -5449810525718727742
+    second: step door 11_12
+  - first:
+      213: 42948399551341682
+    second: step door 11_13
+  - first:
+      213: 4860337862292512144
+    second: step door 11_14
+  - first:
+      213: 5257662872456003618
+    second: step door 11_15
+  - first:
+      213: -4709812230568687437
+    second: step door 11_16
+  - first:
+      213: -8459268783865202767
+    second: step door 11_17
+  - first:
+      213: 6132459704654628816
+    second: step door 11_18
+  - first:
+      213: 1642094367130995597
+    second: step door 11_19
+  - first:
+      213: 6483503740910401199
+    second: step door 11_20
+  - first:
+      213: -6129975377320360748
+    second: step door 11_21
+  - first:
+      213: 67398702161270238
+    second: step door 11_22
+  - first:
+      213: 3100481365570391506
+    second: step door 11_23
+  - first:
+      213: -4907686270929990009
+    second: step door 11_24
+  - first:
+      213: -3170477852818653091
+    second: step door 11_25
+  - first:
+      213: 6450629515749740913
+    second: step door 11_26
+  - first:
+      213: -5065676736481684600
+    second: step door 11_27
+  - first:
+      213: -6664074887931240985
+    second: step door 11_28
+  - first:
+      213: 396597265557683041
+    second: step door 11_29
+  - first:
+      213: 5972318440052611417
+    second: step door 11_30
+  - first:
+      213: -8955007648059991055
+    second: step door 11_31
+  - first:
+      213: 8383505559451551952
+    second: step door 11_32
+  - first:
+      213: 8989334772232715406
+    second: step door 11_33
+  - first:
+      213: 6782146523324667881
+    second: step door 11_34
+  - first:
+      213: -7206581292311212445
+    second: step door 11_35
+  - first:
+      213: -5361759012404366102
+    second: step door 11_36
+  - first:
+      213: 6471785358552392328
+    second: step door 11_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: step door 11_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 169
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cb4c21ab02d1de0800000000000000
+      internalID: -1360895528845132763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 169
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93daefc9c89d8cd60800000000000000
+      internalID: 7910811943428861241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 169
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f502325910515b780800000000000000
+      internalID: -8667998811263393697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 155
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ee1268c55ce16c0800000000000000
+      internalID: -4170679203720466793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_4
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 169
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c1f681a6e5f62b0800000000000000
+      internalID: -5589144802774016924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_5
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 169
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fed27a2342389420800000000000000
+      internalID: 2636912845881794292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 169
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba805764622cbbf0800000000000000
+      internalID: -307332859942630731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 169
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3720416c434b1400800000000000000
+      internalID: 295904195851069243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_8
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 169
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7316d1dff36cf90a0800000000000000
+      internalID: -6872556528212287177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_9
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 113
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dafd083ca9018cb10800000000000000
+      internalID: 2001868291257196461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_10
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 169
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49136ea2aa3165270800000000000000
+      internalID: 8238794189905998228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_11
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 169
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8074bb8609bb7890800000000000000
+      internalID: -7459164920044294001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_12
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 169
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3b95183326e54b0800000000000000
+      internalID: -5449810525718727742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_13
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 169
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274ede28755989000800000000000000
+      internalID: 42948399551341682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 113
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d935ad883637340800000000000000
+      internalID: 4860337862292512144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_15
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 113
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2200085b688f6f840800000000000000
+      internalID: 5257662872456003618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_16
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 113
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b8c92edab263aeb0800000000000000
+      internalID: -4709812230568687437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_17
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 113
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b7f9263cd3aa9a80800000000000000
+      internalID: -8459268783865202767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_18
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 113
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d706573c9fda1550800000000000000
+      internalID: 6132459704654628816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_19
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 113
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b43807024e9c610800000000000000
+      internalID: 1642094367130995597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_20
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 113
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa671e02d480af950800000000000000
+      internalID: 6483503740910401199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_21
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 113
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4cde05fd3fdeaa0800000000000000
+      internalID: -6129975377320360748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_22
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 89
+        width: 27
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed515a433c27fe000800000000000000
+      internalID: 67398702161270238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_23
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 113
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd8a8bff5f170b20800000000000000
+      internalID: 3100481365570391506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_24
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 143
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e0820b65564ebb0800000000000000
+      internalID: -4907686270929990009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_25
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 113
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d504086d0333004d0800000000000000
+      internalID: -3170477852818653091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_26
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 36
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171d9ef1e5d358950800000000000000
+      internalID: 6450629515749740913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_27
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 57
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8839c07e8d913b9b0800000000000000
+      internalID: -5065676736481684600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_28
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 57
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edd14c72337483a0800000000000000
+      internalID: -6664074887931240985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_29
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 57
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bf47c9c1ff08500800000000000000
+      internalID: 396597265557683041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_30
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 43
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959d9d08affe1e250800000000000000
+      internalID: 5972318440052611417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_31
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 87
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb5a706dfb69b380800000000000000
+      internalID: -8955007648059991055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_32
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 57
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d84f9b73e1385470800000000000000
+      internalID: 8383505559451551952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_33
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 57
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c7ff9095880cc70800000000000000
+      internalID: 8989334772232715406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_34
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 57
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7da6164560f1e50800000000000000
+      internalID: 6782146523324667881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_35
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 57
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e80da2f741dfb90800000000000000
+      internalID: -7206581292311212445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_36
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 57
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4736606943795b0800000000000000
+      internalID: -5361759012404366102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step door 11_37
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 36
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882e61f9e7660d950800000000000000
+      internalID: 6471785358552392328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      step door 11_0: -1360895528845132763
+      step door 11_1: 7910811943428861241
+      step door 11_10: 8238794189905998228
+      step door 11_11: -7459164920044294001
+      step door 11_12: -5449810525718727742
+      step door 11_13: 42948399551341682
+      step door 11_14: 4860337862292512144
+      step door 11_15: 5257662872456003618
+      step door 11_16: -4709812230568687437
+      step door 11_17: -8459268783865202767
+      step door 11_18: 6132459704654628816
+      step door 11_19: 1642094367130995597
+      step door 11_2: -8667998811263393697
+      step door 11_20: 6483503740910401199
+      step door 11_21: -6129975377320360748
+      step door 11_22: 67398702161270238
+      step door 11_23: 3100481365570391506
+      step door 11_24: -4907686270929990009
+      step door 11_25: -3170477852818653091
+      step door 11_26: 6450629515749740913
+      step door 11_27: -5065676736481684600
+      step door 11_28: -6664074887931240985
+      step door 11_29: 396597265557683041
+      step door 11_3: -4170679203720466793
+      step door 11_30: 5972318440052611417
+      step door 11_31: -8955007648059991055
+      step door 11_32: 8383505559451551952
+      step door 11_33: 8989334772232715406
+      step door 11_34: 6782146523324667881
+      step door 11_35: -7206581292311212445
+      step door 11_36: -5361759012404366102
+      step door 11_37: 6471785358552392328
+      step door 11_4: -5589144802774016924
+      step door 11_5: 2636912845881794292
+      step door 11_6: -307332859942630731
+      step door 11_7: 295904195851069243
+      step door 11_8: -6872556528212287177
+      step door 11_9: 2001868291257196461
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

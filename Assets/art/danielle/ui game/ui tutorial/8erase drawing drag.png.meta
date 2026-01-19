@@ -1,0 +1,1638 @@
+fileFormatVersion: 2
+guid: ce76aeaf534f6400aa1ac9c90c6d1db5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 972477258523657921
+    second: 8erase drawing drag_0
+  - first:
+      213: -1174905926835530146
+    second: 8erase drawing drag_1
+  - first:
+      213: 5778639806349072543
+    second: 8erase drawing drag_2
+  - first:
+      213: 6543246877997340985
+    second: 8erase drawing drag_3
+  - first:
+      213: 6797488493270590301
+    second: 8erase drawing drag_4
+  - first:
+      213: 2662215100977031064
+    second: 8erase drawing drag_5
+  - first:
+      213: -3753112141327402964
+    second: 8erase drawing drag_6
+  - first:
+      213: -3182826812744562911
+    second: 8erase drawing drag_7
+  - first:
+      213: -7277162414501714929
+    second: 8erase drawing drag_8
+  - first:
+      213: 5996166243977208209
+    second: 8erase drawing drag_9
+  - first:
+      213: -261732915463187465
+    second: 8erase drawing drag_10
+  - first:
+      213: -2892353263767424264
+    second: 8erase drawing drag_11
+  - first:
+      213: -916882644184744848
+    second: 8erase drawing drag_12
+  - first:
+      213: -5502059271440990745
+    second: 8erase drawing drag_13
+  - first:
+      213: -3695259269295424683
+    second: 8erase drawing drag_14
+  - first:
+      213: 740370353358695543
+    second: 8erase drawing drag_15
+  - first:
+      213: -6113321790103703373
+    second: 8erase drawing drag_16
+  - first:
+      213: 980357561465977367
+    second: 8erase drawing drag_17
+  - first:
+      213: 231832227934112160
+    second: 8erase drawing drag_18
+  - first:
+      213: 2735921679367623684
+    second: 8erase drawing drag_19
+  - first:
+      213: 761877498174350998
+    second: 8erase drawing drag_20
+  - first:
+      213: -4899670687617963680
+    second: 8erase drawing drag_21
+  - first:
+      213: -8495104920464047353
+    second: 8erase drawing drag_22
+  - first:
+      213: 7807646858655086621
+    second: 8erase drawing drag_23
+  - first:
+      213: 9044169528219828854
+    second: 8erase drawing drag_24
+  - first:
+      213: 545087206306568616
+    second: 8erase drawing drag_25
+  - first:
+      213: 7067054050013262604
+    second: 8erase drawing drag_26
+  - first:
+      213: -1940212725188950387
+    second: 8erase drawing drag_27
+  - first:
+      213: 3793714247075199830
+    second: 8erase drawing drag_28
+  - first:
+      213: -4168696791024747444
+    second: 8erase drawing drag_29
+  - first:
+      213: -8926324201142824894
+    second: 8erase drawing drag_30
+  - first:
+      213: -8031258878574376635
+    second: 8erase drawing drag_31
+  - first:
+      213: 4574301711978719096
+    second: 8erase drawing drag_32
+  - first:
+      213: -7672794984160471784
+    second: 8erase drawing drag_33
+  - first:
+      213: -7096994289084783706
+    second: 8erase drawing drag_34
+  - first:
+      213: -603382801153709509
+    second: 8erase drawing drag_35
+  - first:
+      213: -6186221647261643861
+    second: 8erase drawing drag_36
+  - first:
+      213: -7499861818960911133
+    second: 8erase drawing drag_37
+  - first:
+      213: -2230609315572760479
+    second: 8erase drawing drag_38
+  - first:
+      213: 7373553353078010733
+    second: 8erase drawing drag_39
+  - first:
+      213: -8984737673318280655
+    second: 8erase drawing drag_40
+  - first:
+      213: 2907596593310152226
+    second: 8erase drawing drag_41
+  - first:
+      213: -8870007901935295707
+    second: 8erase drawing drag_42
+  - first:
+      213: 330868400558611619
+    second: 8erase drawing drag_43
+  - first:
+      213: 325924818092935751
+    second: 8erase drawing drag_44
+  - first:
+      213: -3369408450652145062
+    second: 8erase drawing drag_45
+  - first:
+      213: 9064322867619904877
+    second: 8erase drawing drag_46
+  - first:
+      213: -3792028541783783966
+    second: 8erase drawing drag_47
+  - first:
+      213: 2297218643925491890
+    second: 8erase drawing drag_48
+  - first:
+      213: 5681158837058580002
+    second: 8erase drawing drag_49
+  - first:
+      213: -2497722792692107782
+    second: 8erase drawing drag_50
+  - first:
+      213: -3012041425859921719
+    second: 8erase drawing drag_51
+  - first:
+      213: 2727706541515499543
+    second: 8erase drawing drag_52
+  - first:
+      213: 8966432390737291131
+    second: 8erase drawing drag_53
+  - first:
+      213: -2769363800062758196
+    second: 8erase drawing drag_54
+  - first:
+      213: 7798413994568555373
+    second: 8erase drawing drag_55
+  - first:
+      213: -6994236555088916757
+    second: 8erase drawing drag_56
+  - first:
+      213: -9175232617265772166
+    second: 8erase drawing drag_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 8erase drawing drag_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 220
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c6c27a0aeeee7d00800000000000000
+      internalID: 972477258523657921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 220
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e569772d845e1bfe0800000000000000
+      internalID: -1174905926835530146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_2
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 220
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f985e5e894ad13050800000000000000
+      internalID: 5778639806349072543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 220
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93917b03e584eca50800000000000000
+      internalID: 6543246877997340985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 220
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53e23e15c7855e50800000000000000
+      internalID: 6797488493270590301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_5
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 220
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897aa61878612f420800000000000000
+      internalID: 2662215100977031064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_6
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 220
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2879fd64644aebc0800000000000000
+      internalID: -3753112141327402964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_7
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 220
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12785cc80e354d3d0800000000000000
+      internalID: -3182826812744562911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_8
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 220
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f042dce0753520b90800000000000000
+      internalID: -7277162414501714929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_9
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 220
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191237a0e69a63350800000000000000
+      internalID: 5996166243977208209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_10
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 220
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f31ac3dc432e5cf0800000000000000
+      internalID: -261732915463187465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_11
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 220
+        width: 49
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2733ce70c4cd7d0800000000000000
+      internalID: -2892353263767424264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_12
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 220
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07cb5acc7149643f0800000000000000
+      internalID: -916882644184744848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_13
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 220
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed7d986e32c4a3b0800000000000000
+      internalID: -5502059271440990745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_14
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 220
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b3dacd54dc7bcc0800000000000000
+      internalID: -3695259269295424683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_15
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 220
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77cec2ae9e2564a00800000000000000
+      internalID: 740370353358695543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_16
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 164
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0b63fb83e192ba0800000000000000
+      internalID: -6113321790103703373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_17
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 164
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a3c0c020eea9d00800000000000000
+      internalID: 980357561465977367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_18
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 164
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a90089de22a73300800000000000000
+      internalID: 231832227934112160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_19
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 164
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4045ff79542f7f520800000000000000
+      internalID: 2735921679367623684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_20
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 164
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 696ab094c8bb29a00800000000000000
+      internalID: 761877498174350998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_21
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 164
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 069232c187fd00cb0800000000000000
+      internalID: -4899670687617963680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_22
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 164
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703411675135b1a80800000000000000
+      internalID: -8495104920464047353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_23
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 164
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18b4d583755a5c60800000000000000
+      internalID: 7807646858655086621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_24
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 164
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67284f19448538d70800000000000000
+      internalID: 9044169528219828854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_25
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 164
+        width: 31
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a953871de9809700800000000000000
+      internalID: 545087206306568616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_26
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 164
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03b6833738331260800000000000000
+      internalID: 7067054050013262604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_27
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 164
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d868b6e5ecaf215e0800000000000000
+      internalID: -1940212725188950387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_28
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 140
+        width: 27
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b714cf10bf5a430800000000000000
+      internalID: 3793714247075199830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_29
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 164
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4cb8a2fa50d526c0800000000000000
+      internalID: -4168696791024747444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_30
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 164
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 240d8e8ce635f1480800000000000000
+      internalID: -8926324201142824894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_31
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 164
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5494f53f99c3b8090800000000000000
+      internalID: -8031258878574376635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_32
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 164
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 877e3fddb2f2b7f30800000000000000
+      internalID: 4574301711978719096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_33
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 108
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81557b63d91c48590800000000000000
+      internalID: -7672794984160471784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_34
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 108
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3202aab49628d90800000000000000
+      internalID: -7096994289084783706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_35
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 108
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a27a90a8a50a7f0800000000000000
+      internalID: -603382801153709509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_36
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 108
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab43251030262aa0800000000000000
+      internalID: -6186221647261643861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_37
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 108
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4e15069632be790800000000000000
+      internalID: -7499861818960911133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_38
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 108
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160cb9055a84b01e0800000000000000
+      internalID: -2230609315572760479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_39
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 108
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63fa9635bf145660800000000000000
+      internalID: 7373553353078010733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_40
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 108
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1325bc570bccf4380800000000000000
+      internalID: -8984737673318280655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_41
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 138
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226336e42bbd95820800000000000000
+      internalID: 2907596593310152226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_42
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 108
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5232d3afec667e480800000000000000
+      internalID: -8870007901935295707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_43
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 84
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac92baae0b779400800000000000000
+      internalID: 330868400558611619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_44
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 87
+        width: 41
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ac9ed25eae58400800000000000000
+      internalID: 325924818092935751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_45
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 108
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5afda3bdd47d31d0800000000000000
+      internalID: -3369408450652145062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_46
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 108
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6d3fed8f91facd70800000000000000
+      internalID: 9064322867619904877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_47
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 108
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5c5dcd122006bc0800000000000000
+      internalID: -3792028541783783966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_48
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 108
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b0659a7f2c51ef10800000000000000
+      internalID: 2297218643925491890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_49
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 108
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ea27bbcd787de40800000000000000
+      internalID: 5681158837058580002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_50
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 108
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5b0328a5e465dd0800000000000000
+      internalID: -2497722792692107782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_51
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 52
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c8bbda18441336d0800000000000000
+      internalID: -3012041425859921719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_52
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 52
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7186a82c5a2cad520800000000000000
+      internalID: 2727706541515499543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_53
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 52
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77e370d0ca2f6c70800000000000000
+      internalID: 8966432390737291131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_54
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 52
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2fe6beb4e3199d0800000000000000
+      internalID: -2769363800062758196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_55
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 52
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b91b5d538893c60800000000000000
+      internalID: 7798413994568555373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_56
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 52
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee8fd209ea7fee90800000000000000
+      internalID: -6994236555088916757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 8erase drawing drag_57
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 52
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79cb4c0c860ba080800000000000000
+      internalID: -9175232617265772166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      8erase drawing drag_0: 972477258523657921
+      8erase drawing drag_1: -1174905926835530146
+      8erase drawing drag_10: -261732915463187465
+      8erase drawing drag_11: -2892353263767424264
+      8erase drawing drag_12: -916882644184744848
+      8erase drawing drag_13: -5502059271440990745
+      8erase drawing drag_14: -3695259269295424683
+      8erase drawing drag_15: 740370353358695543
+      8erase drawing drag_16: -6113321790103703373
+      8erase drawing drag_17: 980357561465977367
+      8erase drawing drag_18: 231832227934112160
+      8erase drawing drag_19: 2735921679367623684
+      8erase drawing drag_2: 5778639806349072543
+      8erase drawing drag_20: 761877498174350998
+      8erase drawing drag_21: -4899670687617963680
+      8erase drawing drag_22: -8495104920464047353
+      8erase drawing drag_23: 7807646858655086621
+      8erase drawing drag_24: 9044169528219828854
+      8erase drawing drag_25: 545087206306568616
+      8erase drawing drag_26: 7067054050013262604
+      8erase drawing drag_27: -1940212725188950387
+      8erase drawing drag_28: 3793714247075199830
+      8erase drawing drag_29: -4168696791024747444
+      8erase drawing drag_3: 6543246877997340985
+      8erase drawing drag_30: -8926324201142824894
+      8erase drawing drag_31: -8031258878574376635
+      8erase drawing drag_32: 4574301711978719096
+      8erase drawing drag_33: -7672794984160471784
+      8erase drawing drag_34: -7096994289084783706
+      8erase drawing drag_35: -603382801153709509
+      8erase drawing drag_36: -6186221647261643861
+      8erase drawing drag_37: -7499861818960911133
+      8erase drawing drag_38: -2230609315572760479
+      8erase drawing drag_39: 7373553353078010733
+      8erase drawing drag_4: 6797488493270590301
+      8erase drawing drag_40: -8984737673318280655
+      8erase drawing drag_41: 2907596593310152226
+      8erase drawing drag_42: -8870007901935295707
+      8erase drawing drag_43: 330868400558611619
+      8erase drawing drag_44: 325924818092935751
+      8erase drawing drag_45: -3369408450652145062
+      8erase drawing drag_46: 9064322867619904877
+      8erase drawing drag_47: -3792028541783783966
+      8erase drawing drag_48: 2297218643925491890
+      8erase drawing drag_49: 5681158837058580002
+      8erase drawing drag_5: 2662215100977031064
+      8erase drawing drag_50: -2497722792692107782
+      8erase drawing drag_51: -3012041425859921719
+      8erase drawing drag_52: 2727706541515499543
+      8erase drawing drag_53: 8966432390737291131
+      8erase drawing drag_54: -2769363800062758196
+      8erase drawing drag_55: 7798413994568555373
+      8erase drawing drag_56: -6994236555088916757
+      8erase drawing drag_57: -9175232617265772166
+      8erase drawing drag_6: -3753112141327402964
+      8erase drawing drag_7: -3182826812744562911
+      8erase drawing drag_8: -7277162414501714929
+      8erase drawing drag_9: 5996166243977208209
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

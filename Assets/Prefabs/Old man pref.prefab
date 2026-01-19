@@ -479,6 +479,7 @@ GameObject:
   - component: {fileID: 1812661692275931933}
   - component: {fileID: 2101777327327709398}
   - component: {fileID: 6280057020848582460}
+  - component: {fileID: 726513735462531580}
   m_Layer: 0
   m_Name: old man
   m_TagString: Untagged
@@ -590,15 +591,15 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.26607132, y: 4.3678513}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.1266665, y: 8.88}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 4.5950003, y: 6.6600003}
     newSize: {x: 3.112, y: 4.4119997}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -624,3 +625,21 @@ MonoBehaviour:
   character: 10
   registry: {fileID: 7709894211729918057}
   hideOthersOnEnter: 0
+--- !u!114 &726513735462531580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3dd6ab7b4e2ff48bd0359433c07d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Prototype1.SwordUnlockTrigger2D
+  requiredTag: Player
+  progress: {fileID: 0}
+  uiController: {fileID: 0}
+  uiRootToEnable: {fileID: 0}
+  showUiOnlyFirstTime: 1
+  triggerOnce: 1

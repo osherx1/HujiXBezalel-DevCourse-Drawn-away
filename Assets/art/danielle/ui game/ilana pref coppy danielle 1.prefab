@@ -65,9 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Johnny! The boy from the prophecy! I\u2019ve been waiting for you! The
-    giant broke my wings. I need your help. Use your tools and help me get down from
-    here."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -148,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3998444061344760620}
   m_Layer: 0
-  m_Name: Old MAN BUBBLEFOLLOW
+  m_Name: ilana BUBBLEFOLLOW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,16 +196,16 @@ RectTransform:
   m_GameObject: {fileID: 2666375503047912871}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 406992977219142511}
   m_Father: {fileID: 5940093676031654459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 8.12}
-  m_SizeDelta: {x: 350, y: 160}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0, y: 100}
+  m_SizeDelta: {x: 800, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5025652696417926597
 CanvasRenderer:
@@ -230,14 +228,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.01132071, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 6966910601426555534, guid: e752ddbea5b35491b8a9de078ebe77dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -298,7 +296,7 @@ GameObject:
   - component: {fileID: 6463613813870261100}
   - component: {fileID: 3965005861569162626}
   m_Layer: 5
-  m_Name: Speech Bubble
+  m_Name: Speech Bubble 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,17 +311,17 @@ RectTransform:
   m_GameObject: {fileID: 5413831394258502183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5855377627510852282}
   m_Father: {fileID: 5940093676031654459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000024438, y: 8.12}
-  m_SizeDelta: {x: 350, y: 160}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0, y: 26}
+  m_SizeDelta: {x: 800, y: 300}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1810764728124598804
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -345,14 +343,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.01132071, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2967739578593793381, guid: 475cee4b742b34fd4b44e47449b00e2e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -425,20 +423,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6262012262128701744}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8027858588832544215}
   - {fileID: 3301621220462708621}
+  - {fileID: 8027858588832544215}
   m_Father: {fileID: 7637390261902976642}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 466.93976, y: 415.35492}
-  m_SizeDelta: {x: 1091.5001, y: 515.25}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!223 &1978837964778649386
 Canvas:
   m_ObjectHideFlags: 0
@@ -448,7 +446,7 @@ Canvas:
   m_GameObject: {fileID: 6262012262128701744}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -484,7 +482,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4055392734956605297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +511,7 @@ GameObject:
   - component: {fileID: 6943322053938539809}
   - component: {fileID: 7709894211729918057}
   m_Layer: 0
-  m_Name: SpeechBubbleRegistry
+  m_Name: SpeechBubbleRegistryIllana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -547,8 +545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpeechBubbleRegistry
   entries:
-  - character: 10
-    bubble: {fileID: 2666375503047912871}
+  - character: 11
+    bubble: {fileID: 5413831394258502183}
+    bubble2: {fileID: 2666375503047912871}
     followTarget: {fileID: 0}
     followOffset: {x: 0, y: 0.1, z: 0}
 --- !u!1 &6539721273060943638
@@ -597,6 +596,10 @@ GameObject:
   - component: {fileID: 1812661692275931933}
   - component: {fileID: 2101777327327709398}
   - component: {fileID: 6280057020848582460}
+  - component: {fileID: 4782473059491385817}
+  - component: {fileID: 6752975474302014390}
+  - component: {fileID: 693764648633765412}
+  - component: {fileID: 5314393299698532833}
   m_Layer: 0
   m_Name: ilana
   m_TagString: Untagged
@@ -613,8 +616,8 @@ Transform:
   m_GameObject: {fileID: 8066668099077057119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.095321, y: 0.31, z: 0}
+  m_LocalScale: {x: 0.6417818, y: 0.6417818, z: 0.6417818}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3998444061344760620}
@@ -667,7 +670,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5931671104767381753, guid: f13ce27fb64664150809f8c5928a5469, type: 3}
+  m_Sprite: {fileID: 5931671104767381753, guid: 1acf59c668b8645a58dece3622e4e440, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -708,21 +711,21 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.26607132, y: 4.3678513}
+  m_Offset: {x: -0.26607132, y: 1.2996392}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.595, y: 8.49}
+    oldSize: {x: 19.45, y: 17.32}
     newSize: {x: 3.112, y: 4.4119997}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 21.870216, y: 10.598221}
+  m_Size: {x: 21.870216, y: 16.734646}
   m_EdgeRadius: 0
 --- !u!114 &6280057020848582460
 MonoBehaviour:
@@ -731,7 +734,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8066668099077057119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b9acdd63a3f7b84492295e5f153705b, type: 3}
   m_Name: 
@@ -739,9 +742,121 @@ MonoBehaviour:
   triggerCollider: {fileID: 2101777327327709398}
   playerTransform: {fileID: 0}
   playerTag: Player
-  character: 10
+  character: 11
   registry: {fileID: 7709894211729918057}
   hideOthersOnEnter: 0
+--- !u!114 &4782473059491385817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1378c8d79955444becfc7522341537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcPathFollower
+  animator: {fileID: 0}
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: IllanaLineQuestController, Assembly-CSharp
+        m_MethodName: OnIllanaFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  moveSpeed: 10
+  flipByLocalScaleX: 1
+--- !u!114 &6752975474302014390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1378c8d79955444becfc7522341537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcPathFollower
+  animator: {fileID: 0}
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 693764648633765412}
+        m_TargetAssemblyTypeName: IllanaLineQuestController, Assembly-CSharp
+        m_MethodName: OnIllanaFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  moveSpeed: 10
+  flipByLocalScaleX: 1
+--- !u!114 &693764648633765412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab2cce2c67f5ca4d8e56975acd07834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IllanaLineQuestController
+  progress: {fileID: 0}
+  objective: {fileID: 0}
+  requireMeetingIllanaBeforeObjective: 1
+  illanaFollower: {fileID: 6752975474302014390}
+  illanaPath: {fileID: 0}
+  player: {fileID: 0}
+  registry: {fileID: 7709894211729918057}
+  character: 11
+  idleBubbleVariant: 0
+  completedBubbleVariant: 1
+  hideOthersOnShow: 1
+  dudePathTrigger: {fileID: 0}
+  onObjectiveCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  onEscortStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onEscortCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5314393299698532833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f5b48514ea44a4a8e2028e85a65f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IllanaSpeechBubbleTrigger
+  triggerCollider: {fileID: 0}
+  playerTransform: {fileID: 0}
+  playerTag: Player
+  character: 11
+  registry: {fileID: 7709894211729918057}
+  hideOthersOnEnter: 1
+  progress: {fileID: 0}
 --- !u!1 &8325893728362873161
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,11 +922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Thank you, brave boy. I knew you would succeed.
-
-    To show my gratitude,
-    I grant you a companio to join you on your journey to the giant. Farewell, Johnny,
-    may the gods be by your side'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
