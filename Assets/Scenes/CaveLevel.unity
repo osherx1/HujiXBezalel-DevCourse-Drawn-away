@@ -7457,6 +7457,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1205310105}
     - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
+      propertyPath: flyDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
       propertyPath: moveLimiter
       value: 
       objectReference: {fileID: 1151456094}
@@ -7484,6 +7488,10 @@ PrefabInstance:
       propertyPath: movementController
       value: 
       objectReference: {fileID: 1151456097}
+    - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
+      propertyPath: delayBeforeFlySeconds
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7936662589250320921, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 209.9
