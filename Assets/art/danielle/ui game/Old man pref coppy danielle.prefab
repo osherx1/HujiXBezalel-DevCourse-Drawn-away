@@ -481,6 +481,7 @@ GameObject:
   - component: {fileID: 2101777327327709398}
   - component: {fileID: 6280057020848582460}
   - component: {fileID: 6899671037645798104}
+  - component: {fileID: 3709284863470721802}
   m_Layer: 0
   m_Name: old man
   m_TagString: Untagged
@@ -644,3 +645,25 @@ MonoBehaviour:
   uiRootToEnable: {fileID: 0}
   showUiOnlyFirstTime: 1
   triggerOnce: 1
+--- !u!95 &3709284863470721802
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abd8c1cace71171429f79e5ac715427c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
