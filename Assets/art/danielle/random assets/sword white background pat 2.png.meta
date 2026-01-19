@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 2175d14e40eea4159af3c0296fafaa7e
+guid: b9459c6e111c14ec899f8f55e24bbcfb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1635237893512929693
-    second: sword white_0
-  - first:
-      213: 7619515655558274486
-    second: sword white_1
-  - first:
-      213: -2413647437602655015
-    second: sword white_2
+      213: -4161526645106470756
+    second: sword white background pat 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sword white_0
+      name: sword white background pat 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 71
-        height: 244
+        width: 58
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d91a816433881b610800000000000000
-      internalID: 1635237893512929693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sword white_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 63
-        width: 5
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6bd141a6e15fdb960800000000000000
-      internalID: 7619515655558274486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sword white_2
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 59
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d479ac8170018ed0800000000000000
-      internalID: -2413647437602655015
+      spriteID: c901b13a0994f36c0800000000000000
+      internalID: -4161526645106470756
       vertices: []
       indices: 
       edges: []
@@ -198,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sword white_0: 1635237893512929693
-      sword white_1: 7619515655558274486
-      sword white_2: -2413647437602655015
+      sword white background pat 2_0: -4161526645106470756
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

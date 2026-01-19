@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 83c4d27691c694c6ba1fcf90953548c4
+guid: 43ce307b7e0bc4c7d93bcb50032ce71b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7494128815598906917
-    second: "\u05D7\u05DC\u05E7 3_0"
+      213: -3091268232744136954
+    second: grey sword_0
   - first:
-      213: 6151768510173897122
-    second: "\u05D7\u05DC\u05E7 3_1"
+      213: 1822878222676829339
+    second: grey sword_1
+  - first:
+      213: -5953009130673440726
+    second: grey sword_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 80
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u05D7\u05DC\u05E7 3_0"
+      name: grey sword_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 85
-        width: 28
-        height: 80
+        x: 0
+        y: 0
+        width: 71
+        height: 244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd1553d3c818ff790800000000000000
-      internalID: -7494128815598906917
+      spriteID: 60f06d9abeb9915d0800000000000000
+      internalID: -3091268232744136954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u05D7\u05DC\u05E7 3_1"
+      name: grey sword_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 40
-        height: 70
+        y: 63
+        width: 5
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +156,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a16955ddd87f5550800000000000000
-      internalID: 6151768510173897122
+      spriteID: b94a273e51a2c4910800000000000000
+      internalID: 1822878222676829339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grey sword_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 59
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a287d8d6cb9a26da0800000000000000
+      internalID: -5953009130673440726
       vertices: []
       indices: 
       edges: []
@@ -173,8 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u05D7\u05DC\u05E7 3_0": -7494128815598906917
-      "\u05D7\u05DC\u05E7 3_1": 6151768510173897122
+      grey sword_0: -3091268232744136954
+      grey sword_1: 1822878222676829339
+      grey sword_2: -5953009130673440726
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
