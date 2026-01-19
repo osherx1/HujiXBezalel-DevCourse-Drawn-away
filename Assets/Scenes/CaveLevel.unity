@@ -6878,21 +6878,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5509103912426254922, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
   m_PrefabInstance: {fileID: 1250955285}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1278000911 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5732093801444738307, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
-  m_PrefabInstance: {fileID: 1601919416}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1278000913 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8984689350585336704, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
-  m_PrefabInstance: {fileID: 1601919416}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1278000914 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2429204260041368615, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
-  m_PrefabInstance: {fileID: 1601919416}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1349886770
 GameObject:
   m_ObjectHideFlags: 0
@@ -7476,10 +7461,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1151456094}
     - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
-      propertyPath: worldSprite
-      value: 
-      objectReference: {fileID: 1278000914}
-    - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
       propertyPath: targetCanvas
       value: 
       objectReference: {fileID: 931908853}
@@ -7499,14 +7480,6 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 652030366}
-    - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
-      propertyPath: triggerCollider
-      value: 
-      objectReference: {fileID: 1278000913}
-    - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
-      propertyPath: flyingVisualPrefab
-      value: 
-      objectReference: {fileID: 1278000911}
     - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
       propertyPath: movementController
       value: 

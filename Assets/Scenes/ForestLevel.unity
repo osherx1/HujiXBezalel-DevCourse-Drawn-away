@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1221430315425563651, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4161526645106470756, guid: b9459c6e111c14ec899f8f55e24bbcfb, type: 3}
     - target: {fileID: 1682890127755183655, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
       propertyPath: m_Name
       value: SwordPiece2
@@ -327,7 +331,7 @@ PrefabInstance:
     - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
       propertyPath: uiTargetSlot
       value: 
-      objectReference: {fileID: 1878058871}
+      objectReference: {fileID: 841501673}
     - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
       propertyPath: jumpController
       value: 
@@ -6832,6 +6836,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 474459123173163617, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8372390266166980275, guid: 8c4787dd0ad934a2c90115711b582777, type: 3}
     - target: {fileID: 967339002657419891, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
       propertyPath: m_Name
       value: SwordPiece1
@@ -7131,6 +7139,11 @@ Transform:
   - {fileID: 369913963}
   m_Father: {fileID: 1622035599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &841501673 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8391074459720895813, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+  m_PrefabInstance: {fileID: 1708873653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &848629980
 GameObject:
   m_ObjectHideFlags: 0
@@ -17123,11 +17136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31598d0a38e0c2040a5e2bfdbfeccfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype1.SwordUIController
---- !u!224 &1878058871 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 726316929138305140, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
-  m_PrefabInstance: {fileID: 1708873653}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1878612297
 GameObject:
   m_ObjectHideFlags: 0

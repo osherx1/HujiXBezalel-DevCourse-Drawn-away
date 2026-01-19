@@ -49,7 +49,7 @@ MonoBehaviour:
   pieceId: 3
   requireUnlockedToCollect: 1
   hideIfAlreadyCollectedOnStart: 1
-  triggerCollider: {fileID: 0}
+  triggerCollider: {fileID: 8984689350585336704}
   playerTransform: {fileID: 0}
   playerTag: Player
   moveLimiter: {fileID: 0}
@@ -60,11 +60,11 @@ MonoBehaviour:
   keepPlayerVelocityZeroWhileLocked: 1
   disablePlayerControllersWhileLocked: 1
   lockDurationSeconds: 0.6
-  worldSprite: {fileID: 0}
+  worldSprite: {fileID: 2429204260041368615}
   glowObject: {fileID: 0}
   targetCanvas: {fileID: 0}
   uiTargetSlot: {fileID: 0}
-  flyingVisualPrefab: {fileID: 0}
+  flyingVisualPrefab: {fileID: 5732093801444738307}
   flyDuration: 0.6
   delayBeforeFlySeconds: 0
   delayAfterFlySeconds: 0
@@ -142,7 +142,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.077778, y: 3.711111}
+    oldSize: {x: 0.4875, y: 1.0625}
     newSize: {x: 4.077778, y: 3.711111}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -486777534330898763, guid: 351892580c5ad4a57a5a286a3f5679eb, type: 3}
+  m_Sprite: {fileID: 3717354317395452461, guid: 67ee48e0b466b4da78bbc90cdc4885a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
