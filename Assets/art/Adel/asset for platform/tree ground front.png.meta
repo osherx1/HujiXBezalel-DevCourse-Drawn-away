@@ -1,13 +1,58 @@
 fileFormatVersion: 2
-guid: e956f70393578487a9dd026c2c58e644
+guid: 9b015853bb0074f958871b916f603d44
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6579287912690554368
-    second: CAVE 4_0
+      213: -5271859133082159823
+    second: tree ground front_0
   - first:
-      213: -7540332926521951821
-    second: CAVE 4_1
+      213: -5616860425268228866
+    second: tree ground front_1
+  - first:
+      213: 5540002935591202434
+    second: tree ground front_2
+  - first:
+      213: -8542065129718796468
+    second: tree ground front_3
+  - first:
+      213: -7480631976770410370
+    second: tree ground front_4
+  - first:
+      213: 431920231882796704
+    second: tree ground front_5
+  - first:
+      213: -8433772217453079144
+    second: tree ground front_6
+  - first:
+      213: -6767345250153553264
+    second: tree ground front_7
+  - first:
+      213: -1347708458288114030
+    second: tree ground front_8
+  - first:
+      213: 4702959692776362007
+    second: tree ground front_9
+  - first:
+      213: -1789196891315836910
+    second: tree ground front_10
+  - first:
+      213: 7945915382314077834
+    second: tree ground front_11
+  - first:
+      213: -3903830818517087410
+    second: tree ground front_12
+  - first:
+      213: -7483913693058611347
+    second: tree ground front_13
+  - first:
+      213: -629876409807511596
+    second: tree ground front_14
+  - first:
+      213: -2592243520472620662
+    second: tree ground front_15
+  - first:
+      213: 188467657693664493
+    second: tree ground front_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +99,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,35 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CAVE 4_0
+      name: tree ground front_0
       rect:
         serializedVersion: 2
-        x: 211
-        y: 3797
-        width: 1628
-        height: 778
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 10, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 00611fe7f735e4b50800000000000000
-      internalID: 6579287912690554368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CAVE 4_1
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 1416
-        height: 3797
+        x: 1108
+        y: 213
+        width: 650
+        height: 829
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,30 +163,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b93a7a572b5b5790800000000000000
-      internalID: -7540332926521951821
+      spriteID: 1353dbacc0896d6b0800000000000000
+      internalID: -5271859133082159823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CAVE 4_2
+      name: tree ground front_1
       rect:
         serializedVersion: 2
-        x: 161
-        y: 4575
-        width: 1784
-        height: 296
+        x: 1727
+        y: 279
+        width: 9
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f6f45e80869874b66ab787d16e0cd046
-      internalID: 1089171123
+      spriteID: efc00fed337ec02b0800000000000000
+      internalID: -5616860425268228866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree ground front_2
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 275
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ee886515b02ec40800000000000000
+      internalID: 5540002935591202434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree ground front_3
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 240
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f2cd6b50d747980800000000000000
+      internalID: -8542065129718796468
       vertices: []
       indices: 
       edges: []
@@ -172,7 +239,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3c1d279e962c844b4a72d5e019cb235d
+    spriteID: ac3a8df27d9ff468f864126683765c69
     internalID: 0
     vertices: []
     indices: 
@@ -182,9 +249,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CAVE 4_0: 6579287912690554368
-      CAVE 4_1: -7540332926521951821
-      CAVE 4_2: 1089171123
+      tree ground front_0: -5271859133082159823
+      tree ground front_1: -5616860425268228866
+      tree ground front_10: -1789196891315836910
+      tree ground front_11: 7945915382314077834
+      tree ground front_12: -3903830818517087410
+      tree ground front_13: -7483913693058611347
+      tree ground front_14: -629876409807511596
+      tree ground front_15: -2592243520472620662
+      tree ground front_16: 188467657693664493
+      tree ground front_17: 1026365344
+      tree ground front_2: 5540002935591202434
+      tree ground front_3: -8542065129718796468
+      tree ground front_4: -7480631976770410370
+      tree ground front_5: 431920231882796704
+      tree ground front_6: -8433772217453079144
+      tree ground front_7: -6767345250153553264
+      tree ground front_8: -1347708458288114030
+      tree ground front_9: 4702959692776362007
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

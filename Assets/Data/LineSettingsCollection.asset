@@ -302,8 +302,8 @@ MonoBehaviour:
       linePrefab: {fileID: 5247383489900493533, guid: 36bb7d01be5661b46bcb22d9251bccb9, type: 3}
       lineColor:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0.40392157}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0.47358483, b: 0.76358896, a: 0.40392157}
+        key1: {r: 0.4113207, g: 0.343802, b: 0.39676595, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0.23921569}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -331,7 +331,7 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 4
       lineWidth: 1.248
-      material: {fileID: 2100000, guid: 8db46a6b21aefd84f9a17d809c06ffad, type: 2}
+      material: {fileID: 2100000, guid: b4ba7b64e96194cb8a05097626428482, type: 2}
       useDifferentMaterialBeforePhysics: 1
       materialBeforePhysics: {fileID: 2100000, guid: 8bfcef7bb6e06644685e731abb9b8928, type: 2}
       endCapVertices: 36
@@ -339,8 +339,8 @@ MonoBehaviour:
       lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 85cd5cd4ad3bd674480507b265d09655, type: 2}
-      gravityScaleOverride: -0.97
-      massMult: 1
+      gravityScaleOverride: -2
+      massMult: 1.5
       useDrawSound: 0
       drawSound: 13
       useCollisionSound: 0

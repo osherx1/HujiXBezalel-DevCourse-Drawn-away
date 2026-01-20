@@ -23,7 +23,11 @@ public class IllanaLineQuestController : MonoBehaviour
 
     [Header("Illana Movement")]
     [SerializeField] private NpcPathFollower illanaFollower;
+    [Tooltip("Legacy fallback path. Prefer setting per-route NpcPath on the LineTouchAllObjective2D Routes.")]
     [SerializeField] private NpcPath illanaPath;
+
+    [Tooltip("Legacy fallback array. Prefer setting per-route NpcPath on the LineTouchAllObjective2D Routes.")]
+    [SerializeField] private NpcPath[] illanaPaths;
 
     [Tooltip("Player transform used for waypoint waiting distances.")]
     [SerializeField] private Transform player;
@@ -189,7 +193,8 @@ public class IllanaLineQuestController : MonoBehaviour
             return;
         }
 
-        if (illanaFollower == null || illanaPath == null)
+        NpcPath pathToUse = ResolveIllanaPath();
+        if (illanaFollower == null || pathToUse == null)
         {
             return;
         }
@@ -198,7 +203,33 @@ public class IllanaLineQuestController : MonoBehaviour
         onEscortStarted?.Invoke();
 
         // We rely on NpcPathFollower's onFinished UnityEvent to call OnIllanaFinished().
-        illanaFollower.Begin(illanaPath, player);
+        illanaFollower.Begin(pathToUse, player);
+    }
+
+    private NpcPath ResolveIllanaPath()
+    {
+        // Preferred: get the path from the completed route.
+        if (objective != null)
+        {
+            NpcPath routePath = objective.SelectedNpcPath;
+            if (routePath != null)
+            {
+                return routePath;
+            }
+        }
+
+        // Route-aware selection.
+        if (illanaPaths != null && illanaPaths.Length > 0 && objective != null)
+        {
+            int index = objective.SelectedRouteIndex;
+            if (index >= 0 && index < illanaPaths.Length && illanaPaths[index] != null)
+            {
+                return illanaPaths[index];
+            }
+        }
+
+        // Legacy fallback.
+        return illanaPath;
     }
 
     public void OnIllanaFinished()

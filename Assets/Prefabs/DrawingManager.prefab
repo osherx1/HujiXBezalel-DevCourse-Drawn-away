@@ -57,7 +57,7 @@ MonoBehaviour:
   maxColliderPoints: 128
   cantDrawOverLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   drawOverlapPadding: 0.3
   cantDrawLayerDelay: 0.1
   limitDrawingArea: 0
@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718994073364508850, guid: 9c2f7c28fd4a42a428f37e9ef9fe585d, type: 3}
       propertyPath: m_SortingOrder
-      value: 110
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4862250708090607599, guid: 9c2f7c28fd4a42a428f37e9ef9fe585d, type: 3}
       propertyPath: m_LocalScale.x
