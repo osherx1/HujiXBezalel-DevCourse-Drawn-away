@@ -2992,6 +2992,7 @@ MonoBehaviour:
   beforeEscortTriggerCollider: {fileID: 4469351996816251443}
   afterEscortTriggerCollider: {fileID: 4446603669085838011}
   defaultTriggerCollider: {fileID: 4446603669085838011}
+  characterBodyCollider: {fileID: 0}
   playerTransform: {fileID: 0}
   playerTag: Player
   character: 11
@@ -24075,7 +24076,6 @@ Transform:
   - {fileID: 6625381894601764991}
   - {fileID: 6717009557530614538}
   - {fileID: 7643708329208732687}
-  - {fileID: 5414787682133944509}
   - {fileID: 1000790178405294702}
   - {fileID: 5595945684106328023}
   - {fileID: 2574582800674376255}
@@ -32800,10 +32800,6 @@ PrefabInstance:
       value: SwordPiece1
       objectReference: {fileID: 0}
     - target: {fileID: 2875991971189135388, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
-      propertyPath: progress
-      value: 
-      objectReference: {fileID: 3972765663967967495}
-    - target: {fileID: 2875991971189135388, guid: e0ccd1599cf960140bb32fe5c72ab642, type: 3}
       propertyPath: flyDuration
       value: 1
       objectReference: {fileID: 0}
@@ -32920,10 +32916,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Old man pref coppy danielle
       objectReference: {fileID: 0}
-    - target: {fileID: 6899671037645798104, guid: ca495e866c64d4081996832b1921df3b, type: 3}
-      propertyPath: progress
-      value: 
-      objectReference: {fileID: 3972765663967967495}
     - target: {fileID: 7637390261902976642, guid: ca495e866c64d4081996832b1921df3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -237.7448
@@ -33396,10 +33388,6 @@ PrefabInstance:
       value: SwordPiece2
       objectReference: {fileID: 0}
     - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
-      propertyPath: progress
-      value: 
-      objectReference: {fileID: 3972765663967967495}
-    - target: {fileID: 6711743433428662670, guid: f37b7f9745ba6d54090e4dc3326b0b17, type: 3}
       propertyPath: worldSprite
       value: 
       objectReference: {fileID: 6840161614518278986}
@@ -33545,87 +33533,6 @@ Transform:
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 6948951642613293258, guid: 6fa8ae9c3f4b3474988871bb7ff8461e, type: 3}
   m_PrefabInstance: {fileID: 6803233993077521145}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6859887886953087805
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2364937750154510183}
-    m_Modifications:
-    - target: {fileID: 222389097043976483, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_Name
-      value: SwordProgress
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -191.27444
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.68828
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7498826405907921466, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: totalPieces
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7498826405907921466, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: usePlayerPrefs
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
---- !u!114 &3972765663967967495 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7498826405907921466, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-  m_PrefabInstance: {fileID: 6859887886953087805}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba85de985b45acf47864c0e7fcb82c43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Prototype1.SwordProgressManager
---- !u!4 &5414787682133944509 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-  m_PrefabInstance: {fileID: 6859887886953087805}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6997090264273324441
 PrefabInstance:

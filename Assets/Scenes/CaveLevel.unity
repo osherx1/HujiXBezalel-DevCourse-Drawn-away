@@ -6523,7 +6523,7 @@ Transform:
   m_GameObject: {fileID: 713423534}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.991196, y: -161.584, z: -10}
+  m_LocalPosition: {x: 33.96933, y: -161.584, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14502,6 +14502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwordPiece3
       objectReference: {fileID: 0}
+    - target: {fileID: 5732093801444738307, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
       propertyPath: progress
       value: 
@@ -18451,7 +18455,7 @@ Transform:
   m_GameObject: {fileID: 1908484744}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.991196, y: -144.61, z: -10}
+  m_LocalPosition: {x: 33.96933, y: -144.61, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18946,7 +18950,7 @@ Transform:
   m_GameObject: {fileID: 1919921331}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.991196, y: -144.61, z: -10}
+  m_LocalPosition: {x: 33.96933, y: -144.61, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
