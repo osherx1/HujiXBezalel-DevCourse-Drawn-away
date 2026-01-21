@@ -4311,6 +4311,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1605370979456931752}
     m_Modifications:
+    - target: {fileID: 2756610964051637911, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3081937800584151000, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0.5655
@@ -4702,6 +4706,10 @@ PrefabInstance:
     - target: {fileID: 577367613293796373, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
       propertyPath: m_Name
       value: 'Padding '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756610964051637911, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3081937800584151000, guid: 27e0cebc8f46acc48b7d8fced6a91caf, type: 3}
       propertyPath: m_SizeDelta.x
