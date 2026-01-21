@@ -2,29 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Drawing.Buttons; 
+using Drawing.Buttons;
 using Drawing.LineControl;
 
-public class BossIntroTrigger : MonoBehaviour
+public class BossIntroCinemachineTrigger : MonoBehaviour
 {
     [Header("Trigger Settings")]
     [SerializeField] private Collider2D triggerCollider;
     [SerializeField] private string playerTag = "Player";
 
-    [Header("Camera Cutscene")]
-    [SerializeField] private Transform cameraTarget;
-    [SerializeField] private float targetOrthoSize = 18f;
-    [SerializeField] private float panDuration = 2.0f;
+    [Header("Cinemachine Integration")]
+    [Tooltip("Drag the Virtual Camera GameObject that focuses on the Giant here. Make sure it is DISABLED initially.")]
+    [SerializeField] private GameObject giantVirtualCamera;
+    [Tooltip("How long Cinemachine takes to blend (match this to your Cinemachine Brain 'Default Blend' time).")]
+    [SerializeField] private float blendDuration = 2.0f;
+    [Tooltip("How long to stay focused on the giant.")]
     [SerializeField] private float holdDuration = 3.0f;
-    [SerializeField] private AnimationCurve panCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
-    [Header("Material Scattering (Animation)")]
+    [Header("Material Scattering")]
     [SerializeField] private float scatterDuration = 1.0f;
     [SerializeField] private AnimationCurve scatterCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
-    [Tooltip("Define which materials are taken and where they go.")]
     [SerializeField] private List<ScatteredMaterial> materialsToScatter;
 
-    [Header("Player Control (Auto-Detected)")]
+    [Header("Player Control")]
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private MonoBehaviour movementController; 
     [SerializeField] private MonoBehaviour jumpController;     
@@ -51,6 +51,9 @@ public class BossIntroTrigger : MonoBehaviour
     {
         if (triggerCollider == null) triggerCollider = GetComponent<Collider2D>();
         if (triggerCollider != null) triggerCollider.isTrigger = true;
+        
+        // Ensure the boss cam is off at start
+        if (giantVirtualCamera != null) giantVirtualCamera.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -71,57 +74,35 @@ public class BossIntroTrigger : MonoBehaviour
 
     private IEnumerator IntroSequenceRoutine()
     {
-        // 1. LOCK
+        // 1. LOCK PLAYER
         SetPlayerLock(true);
         if (menuController != null) menuController.CloseMenu();
 
-        // 2. PAN CAMERA OUT
-        Camera cam = Camera.main;
-        float originalSize = 5f;
-        Vector3 originalPos = Vector3.zero;
-
-        if (cam != null && cameraTarget != null)
+        // 2. SWITCH CAMERA (Pan to Giant)
+        // Enabling the high-priority camera makes Cinemachine blend to it automatically
+        if (giantVirtualCamera != null)
         {
-            originalPos = cam.transform.position;
-            originalSize = cam.orthographicSize;
-            Vector3 targetPos = cameraTarget.position;
-            targetPos.z = originalPos.z;
-
-            float t = 0f;
-            while (t < 1f)
-            {
-                t += Time.unscaledDeltaTime / panDuration;
-                float curve = panCurve.Evaluate(t);
-                cam.transform.position = Vector3.Lerp(originalPos, targetPos, curve);
-                cam.orthographicSize = Mathf.Lerp(originalSize, targetOrthoSize, curve);
-                yield return null;
-            }
+            giantVirtualCamera.SetActive(true);
         }
+        
+        // Wait for the blend to finish so we are fully looking at the giant
+        yield return new WaitForSecondsRealtime(blendDuration);
 
         // 3. SCATTER ANIMATION
-        // We start the scattering routine and let it run parallel to the "Hold" wait
+        // Start scattering materials while holding the view
         StartCoroutine(ScatterMaterialsRoutine());
         
         yield return new WaitForSecondsRealtime(holdDuration);
 
-        // 4. PAN CAMERA BACK
-        if (cam != null && playerRigidbody != null)
+        // 4. SWITCH CAMERA BACK (Pan to Player)
+        // Disabling the boss camera makes Cinemachine fall back to the Player camera
+        if (giantVirtualCamera != null)
         {
-            Vector3 startPos = cam.transform.position;
-            float startSize = cam.orthographicSize;
-            Vector3 returnPos = playerRigidbody.transform.position;
-            returnPos.z = originalPos.z;
-
-            float t = 0f;
-            while (t < 1f)
-            {
-                t += Time.unscaledDeltaTime / panDuration;
-                float curve = panCurve.Evaluate(t);
-                cam.transform.position = Vector3.Lerp(startPos, returnPos, curve);
-                cam.orthographicSize = Mathf.Lerp(startSize, originalSize, curve);
-                yield return null;
-            }
+            giantVirtualCamera.SetActive(false);
         }
+        
+        // Wait for the blend back
+        yield return new WaitForSecondsRealtime(blendDuration);
 
         // 5. UNLOCK
         SetPlayerLock(false);
@@ -130,22 +111,19 @@ public class BossIntroTrigger : MonoBehaviour
 
     private IEnumerator ScatterMaterialsRoutine()
     {
-        // The start position for all items is the Player (simulating them dropping from inventory)
         Vector3 origin = playerRigidbody != null ? playerRigidbody.transform.position : transform.position;
 
         foreach (var item in materialsToScatter)
         {
-            // Lock UI
             if (item.uiButton != null) item.uiButton.interactable = false;
 
-            // Activate and Animate Pickup
             if (item.pickupInstance != null && item.spawnLocation != null)
             {
-                // Start at player
+                // Start from player position
                 item.pickupInstance.transform.position = origin;
                 item.pickupInstance.SetActive(true);
-
-                // Start individual flight coroutine
+                
+                // Fly to destination
                 StartCoroutine(MoveToTarget(item.pickupInstance.transform, item.spawnLocation.position));
             }
         }
@@ -156,7 +134,6 @@ public class BossIntroTrigger : MonoBehaviour
     {
         Vector3 startPos = obj.position;
         float t = 0f;
-
         while (t < 1f)
         {
             t += Time.unscaledDeltaTime / scatterDuration;

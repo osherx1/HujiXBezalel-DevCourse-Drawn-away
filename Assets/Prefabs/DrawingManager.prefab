@@ -324,6 +324,7 @@ MonoBehaviour:
   tagsToDelete:
   - Line
   - DrawingTool
+  - IronLine
 --- !u!4 &8603095735973221190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4324551146690183948, guid: 4b4f9359d64f6964c9b984454969f66b, type: 3}
