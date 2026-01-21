@@ -72,6 +72,8 @@ namespace Drawing.Data
             RockHit = 40,
             RockShatter = 41,
             GiantRoar = 50
+            
+            ,CheckpointReached = 60
         }
     }
 }
