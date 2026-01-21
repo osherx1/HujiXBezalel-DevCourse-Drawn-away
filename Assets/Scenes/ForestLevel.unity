@@ -6198,6 +6198,22 @@ PrefabInstance:
       propertyPath: movementController
       value: 
       objectReference: {fileID: 652030369}
+    - target: {fileID: 3531208723354734382, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531208723354734382, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531208723354734382, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531208723354734382, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 38
+      objectReference: {fileID: 0}
     - target: {fileID: 4736189325033389504, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: path
       value: 
@@ -6218,6 +6234,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 652030366}
+    - target: {fileID: 5447959450257624458, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: characterBodyCollider
+      value: 
+      objectReference: {fileID: 1788869698}
     - target: {fileID: 5608380327250729839, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: moveLimiter
       value: 
@@ -6266,6 +6286,18 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 157230078}
+    - target: {fileID: 8510043580522787982, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 190.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510043580522787982, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892690758298376030, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8905078029032958861, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: uiController
       value: 
@@ -12991,6 +13023,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1788869698 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4846702310164394543, guid: 5789adfefa3204116860a00997096618, type: 3}
+  m_PrefabInstance: {fileID: 912553909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1793549023
 PrefabInstance:
   m_ObjectHideFlags: 0
