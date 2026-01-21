@@ -92,7 +92,7 @@ public class BossIntroCinemachineTrigger : MonoBehaviour
         // Start scattering materials while holding the view
         StartCoroutine(ScatterMaterialsRoutine());
         
-        // yield return new WaitForSecondsRealtime(holdDuration);
+        yield return new WaitForSecondsRealtime(holdDuration);
 
         // 4. SWITCH CAMERA BACK (Pan to Player)
         // Disabling the boss camera makes Cinemachine fall back to the Player camera
