@@ -2149,6 +2149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cave
       objectReference: {fileID: 0}
+    - target: {fileID: 697169428717278141, guid: 1fee9e8b370374b95b1f649eab51265f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 4284607748595595572, guid: 1fee9e8b370374b95b1f649eab51265f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6a78678f19e26472da68d40988183e1c
+guid: 620d8d87404e34c28834e7e4fd78b450
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9021484342822676617
-    second: cave ground_0
+      213: 3006518879343093986
+    second: tzuk_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave ground_0
+      name: tzuk_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 6130
-        height: 800
+        y: 289
+        width: 895
+        height: 3660
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7775e4fb9cf3dc280800000000000000
-      internalID: -9021484342822676617
+      spriteID: 2e820c5ddfc49b920800000000000000
+      internalID: 3006518879343093986
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b6eb51a03127457e93246a9e1df1e20
+    spriteID: b559a0622ad9e4726b390257434de4d2
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cave ground_0: -9021484342822676617
+      tzuk_0: 3006518879343093986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6a78678f19e26472da68d40988183e1c
+guid: 09c6a76fa3a8043529cac60270fadaa0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9021484342822676617
-    second: cave ground_0
+      213: -3351644222534770483
+    second: wood ground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cave ground_0
+      name: wood ground_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 6130
-        height: 800
+        width: 4096
+        height: 559
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7775e4fb9cf3dc280800000000000000
-      internalID: -9021484342822676617
+      spriteID: dc0235e56519c71d0800000000000000
+      internalID: -3351644222534770483
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6b6eb51a03127457e93246a9e1df1e20
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cave ground_0: -9021484342822676617
+      wood ground_0: -3351644222534770483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
