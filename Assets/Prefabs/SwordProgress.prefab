@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba85de985b45acf47864c0e7fcb82c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Prototype1.SwordProgressManager
-  totalPieces: 4
+  totalPieces: 3
   usePlayerPrefs: 0
   playerPrefsKey: Prototype1.SwordProgress
   unlocked: 0
