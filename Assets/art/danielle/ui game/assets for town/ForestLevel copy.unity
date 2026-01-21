@@ -8428,6 +8428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123e800ac9197d14ab0e5ae8e3b9e032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LineTouchAllObjective2D
+  routes: []
   targets:
   - {fileID: 646241203}
   - {fileID: 784415231}
@@ -8442,7 +8443,11 @@ MonoBehaviour:
   onAllTouched:
     m_PersistentCalls:
       m_Calls: []
+  onRouteCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   completed: 0
+  selectedRouteIndex: -1
 --- !u!114 &1068913644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15589,7 +15594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f5b48514ea44a4a8e2028e85a65f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IllanaSpeechBubbleTrigger
-  triggerCollider: {fileID: 1763692303}
+  beforeEscortTriggerCollider: {fileID: 0}
+  afterEscortTriggerCollider: {fileID: 0}
+  defaultTriggerCollider: {fileID: 1763692303}
+  characterBodyCollider: {fileID: 0}
   playerTransform: {fileID: 652030366}
   playerTag: Player
   character: 11
@@ -18604,6 +18612,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2064114745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064114747}
+  - component: {fileID: 2064114746}
+  m_Layer: 0
+  m_Name: holddddd_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2064114746
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064114745}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -534559328313189272, guid: 68b63b24a55a443108160c0d9df0b4ec, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 9.7125, y: 3.675}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2064114747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064114745}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.06, y: -20.99, z: 0}
+  m_LocalScale: {x: 1.8048, y: 1.8048, z: 1.8048}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2075398332
 GameObject:
   m_ObjectHideFlags: 0
@@ -19213,12 +19311,14 @@ MonoBehaviour:
   requireMeetingIllanaBeforeObjective: 1
   illanaFollower: {fileID: 2128969952}
   illanaPath: {fileID: 1386816685}
+  illanaPaths: []
   player: {fileID: 652030366}
   registry: {fileID: 1932665889}
   character: 11
   idleBubbleVariant: 0
   completedBubbleVariant: 1
   hideOthersOnShow: 1
+  autoShowCompletedBubbleMaxDistance: 4
   dudePathTrigger: {fileID: 1234702063}
   onObjectiveCompleted:
     m_PersistentCalls:
@@ -19241,7 +19341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f5b48514ea44a4a8e2028e85a65f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IllanaSpeechBubbleTrigger
-  triggerCollider: {fileID: 1763692303}
+  beforeEscortTriggerCollider: {fileID: 0}
+  afterEscortTriggerCollider: {fileID: 0}
+  defaultTriggerCollider: {fileID: 1763692303}
+  characterBodyCollider: {fileID: 0}
   playerTransform: {fileID: 652030366}
   playerTag: Player
   character: 11
@@ -19284,3 +19387,4 @@ SceneRoots:
   - {fileID: 2043085553}
   - {fileID: 517165126}
   - {fileID: 1265531418}
+  - {fileID: 2064114747}
