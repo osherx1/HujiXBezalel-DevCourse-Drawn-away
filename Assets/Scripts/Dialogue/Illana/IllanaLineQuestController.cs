@@ -45,6 +45,10 @@ public class IllanaLineQuestController : MonoBehaviour
     [Tooltip("If true, hides other bubbles when showing Illana's bubble.")]
     [SerializeField] private bool hideOthersOnShow = true;
 
+    [Header("Bubble Proximity")]
+    [Tooltip("When Illana finishes escort, only auto-show the completed bubble if the player is within this distance. Otherwise, the proximity trigger will handle showing it when the player approaches.")]
+    [SerializeField] private float autoShowCompletedBubbleMaxDistance = 4f;
+
     [Header("Dude")]
     [Tooltip("Optional: a NpcPathStartTrigger for the Dude. Will be triggered when Illana finishes her path.")]
     [SerializeField] private NpcPathStartTrigger dudePathTrigger;
@@ -242,9 +246,15 @@ public class IllanaLineQuestController : MonoBehaviour
         progress?.MarkEscortCompleted();
         onEscortCompleted?.Invoke();
 
-        if (registry != null)
+        // Don't force the bubble on globally; only show it immediately if the player is actually nearby.
+        if (registry != null && player != null)
         {
-            registry.ShowVariant(character, completedBubbleVariant, hideOthersOnShow);
+            Transform illanaTransform = illanaFollower != null ? illanaFollower.transform : transform;
+            float dist = Vector3.Distance(player.position, illanaTransform.position);
+            if (dist <= autoShowCompletedBubbleMaxDistance)
+            {
+                registry.ShowVariant(character, completedBubbleVariant, hideOthersOnShow);
+            }
         }
 
         if (dudePathTrigger != null)

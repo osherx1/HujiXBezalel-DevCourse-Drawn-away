@@ -130,8 +130,8 @@ MonoBehaviour:
       SettingID: Iron
       fillMult: 1
       ignoreCantDrawOverLayer: 0
-      usePrefab: 0
-      linePrefab: {fileID: 0}
+      usePrefab: 1
+      linePrefab: {fileID: 5247383489900493533, guid: b6437c779077e7f4d9da4898c672bc6f, type: 3}
       lineColor:
         serializedVersion: 2
         key0: {r: 0.7433963, g: 0.7433963, b: 0.7433963, a: 1}

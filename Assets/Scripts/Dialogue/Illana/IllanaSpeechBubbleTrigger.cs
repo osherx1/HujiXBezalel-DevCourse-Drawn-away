@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using System.Collections.Generic;
 
 /// <summary>
 /// Illana-specific bubble trigger: supports two bubble variants.
@@ -23,6 +24,10 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
     [Tooltip("Legacy/fallback trigger collider. If both before/after are empty, this will be used.")]
     [SerializeField] private Collider2D defaultTriggerCollider;
 
+    [Header("Character Collider (Safety)")]
+    [Tooltip("Optional: the main collider on Illana's character body. This script will keep it enabled (never disables it).")]
+    [SerializeField] private Collider2D characterBodyCollider;
+
     [Tooltip("Optional: if set, only this Transform can trigger the bubble.")]
     [SerializeField] private Transform playerTransform;
 
@@ -42,6 +47,8 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
     [Tooltip("Optional: if empty, uses IllanaProgressManager.Instance.")]
     [SerializeField] private IllanaProgressManager progress;
 
+    private readonly List<Collider2D> _overlapResults = new List<Collider2D>(8);
+
     private void OnEnable()
     {
         EnsureProgress();
@@ -60,6 +67,10 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
         {
             progress.StateChanged -= HandleProgressChanged;
         }
+
+        // If this trigger gets disabled while the player is inside a trigger collider,
+        // Unity may not send OnTriggerExit2D. Ensure we don't leave the bubble stuck on.
+        HideIfPlayerNotOverlappingAnyEnabledTrigger();
     }
 
     private void Reset()
@@ -89,11 +100,45 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
 
         SetAsTrigger(beforeEscortTriggerCollider);
         SetAsTrigger(afterEscortTriggerCollider);
-        SetAsTrigger(defaultTriggerCollider);
+        // Only force the legacy/default collider to be a trigger if it's actually being used as the trigger.
+        if (beforeEscortTriggerCollider == null && afterEscortTriggerCollider == null)
+        {
+            SetAsTrigger(defaultTriggerCollider);
+        }
 
         EnsureRelay(beforeEscortTriggerCollider);
         EnsureRelay(afterEscortTriggerCollider);
-        EnsureRelay(defaultTriggerCollider);
+        if (beforeEscortTriggerCollider == null && afterEscortTriggerCollider == null)
+        {
+            EnsureRelay(defaultTriggerCollider);
+        }
+
+        // Auto-detect body collider if not assigned: prefer a collider on this GameObject that is not a trigger.
+        if (characterBodyCollider == null)
+        {
+            var colliders = GetComponents<Collider2D>();
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                var c = colliders[i];
+                if (c == null)
+                {
+                    continue;
+                }
+
+                // Prefer a non-trigger collider as the "body".
+                if (!c.isTrigger)
+                {
+                    characterBodyCollider = c;
+                    break;
+                }
+            }
+
+            // Fallback: if default trigger collider is on the character GO, treat it as body collider safety.
+            if (characterBodyCollider == null && defaultTriggerCollider != null && defaultTriggerCollider.gameObject == gameObject)
+            {
+                characterBodyCollider = defaultTriggerCollider;
+            }
+        }
 
         if (registry == null)
         {
@@ -102,6 +147,15 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
 
         EnsureProgress();
         UpdateActiveTriggerCollider();
+    }
+
+    private void LateUpdate()
+    {
+        // Safety watchdog: ensure the character's main collider never gets disabled by mistake.
+        if (characterBodyCollider != null && !characterBodyCollider.enabled)
+        {
+            characterBodyCollider.enabled = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -155,10 +209,8 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
             return;
         }
 
-        if (registry != null)
-        {
-            registry.Hide(character);
-        }
+        // Only hide if the player is not still overlapping any other enabled trigger.
+        HideIfPlayerNotOverlappingAnyEnabledTrigger();
     }
 
     private bool IsPlayer(Collider2D other)
@@ -198,6 +250,22 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
         {
             beforeEscortTriggerCollider.enabled = !useAfterEscort;
             afterEscortTriggerCollider.enabled = useAfterEscort;
+
+            // If a legacy/default collider is also assigned (often a larger area), make sure
+            // it does NOT stay enabled and cause ghost enters/exits.
+            if (defaultTriggerCollider != null &&
+                defaultTriggerCollider != beforeEscortTriggerCollider &&
+                defaultTriggerCollider != afterEscortTriggerCollider)
+            {
+                // Never disable the character's main body collider.
+                if (defaultTriggerCollider != characterBodyCollider)
+                {
+                    defaultTriggerCollider.enabled = false;
+                }
+            }
+
+            // Switching enabled colliders can skip OnTriggerExit2D.
+            HideIfPlayerNotOverlappingAnyEnabledTrigger();
             return;
         }
 
@@ -216,6 +284,60 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
         {
             defaultTriggerCollider.enabled = true;
         }
+
+        HideIfPlayerNotOverlappingAnyEnabledTrigger();
+    }
+
+    private void HideIfPlayerNotOverlappingAnyEnabledTrigger()
+    {
+        if (registry == null)
+        {
+            registry = FindObjectOfType<SpeechBubbleRegistry>(true);
+        }
+
+        if (registry == null)
+        {
+            return;
+        }
+
+        if (IsPlayerOverlappingEnabledTrigger(beforeEscortTriggerCollider) ||
+            IsPlayerOverlappingEnabledTrigger(afterEscortTriggerCollider) ||
+            IsPlayerOverlappingEnabledTrigger(defaultTriggerCollider))
+        {
+            return;
+        }
+
+        registry.Hide(character);
+    }
+
+    private bool IsPlayerOverlappingEnabledTrigger(Collider2D trigger)
+    {
+        if (trigger == null || !trigger.enabled)
+        {
+            return false;
+        }
+
+        _overlapResults.Clear();
+
+        // OverlapCollider works for trigger colliders too; we explicitly allow triggers.
+        ContactFilter2D filter = new ContactFilter2D
+        {
+            useTriggers = true,
+            useLayerMask = false,
+            useDepth = false,
+            useNormalAngle = false,
+        };
+
+        int count = trigger.Overlap(filter, _overlapResults);
+        for (int i = 0; i < count && i < _overlapResults.Count; i++)
+        {
+            if (IsPlayer(_overlapResults[i]))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static void SetAsTrigger(Collider2D c)
