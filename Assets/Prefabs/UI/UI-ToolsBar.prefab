@@ -2950,6 +2950,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5944365242924627156, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: enableAutoClose
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944365242924627156, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: slowMotionFactor
       value: 0.613
       objectReference: {fileID: 0}
