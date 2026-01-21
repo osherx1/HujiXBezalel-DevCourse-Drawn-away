@@ -1,0 +1,1742 @@
+fileFormatVersion: 2
+guid: 4c160a2f4aff04eae8e809d6cf24d1c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4483230136685972684
+    second: balck right_0
+  - first:
+      213: 8925116816356859935
+    second: balck right_1
+  - first:
+      213: -4396078099741739702
+    second: balck right_2
+  - first:
+      213: 1373481180779298761
+    second: balck right_3
+  - first:
+      213: 3853350201858599742
+    second: balck right_4
+  - first:
+      213: -666988730118216336
+    second: balck right_5
+  - first:
+      213: -1763392585327834377
+    second: balck right_6
+  - first:
+      213: -8960621553175189246
+    second: balck right_7
+  - first:
+      213: 4578952725811314273
+    second: balck right_8
+  - first:
+      213: 7061685625557021619
+    second: balck right_9
+  - first:
+      213: 4201702630164487621
+    second: balck right_10
+  - first:
+      213: -3164097750072897618
+    second: balck right_11
+  - first:
+      213: -5136163927320322323
+    second: balck right_12
+  - first:
+      213: -5718214743793323397
+    second: balck right_13
+  - first:
+      213: 5182282474018771575
+    second: balck right_14
+  - first:
+      213: -6666942904061433636
+    second: balck right_15
+  - first:
+      213: 7008785571869720696
+    second: balck right_16
+  - first:
+      213: 5251002891520918286
+    second: balck right_17
+  - first:
+      213: 3550393817490017606
+    second: balck right_18
+  - first:
+      213: 3848085347980643236
+    second: balck right_19
+  - first:
+      213: 5434390048783827817
+    second: balck right_20
+  - first:
+      213: -3790203470277279161
+    second: balck right_21
+  - first:
+      213: -1127300752110918285
+    second: balck right_22
+  - first:
+      213: -7283611088792644054
+    second: balck right_23
+  - first:
+      213: -1871325633973807059
+    second: balck right_24
+  - first:
+      213: 4852071646899029351
+    second: balck right_25
+  - first:
+      213: 2843590243222858068
+    second: balck right_26
+  - first:
+      213: -5460364650210629497
+    second: balck right_27
+  - first:
+      213: -6847470821551068145
+    second: balck right_28
+  - first:
+      213: -2712454301198389044
+    second: balck right_29
+  - first:
+      213: 3645094939894379208
+    second: balck right_30
+  - first:
+      213: 9172505284723054378
+    second: balck right_31
+  - first:
+      213: 2781852544312979685
+    second: balck right_32
+  - first:
+      213: 7491482975089596092
+    second: balck right_33
+  - first:
+      213: 3050198281004635088
+    second: balck right_34
+  - first:
+      213: 3727253831112619478
+    second: balck right_35
+  - first:
+      213: -8167035591301337770
+    second: balck right_36
+  - first:
+      213: -842297404895542083
+    second: balck right_37
+  - first:
+      213: -6003756224554142957
+    second: balck right_38
+  - first:
+      213: 1277367377973212996
+    second: balck right_39
+  - first:
+      213: -1765383457960652189
+    second: balck right_40
+  - first:
+      213: 2244931704685323597
+    second: balck right_41
+  - first:
+      213: 7996063375816918194
+    second: balck right_42
+  - first:
+      213: -3191121345553382072
+    second: balck right_43
+  - first:
+      213: -2752685483082993575
+    second: balck right_44
+  - first:
+      213: 3200535203235921716
+    second: balck right_45
+  - first:
+      213: 8894344397071758758
+    second: balck right_46
+  - first:
+      213: 9087946772639873165
+    second: balck right_47
+  - first:
+      213: -3123557630924785620
+    second: balck right_48
+  - first:
+      213: -5366124755917602056
+    second: balck right_49
+  - first:
+      213: 4047288302715521330
+    second: balck right_50
+  - first:
+      213: -3155337101526263890
+    second: balck right_51
+  - first:
+      213: -885856219206503649
+    second: balck right_52
+  - first:
+      213: -7465560930357687246
+    second: balck right_53
+  - first:
+      213: -3225446326805608681
+    second: balck right_54
+  - first:
+      213: -8352866028264159854
+    second: balck right_55
+  - first:
+      213: 2189650836378935966
+    second: balck right_56
+  - first:
+      213: 1874913336053210678
+    second: balck right_57
+  - first:
+      213: -782761423462431864
+    second: balck right_58
+  - first:
+      213: -3429969203154473416
+    second: balck right_59
+  - first:
+      213: -4708269523947747875
+    second: balck right_60
+  - first:
+      213: 5986625783892960276
+    second: balck right_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: balck right_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 0
+        width: 1689
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc4e7f5e02a73e30800000000000000
+      internalID: 4483230136685972684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1057
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10e0d905726cdb70800000000000000
+      internalID: 8925116816356859935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_2
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1031
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45f40c724efdf2c0800000000000000
+      internalID: -4396078099741739702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_3
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 974
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cfb80e5bd59f0310800000000000000
+      internalID: 1373481180779298761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_4
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 979
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b26f8b799d97530800000000000000
+      internalID: 3853350201858599742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 976
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0756d18a8416eb6f0800000000000000
+      internalID: -666988730118216336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_6
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 983
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa0af759cb2787e0800000000000000
+      internalID: -1763392585327834377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_7
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 961
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209a84c3c2a75a380800000000000000
+      internalID: -8960621553175189246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 950
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e3a496e35bb8f30800000000000000
+      internalID: 4578952725811314273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_9
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 836
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3feca79a5200260800000000000000
+      internalID: 7061685625557021619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_10
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 821
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd57c2d7427f4a30800000000000000
+      internalID: 4201702630164487621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_11
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 783
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eafca444cddd614d0800000000000000
+      internalID: -3164097750072897618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_12
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 793
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee95e3ee1ea8b8b0800000000000000
+      internalID: -5136163927320322323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_13
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 778
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b723cc6acf1d4a0b0800000000000000
+      internalID: -5718214743793323397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_14
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 753
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7721f95047a2be740800000000000000
+      internalID: 5182282474018771575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_15
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 747
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd86b9170c24a73a0800000000000000
+      internalID: -6666942904061433636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_16
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 725
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8708d2ee755344160800000000000000
+      internalID: 7008785571869720696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_17
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 731
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0347af0f4f4fd840800000000000000
+      internalID: 5251002891520918286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_18
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 733
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d4c30cd58854130800000000000000
+      internalID: 3550393817490017606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_19
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 720
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab85c76c35276530800000000000000
+      internalID: 3848085347980643236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 719
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9638dace4f4da6b40800000000000000
+      internalID: 5434390048783827817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_21
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 725
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7428baf660e766bc0800000000000000
+      internalID: -3790203470277279161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_22
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 714
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375e56b40f50b50f0800000000000000
+      internalID: -1127300752110918285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_23
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 711
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a261b621e4a6bea90800000000000000
+      internalID: -7283611088792644054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_24
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 718
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2898e72047b706e0800000000000000
+      internalID: -1871325633973807059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_25
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 701
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765492a9475065340800000000000000
+      internalID: 4852071646899029351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_26
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 708
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459a01e9246767720800000000000000
+      internalID: 2843590243222858068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_27
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 706
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7886818e743e834b0800000000000000
+      internalID: -5460364650210629497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_28
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 686
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ca8973195e8f0a0800000000000000
+      internalID: -6847470821551068145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_29
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 694
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc0f69b2f2d6b5ad0800000000000000
+      internalID: -2712454301198389044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_30
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 675
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c27af8098af59230800000000000000
+      internalID: 3645094939894379208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_31
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 680
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a279f4c55f84b4f70800000000000000
+      internalID: 9172505284723054378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_32
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 678
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0ba4176202b9620800000000000000
+      internalID: 2781852544312979685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_33
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 672
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb61a13031817f760800000000000000
+      internalID: 7491482975089596092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_34
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 663
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3d9c90d2b745a20800000000000000
+      internalID: 3050198281004635088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_35
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 666
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d57e2f8c9dd9b330800000000000000
+      internalID: 3727253831112619478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_36
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 649
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65de288866cd8ae80800000000000000
+      internalID: -8167035591301337770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_37
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 639
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4c7f119fe8f44f0800000000000000
+      internalID: -842297404895542083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_38
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 630
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313f865e58f5eaca0800000000000000
+      internalID: -6003756224554142957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_39
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 630
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447f3cbccde1ab110800000000000000
+      internalID: 1277367377973212996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_40
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 626
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36297ef29191087e0800000000000000
+      internalID: -1765383457960652189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_41
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 612
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45e7c2cd79972f10800000000000000
+      internalID: 2244931704685323597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_42
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 621
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4041d7649b7fe60800000000000000
+      internalID: 7996063375816918194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_43
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 601
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845cf132b0cd6b3d0800000000000000
+      internalID: -3191121345553382072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_44
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 600
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 950b672332f7cc9d0800000000000000
+      internalID: -2752685483082993575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_45
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 595
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f72086fc59a6c20800000000000000
+      internalID: 3200535203235921716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_46
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 577
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5b279da1f0f6b70800000000000000
+      internalID: 8894344397071758758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_47
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 575
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d887bd0907fde1e70800000000000000
+      internalID: 9087946772639873165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_48
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 580
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28744d42e4e6a4d0800000000000000
+      internalID: -3123557630924785620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_49
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 582
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f20a1727f1b785b0800000000000000
+      internalID: -5366124755917602056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_50
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 570
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239c3f2944bda2830800000000000000
+      internalID: 4047288302715521330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_51
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 550
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea79ae4bf9df534d0800000000000000
+      internalID: -3155337101526263890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_52
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 561
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13302c467ec4b3f0800000000000000
+      internalID: -885856219206503649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_53
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 527
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ccef853eff46890800000000000000
+      internalID: -7465560930357687246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_54
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 533
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717c9a8a7a9ec33d0800000000000000
+      internalID: -3225446326805608681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_55
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 519
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29503e84a98a41c80800000000000000
+      internalID: -8352866028264159854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_56
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 518
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92e08c95d3336e10800000000000000
+      internalID: 2189650836378935966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_57
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 507
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e1814deb7050a10800000000000000
+      internalID: 1874913336053210678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_58
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 506
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88384a2f1a21325f0800000000000000
+      internalID: -782761423462431864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_59
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 495
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ea277be2d4660d0800000000000000
+      internalID: -3429969203154473416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_60
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 444
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd50c4e30ddd8aeb0800000000000000
+      internalID: -4708269523947747875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balck right_61
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 386
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41462249e64c41350800000000000000
+      internalID: 5986625783892960276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      balck right_0: 4483230136685972684
+      balck right_1: 8925116816356859935
+      balck right_10: 4201702630164487621
+      balck right_11: -3164097750072897618
+      balck right_12: -5136163927320322323
+      balck right_13: -5718214743793323397
+      balck right_14: 5182282474018771575
+      balck right_15: -6666942904061433636
+      balck right_16: 7008785571869720696
+      balck right_17: 5251002891520918286
+      balck right_18: 3550393817490017606
+      balck right_19: 3848085347980643236
+      balck right_2: -4396078099741739702
+      balck right_20: 5434390048783827817
+      balck right_21: -3790203470277279161
+      balck right_22: -1127300752110918285
+      balck right_23: -7283611088792644054
+      balck right_24: -1871325633973807059
+      balck right_25: 4852071646899029351
+      balck right_26: 2843590243222858068
+      balck right_27: -5460364650210629497
+      balck right_28: -6847470821551068145
+      balck right_29: -2712454301198389044
+      balck right_3: 1373481180779298761
+      balck right_30: 3645094939894379208
+      balck right_31: 9172505284723054378
+      balck right_32: 2781852544312979685
+      balck right_33: 7491482975089596092
+      balck right_34: 3050198281004635088
+      balck right_35: 3727253831112619478
+      balck right_36: -8167035591301337770
+      balck right_37: -842297404895542083
+      balck right_38: -6003756224554142957
+      balck right_39: 1277367377973212996
+      balck right_4: 3853350201858599742
+      balck right_40: -1765383457960652189
+      balck right_41: 2244931704685323597
+      balck right_42: 7996063375816918194
+      balck right_43: -3191121345553382072
+      balck right_44: -2752685483082993575
+      balck right_45: 3200535203235921716
+      balck right_46: 8894344397071758758
+      balck right_47: 9087946772639873165
+      balck right_48: -3123557630924785620
+      balck right_49: -5366124755917602056
+      balck right_5: -666988730118216336
+      balck right_50: 4047288302715521330
+      balck right_51: -3155337101526263890
+      balck right_52: -885856219206503649
+      balck right_53: -7465560930357687246
+      balck right_54: -3225446326805608681
+      balck right_55: -8352866028264159854
+      balck right_56: 2189650836378935966
+      balck right_57: 1874913336053210678
+      balck right_58: -782761423462431864
+      balck right_59: -3429969203154473416
+      balck right_6: -1763392585327834377
+      balck right_60: -4708269523947747875
+      balck right_61: 5986625783892960276
+      balck right_7: -8960621553175189246
+      balck right_8: 4578952725811314273
+      balck right_9: 7061685625557021619
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
