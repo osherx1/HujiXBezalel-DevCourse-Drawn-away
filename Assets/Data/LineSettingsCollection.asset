@@ -51,7 +51,7 @@ MonoBehaviour:
         m_NumColorKeys: 5
         m_NumAlphaKeys: 4
       lineWidth: 1
-      material: {fileID: 2100000, guid: bcf9e67415bcb3c49ae8a276080935d8, type: 2}
+      material: {fileID: 2100000, guid: d7bd99492bc3abf4ab9eff800fdfe127, type: 2}
       useDifferentMaterialBeforePhysics: 1
       materialBeforePhysics: {fileID: 2100000, guid: 346a324557c2aab4181343f7f33ced25, type: 2}
       endCapVertices: 0
