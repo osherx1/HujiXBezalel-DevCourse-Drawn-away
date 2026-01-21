@@ -1,3 +1,5 @@
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 
 namespace Prototype1
@@ -142,6 +144,8 @@ namespace Prototype1
 
             Vector3 checkpointPosition = (respawnPoint != null ? respawnPoint.position : transform.position);
             hurt.newCheckpoint(checkpointPosition);
+            
+            AudioManager.Instance?.PlaySoundByAudioType(GameSoundsSo.AudioType.CheckpointReached);
 
             PlayActivationAnimationIfNeeded();
 

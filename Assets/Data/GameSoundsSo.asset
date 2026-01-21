@@ -33,3 +33,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ec27f62fa0c2c344c8141942fcf3a99e, type: 3}
   - audioType: 50
     clip: {fileID: 8300000, guid: 726b1217c68ded54daf7ad7486c96777, type: 3}
+  - audioType: 60
+    clip: {fileID: 8300000, guid: 0b478082cb09d432ea08d2e2cdd14ae5, type: 3}
+  - audioType: 1
+    clip: {fileID: 8300000, guid: 080832f79db5848f9b7329f2e584e926, type: 3}

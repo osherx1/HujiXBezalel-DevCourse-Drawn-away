@@ -1,3 +1,5 @@
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 
 namespace Prototype1
@@ -48,6 +50,10 @@ namespace Prototype1
             var hurt = other.GetComponent<characterHurt>() ?? other.GetComponentInParent<characterHurt>();
             if (hurt != null)
             {
+                if(AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.GameOver);
+                }
                 hurt.TriggerHazardHit(zeroVelocityOnHit);
             }
         }
