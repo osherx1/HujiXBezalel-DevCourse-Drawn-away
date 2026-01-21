@@ -72,15 +72,23 @@ public class FireballShooter : MonoBehaviour
 
         foreach (float angle in angles)
         {
+            // Calculate direction spread
             Vector2 spreadDir = Quaternion.Euler(0, 0, angle) * direction;
+            
             GameObject ball = Instantiate(fireballPrefab, mouthPoint.position, Quaternion.identity);
             
             Rigidbody2D rb = ball.GetComponent<Rigidbody2D>();
             if (rb)
             {
+                // Move towards the player
                 rb.linearVelocity = spreadDir * fireballSpeed;
+
+                // Calculate standard angle (0 = Right)
                 float rot_z = Mathf.Atan2(spreadDir.y, spreadDir.x) * Mathf.Rad2Deg;
-                ball.transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
+                
+                // Add 90 degrees offset because the sprite points DOWN
+                // (Down is -90 from Right, so we add 90 to compensate)
+                ball.transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90f);
             }
         }
     }
