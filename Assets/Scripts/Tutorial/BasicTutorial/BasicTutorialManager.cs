@@ -129,7 +129,12 @@ public class BasicTutorialManager : MonoBehaviour
         System.Action<InputAction.CallbackContext> onJump = (ctx) => jumped = true;
 
         if (moveAction != null) moveAction.action.performed += onMove;
-        if (jumpAction != null) jumpAction.action.started += onJump;
+        // Some button interactions only reliably fire on `performed` (e.g., Press)
+        if (jumpAction != null)
+        {
+            jumpAction.action.started += onJump;
+            jumpAction.action.performed += onJump;
+        }
 
         while (!IsItemPickedUp())
         {
@@ -139,13 +144,23 @@ public class BasicTutorialManager : MonoBehaviour
             {
                 if (Keyboard.current.aKey.wasPressedThisFrame) movedLeft = true;
                 if (Keyboard.current.dKey.wasPressedThisFrame) movedRight = true;
-                if (Keyboard.current.spaceKey.wasPressedThisFrame) jumped = true;
+                // Allow both Space and W (and UpArrow) to count as jump
+                if (Keyboard.current.spaceKey.wasPressedThisFrame ||
+                    Keyboard.current.wKey.wasPressedThisFrame ||
+                    Keyboard.current.upArrowKey.wasPressedThisFrame)
+                {
+                    jumped = true;
+                }
             }
             yield return null;
         }
 
         if (moveAction != null) moveAction.action.performed -= onMove;
-        if (jumpAction != null) jumpAction.action.started -= onJump;
+        if (jumpAction != null)
+        {
+            jumpAction.action.started -= onJump;
+            jumpAction.action.performed -= onJump;
+        }
 
         HideInstruction();
         yield return new WaitForSeconds(0.2f);
