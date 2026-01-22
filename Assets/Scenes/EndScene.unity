@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f514b55db89ca6142a8b4e3e00a569ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndScreenManager
-  startSceneName: ForestLevel
+  startSceneName: Start scene
   startOverButton: {fileID: 554543378}
   exitButton: {fileID: 1891091350}
 --- !u!4 &1131954283
