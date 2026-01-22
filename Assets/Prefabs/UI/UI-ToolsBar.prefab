@@ -2834,6 +2834,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4111935425821280004}
     - target: {fileID: 4025836214667683321, guid: e8063938d3e8b01438e935e12e803424, type: 3}
+      propertyPath: eraserSprite
+      value: 
+      objectReference: {fileID: -7039296000305159293, guid: f25794f4c2602474ba9d16312aa77d01, type: 3}
+    - target: {fileID: 4025836214667683321, guid: e8063938d3e8b01438e935e12e803424, type: 3}
       propertyPath: selectedButtonImage
       value: 
       objectReference: {fileID: 6570065625524261262}

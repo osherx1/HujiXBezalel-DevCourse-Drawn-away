@@ -1,163 +1,9 @@
-﻿/*using System.Collections;
-using Drawing.Data;
-using Drawing.Managers;
-using Drawing.Managers.Core.Managers;
-using UnityEngine;
-// Assuming AudioManager is here
-
-namespace PhysicsObjects.Rock
-{
-    public class CinematicTrajectoryKicker : MonoBehaviour
-    {
-        [Header("Path Settings")]
-        [Tooltip("Where the player should land.")]
-        [SerializeField] private Transform targetEndPoint;
-        
-        [Tooltip("An empty object that defines the height/curve of the path.")]
-        [SerializeField] private Transform curveControlPoint;
-
-        [Tooltip("How long (in seconds) the flight takes.")]
-        [SerializeField] private float flightDuration = 1.5f;
-
-        [Header("Audio")]
-        [SerializeField] private GameSoundsSo.AudioType audioType = GameSoundsSo.AudioType.None;
-        [SerializeField] private float soundVolume = 1f;
-
-        [Header("Configuration")]
-        [SerializeField] private string collisionTag = "Barrier";
-        [SerializeField] private GameObject playerObject;
-        [SerializeField] private Transform barrierTransform;
-        [SerializeField] private bool showDebugLogs = true;
-
-        private bool _hasActivated = false;
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (_hasActivated) return;
-
-            if (other.CompareTag(collisionTag))
-            {
-                if (showDebugLogs) Debug.Log($"[CinematicKicker] Activated by {other.name}");
-                StartCoroutine(PerformCinematicKick());
-            }
-        }
-
-        private IEnumerator PerformCinematicKick()
-        {
-            _hasActivated = true;
-
-            // 1. Validation
-            if (playerObject == null || targetEndPoint == null || curveControlPoint == null)
-            {
-                Debug.LogError("[CinematicKicker] Missing references (Player, EndPoint, or ControlPoint).");
-                yield break;
-            }
-
-            // 2. Global Event (Stop other systems)
-            if (EventManager.Instance != null)
-            {
-                EventManager.Instance.TriggerDropPlayerToTheHole(true);
-            }
-            
-            // 3. Audio
-            if (audioType != GameSoundsSo.AudioType.None && AudioManager.Instance != null)
-            {
-                AudioManager.Instance.PlaySoundByAudioType(audioType, soundVolume);
-            }
-
-            // 4. Disable Barrier
-            if (barrierTransform != null) barrierTransform.gameObject.SetActive(false);
-
-            // 5. Take Control of Player Physics
-            Rigidbody2D playerRb = playerObject.GetComponent<Rigidbody2D>();
-            bool originalKinematicState = false;
-            
-            if (playerRb != null)
-            {
-                originalKinematicState = playerRb.isKinematic;
-                playerRb.linearVelocity = Vector2.zero; // Stop movement
-                playerRb.isKinematic = true; // Disable physics simulation
-            }
-
-            // 6. Execute Bezier Movement
-            Vector3 startPos = playerObject.transform.position;
-            Vector3 endPos = targetEndPoint.position;
-            Vector3 controlPos = curveControlPoint.position;
-            
-            float timer = 0f;
-
-            while (timer < flightDuration)
-            {
-                timer += Time.deltaTime;
-                float t = timer / flightDuration; // Normalized time (0 to 1)
-
-                // --- Quadratic Bezier Formula ---
-                // B(t) = (1-t)^2 * P0 + 2(1-t)t * P1 + t^2 * P2
-                Vector3 newPos = 
-                    Mathf.Pow(1 - t, 2) * startPos + 
-                    2 * (1 - t) * t * controlPos + 
-                    Mathf.Pow(t, 2) * endPos;
-
-                playerObject.transform.position = newPos;
-
-                yield return null;
-            }
-
-            // 7. Snap to exact end and Restore Physics (Optional)
-            playerObject.transform.position = endPos;
-            
-            if (playerRb != null)
-            {
-                playerRb.isKinematic = originalKinematicState;
-                // Optional: Add a small final velocity if needed to keep them falling
-                // playerRb.linearVelocity = Vector2.down * 5f; 
-            }
-
-            if (showDebugLogs) Debug.Log("[CinematicKicker] Sequence Finished.");
-        }
-
-        // --- Editor Visualization ---
-        private void OnDrawGizmos()
-        {
-            if (targetEndPoint == null || curveControlPoint == null) return;
-
-            Gizmos.color = Color.cyan;
-            Vector3 startPos = transform.position; // Approximation for editor view
-            
-            // Draw Control Points
-            Gizmos.DrawLine(startPos, curveControlPoint.position);
-            Gizmos.DrawLine(curveControlPoint.position, targetEndPoint.position);
-            Gizmos.DrawWireSphere(curveControlPoint.position, 0.3f);
-            Gizmos.DrawWireSphere(targetEndPoint.position, 0.3f);
-
-            // Draw Curve
-            Gizmos.color = Color.yellow;
-            Vector3 prevPos = startPos;
-            int segments = 20;
-            
-            for (int i = 1; i <= segments; i++)
-            {
-                float t = i / (float)segments;
-                Vector3 currentPos = 
-                    Mathf.Pow(1 - t, 2) * startPos + 
-                    2 * (1 - t) * t * curveControlPoint.position + 
-                    Mathf.Pow(t, 2) * targetEndPoint.position;
-
-                Gizmos.DrawLine(prevPos, currentPos);
-                prevPos = currentPos;
-            }
-        }
-    }
-}*/
-
-
-using System.Collections;
+﻿using System.Collections;
 using Drawing.Data;
 using Drawing.Managers;
 using Drawing.Managers.Core.Managers;
 using UnityEngine;
 using Utilities.Camera.CameraShake;
-
 
 namespace PhysicsObjects.Rock
 {
@@ -221,6 +67,20 @@ namespace PhysicsObjects.Rock
                 EventManager.Instance.TriggerDropPlayerToTheHole(true);
             }
 
+            // Take Control of Player Physics
+            Rigidbody2D playerRb = playerObject.GetComponent<Rigidbody2D>();
+            bool originalKinematicState = false;
+            
+        
+            Vector3 startPos = playerObject.transform.position;
+
+            if (playerRb != null)
+            {
+                originalKinematicState = playerRb.isKinematic;
+                playerRb.linearVelocity = Vector2.zero; // Stop movement
+                playerRb.isKinematic = true; // Disable physics simulation
+            }
+
             // --- 3. Start The DRAMA (Sound + Shake) ---
             if (showDebugLogs) Debug.Log("[CinematicKicker] Starting build-up (Shake & Sound)...");
 
@@ -240,9 +100,22 @@ namespace PhysicsObjects.Rock
                 Debug.LogWarning("[CinematicKicker] No ShakeProfile assigned!");
             }
 
-            // --- 4. Wait for the shake effect (Build-up) ---
-            yield return new WaitForSeconds(preKickDelay);
 
+            float delayTimer = 0f;
+            while (delayTimer < preKickDelay)
+            {
+                delayTimer += Time.deltaTime;
+
+  
+                playerObject.transform.position = startPos;
+                
+                if (playerRb != null)
+                {
+                    playerRb.linearVelocity = Vector2.zero;
+                }
+
+                yield return null;
+            }
 
             // --- 5. The Kick (Movement Logic) ---
             if (showDebugLogs) Debug.Log("[CinematicKicker] Launching Player!");
@@ -250,28 +123,17 @@ namespace PhysicsObjects.Rock
             // Disable Barrier (Open the gate/remove the trigger visual)
             if (barrierTransform != null) barrierTransform.gameObject.SetActive(false);
 
-            // Take Control of Player Physics
-            Rigidbody2D playerRb = playerObject.GetComponent<Rigidbody2D>();
-            bool originalKinematicState = false;
-            
-            if (playerRb != null)
-            {
-                originalKinematicState = playerRb.isKinematic;
-                playerRb.linearVelocity = Vector2.zero; // Stop movement
-                playerRb.isKinematic = true; // Disable physics simulation
-            }
-
             // Execute Bezier Movement
-            Vector3 startPos = playerObject.transform.position;
+    
             Vector3 endPos = targetEndPoint.position;
             Vector3 controlPos = curveControlPoint.position;
             
-            float timer = 0f;
+            float flightTimer = 0f;
 
-            while (timer < flightDuration)
+            while (flightTimer < flightDuration)
             {
-                timer += Time.deltaTime;
-                float t = timer / flightDuration; // Normalized time (0 to 1)
+                flightTimer += Time.deltaTime;
+                float t = flightTimer / flightDuration; // Normalized time (0 to 1)
 
                 // Quadratic Bezier Formula
                 Vector3 newPos = 
@@ -280,6 +142,11 @@ namespace PhysicsObjects.Rock
                     Mathf.Pow(t, 2) * endPos;
 
                 playerObject.transform.position = newPos;
+                
+                if (playerRb != null)
+                {
+                    playerRb.linearVelocity = Vector2.zero; 
+                }
 
                 yield return null;
             }

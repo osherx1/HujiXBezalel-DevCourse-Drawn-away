@@ -32,6 +32,7 @@ namespace Drawing.Buttons
         [Header("Auto Close Settings")]
         [Tooltip("If true, the menu will automatically close after the duration.")]
         [SerializeField] private bool enableAutoClose = false;
+        [SerializeField] private bool startMenuOpen = false;
 
         [Tooltip("Time in real seconds before the menu closes automatically.")]
         [ShowIf(nameof(enableAutoClose))] [Indent(1)]
@@ -44,7 +45,7 @@ namespace Drawing.Buttons
 
         private void Awake()
         {
-            if (menuPanel != null) menuPanel.SetActive(false);
+            if (menuPanel != null) menuPanel.SetActive(startMenuOpen);
             
             Time.timeScale = 1f;
             _defaultFixedDeltaTime = Time.fixedDeltaTime;
