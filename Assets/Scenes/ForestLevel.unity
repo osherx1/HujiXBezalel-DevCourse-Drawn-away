@@ -6393,10 +6393,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 294666757771074466, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 662875150352655225, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 670701903190939077, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 652030366}
+    - target: {fileID: 711764881346055183, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7300889578897053814, guid: b582a7156f6e54352b75beac79ff3016, type: 3}
+    - target: {fileID: 1016651705189177752, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1913134
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016651705189177752, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -66.4647
+      objectReference: {fileID: 0}
     - target: {fileID: 1385597742685431495, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: progress
       value: 
@@ -6501,6 +6521,14 @@ PrefabInstance:
       propertyPath: movementController
       value: 
       objectReference: {fileID: 652030369}
+    - target: {fileID: 3357802285458845742, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1686287
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357802285458845742, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -66.4012
+      objectReference: {fileID: 0}
     - target: {fileID: 4469351996816251443, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: m_Size.x
       value: 52.106873
@@ -6525,6 +6553,26 @@ PrefabInstance:
       propertyPath: npcInScene
       value: 
       objectReference: {fileID: 89360922}
+    - target: {fileID: 4899317752658886505, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260960390550226306, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6603774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260960390550226306, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6603774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260960390550226306, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6603774
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260960390550226306, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_SortingOrder
+      value: -6
+      objectReference: {fileID: 0}
     - target: {fileID: 5447959450257624458, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: playerTransform
       value: 
@@ -6581,6 +6629,18 @@ PrefabInstance:
       propertyPath: uiObjectToActivate
       value: 
       objectReference: {fileID: 1708873655}
+    - target: {fileID: 6314093206810185585, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314093206810185585, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314093206810185585, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6627451
+      objectReference: {fileID: 0}
     - target: {fileID: 6325672914174964957, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: player
       value: 
