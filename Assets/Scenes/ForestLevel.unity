@@ -2910,7 +2910,7 @@ Transform:
   m_GameObject: {fileID: 363968816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -108.82523, y: -35.008743, z: -10}
+  m_LocalPosition: {x: -109.20801, y: -35.008743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10122,6 +10122,14 @@ PrefabInstance:
       propertyPath: lineroot
       value: 
       objectReference: {fileID: 296961771}
+    - target: {fileID: 4448918920157762783, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9192638271177797499, guid: aeb12b4f30243402db37559c39ecc7b4, type: 3}
+    - target: {fileID: 4448918920157762783, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4821352767704367762, guid: 7428abe5cb42d9d4d8e33b0eadb6e34e, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -11974,7 +11982,7 @@ Transform:
   m_GameObject: {fileID: 1390876105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -108.82523, y: -35.008743, z: -10}
+  m_LocalPosition: {x: -109.20801, y: -35.008743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
