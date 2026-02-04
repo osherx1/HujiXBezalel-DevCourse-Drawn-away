@@ -302,36 +302,36 @@ MonoBehaviour:
       linePrefab: {fileID: 5247383489900493533, guid: 36bb7d01be5661b46bcb22d9251bccb9, type: 3}
       lineColor:
         serializedVersion: 2
-        key0: {r: 0.46489662, g: 0.29334286, b: 0.6037736, a: 1}
+        key0: {r: 0.46489662, g: 0.29334286, b: 0.6037736, a: 0}
         key1: {r: 0.66247386, g: 0.5589622, b: 0.745283, a: 1}
-        key2: {r: 0.31349313, g: 0.2481755, b: 0.3679245, a: 1}
-        key3: {r: 0.6962169, g: 0.54725885, b: 0.8113208, a: 0.23921569}
-        key4: {r: 0.46489662, g: 0.29334286, b: 0.6037736, a: 0}
+        key2: {r: 0.5204613, g: 0.4078409, b: 0.6132076, a: 1}
+        key3: {r: 0.6962169, g: 0.54725885, b: 0.8113208, a: 0}
+        key4: {r: 0.46489662, g: 0.29334286, b: 0.6037736, a: 1}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 13107
-        ctime2: 33346
-        ctime3: 52043
-        ctime4: 64957
+        ctime0: 4819
+        ctime1: 19468
+        ctime2: 31804
+        ctime3: 46067
+        ctime4: 57440
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 65535
-        atime3: 65500
-        atime4: 0
+        atime1: 10794
+        atime2: 54934
+        atime3: 65535
+        atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
         m_NumColorKeys: 5
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 4
       lineWidth: 2.5
-      material: {fileID: 2100000, guid: b4ba7b64e96194cb8a05097626428482, type: 2}
+      material: {fileID: 2100000, guid: 6deb7505ac2604222a42b412310704f5, type: 2}
       useDifferentMaterialBeforePhysics: 0
       materialBeforePhysics: {fileID: 0}
       endCapVertices: 90
@@ -470,40 +470,40 @@ MonoBehaviour:
       linePrefab: {fileID: 5247383489900493533, guid: abe1edfebdfcc8a449556c743391f375, type: 3}
       lineColor:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 0.32941177}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0, g: 0, b: 0, a: 0.84313726}
+        key1: {r: 0, g: 0, b: 0, a: 0.84313726}
+        key2: {r: 0.21293165, g: 0.5188679, b: 0.30388567, a: 0.2509804}
         key3: {r: 0, g: 0, b: 0, a: 0.2509804}
         key4: {r: 0, g: 0, b: 0, a: 1}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 58195
+        ctime1: 65535
         ctime2: 63622
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 209
-        atime1: 2018
-        atime2: 62752
+        atime0: 0
+        atime1: 65535
+        atime2: 65342
         atime3: 65535
         atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
-        m_Mode: 0
+        m_Mode: 1
         m_ColorSpace: 0
-        m_NumColorKeys: 3
-        m_NumAlphaKeys: 4
-      lineWidth: 0.61
-      material: {fileID: -876546973899608171, guid: b377a3b9dfb15ed4b9c8bd7d1acc9136, type: 3}
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      lineWidth: 0.58
+      material: {fileID: 2100000, guid: f69b43fd32440cf4e994f8db39df95c0, type: 2}
       useDifferentMaterialBeforePhysics: 0
       materialBeforePhysics: {fileID: 0}
-      endCapVertices: 7
-      cornerVertices: 7
+      endCapVertices: 18
+      cornerVertices: 50
       lineTextureMode: 1
       usePhysics: 1
       physicsMaterial: {fileID: 6200000, guid: 913b79e3fbb3e74419996a295271f043, type: 2}
