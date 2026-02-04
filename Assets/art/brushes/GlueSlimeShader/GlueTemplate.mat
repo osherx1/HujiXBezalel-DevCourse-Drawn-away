@@ -72,16 +72,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _FillAmount: 0.7
-    - _Float: 0
-    - _FlowSpeed: 0.05
-    - _NoiseScale: 20
+    - _FillAmount: 1
+    - _Float: 1
+    - _FlowSpeed: 1
+    - _NoiseScale: 12.9
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _GlueColor: {r: 0.5807189, g: 0.6415094, b: 0.3843004, a: 1}
+    - _GlueColor: {r: 0.23736204, g: 0.3962264, b: 0.37100065, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
