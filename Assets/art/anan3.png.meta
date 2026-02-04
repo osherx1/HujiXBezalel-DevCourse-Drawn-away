@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 55325797e9781437fa37bf391511d971
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3367392128251890473
+    second: anan3_0
+  - first:
+      213: -5177880637594161785
+    second: anan3_1
+  - first:
+      213: -2036286975645584134
+    second: anan3_2
+  - first:
+      213: 421933302280614339
+    second: anan3_3
+  - first:
+      213: 7226931311307643189
+    second: anan3_4
+  - first:
+      213: 2124949557229017789
+    second: anan3_5
+  - first:
+      213: -2113933877742858497
+    second: anan3_6
+  - first:
+      213: -4990887189073034699
+    second: anan3_7
+  - first:
+      213: 8988522816688382545
+    second: anan3_8
+  - first:
+      213: -8723240817918870888
+    second: anan3_9
+  - first:
+      213: 208133461187554792
+    second: anan3_10
+  - first:
+      213: 841600736501122967
+    second: anan3_11
+  - first:
+      213: -3670578210183429523
+    second: anan3_12
+  - first:
+      213: -200576616838401181
+    second: anan3_13
+  - first:
+      213: 3280781842621837263
+    second: anan3_14
+  - first:
+      213: -7520272576288804434
+    second: anan3_15
+  - first:
+      213: -1470844289501830398
+    second: anan3_16
+  - first:
+      213: -917865894445849333
+    second: anan3_17
+  - first:
+      213: -6822653041132121443
+    second: anan3_18
+  - first:
+      213: 1688822647051853782
+    second: anan3_19
+  - first:
+      213: 4115061551223191200
+    second: anan3_20
+  - first:
+      213: 3089919629619108213
+    second: anan3_21
+  - first:
+      213: -6426463081403329486
+    second: anan3_22
+  - first:
+      213: 7520643591260767172
+    second: anan3_23
+  - first:
+      213: -1046483567243616295
+    second: anan3_24
+  - first:
+      213: 8645984912344177782
+    second: anan3_25
+  - first:
+      213: 7784180622816080973
+    second: anan3_26
+  - first:
+      213: 4029871150794891769
+    second: anan3_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: anan3_0
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 50
+        width: 784
+        height: 1426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b86e7ac416bbe20800000000000000
+      internalID: 3367392128251890473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_1
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 1467
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78da3d26ef87428b0800000000000000
+      internalID: -5177880637594161785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_2
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1458
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af4f3ebc8c7adb3e0800000000000000
+      internalID: -2036286975645584134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_3
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1462
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1f7595a120bd500800000000000000
+      internalID: 421933302280614339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_4
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1467
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539d3aadcb73b4460800000000000000
+      internalID: 7226931311307643189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_5
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1459
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba52442d565d7d10800000000000000
+      internalID: 2124949557229017789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_6
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1453
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe097a965cc9a2e0800000000000000
+      internalID: -2113933877742858497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_7
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1453
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532014d5b8eccbab0800000000000000
+      internalID: -4990887189073034699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_8
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1459
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1526438e0e5adbc70800000000000000
+      internalID: 8988522816688382545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_9
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1101
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89af1cd91b2d0f680800000000000000
+      internalID: -8723240817918870888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_10
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1094
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ede4fbb74073e200800000000000000
+      internalID: 208133461187554792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_11
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 976
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7974bdd2967fdab00800000000000000
+      internalID: 841600736501122967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_12
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 742
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d624abdb09c7f0dc0800000000000000
+      internalID: -3670578210183429523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_13
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 693
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363f81331a8673df0800000000000000
+      internalID: -200576616838401181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_14
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 677
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcfa60b14bda78d20800000000000000
+      internalID: 3280781842621837263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_15
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 660
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1b13c9fef92a790800000000000000
+      internalID: -7520272576288804434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_16
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 665
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 203e45c59e2869be0800000000000000
+      internalID: -1470844289501830398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_17
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 641
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05eb1205d51343f0800000000000000
+      internalID: -917865894445849333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_18
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 636
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92d49105311151a0800000000000000
+      internalID: -6822653041132121443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_19
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 643
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df192eef37ef6710800000000000000
+      internalID: 1688822647051853782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_20
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 624
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6b685ada2ab1930800000000000000
+      internalID: 4115061551223191200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_21
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 594
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57914f3388991ea20800000000000000
+      internalID: 3089919629619108213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_22
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 92
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234dac650ed90d6a0800000000000000
+      internalID: -6426463081403329486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_23
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 88
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c38a6b0081be5860800000000000000
+      internalID: 7520643591260767172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_24
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 92
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df19277db42a71f0800000000000000
+      internalID: -1046483567243616295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_25
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 95
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c59a92875bcf770800000000000000
+      internalID: 8645984912344177782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_26
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 84
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d447e6ab807f60c60800000000000000
+      internalID: 7784180622816080973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anan3_27
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 83
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f169b1e57afce730800000000000000
+      internalID: 4029871150794891769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      anan3_0: 3367392128251890473
+      anan3_1: -5177880637594161785
+      anan3_10: 208133461187554792
+      anan3_11: 841600736501122967
+      anan3_12: -3670578210183429523
+      anan3_13: -200576616838401181
+      anan3_14: 3280781842621837263
+      anan3_15: -7520272576288804434
+      anan3_16: -1470844289501830398
+      anan3_17: -917865894445849333
+      anan3_18: -6822653041132121443
+      anan3_19: 1688822647051853782
+      anan3_2: -2036286975645584134
+      anan3_20: 4115061551223191200
+      anan3_21: 3089919629619108213
+      anan3_22: -6426463081403329486
+      anan3_23: 7520643591260767172
+      anan3_24: -1046483567243616295
+      anan3_25: 8645984912344177782
+      anan3_26: 7784180622816080973
+      anan3_27: 4029871150794891769
+      anan3_3: 421933302280614339
+      anan3_4: 7226931311307643189
+      anan3_5: 2124949557229017789
+      anan3_6: -2113933877742858497
+      anan3_7: -4990887189073034699
+      anan3_8: 8988522816688382545
+      anan3_9: -8723240817918870888
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
