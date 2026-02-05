@@ -1,3 +1,5 @@
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 
 /// <summary>
@@ -68,6 +70,7 @@ public class NPCSpeechBubbleTrigger : MonoBehaviour
         if (registry != null)
         {
             registry.Show(character, hideOthersOnEnter);
+            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.OldManMumbling);
         }
     }
 

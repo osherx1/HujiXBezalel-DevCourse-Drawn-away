@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Serialization;
 using Drawing.Buttons;
 using Drawing;
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 
 /// <summary>
 /// World pickup that, on player trigger, locks movement, animates an icon into a UI slot,
@@ -224,6 +226,7 @@ public class BrushPickupToUI : MonoBehaviour
     {
         float startTime = Time.unscaledTime;
         onPickupStarted?.Invoke();
+        AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.PickupSound);
 
         PrepareSparkForSequence();
 
