@@ -1,7 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Drawing.Buttons; // For MenuController
+using Drawing.Buttons;
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
+using Drawing.Utilities; // For MenuController
 
 public class NewTutorialManager : MonoBehaviour
 {
@@ -9,7 +12,8 @@ public class NewTutorialManager : MonoBehaviour
     [SerializeField] private TutorialOverlayController overlay;
     [SerializeField] private MenuController menuController;
     [SerializeField] private DoorTeleport doorTeleport;
-    [SerializeField] private SpriteRenderer roomDoor;
+    [SerializeField] private GameObject roomDoor;
+    [SerializeField] private GameObject levelExit;
 
     [Header("Sprites")]
     [SerializeField] private Sprite spriteMovementControls;
@@ -142,19 +146,29 @@ public class NewTutorialManager : MonoBehaviour
         if (doorTeleport) doorTeleport.UnlockDoor();
 
         // Slide Animation
-        if (roomDoor != null)
+        if (roomDoor != null && levelExit != null)
         {
-            Vector3 start = roomDoor.transform.position;
-            Vector3 end = start + Vector3.up * doorSlideHeight;
-            float t = 0f;
-            while (t < 2f)
-            {
-                t += Time.deltaTime;
-                roomDoor.transform.position = Vector3.Lerp(start, end, Mathf.Sin((t/2f) * Mathf.PI * 0.5f));
-                yield return null;
-            }
-            roomDoor.transform.position = end;
+            // Vector3 start = roomDoor.transform.position;
+            // Vector3 end = start + Vector3.up * doorSlideHeight;
+            // float t = 0f;
+            // while (t < 2f)
+            // {
+            //     t += Time.deltaTime;
+            //     roomDoor.transform.position = Vector3.Lerp(start, end, Mathf.Sin((t/2f) * Mathf.PI * 0.5f));
+            //     yield return null;
+            // }
+            // roomDoor.transform.position = end;
+            roomDoor.SetActive(true);
+            levelExit.SetActive(true);
+            PlaySound(GameSoundsSo.AudioType.DoorOpen);
         }
+        yield return null;
+    }
+    
+    private void PlaySound(GameSoundsSo.AudioType audioType, float volume = 1f)
+    {
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySoundByAudioType(audioType, volume);
     }
     
     // --- LEVEL 2 HELPER ---

@@ -37,3 +37,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0b478082cb09d432ea08d2e2cdd14ae5, type: 3}
   - audioType: 1
     clip: {fileID: 8300000, guid: 080832f79db5848f9b7329f2e584e926, type: 3}
+  - audioType: 61
+    clip: {fileID: 8300000, guid: d197baa768612454b99b18a375247db9, type: 3}
+  - audioType: 70
+    clip: {fileID: 8300000, guid: cd1ea88250f3c4787b718d6c10a8825c, type: 3}
+  - audioType: 71
+    clip: {fileID: 8300000, guid: bf9c422a0ccbf403fb3c1c44d672a77d, type: 3}
+  - audioType: 80
+    clip: {fileID: 8300000, guid: 661aa213bd1034b4dbdb8b9a8d884893, type: 3}
+  - audioType: 100
+    clip: {fileID: 8300000, guid: 9b321e90a7f8343d6a1309dc16fa6b42, type: 3}
