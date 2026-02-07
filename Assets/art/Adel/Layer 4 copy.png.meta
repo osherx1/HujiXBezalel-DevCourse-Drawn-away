@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 62e0ba9da6b1b45b2b94384a5954cc06
+guid: 2d59314ff8b1f4299af34399fd99e2ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1819116676684815114
-    second: cage_0
+      213: -7974739688111750044
+    second: Layer 4 copy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,40 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cage_0
+      name: Layer 4 copy_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 101
-        height: 260
-      alignment: 9
-      pivot: {x: 0.7895502, y: 0.9833561}
+        y: 75
+        width: 1306
+        height: 2611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0b99c6bafcce3910800000000000000
-      internalID: 1819116676684815114
+      spriteID: 464c3e17188045190800000000000000
+      internalID: -7974739688111750044
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 986827464047e47f0877873d954df082
+    spriteID: b98f033c0445349958c7ac6db47874cf
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cage_0: 1819116676684815114
+      Layer 4 copy_0: -7974739688111750044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
