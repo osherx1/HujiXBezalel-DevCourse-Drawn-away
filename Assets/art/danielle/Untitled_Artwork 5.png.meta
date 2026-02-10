@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e1ac46322d884447a94d002aa91ef287
+guid: acf8bf567dd8843329ddad308996e2ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6265054668056534801
-    second: bridge_0
+      213: -8638421506506822070
+    second: Untitled_Artwork 5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +54,7 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-  alphaUsage: 1
+  alphaUsage: 0
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bridge_0
+      name: Untitled_Artwork 5_0
       rect:
         serializedVersion: 2
-        x: 188
-        y: 710
-        width: 1583
-        height: 784
+        x: 1231
+        y: 105
+        width: 1424
+        height: 2006
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe0661c19fd0e09a0800000000000000
-      internalID: -6265054668056534801
+      spriteID: a4ee09c78692e1880800000000000000
+      internalID: -8638421506506822070
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bridge_0: -6265054668056534801
+      Untitled_Artwork 5_0: -8638421506506822070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
