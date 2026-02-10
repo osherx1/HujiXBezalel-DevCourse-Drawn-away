@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: ce82807e5a1514b1a96b4a075a91dc23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1434604444293651743
+    second: Journey Complete@300x_0
+  - first:
+      213: 4282706371023005381
+    second: Journey Complete@300x_1
+  - first:
+      213: 145176052723178047
+    second: Journey Complete@300x_2
+  - first:
+      213: 4992273616109960358
+    second: Journey Complete@300x_3
+  - first:
+      213: -3058059028950611091
+    second: Journey Complete@300x_4
+  - first:
+      213: 7078854739511850132
+    second: Journey Complete@300x_5
+  - first:
+      213: -7193815133811409889
+    second: Journey Complete@300x_6
+  - first:
+      213: 4718853631382848026
+    second: Journey Complete@300x_7
+  - first:
+      213: 487332094072492314
+    second: Journey Complete@300x_8
+  - first:
+      213: -9146879880276593510
+    second: Journey Complete@300x_9
+  - first:
+      213: 643588870890228017
+    second: Journey Complete@300x_10
+  - first:
+      213: 2482991183933595767
+    second: Journey Complete@300x_11
+  - first:
+      213: -6606475667870509617
+    second: Journey Complete@300x_12
+  - first:
+      213: -9208259210979888013
+    second: Journey Complete@300x_13
+  - first:
+      213: -4702065589590073997
+    second: Journey Complete@300x_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Journey Complete@300x_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 296
+        width: 496
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1dd157242db8e310800000000000000
+      internalID: 1434604444293651743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_1
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 296
+        width: 371
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6e022f0ca3f6b30800000000000000
+      internalID: 4282706371023005381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_2
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 296
+        width: 469
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a557cc9d4c30200800000000000000
+      internalID: 145176052723178047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_3
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 296
+        width: 312
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6acf9c5576e184540800000000000000
+      internalID: 4992273616109960358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_4
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 296
+        width: 468
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b0935f3879f85d0800000000000000
+      internalID: -3058059028950611091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_5
+      rect:
+        serializedVersion: 2
+        x: 2188
+        y: 296
+        width: 343
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 494b13551e42d3260800000000000000
+      internalID: 7078854739511850132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_6
+      rect:
+        serializedVersion: 2
+        x: 2419
+        y: 0
+        width: 560
+        height: 716
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c7751104f6a2c90800000000000000
+      internalID: -7193815133811409889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_7
+      rect:
+        serializedVersion: 2
+        x: 3348
+        y: 296
+        width: 505
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1203ad406cbc7140800000000000000
+      internalID: 4718853631382848026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_8
+      rect:
+        serializedVersion: 2
+        x: 3897
+        y: 296
+        width: 371
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1196d225f953c600800000000000000
+      internalID: 487332094072492314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_9
+      rect:
+        serializedVersion: 2
+        x: 4277
+        y: 296
+        width: 672
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9432fc0631cf0180800000000000000
+      internalID: -9146879880276593510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_10
+      rect:
+        serializedVersion: 2
+        x: 4950
+        y: 97
+        width: 405
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1398ece0bac7ee800800000000000000
+      internalID: 643588870890228017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_11
+      rect:
+        serializedVersion: 2
+        x: 5364
+        y: 296
+        width: 199
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770e9ca835b557220800000000000000
+      internalID: 2482991183933595767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_12
+      rect:
+        serializedVersion: 2
+        x: 5572
+        y: 296
+        width: 343
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc51157f1651154a0800000000000000
+      internalID: -6606475667870509617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_13
+      rect:
+        serializedVersion: 2
+        x: 5924
+        y: 296
+        width: 356
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37433d9f801b53080800000000000000
+      internalID: -9208259210979888013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Journey Complete@300x_14
+      rect:
+        serializedVersion: 2
+        x: 6303
+        y: 296
+        width: 342
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d55e54248eebeb0800000000000000
+      internalID: -4702065589590073997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Journey Complete@300x_0: 1434604444293651743
+      Journey Complete@300x_1: 4282706371023005381
+      Journey Complete@300x_10: 643588870890228017
+      Journey Complete@300x_11: 2482991183933595767
+      Journey Complete@300x_12: -6606475667870509617
+      Journey Complete@300x_13: -9208259210979888013
+      Journey Complete@300x_14: -4702065589590073997
+      Journey Complete@300x_2: 145176052723178047
+      Journey Complete@300x_3: 4992273616109960358
+      Journey Complete@300x_4: -3058059028950611091
+      Journey Complete@300x_5: 7078854739511850132
+      Journey Complete@300x_6: -7193815133811409889
+      Journey Complete@300x_7: 4718853631382848026
+      Journey Complete@300x_8: 487332094072492314
+      Journey Complete@300x_9: -9146879880276593510
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
