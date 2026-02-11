@@ -7123,6 +7123,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -7.2379
       objectReference: {fileID: 0}
+    - target: {fileID: 5848540548092472348, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5935538779254513485, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: m_LocalPosition.x
       value: -57.010048
@@ -7287,6 +7291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: new forest)
       objectReference: {fileID: 0}
+    - target: {fileID: 6840161614518278986, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6886333172723649569, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7422,6 +7430,14 @@ PrefabInstance:
     - target: {fileID: 7715552787237788540, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822565829261752811, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864316051790654007, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7942209350806170687, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9442,6 +9458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheatManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2422057440493575961, guid: 9398cfa124f99e14cbe733aed242445e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 652030366}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
