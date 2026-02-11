@@ -401,7 +401,7 @@ namespace Drawing.LineControl
                 collideWhileDrawing,
                 colliderSimplifyTolerance, maxColliderPoints,
                 conf.lineColor, conf.materialBeforePhysics, conf.endCapVertices, conf.cornerVertices, conf.lineTextureMode);
-            ln.InitializeSound(conf.collisionSound, conf.baseVolume, conf.useCameraShake);
+            ln.InitializeSound(conf.collisionSound, conf.baseCollisionSoundVolume, conf.useCameraShake);
 
             currentLine = ln;
             // Notify listeners
@@ -446,7 +446,7 @@ namespace Drawing.LineControl
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
                 if (conf.releaseSound != GameSoundsSo.AudioType.None)
-                    AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound, conf.baseVolume);
+                    AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound, conf.baseReleaseSoundVolume);
                 // Trigger Particle System at the final position
                 if (releaseEffect != null)
                 {
