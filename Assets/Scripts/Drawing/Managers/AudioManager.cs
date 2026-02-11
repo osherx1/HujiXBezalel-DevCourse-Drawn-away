@@ -157,6 +157,10 @@ namespace Drawing.Managers
                     EventManager.Instance.OnGamePausedChanged -= HandleGamePaused;
                 }
             }
+            
+            
+            
+            
 
        
 

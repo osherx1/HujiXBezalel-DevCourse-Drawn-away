@@ -28,6 +28,8 @@ public class NPCSpeechBubbleTrigger : MonoBehaviour
     [Tooltip("If true, entering this trigger will hide other bubbles first.")]
     [SerializeField] private bool hideOthersOnEnter = true;
 
+    private bool _alreadyPlayedSound;
+
     private void Reset()
     {
         triggerCollider = GetComponent<Collider2D>();
@@ -69,8 +71,14 @@ public class NPCSpeechBubbleTrigger : MonoBehaviour
 
         if (registry != null)
         {
+            
             registry.Show(character, hideOthersOnEnter);
+            if(_alreadyPlayedSound)
+            {
+                return;
+            }
             AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.OldManMumbling);
+            _alreadyPlayedSound = true;
         }
     }
 

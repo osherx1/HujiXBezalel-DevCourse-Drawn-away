@@ -918,10 +918,9 @@ MonoBehaviour:
   pauseActionReference: {fileID: 2778723480505971671, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   pauseMenuPanel: {fileID: 1621523561547945703}
   musicSlider: {fileID: 8399559161718845316}
-  sfxSlider: {fileID: 3695117269647111639}
   resumeButton: {fileID: 4601973003816892039}
   quitButton: {fileID: 821489125500567421}
-  mainMenuSceneName: MainMenu
+  mainMenuSceneName: Start scene
 --- !u!1 &6257095949162390305
 GameObject:
   m_ObjectHideFlags: 0

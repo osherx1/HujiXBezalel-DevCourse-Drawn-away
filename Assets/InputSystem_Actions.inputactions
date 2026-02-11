@@ -1077,17 +1077,117 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "NextScene",
+                    "type": "Button",
+                    "id": "a53ef7b9-8cdd-47fb-aa4d-ca0bc18495d2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PrevScene",
+                    "type": "Button",
+                    "id": "caac92d7-cdfb-4418-8b5a-cfc0d98b9747",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ReloadScene",
+                    "type": "Button",
+                    "id": "a3f81d72-1079-40ac-858e-8ca57818202a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextPoint",
+                    "type": "Button",
+                    "id": "38ddd8ee-0236-4f64-a5a5-dba13169bdd3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PrevPoint",
+                    "type": "Button",
+                    "id": "4b99a0ec-6d07-44bd-916a-1c8ba43ab9e5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "dcbee4e3-8ad5-43ae-8ac6-3e039d967e0a",
-                    "path": "<Keyboard>/f1",
+                    "path": "<Keyboard>/numpadDivide",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "LaunchAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3da13de7-7f59-432d-b034-a2720ae6f4b3",
+                    "path": "<Keyboard>/f3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72277259-5651-4306-989a-58c9299c620a",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrevScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "750649e5-36db-4ec9-94d9-c9e2b9be1756",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReloadScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ddb9d37-4b54-4b2b-b565-8f64fdc091d1",
+                    "path": "<Keyboard>/f6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e1a3ca8-65a6-4e6d-838b-2afbf965ed08",
+                    "path": "<Keyboard>/f5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrevPoint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
