@@ -7031,6 +7031,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 652030366}
+    - target: {fileID: 5447959450257624458, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: enterSoundCooldownSeconds
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5500689471617095780, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: routes.Array.data[0].requiredTouchedPercent
       value: 0.9
@@ -7611,7 +7615,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -10.483202
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 670701903190939077, guid: 5789adfefa3204116860a00997096618, type: 3}
     m_RemovedGameObjects:
     - {fileID: 2324233246163145669, guid: 5789adfefa3204116860a00997096618, type: 3}
     - {fileID: 7432194584765236317, guid: 5789adfefa3204116860a00997096618, type: 3}

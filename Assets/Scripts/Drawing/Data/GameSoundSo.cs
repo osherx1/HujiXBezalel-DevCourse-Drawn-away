@@ -80,7 +80,9 @@ namespace Drawing.Data
             BossEvilLaugh = 80,
             BackgroundMusicMainTheme = 90,
             OldManMumbling = 100,
-            PickupSound = 110
+            PickupSound = 110,
+            Illanaspeak = 120,
+            JonnyWalk = 121
         }
     }
 }
