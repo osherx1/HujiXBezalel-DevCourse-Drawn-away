@@ -25,11 +25,15 @@ public class NpcWaypoint : MonoBehaviour
     [FormerlySerializedAs("deactivatePlayerOnArrive")]
     [SerializeField] private bool deactivateNpcOnArrive;
 
+    [Tooltip("Optional delay before deactivating the NPC at the end waypoint (seconds). Useful to let an arrive animation play.")]
+    [SerializeField, Min(0f)] private float deactivateDelaySeconds;
+
     public bool WaitForPlayerDistance => waitForPlayerDistance;
     public float RequiredPlayerDistance => requiredPlayerDistance;
     public string OnArriveTrigger => onArriveTrigger;
     public string OnDepartTrigger => onDepartTrigger;
     public bool DeactivateNpcOnArrive => deactivateNpcOnArrive;
+    public float DeactivateDelaySeconds => deactivateDelaySeconds;
 
     private void OnDrawGizmos()
     {

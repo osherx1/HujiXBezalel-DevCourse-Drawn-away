@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 6752975474302014390}
   - component: {fileID: 693764648633765412}
   - component: {fileID: 5314393299698532833}
+  - component: {fileID: 3164972485674185758}
   m_Layer: 0
   m_Name: ilana
   m_TagString: Untagged
@@ -753,7 +754,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8066668099077057119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd1378c8d79955444becfc7522341537, type: 3}
   m_Name: 
@@ -863,6 +864,28 @@ MonoBehaviour:
   registry: {fileID: 7709894211729918057}
   hideOthersOnEnter: 1
   progress: {fileID: 0}
+--- !u!95 &3164972485674185758
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c9ecd6191f029942a48e5a074822c5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8325893728362873161
 GameObject:
   m_ObjectHideFlags: 0
