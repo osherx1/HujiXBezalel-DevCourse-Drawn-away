@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using Drawing.Data;
 using Drawing.Utilities;
@@ -37,36 +38,127 @@ namespace Drawing.Managers
             /// Whether to automatically start background music on Awake.
             /// </summary>
             [SerializeField] private bool startWithBackgroundMusic;
+
             [SerializeField] private bool muteOnGameFinished = true;
 
             private bool _isMutedFromGameEnd;
+            private float _volMult;
+            private bool _isPaused;
+            private float _musicVolumeSetting = 1f;
+            private float _sfxVolumeSetting = 1f;
 
-            /// <summary>
-            /// Called when the object is initialized. Plays background music if enabled.
-            /// </summary>
+            // 1. Add these constants at the top of the class
+            //private const string BACKGROUND_VOLUME_KEY = "MusicVolume";
+            //private const string SFX_VOLUME_KEY = "SFXVolume";
+            private const string VOLUME_MULT_KEY = "VolumeMult";
+
+            private void Awake()
+            {
+                _volMult = PlayerPrefs.GetFloat(VOLUME_MULT_KEY, 1.0f);
+            }
+
+            // 2. Update the Start method to load saved values
             void Start()
             {
+                // Load saved volumes (default to 1.0f if not found)
+                //float savedMusicVol = PlayerPrefs.GetFloat(BACKGROUND_VOLUME_KEY, 1.0f);
+               // float savedSFXVol = PlayerPrefs.GetFloat(SFX_VOLUME_KEY, 1.0f);
+                
+                
+
+                // Apply the loaded values
+                //SetBackgroundMusicVolume(_volMult);
+                //SetSFXVolume(_volMult);
+
                 if (startWithBackgroundMusic)
                 {
                     PlayBackgroundMusic();
                 }
             }
 
+            // 3. Update SetBackgroundMusicVolume to save the value
+            public void SetBackgroundMusicVolume(float volume)
+            {
+                _musicVolumeSetting = Mathf.Clamp01(volume);
+                UpdateMusicOutput();
+                
+            }
+
+            private void UpdateMusicOutput()
+            {
+                if (backgroundMusic != null)
+                {
+                   
+                    backgroundMusic.volume = _musicVolumeSetting * _volMult;
+                }
+               // Debug.Log($"[AudioManager] Music Setting Changed: {_musicVolumeSetting} | Output Volume: {backgroundMusic.volume}");
+                
+            }
+
+            public float GetVolumeMult()
+            {
+                return PlayerPrefs.GetFloat(VOLUME_MULT_KEY, 1f);
+            }
+
+            public void SetVolumeMult(float volume)
+            {
+                float oldVol = _volMult;
+                _volMult = Mathf.Clamp01(volume);
+                PlayerPrefs.SetFloat(VOLUME_MULT_KEY, _volMult);
+            
+                UpdateMusicOutput();
+            
+               // Debug.Log($"[AudioManager] Master Volume Changed: {oldVol} -> {_volMult}");
+            }
+
+            
+
+            // 4. Update SetSFXVolume to save the value
+            public void SetSFXVolume(float volume)
+            {
+                if (audioSource != null)
+                {
+                    volume = Mathf.Clamp01(volume);
+                    audioSource.volume = volume;
+
+                    /*// Save to PlayerPrefs
+                    PlayerPrefs.SetFloat(SFX_VOLUME_KEY, volume);*/
+                }
+            }
+
+// 5. Add these Getter methods (needed for the UI Slider)
+            public float GetMusicVolume()
+            {
+                return _musicVolumeSetting;
+            }
+
+            public float GetSFXVolume()
+            {
+                return audioSource != null ? audioSource.volume : 1f;
+            }
+
+
             private void OnEnable()
             {
                 if (EventManager.Instance != null)
                 {
                     EventManager.Instance.OnGameFinished += HandleGameFinished;
+                    EventManager.Instance.OnGamePausedChanged += HandleGamePaused;
                 }
             }
+
+        
 
             private void OnDisable()
             {
                 if (EventManager.Instance != null)
                 {
                     EventManager.Instance.OnGameFinished -= HandleGameFinished;
+                    EventManager.Instance.OnGamePausedChanged -= HandleGamePaused;
                 }
             }
+
+       
 
             /// <summary>
             /// Plays the background music on a loop.
@@ -102,7 +194,7 @@ namespace Drawing.Managers
                 }
                 else
                 {
-                    Debug.LogWarning($"Background music {audioType} not found!");
+                   // Debug.LogWarning($"Background music {audioType} not found!");
                 }
             }
 
@@ -113,7 +205,7 @@ namespace Drawing.Managers
             public void PlaySoundByAudioType(GameSoundsSo.AudioType audioType, float volumeScale = 1.0f)
             {
                 if (audioType == GameSoundsSo.AudioType.None) return;
-                if (_isMutedFromGameEnd) return;
+                if (_isMutedFromGameEnd||_isPaused) return;
 
                 AudioClip clip = gameSoundsSo.GetClip(audioType);
                 if (clip != null)
@@ -121,14 +213,13 @@ namespace Drawing.Managers
                     AudioObject sound = AudioPool.Instance.Get();
                     if (sound != null)
                     {
-                        sound.Play(clip, volumeScale);
+                        sound.Play(clip, volumeScale*_volMult);
                     }
                     else
                     {
                         // PlayOneShot without pooling fallback
-                        audioSource.PlayOneShot(clip, volumeScale);
+                        audioSource.PlayOneShot(clip, volumeScale*_volMult);
                     }
-                   
                 }
                 else
                 {
@@ -136,8 +227,8 @@ namespace Drawing.Managers
                     // Debug.LogWarning($"Sound {audioType} not found!");
                 }
             }
-            
-            
+
+
             public void SetMusicPitch(float pitch)
             {
                 if (backgroundMusic != null)
@@ -153,33 +244,9 @@ namespace Drawing.Managers
             /// <param name="volume">The volume (default is 0.8).</param>
             public void PlaySound(AudioSource audioSource, float volume = 0.8f)
             {
-                if (_isMutedFromGameEnd) return;
-                audioSource.volume = volume;
+                if (_isMutedFromGameEnd||_isPaused) return;
+                audioSource.volume = volume*_volMult;
                 audioSource.Play();
-            }
-
-            /// <summary>
-            /// Sets the volume for background music.
-            /// </summary>
-            /// <param name="volume">Volume value between 0 and 1.</param>
-            public void SetBackgroundMusicVolume(float volume)
-            {
-                if (backgroundMusic != null)
-                {
-                    backgroundMusic.volume = Mathf.Clamp01(volume);
-                }
-            }
-
-            /// <summary>
-            /// Sets the volume for sound effects.
-            /// </summary>
-            /// <param name="volume">Volume value between 0 and 1.</param>
-            public void SetSFXVolume(float volume)
-            {
-                if (audioSource != null)
-                {
-                    audioSource.volume = Mathf.Clamp01(volume);
-                }
             }
 
 
@@ -260,10 +327,31 @@ namespace Drawing.Managers
                 {
                     audioSource.Stop();
                 }
+
                 if (backgroundMusic != null)
                 {
                     backgroundMusic.loop = false;
                 }
+            }
+            private void HandleGamePaused(bool isPaused)
+            {
+                _isPaused = isPaused;
+                //Debug.Log($"[AudioManager] Pause State Changed: {isPaused}");
+                if (isPaused)
+                {
+                    if (backgroundMusic != null) backgroundMusic.Pause();
+                    if(audioSource!= null) audioSource.Pause();
+                }
+                else
+                {
+                    ResumeBackgroundMusic();
+                }
+            }
+        
+
+            public AudioClip GetClip(GameSoundsSo.AudioType drawSound)
+            {
+                return gameSoundsSo.GetClip(drawSound);
             }
         }
     }

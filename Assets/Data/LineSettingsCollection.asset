@@ -65,9 +65,9 @@ MonoBehaviour:
       drawSound: 10
       useCollisionSound: 0
       collisionSound: -1
-      useReleaseSound: 0
-      releaseSound: -1
-      baseVolume: 1
+      useReleaseSound: 1
+      releaseSound: 30
+      baseVolume: 0.1
       useCameraShake: 0
   - id: Spring
     settings:

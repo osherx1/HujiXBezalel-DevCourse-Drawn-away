@@ -1,7 +1,133 @@
-﻿using UnityEngine;
+﻿using Drawing.Managers;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Drawing.Buttons
+{
+    public class MenuInputListener : MonoBehaviour
+    {
+        [Header("References")]
+        [SerializeField] private MenuController menuController;
+        [SerializeField] private InputActionReference toggleActionReference;
+
+        [Header("Settings")]
+        [Tooltip("If true, the menu opens while holding the button and closes on release. If false, it toggles on press.")]
+        [SerializeField] private bool isHoldToOpen = false;
+
+        private bool _isInputActive = true;
+
+        public bool IsHoldToOpen => isHoldToOpen;
+
+        public bool IsInputActive
+        {
+            get => _isInputActive;
+            set => _isInputActive = value;
+        }
+
+        public bool IsToggleActionPressed
+        {
+            get
+            {
+                if (toggleActionReference == null || toggleActionReference.action == null)
+                {
+                    return false;
+                }
+
+                return toggleActionReference.action.IsPressed();
+            }
+        }
+
+        public void SyncMenuToHoldState()
+        {
+            if (!isHoldToOpen || menuController == null)
+            {
+                return;
+            }
+
+            if (IsToggleActionPressed)
+            {
+                menuController.OpenMenu();
+            }
+            else
+            {
+                menuController.CloseMenu();
+            }
+        }
+
+        private void OnEnable()
+        {
+            if (toggleActionReference != null && toggleActionReference.action != null)
+            {
+                toggleActionReference.action.Enable();
+
+                if (isHoldToOpen)
+                {
+                    toggleActionReference.action.started += OnHoldStarted;
+                    toggleActionReference.action.canceled += OnHoldCanceled;
+                }
+                else
+                {
+                    toggleActionReference.action.performed += OnTogglePerformed;
+                }
+                
+            }
+            EventManager.Instance.OnGamePausedChanged += HandleGamePausedChanged;
+        }
+
+        private void OnDisable()
+        {
+            if (toggleActionReference != null && toggleActionReference.action != null)
+            {
+                toggleActionReference.action.started -= OnHoldStarted;
+                toggleActionReference.action.canceled -= OnHoldCanceled;
+                toggleActionReference.action.performed -= OnTogglePerformed;
+                
+                toggleActionReference.action.Disable();
+            }
+            EventManager.Instance.OnGamePausedChanged -= HandleGamePausedChanged;
+        }
+
+        private void HandleGamePausedChanged(bool gameIsPaused)
+        {
+            if (gameIsPaused)
+            {
+                _isInputActive = false;
+            }
+            else
+            {
+                _isInputActive = true;
+            }
+        }
+
+        private void OnTogglePerformed(InputAction.CallbackContext context)
+        {
+            if (!_isInputActive || menuController == null) return;
+
+            menuController.ToggleMenu();
+        }
+
+        private void OnHoldStarted(InputAction.CallbackContext context)
+        {
+            if (!_isInputActive || menuController == null) return;
+
+            menuController.OpenMenu(); 
+        }
+
+        private void OnHoldCanceled(InputAction.CallbackContext context)
+        {
+            // Note: Depending on your UX needs, you might want to allow 
+            // the 'canceled' event even if input is disabled to prevent stuck menus.
+            // For now, adhering to strict 'disable input' logic:
+            if (!_isInputActive || menuController == null) return;
+
+            menuController.CloseMenu();
+        }
+    }
+}
+/*namespace Drawing.Buttons
 {
     public class MenuInputListener : MonoBehaviour
     {
@@ -112,7 +238,7 @@ namespace Drawing.Buttons
             }
         }
     }
-}
+}*/
 
 /*using UnityEngine;
 using UnityEngine.InputSystem;

@@ -2,8 +2,11 @@
 
 using System;
 using System.Collections.Generic;
+using CartoonFX;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
+using Drawing.VFX;
+using NUnit.Framework;
 using UnityEngine;
 using Utilities.Camera;
 
@@ -76,6 +79,8 @@ namespace Drawing.LineControl
         private bool _useCameraShake;
         private float _maxDistanceFromStart;
         private float _lastSegmentLength;
+        //[SerializeField]private ParticleSystem LineDestroyParticle;
+        //[SerializeField]private Color LineDestroyParticleColor;
         public float LastSegmentLength => _lastSegmentLength; // Expose line length
 
 
@@ -364,8 +369,8 @@ namespace Drawing.LineControl
                 _pendingLengthBuffer = 0f;
             }
 
-            var ratio = GetReachRatio();
-            Debug.Log("Final Line Length: " + _lineLength.ToString("F3") + " units.", this);
+//            var ratio = GetReachRatio();
+//            Debug.Log("Final Line Length: " + _lineLength.ToString("F3") + " units.", this);
 
             OnLineFinalized?.Invoke();
         }
@@ -594,7 +599,33 @@ namespace Drawing.LineControl
 
         private void OnDisable()
         {
+            HandleLineDestruction();
             onLineDestroyed?.Invoke(settingID, (int)_inkCost);
+            
+        }
+        
+        private List<Vector2> BuildWorldPointsFromLine(Line targetLine, List<Vector2> worldPointsOut)
+        {
+            worldPointsOut?.Clear();
+            if (targetLine == null || targetLine.pointsCount < 2 || worldPointsOut == null) return null;
+
+            Transform lineTransform = targetLine.transform;
+            for (int i = 0; i < targetLine.pointsCount; i++)
+                worldPointsOut.Add(lineTransform.TransformPoint(targetLine.points[i]));
+            return worldPointsOut;
+        }
+
+        private void HandleLineDestruction()
+        {
+            //TODO - add line destruction VFX maybe instantiate Effect.
+            
+            /*var list = new List<Vector2>(); 
+            var pointToSpawn = new List<Vector2>();
+            list = BuildWorldPointsFromLine(this, list);
+            if (list == null|| list.Count < 2) return;
+            LineMathUtils.CalculateEquidistantPoints(list, true,1,1,pointToSpawn );
+            if(pointToSpawn.Count >2)
+                LineVFXHandler.SpawnBurstParticles(pointToSpawn, LineDestroyParticle, LineDestroyParticleColor =Color.white);*/
         }
 
         public float GetStraightnessRatio()

@@ -5,6 +5,8 @@ using System.Collections;
 using Drawing.Data;
 using Drawing.Managers.Core.Managers;
 using Drawing.Managers;
+using Drawing.VFX;
+using NUnit.Framework.Internal.Filters;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.Rendering;
@@ -96,7 +98,10 @@ namespace Drawing.LineControl
         [SerializeField]
         private ParticleSystem releaseEffect;
 
-        [SerializeField] private ParticleSystem drawEffect;
+       // [SerializeField] private ParticleSystem drawEffect;
+        // Inside LineManager.cs
+        private LineVFXHandler _vfxHandler; // Cache this in Awake
+        
 
         private Line currentLine;
         private bool isDrawing;
@@ -115,6 +120,8 @@ namespace Drawing.LineControl
             {
                 EnsureDrawAreaRenderer();
             }
+            //TODO - Change Later
+            _vfxHandler = GetComponent<LineVFXHandler>(); 
         }
 
         void OnEnable()
@@ -312,7 +319,7 @@ namespace Drawing.LineControl
                         return;
                     }
                     Vector2 wp = ClampToDrawArea(Camera.main.ScreenToWorldPoint(primary.position.ReadValue()));
-
+                    
                     StartLine(wp);
 
                     // if (logTouchDebug) Debug.Log("LineManager: Touch down.", this);
@@ -397,19 +404,25 @@ namespace Drawing.LineControl
             ln.InitializeSound(conf.collisionSound, conf.baseVolume, conf.useCameraShake);
 
             currentLine = ln;
+            // Notify listeners
+            OnLineStarted?.Invoke(currentLine);
 
             TryAddPoint(worldPos);
 
-
+            //TODO - maybe put this bool flag in TryAddPoint func 
             isDrawing = true;
             //currentLine.AddWorldPoint(worldPos);
         }
 
         void FinishLine(Vector2 wp)
         {
-            if (drawEffect != null && drawEffect.isPlaying)
+            /*if (drawEffect != null && drawEffect.isPlaying)
             {
                 drawEffect.Stop();
+            }*/
+            if(_vfxHandler != null)
+            {
+                _vfxHandler.HandleLineFinished(currentLine);
             }
 
             if (currentLine == null)
@@ -433,7 +446,7 @@ namespace Drawing.LineControl
                 // Build a solid polygon (optional) and activate physics so it will fall/interact in world space
                 currentLine.FinalizeLine(conf);
                 if (conf.releaseSound != GameSoundsSo.AudioType.None)
-                    AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound);
+                    AudioManager.Instance.PlaySoundByAudioType(conf.releaseSound, conf.baseVolume);
                 // Trigger Particle System at the final position
                 if (releaseEffect != null)
                 {
@@ -721,10 +734,15 @@ namespace Drawing.LineControl
                 currentLine.AddInkCost(inkCost);
                 // Debug.Log("LineManager: Consumed " + inkCost + " ink for line segment. Total line length: " +
                 //        currentLine.LineLength);
-                if (drawEffect != null&& !drawEffect.isPlaying)
+                /*if (drawEffect != null&& !drawEffect.isPlaying)
                 {
                     drawEffect.transform.position = worldPos;
                     drawEffect.Play();
+                }*/
+                if(_vfxHandler != null )
+                {
+                    
+                    _vfxHandler.HandleLineStarted(currentLine);
                 }
                 UpdateDrawEffectPos(worldPos);
      
@@ -736,13 +754,7 @@ namespace Drawing.LineControl
             }
         }
 
-        void UpdateDrawEffectPos(Vector2 pos)
-        {
-            if (drawEffect != null&& drawEffect.isPlaying)
-            {
-                drawEffect.transform.position = pos;
-            }
-        }
+
         private bool IsPointerOverUI(int pointerId = -1)
         {
             if (EventSystem.current == null) return false;
@@ -756,6 +768,16 @@ namespace Drawing.LineControl
            
             return EventSystem.current.IsPointerOverGameObject(pointerId);
         }
+        
+
+
+        void UpdateDrawEffectPos(Vector2 pos)
+        {
+            if (_vfxHandler != null &&  currentLine!= null)
+            {
+                _vfxHandler.UpdateTrailPosition(pos);
+            }
+        }
     }
 
     public enum DrawAreaShape
@@ -763,4 +785,6 @@ namespace Drawing.LineControl
         Circle,
         Rectangle
     }
+    
+
 }

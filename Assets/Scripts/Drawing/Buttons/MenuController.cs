@@ -111,10 +111,10 @@ namespace Drawing.Buttons
 
             menuPanel.SetActive(isOpen);
             
-            UpdateTimeScale(isOpen);
+            /*UpdateTimeScale(isOpen);
             
             EventManager.Instance.TriggerSlowMotion(isOpen && slowTimeOnOpen);
-            EventManager.Instance.TriggerGamePaused(isOpen && pauseGameOnOpen);
+            EventManager.Instance.TriggerGamePaused(isOpen && pauseGameOnOpen);*/
 
             // 3. Start Auto-Close if opening
             if (isOpen && enableAutoClose)
