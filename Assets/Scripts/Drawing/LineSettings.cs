@@ -13,11 +13,7 @@ namespace Drawing
         public int fillMult = 1;
 
 
-        // ----------------- TAB: DRAWING -----------------
-        [Tab("Drawing")]
-        [Tooltip("If true, this tool ignores LineManager.cantDrawOverLayer while drawing (useful for Glue so it can be drawn on 'non-drawable' surfaces).")]
-        public bool ignoreCantDrawOverLayer = false;
-        
+
         
         [Tooltip("If true, use a specific Line prefab. If false, configure manually.")]
         public bool usePrefab;
@@ -100,7 +96,9 @@ namespace Drawing
 
         // ----------------- TAB: SOUND -----------------
 
-
+        [Tab("Sound")] [Range(0, 1)]
+        //[ShowIfNot(nameof(usePrefab))]  [Indent(0)]
+        public float baseVolume = 1.0f;
         // 1. Draw Sound
         [Hook(nameof(OnDrawSoundBoolChanged))]
         //[ShowIfNot(nameof(usePrefab))]
@@ -111,6 +109,9 @@ namespace Drawing
         //[ShowIfNot(nameof(usePrefab))]
         [Tab("Sound")] [ShowIf(nameof(useDrawSound))] [Indent(1)]
         public GameSoundsSo.AudioType drawSound = GameSoundsSo.AudioType.None;
+        [Tab("Sound")][ShowIf(nameof(useDrawSound))] [Range(0, 1)] [Indent(1)]
+        //[ShowIfNot(nameof(usePrefab))]  [Indent(0)]
+        public float baseDrawSoundVolume = 1.0f;
 
 
         // 2. Collision Sound
@@ -121,9 +122,12 @@ namespace Drawing
         public bool useCollisionSound;
 
         //[ShowIfNot(nameof(usePrefab))] 
+
         [Tab("Sound")] [ShowIf(nameof(useCollisionSound))] [Indent(1)]
         public GameSoundsSo.AudioType collisionSound = GameSoundsSo.AudioType.None;
-
+        [Tab("Sound")][ShowIf(nameof(useCollisionSound))] [Range(0, 1)] [Indent(1)]
+        //[ShowIfNot(nameof(usePrefab))]  [Indent(0)]
+        public float baseCollisionSoundVolume = 1.0f;
 
         // 3. Release Sound
         [Hook(nameof(OnReleaseSoundBoolChanged))]
@@ -135,14 +139,21 @@ namespace Drawing
         //[ShowIfNot(nameof(usePrefab))]
         [Tab("Sound")] [ShowIf(nameof(useReleaseSound))] [Indent(1)]
         public GameSoundsSo.AudioType releaseSound = GameSoundsSo.AudioType.None;
-
-        [Tab("Sound")]
+        [Tab("Sound")][ShowIf(nameof(useReleaseSound))] [Range(0, 1)] [Indent(1)]
         //[ShowIfNot(nameof(usePrefab))]  [Indent(0)]
-        public float baseVolume = 1.0f;
+        public float baseReleaseSoundVolume = 1.0f;
+
+
 
         [Tab("Sound")]
         //[ShowIfNot(nameof(usePrefab))]  [Indent(0)]
         public bool useCameraShake = false;
+
+        
+        // ----------------- TAB: DRAWING -----------------
+        [Tab("Drawing")]
+        [Tooltip("If true, this tool ignores LineManager.cantDrawOverLayer while drawing (useful for Glue so it can be drawn on 'non-drawable' surfaces).")]
+        public bool ignoreCantDrawOverLayer = false;
 
         public void SetLineSetting(LineSettings otherSettings)
         {
@@ -199,6 +210,10 @@ namespace Drawing
             releaseSound = useReleaseSound ? otherSettings.releaseSound : GameSoundsSo.AudioType.None;
 
             baseVolume = otherSettings.baseVolume;
+            baseDrawSoundVolume = otherSettings.baseDrawSoundVolume;
+            baseCollisionSoundVolume = otherSettings.baseCollisionSoundVolume;
+            baseReleaseSoundVolume = otherSettings.baseReleaseSoundVolume;
+
             useCameraShake = otherSettings.useCameraShake;
         }
 
