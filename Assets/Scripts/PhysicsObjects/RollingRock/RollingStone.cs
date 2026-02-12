@@ -5,12 +5,14 @@ public class RollingStone : MonoBehaviour
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private Rigidbody2D rb;
+    private AudioSource stoneAudio;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+        stoneAudio = GetComponent<AudioSource>();
         ResetStoneImmediate();
     }
 
@@ -21,6 +23,7 @@ public class RollingStone : MonoBehaviour
 
         // Then drop it
         rb.simulated = true;
+        stoneAudio.Play();
         // Optional: Add a downward push if it sticks to the ceiling
         // rb.velocity = Vector2.down * 5f; 
     }
@@ -32,6 +35,7 @@ public class RollingStone : MonoBehaviour
         rb.angularVelocity = 0f;
         transform.position = initialPosition;
         transform.rotation = initialRotation;
+        if (stoneAudio) stoneAudio.Stop();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

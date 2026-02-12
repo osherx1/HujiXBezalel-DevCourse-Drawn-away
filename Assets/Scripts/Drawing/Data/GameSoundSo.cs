@@ -71,9 +71,11 @@ namespace Drawing.Data
             BalloonRelease = 33,
             RockHit = 40,
             RockShatter = 41,
-            GiantRoar = 50
+            GiantRoar = 50,
+            GiantStomp = 51,
+            Fireball = 52,
             
-            ,CheckpointReached = 60,
+            CheckpointReached = 60,
             DoorOpen = 61,
             CaveAmbiance = 70,
             ForestAmbiance = 71,

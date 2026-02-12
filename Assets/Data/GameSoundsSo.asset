@@ -59,3 +59,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4ee72e2b930061749a04000963dbcf9e, type: 3}
   - audioType: 121
     clip: {fileID: 8300000, guid: 4310454e04ccc4c3c83197e3e1c1edf9, type: 3}
+  - audioType: 51
+    clip: {fileID: 8300000, guid: 5e41dab12a2374248bbe4c0e7a6cd67b, type: 3}
+  - audioType: 52
+    clip: {fileID: 8300000, guid: 826ed7a628c67154d84be2c9290c3116, type: 3}
