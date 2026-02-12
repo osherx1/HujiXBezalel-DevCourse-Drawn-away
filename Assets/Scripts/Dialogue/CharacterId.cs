@@ -14,5 +14,6 @@ public enum CharacterId
     Old_Man = 10,
     Illana = 11,
     NPC_3 = 12,
+    Dude = 13
 }
 
