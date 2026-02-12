@@ -82,7 +82,9 @@ namespace Drawing.Data
             OldManMumbling = 100,
             PickupSound = 110,
             Illanaspeak = 120,
-            JonnyWalk = 121
+            JonnyWalk = 121,
+            Swordpickup = 122,
+            SwordUI = 123
         }
     }
 }
