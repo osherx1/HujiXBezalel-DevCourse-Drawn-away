@@ -60,6 +60,9 @@ namespace Prototype1
         [Tooltip("UI slot (RectTransform) where the piece should fly to.")]
         [SerializeField] private RectTransform uiTargetSlot;
 
+        [Tooltip("If true, forces the flying visual clone's localScale to (1,1,1) to prevent unexpected scaling.")]
+        [SerializeField] private bool forceFlyingVisualScaleOne = true;
+
         [Tooltip("Prefab used as the flying visual. Can be a UI object (with RectTransform) or a world object (e.g., SpriteRenderer).")]
         [FormerlySerializedAs("flyingIconPrefab")]
         [SerializeField] private GameObject flyingVisualPrefab;
@@ -287,6 +290,11 @@ namespace Prototype1
             GameObject flyingVisual = Instantiate(flyingVisualPrefab);
             flyingVisual.SetActive(true);
 
+            if (forceFlyingVisualScaleOne)
+            {
+                flyingVisual.transform.localScale = Vector3.one;
+            }
+
             // Try to copy sprite from world pickup to the flying visual.
             if (worldSprite != null)
             {
@@ -303,6 +311,13 @@ namespace Prototype1
             if (isUiVisual)
             {
                 flyingVisual.transform.SetParent(targetCanvas.transform, worldPositionStays: false);
+
+                if (forceFlyingVisualScaleOne)
+                {
+                    // Setting the parent can change effective scale depending on prefab/canvas.
+                    flyingVisual.transform.localScale = Vector3.one;
+                }
+
                 RectTransform canvasRect = (RectTransform)targetCanvas.transform;
 
                 Vector2 startAnchored = WorldToCanvasAnchoredPosition(transform.position, targetCanvas, canvasRect);
