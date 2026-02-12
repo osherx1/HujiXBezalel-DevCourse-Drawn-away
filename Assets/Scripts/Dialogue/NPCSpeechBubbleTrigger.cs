@@ -77,7 +77,11 @@ public class NPCSpeechBubbleTrigger : MonoBehaviour
             {
                 return;
             }
-            AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.OldManMumbling);
+
+            if (character == CharacterId.Old_Man)
+            {
+                AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.OldManMumbling);
+            }
             _alreadyPlayedSound = true;
         }
     }
