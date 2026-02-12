@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Drawing.Data;
 using UnityEngine;
-using Drawing.Managers; // For camera shake if you have it
+using Drawing.Managers;
+using Drawing.Managers.Core.Managers; // For camera shake if you have it
 
 public class GiantStompMechanic : MonoBehaviour
 {
@@ -26,6 +28,11 @@ public class GiantStompMechanic : MonoBehaviour
     [Header("Leg Groups")]
     [SerializeField] private LegGroup leftLeg;
     [SerializeField] private LegGroup rightLeg;
+    
+    [Header("Sound Settings")]
+    [SerializeField] private float impactSoundVolume = 0.2f;
+    [SerializeField] private float timeToPlaySound = 0.3f;
+    private bool _playedSound = false;
 
     [System.Serializable]
     public struct LegGroup
@@ -112,8 +119,16 @@ public class GiantStompMechanic : MonoBehaviour
                 leg.platformRoot.position = leg.platformStartPos + Vector3.up * currentYOffset;
             }
 
+            if (progress >= timeToPlaySound && !_playedSound)
+            {
+                AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.GiantStomp, impactSoundVolume);
+                _playedSound = true;
+            }
+
             yield return null;
         }
+        
+        _playedSound = false;
 
         // Ensure perfect return to start
         ResetLeg(leg);

@@ -329,7 +329,7 @@ public class characterJump : MonoBehaviour
             var audio = AudioManager.Instance;
             if (audio != null)
             {
-                audio.PlaySoundByAudioType(GameSoundsSo.AudioType.JonnyJump);
+                audio.PlaySoundByAudioType(GameSoundsSo.AudioType.JonnyJump, 0.2f);
             }
 
             if (juice != null)

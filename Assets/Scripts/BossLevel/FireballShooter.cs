@@ -1,4 +1,6 @@
 using System.Collections;
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 using UnityEngine;
 
 public class FireballShooter : MonoBehaviour
@@ -21,6 +23,9 @@ public class FireballShooter : MonoBehaviour
     private float _timer;
     private Sprite _originalSprite;
     private Coroutine _faceCoroutine;
+    
+    [Header("Sound Settings")]
+    [SerializeField] private float soundVolume = 0.4f;
 
     private void Awake()
     {
@@ -91,6 +96,8 @@ public class FireballShooter : MonoBehaviour
                 ball.transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90f);
             }
         }
+        
+        AudioManager.Instance.PlaySoundByAudioType(GameSoundsSo.AudioType.Fireball);
     }
 
     private IEnumerator ShoutFaceRoutine()
