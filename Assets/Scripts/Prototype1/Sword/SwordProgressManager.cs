@@ -21,6 +21,7 @@ namespace Prototype1
         [Serializable]
         private class SaveData
         {
+            public string sessionId;
             public bool unlocked;
             public bool uiUnlockedShownOnce;
             public int totalPieces;
@@ -28,6 +29,28 @@ namespace Prototype1
         }
 
         private static SwordProgressManager _instance;
+
+        private static string _runtimeSessionId;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStaticsOnPlay()
+        {
+            _instance = null;
+            _runtimeSessionId = Guid.NewGuid().ToString("N");
+        }
+
+        private static string RuntimeSessionId
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_runtimeSessionId))
+                {
+                    _runtimeSessionId = Guid.NewGuid().ToString("N");
+                }
+
+                return _runtimeSessionId;
+            }
+        }
 
         public static SwordProgressManager Instance
         {
@@ -56,6 +79,8 @@ namespace Prototype1
         [Header("Persistence")]
         [SerializeField] private bool usePlayerPrefs = true;
         [SerializeField] private string playerPrefsKey = "Prototype1.SwordProgress";
+        [Tooltip("If enabled, data is only valid for the current app/play session. On a fresh app launch (or a new Play session), the saved PlayerPrefs data is ignored/cleared.")]
+        [SerializeField] private bool resetOnNewAppSession = true;
 
         [Header("State (Read Only)")]
         [SerializeField] private bool unlocked;
@@ -200,6 +225,7 @@ namespace Prototype1
 
             SaveData data = new SaveData
             {
+                sessionId = RuntimeSessionId,
                 unlocked = unlocked,
                 uiUnlockedShownOnce = uiUnlockedShownOnce,
                 totalPieces = totalPieces,
@@ -237,6 +263,17 @@ namespace Prototype1
                     return;
                 }
 
+                if (resetOnNewAppSession)
+                {
+                    // If this data was written in a different runtime session, treat it as stale and start fresh.
+                    // This keeps progress across scenes, but resets when the app is relaunched (or Play is restarted).
+                    if (!string.Equals(data.sessionId, RuntimeSessionId, StringComparison.Ordinal))
+                    {
+                        PlayerPrefs.DeleteKey(playerPrefsKey);
+                        return;
+                    }
+                }
+
                 unlocked = data.unlocked;
                 uiUnlockedShownOnce = data.uiUnlockedShownOnce;
                 totalPieces = Mathf.Max(1, data.totalPieces);
@@ -259,6 +296,16 @@ namespace Prototype1
         private void EditorResetKeepUnlocked()
         {
             ResetProgress(false);
+        }
+
+        [ContextMenu("Sword Progress/Clear Saved PlayerPrefs")]
+        private void EditorClearSavedPlayerPrefs()
+        {
+            if (!string.IsNullOrEmpty(playerPrefsKey))
+            {
+                PlayerPrefs.DeleteKey(playerPrefsKey);
+                PlayerPrefs.Save();
+            }
         }
 #endif
     }
