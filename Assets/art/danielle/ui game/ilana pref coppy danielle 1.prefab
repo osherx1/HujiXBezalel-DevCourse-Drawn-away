@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 6752975474302014390}
   - component: {fileID: 693764648633765412}
   - component: {fileID: 5314393299698532833}
+  - component: {fileID: 3164972485674185758}
   m_Layer: 0
   m_Name: ilana
   m_TagString: Untagged
@@ -616,8 +617,8 @@ Transform:
   m_GameObject: {fileID: 8066668099077057119}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.095321, y: 0.31, z: 0}
-  m_LocalScale: {x: 0.6417818, y: 0.6417818, z: 0.6417818}
+  m_LocalPosition: {x: 0.27, y: 1.06, z: 0}
+  m_LocalScale: {x: 1.1115168, y: 1.1115168, z: 1.1115168}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3998444061344760620}
@@ -671,7 +672,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5931671104767381753, guid: 1acf59c668b8645a58dece3622e4e440, type: 3}
+  m_Sprite: {fileID: -5067650897308790489, guid: 314b4a1d213884ffbb0d389b8fa064a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -720,7 +721,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.45, y: 17.32}
+    oldSize: {x: 6.5, y: 11.433333}
     newSize: {x: 3.112, y: 4.4119997}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -753,7 +754,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8066668099077057119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd1378c8d79955444becfc7522341537, type: 3}
   m_Name: 
@@ -830,6 +831,7 @@ MonoBehaviour:
   idleBubbleVariant: 0
   completedBubbleVariant: 1
   hideOthersOnShow: 1
+  autoShowCompletedBubbleMaxDistance: 4
   dudePathTrigger: {fileID: 0}
   onObjectiveCompleted:
     m_PersistentCalls:
@@ -855,12 +857,35 @@ MonoBehaviour:
   beforeEscortTriggerCollider: {fileID: 6948951642613293258}
   afterEscortTriggerCollider: {fileID: 2101777327327709398}
   defaultTriggerCollider: {fileID: 0}
+  characterBodyCollider: {fileID: 0}
   playerTransform: {fileID: 0}
   playerTag: Player
   character: 11
   registry: {fileID: 7709894211729918057}
   hideOthersOnEnter: 1
   progress: {fileID: 0}
+--- !u!95 &3164972485674185758
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066668099077057119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c9ecd6191f029942a48e5a074822c5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8325893728362873161
 GameObject:
   m_ObjectHideFlags: 0

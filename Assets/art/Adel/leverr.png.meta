@@ -1,0 +1,1313 @@
+fileFormatVersion: 2
+guid: 014e8801ee7cd485198efdd54902ec0b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1525360120199390542
+    second: leverr_0
+  - first:
+      213: 8702695580629950540
+    second: leverr_1
+  - first:
+      213: 1454956658448053700
+    second: leverr_2
+  - first:
+      213: 2372865918969981641
+    second: leverr_3
+  - first:
+      213: -1711864538399973482
+    second: leverr_4
+  - first:
+      213: 7196308927271950791
+    second: leverr_5
+  - first:
+      213: 5068700329625739313
+    second: leverr_6
+  - first:
+      213: -2270915507591396944
+    second: leverr_7
+  - first:
+      213: -1826963953752377932
+    second: leverr_8
+  - first:
+      213: -9145678966222563052
+    second: leverr_9
+  - first:
+      213: 7053268220612726036
+    second: leverr_10
+  - first:
+      213: -5390777948103471878
+    second: leverr_11
+  - first:
+      213: 3526380762698411209
+    second: leverr_12
+  - first:
+      213: 352720970747897734
+    second: leverr_13
+  - first:
+      213: -7198013638131937052
+    second: leverr_14
+  - first:
+      213: -5550820951525065717
+    second: leverr_15
+  - first:
+      213: -3913175086500926564
+    second: leverr_16
+  - first:
+      213: 3575044614911647893
+    second: leverr_17
+  - first:
+      213: 6681911988689630887
+    second: leverr_18
+  - first:
+      213: -6504905920388813193
+    second: leverr_19
+  - first:
+      213: 153710954461804092
+    second: leverr_20
+  - first:
+      213: 5086749467622610079
+    second: leverr_21
+  - first:
+      213: 252510471397082259
+    second: leverr_22
+  - first:
+      213: 5657707623540622713
+    second: leverr_23
+  - first:
+      213: 7846920788195348536
+    second: leverr_24
+  - first:
+      213: 6205230006089651884
+    second: leverr_25
+  - first:
+      213: 5623810515478766355
+    second: leverr_26
+  - first:
+      213: 826442741993225832
+    second: leverr_27
+  - first:
+      213: -2616190749065769041
+    second: leverr_28
+  - first:
+      213: 1792675069363171767
+    second: leverr_29
+  - first:
+      213: -5669188027736089983
+    second: leverr_30
+  - first:
+      213: -2157859000635087533
+    second: leverr_31
+  - first:
+      213: 3324782098540519694
+    second: leverr_32
+  - first:
+      213: -5852755575518875715
+    second: leverr_33
+  - first:
+      213: -6544840345731389712
+    second: leverr_34
+  - first:
+      213: 921345407691117732
+    second: leverr_35
+  - first:
+      213: -1240083851029819867
+    second: leverr_36
+  - first:
+      213: 243982258442962777
+    second: leverr_37
+  - first:
+      213: -7218764676791353014
+    second: leverr_38
+  - first:
+      213: 5634500112052064352
+    second: leverr_39
+  - first:
+      213: 6614205440743431597
+    second: leverr_40
+  - first:
+      213: -1704056886985223384
+    second: leverr_41
+  - first:
+      213: 3834450724602321606
+    second: leverr_42
+  - first:
+      213: -2110767851481293192
+    second: leverr_43
+  - first:
+      213: -4738582233552382560
+    second: leverr_44
+  - first:
+      213: 4997870433700476327
+    second: leverr_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.49848, y: 0.1397628}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: leverr_0
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 282
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bad7f86d05d4dae0800000000000000
+      internalID: -1525360120199390542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_1
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 282
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c406fcf858f26c870800000000000000
+      internalID: 8702695580629950540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_2
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 267
+        width: 274
+        height: 867
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5b2664f5b013410800000000000000
+      internalID: 1454956658448053700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_3
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 261
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca26d73bfc1ee020800000000000000
+      internalID: 2372865918969981641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_4
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 220
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69fd41da54c3e38e0800000000000000
+      internalID: -1711864538399973482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_5
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 213
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c9540877dc6ed360800000000000000
+      internalID: 7196308927271950791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_6
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 215
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1306f3c3814a75640800000000000000
+      internalID: 5068700329625739313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_7
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 216
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1c61fa0661c70e0800000000000000
+      internalID: -2270915507591396944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_8
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 109
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b57527b6f155a6e0800000000000000
+      internalID: -1826963953752377932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_9
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 143
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419da84af65041180800000000000000
+      internalID: -9145678966222563052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_10
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 140
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d4c2ba31e32e160800000000000000
+      internalID: 7053268220612726036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_11
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 144
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc884c840c1035b0800000000000000
+      internalID: -5390777948103471878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_12
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 127
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cce86fbe9830f030800000000000000
+      internalID: 3526380762698411209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_13
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 132
+        width: 50
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6876246aadd15e400800000000000000
+      internalID: 352720970747897734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_14
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 79
+        width: 65
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e09aba9bb48b1c90800000000000000
+      internalID: -7198013638131937052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_15
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 100
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c7d8c01c587f2b0800000000000000
+      internalID: -5550820951525065717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_16
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 86
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b2431edfb91b9c0800000000000000
+      internalID: -3913175086500926564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_17
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 84
+        width: 90
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5906bf7c22c1d9130800000000000000
+      internalID: 3575044614911647893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_18
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 73
+        width: 206
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6f44a2d8beabc50800000000000000
+      internalID: 6681911988689630887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_19
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 81
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ea3e5a78ee9b5a0800000000000000
+      internalID: -6504905920388813193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_20
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 83
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3638c67c47122200800000000000000
+      internalID: 153710954461804092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_21
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 81
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f949d07a0b3c79640800000000000000
+      internalID: 5086749467622610079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_22
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 17
+        width: 62
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39480b59fe8118300800000000000000
+      internalID: 252510471397082259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_23
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97588289b17348e40800000000000000
+      internalID: 5657707623540622713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_24
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 70
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8301301d1ecd5ec60800000000000000
+      internalID: 7846920788195348536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_25
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 64
+        width: 40
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6919650d76d1650800000000000000
+      internalID: 6205230006089651884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_26
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 61
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313e73b1ed9cb0e40800000000000000
+      internalID: 5623810515478766355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_27
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 54
+        width: 50
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86eb4bf8b4d187b00800000000000000
+      internalID: 826442741993225832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_28
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 61
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faf8549ff5c61bbd0800000000000000
+      internalID: -2616190749065769041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_29
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b137134a7cd0e810800000000000000
+      internalID: 1792675069363171767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_30
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 0
+        width: 87
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a94e1868ff251b0800000000000000
+      internalID: -5669188027736089983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_31
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 27
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35524c7fbaebd02e0800000000000000
+      internalID: -2157859000635087533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_32
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 16
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01e51304bff32e20800000000000000
+      internalID: 3324782098540519694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_33
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 20
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfa20430d5d6cea0800000000000000
+      internalID: -5852755575518875715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_34
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 30
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f62901b16e0c25a0800000000000000
+      internalID: -6544840345731389712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_35
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 19
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a4dddc44c649cc00800000000000000
+      internalID: 921345407691117732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_36
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 27
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e4ba7ce465acee0800000000000000
+      internalID: -1240083851029819867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_37
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 20
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9578df5429cc26300800000000000000
+      internalID: 243982258442962777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_38
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 23
+        width: 41
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41c6bae5cbc1db90800000000000000
+      internalID: -7218764676791353014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_39
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 23
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06013c1cff3c13e40800000000000000
+      internalID: 5634500112052064352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_40
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 22
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dadd7f60ec06acb50800000000000000
+      internalID: 6614205440743431597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_41
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 23
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 823103e2a49f958e0800000000000000
+      internalID: -1704056886985223384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_42
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 22
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca19a44e94b63530800000000000000
+      internalID: 3834450724602321606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_43
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 20
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e942982db05b2e0800000000000000
+      internalID: -2110767851481293192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_44
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 0
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5122e809c2d3eb0800000000000000
+      internalID: -4738582233552382560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leverr_45
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 0
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5f42afda00c5540800000000000000
+      internalID: 4997870433700476327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      leverr_0: -1525360120199390542
+      leverr_1: 8702695580629950540
+      leverr_10: 7053268220612726036
+      leverr_11: -5390777948103471878
+      leverr_12: 3526380762698411209
+      leverr_13: 352720970747897734
+      leverr_14: -7198013638131937052
+      leverr_15: -5550820951525065717
+      leverr_16: -3913175086500926564
+      leverr_17: 3575044614911647893
+      leverr_18: 6681911988689630887
+      leverr_19: -6504905920388813193
+      leverr_2: 1454956658448053700
+      leverr_20: 153710954461804092
+      leverr_21: 5086749467622610079
+      leverr_22: 252510471397082259
+      leverr_23: 5657707623540622713
+      leverr_24: 7846920788195348536
+      leverr_25: 6205230006089651884
+      leverr_26: 5623810515478766355
+      leverr_27: 826442741993225832
+      leverr_28: -2616190749065769041
+      leverr_29: 1792675069363171767
+      leverr_3: 2372865918969981641
+      leverr_30: -5669188027736089983
+      leverr_31: -2157859000635087533
+      leverr_32: 3324782098540519694
+      leverr_33: -5852755575518875715
+      leverr_34: -6544840345731389712
+      leverr_35: 921345407691117732
+      leverr_36: -1240083851029819867
+      leverr_37: 243982258442962777
+      leverr_38: -7218764676791353014
+      leverr_39: 5634500112052064352
+      leverr_4: -1711864538399973482
+      leverr_40: 6614205440743431597
+      leverr_41: -1704056886985223384
+      leverr_42: 3834450724602321606
+      leverr_43: -2110767851481293192
+      leverr_44: -4738582233552382560
+      leverr_45: 4997870433700476327
+      leverr_5: 7196308927271950791
+      leverr_6: 5068700329625739313
+      leverr_7: -2270915507591396944
+      leverr_8: -1826963953752377932
+      leverr_9: -9145678966222563052
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using System.Collections;
 using System.Collections.Generic;
+using Drawing.Managers.Core.Managers;
+using Drawing.Data;
 
 /// <summary>
 /// Illana-specific bubble trigger: supports two bubble variants.
@@ -47,7 +50,14 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
     [Tooltip("Optional: if empty, uses IllanaProgressManager.Instance.")]
     [SerializeField] private IllanaProgressManager progress;
 
+    [Header("Audio")]
+    [Tooltip("Prevents double-playing the enter sound during rapid exit/enter transitions (seconds).")]
+    [SerializeField, Min(0f)] private float enterSoundCooldownSeconds = 0.12f;
+
     private readonly List<Collider2D> _overlapResults = new List<Collider2D>(8);
+    private bool _playerInsideAnyTrigger;
+    private float _lastEnterSoundTime;
+    private int _exitCheckId;
 
     private void OnEnable()
     {
@@ -185,6 +195,22 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
             return;
         }
 
+        // Cancel any pending exit check; we're definitely in again.
+        _exitCheckId++;
+
+        if (!_playerInsideAnyTrigger && Time.time - _lastEnterSoundTime >= enterSoundCooldownSeconds)
+        {
+            var audio = AudioManager.Instance;
+            if (audio != null)
+            {
+                audio.PlaySoundByAudioType(GameSoundsSo.AudioType.Illanaspeak);
+            }
+
+            _lastEnterSoundTime = Time.time;
+        }
+
+        _playerInsideAnyTrigger = true;
+
         if (registry == null)
         {
             registry = FindObjectOfType<SpeechBubbleRegistry>(true);
@@ -209,8 +235,31 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
             return;
         }
 
+        // Defer the overlap check: in rapid transitions Unity can deliver Exit/Enter
+        // and/or collider enable/disable in a way that makes immediate overlap queries unreliable.
+        int id = ++_exitCheckId;
+        StartCoroutine(DeferredExitCheck(id));
+    }
+
+    private IEnumerator DeferredExitCheck(int id)
+    {
+        yield return new WaitForFixedUpdate();
+        yield return null;
+
+        if (id != _exitCheckId)
+        {
+            yield break;
+        }
+
         // Only hide if the player is not still overlapping any other enabled trigger.
         HideIfPlayerNotOverlappingAnyEnabledTrigger();
+    }
+
+    private bool IsPlayerOverlappingAnyEnabledTrigger()
+    {
+        return IsPlayerOverlappingEnabledTrigger(beforeEscortTriggerCollider) ||
+               IsPlayerOverlappingEnabledTrigger(afterEscortTriggerCollider) ||
+               IsPlayerOverlappingEnabledTrigger(defaultTriggerCollider);
     }
 
     private bool IsPlayer(Collider2D other)
@@ -300,9 +349,9 @@ public class IllanaSpeechBubbleTrigger : MonoBehaviour
             return;
         }
 
-        if (IsPlayerOverlappingEnabledTrigger(beforeEscortTriggerCollider) ||
-            IsPlayerOverlappingEnabledTrigger(afterEscortTriggerCollider) ||
-            IsPlayerOverlappingEnabledTrigger(defaultTriggerCollider))
+        bool isOverlapping = IsPlayerOverlappingAnyEnabledTrigger();
+        _playerInsideAnyTrigger = isOverlapping;
+        if (isOverlapping)
         {
             return;
         }

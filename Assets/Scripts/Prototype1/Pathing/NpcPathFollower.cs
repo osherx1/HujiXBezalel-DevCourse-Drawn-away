@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
 
 public class NpcPathFollower : MonoBehaviour
 {
@@ -29,13 +31,19 @@ public class NpcPathFollower : MonoBehaviour
     private Vector3 baseLocalScale;
     private bool finishedInvoked;
 
+    private readonly HashSet<string> warnedMissingAnimatorParams = new();
+
     private const float ArriveEpsilon = 0.02f;
 
     private void Awake()
     {
         if (animator == null)
         {
-            animator = GetComponentInChildren<Animator>();
+            animator = GetComponent<Animator>();
+            if (animator == null)
+            {
+                animator = GetComponentInChildren<Animator>(true);
+            }
         }
 
         baseLocalScale = transform.localScale;
@@ -186,6 +194,19 @@ public class NpcPathFollower : MonoBehaviour
             return;
         }
 
+        float delay = Mathf.Max(0f, waypoint.DeactivateDelaySeconds);
+        if (delay <= 0f)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
+        StartCoroutine(DeactivateAfterSeconds(delay));
+    }
+
+    private IEnumerator DeactivateAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
         gameObject.SetActive(false);
     }
 
@@ -212,7 +233,35 @@ public class NpcPathFollower : MonoBehaviour
             return;
         }
 
+        if (!HasAnimatorParameter(triggerName, AnimatorControllerParameterType.Trigger))
+        {
+            if (warnedMissingAnimatorParams.Add(triggerName))
+            {
+                Debug.LogWarning($"NpcPathFollower on '{name}': Animator has no Trigger parameter named '{triggerName}'. Check the NPC's Animator Controller.", this);
+            }
+
+            return;
+        }
+
         animator.ResetTrigger(triggerName);
         animator.SetTrigger(triggerName);
+    }
+
+    private bool HasAnimatorParameter(string paramName, AnimatorControllerParameterType type)
+    {
+        if (animator == null || animator.parameters == null)
+        {
+            return false;
+        }
+
+        foreach (var p in animator.parameters)
+        {
+            if (p.type == type && p.name == paramName)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

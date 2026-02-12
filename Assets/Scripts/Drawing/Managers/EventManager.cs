@@ -35,10 +35,11 @@ namespace Drawing.Managers
         }
 
 
-        public void TriggerGamePaused(bool active)
+        public void TriggerGamePaused(bool isPaused)
         {
-            OnGamePausedChanged?.Invoke(active);
+            OnGamePausedChanged?.Invoke(isPaused);
         }
+    
         public void TriggerEraserActive() => OnEraserActive?.Invoke();
 
         public event Action OnEraserInactive;
@@ -70,6 +71,11 @@ namespace Drawing.Managers
         public void TriggerDropPlayerToTheHole(bool b)
         {
             OnDropPlayerToTheHole?.Invoke(b);
+        }
+
+        public void TriggerPauseMenuOpen(bool b)
+        {
+            throw new NotImplementedException();
         }
     }
 }

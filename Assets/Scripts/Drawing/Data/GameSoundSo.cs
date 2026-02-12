@@ -73,7 +73,18 @@ namespace Drawing.Data
             RockShatter = 41,
             GiantRoar = 50
             
-            ,CheckpointReached = 60
+            ,CheckpointReached = 60,
+            DoorOpen = 61,
+            CaveAmbiance = 70,
+            ForestAmbiance = 71,
+            BossEvilLaugh = 80,
+            BackgroundMusicMainTheme = 90,
+            OldManMumbling = 100,
+            PickupSound = 110,
+            Illanaspeak = 120,
+            JonnyJump = 121,
+            Swordpickup = 122,
+            SwordUI = 123
         }
     }
 }

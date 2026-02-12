@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 4c10f4e3aba804511a6e40f328c15f2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6518240997192505970
+    second: base lever_0
+  - first:
+      213: -3565822531691243783
+    second: base lever_1
+  - first:
+      213: 4414898651312983179
+    second: base lever_2
+  - first:
+      213: 4537352959239906191
+    second: base lever_3
+  - first:
+      213: -3985917554916728089
+    second: base lever_4
+  - first:
+      213: -1471644093608081028
+    second: base lever_5
+  - first:
+      213: -3606165386306851272
+    second: base lever_6
+  - first:
+      213: 2321256190307248587
+    second: base lever_7
+  - first:
+      213: -910863442079508817
+    second: base lever_8
+  - first:
+      213: 4653426309243512039
+    second: base lever_9
+  - first:
+      213: -8870673407922621680
+    second: base lever_10
+  - first:
+      213: 7046522197948720998
+    second: base lever_11
+  - first:
+      213: 6586130736232279734
+    second: base lever_12
+  - first:
+      213: -4818800815476137909
+    second: base lever_13
+  - first:
+      213: -9133828375858792580
+    second: base lever_14
+  - first:
+      213: -21688232276571995
+    second: base lever_15
+  - first:
+      213: -6453666993432066995
+    second: base lever_16
+  - first:
+      213: -823500904403210926
+    second: base lever_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: base lever_0
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 766
+        width: 60
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85e3f1295e8a85a0800000000000000
+      internalID: -6518240997192505970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_1
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 873
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6957acc47a38ec0800000000000000
+      internalID: -3565822531691243783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_2
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 872
+        width: 20
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c8cd6aeeed44d30800000000000000
+      internalID: 4414898651312983179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_3
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 870
+        width: 41
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83ef0cf97ae7fe30800000000000000
+      internalID: 4537352959239906191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_4
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 607
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2e1332a1d2fa8c0800000000000000
+      internalID: -3985917554916728089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_5
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 609
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7940b47e7ba39be0800000000000000
+      internalID: -1471644093608081028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_6
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 589
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83eeedbffa354fdc0800000000000000
+      internalID: -3606165386306851272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_7
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 611
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9a0ffd432c63020800000000000000
+      internalID: 2321256190307248587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_8
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 625
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa616ff7686fb53f0800000000000000
+      internalID: -910863442079508817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_9
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 604
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4aae6c29a449040800000000000000
+      internalID: 4653426309243512039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_10
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 608
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013b44ac88905e480800000000000000
+      internalID: -8870673407922621680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_11
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 578
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66763aeda964ac160800000000000000
+      internalID: 7046522197948720998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_12
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 520
+        width: 84
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be28618203a66b50800000000000000
+      internalID: 6586130736232279734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_13
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 519
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40ae2e703e202db0800000000000000
+      internalID: -4818800815476137909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_14
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 519
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77bd893c7f1e3180800000000000000
+      internalID: -9133828375858792580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_15
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 517
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a8495beaa2f2bff0800000000000000
+      internalID: -21688232276571995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_16
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 515
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4481ddff08ff66a0800000000000000
+      internalID: -6453666993432066995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base lever_17
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 0
+        width: 705
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d65d06a465294f0800000000000000
+      internalID: -823500904403210926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      base lever_0: -6518240997192505970
+      base lever_1: -3565822531691243783
+      base lever_10: -8870673407922621680
+      base lever_11: 7046522197948720998
+      base lever_12: 6586130736232279734
+      base lever_13: -4818800815476137909
+      base lever_14: -9133828375858792580
+      base lever_15: -21688232276571995
+      base lever_16: -6453666993432066995
+      base lever_17: -823500904403210926
+      base lever_2: 4414898651312983179
+      base lever_3: 4537352959239906191
+      base lever_4: -3985917554916728089
+      base lever_5: -1471644093608081028
+      base lever_6: -3606165386306851272
+      base lever_7: 2321256190307248587
+      base lever_8: -910863442079508817
+      base lever_9: 4653426309243512039
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
