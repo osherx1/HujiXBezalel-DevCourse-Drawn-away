@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 
 //This script handles moving the character on the Y axis, for jumping and gravity
 
@@ -323,6 +325,12 @@ public class characterJump : MonoBehaviour
             //Apply the new jumpSpeed to the velocity. It will be sent to the Rigidbody in FixedUpdate;
             velocity.y += jumpSpeed;
             currentlyJumping = true;
+
+            var audio = AudioManager.Instance;
+            if (audio != null)
+            {
+                audio.PlaySoundByAudioType(GameSoundsSo.AudioType.JonnyJump);
+            }
 
             if (juice != null)
             {
