@@ -8510,6 +8510,7 @@ GameObject:
   - component: {fileID: 330892601}
   - component: {fileID: 330892600}
   - component: {fileID: 330892599}
+  - component: {fileID: 330892604}
   m_Layer: 0
   m_Name: RollingStone (1)
   m_TagString: Untagged
@@ -8679,6 +8680,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &330892604
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330892597}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: a676f44ef1400ac4ab84ffd55d6380b5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &337726877
 GameObject:
   m_ObjectHideFlags: 0
@@ -14514,7 +14612,7 @@ PrefabInstance:
       objectReference: {fileID: 1198597347}
     - target: {fileID: 9013898741706573847, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: m_Mass
-      value: 12
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22442,7 +22540,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 14220409c69cd4444975ac9f6d56e882, type: 3}
+  m_Resource: {fileID: 8300000, guid: 48e6e3e973ec06e4db9a7a2f876343a2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.166
   m_Pitch: 1
@@ -55953,13 +56051,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938227465}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.13069357, w: 0.99142283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.4700775, y: 6.400009, z: 0}
   m_LocalScale: {x: 2.5415003, y: 2.5415003, z: 2.5415}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 131112025}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.019}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!233 &1938227467
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -55976,7 +56074,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.0046082693, y: -0.27213895}
-  m_ConnectedAnchor: {x: -1099.895, y: -207.64821}
+  m_ConnectedAnchor: {x: -1100.0747, y: -207.6688}
   m_UseConnectedAnchor: 1
   m_UseMotor: 1
   m_Motor:
@@ -55984,8 +56082,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 30
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 30
+    m_LowerAngle: -15
+    m_UpperAngle: 15
 --- !u!50 &1938227468
 Rigidbody2D:
   serializedVersion: 5
