@@ -1505,7 +1505,7 @@ Transform:
   m_GameObject: {fileID: 363968816}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.699966, y: -237.24998, z: -10}
+  m_LocalPosition: {x: 25.499962, y: -237.65, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3728,11 +3728,11 @@ PrefabInstance:
       objectReference: {fileID: 633518669}
     - target: {fileID: 1699645875162652286, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -82.6
+      value: 46.5
       objectReference: {fileID: 0}
     - target: {fileID: 1699645875162652286, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -158.7
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: 1699645875162652286, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8694,7 +8694,7 @@ Transform:
   m_GameObject: {fileID: 1367604363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.3, y: -82.1, z: 0}
+  m_LocalPosition: {x: -21, y: -234.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8897,7 +8897,7 @@ Transform:
   m_GameObject: {fileID: 1390876105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.699966, y: -237.24998, z: -10}
+  m_LocalPosition: {x: 25.499962, y: -237.65, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14569,7 +14569,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119588735}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: 54da0ba47e1c04436a14f2d3f2c213e2, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
