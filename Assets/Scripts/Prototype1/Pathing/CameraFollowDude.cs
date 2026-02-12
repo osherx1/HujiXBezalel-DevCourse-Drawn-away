@@ -17,6 +17,9 @@ public class CameraFollowDude : MonoBehaviour
     
     [Header("Cursor Lock")]
     [SerializeField] private bool lockCursor = true;
+    
+    [Header("Line Control")]
+    [SerializeField] private MonoBehaviour lineManager; // Drag your LineManager script here
 
     private CursorLockMode _previousLockMode;
     private bool _previousCursorVisible;
@@ -46,6 +49,11 @@ public class CameraFollowDude : MonoBehaviour
     
     private void LockPlayer()
     {
+        if (lineManager != null)
+        {
+            lineManager.enabled = false;
+        }
+        
         if (movementGate != null)
         {
             _wasLocked = !movementGate.characterCanMove;
@@ -77,6 +85,11 @@ public class CameraFollowDude : MonoBehaviour
 
     private void UnlockPlayer()
     {
+        if (lineManager != null)
+        {
+            lineManager.enabled = true;
+        }
+        
         if (freezeRigidbody && playerBody != null)
         {
             playerBody.simulated = true;
