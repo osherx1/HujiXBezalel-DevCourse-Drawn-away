@@ -5510,13 +5510,17 @@ PrefabInstance:
       propertyPath: lineroot
       value: 
       objectReference: {fileID: 296961771}
+    - target: {fileID: 2968561652994738507, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3012090481131235905, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3012090481131235905, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3012090481131235905, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

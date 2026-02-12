@@ -1986,6 +1986,10 @@ PrefabInstance:
       propertyPath: lineroot
       value: 
       objectReference: {fileID: 1346187977}
+    - target: {fileID: 2968561652994738507, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3101332653027294917, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_IsActive
       value: 1
