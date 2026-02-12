@@ -14507,6 +14507,10 @@ PrefabInstance:
       propertyPath: deathOverlayCanvasGroup
       value: 
       objectReference: {fileID: 1198597347}
+    - target: {fileID: 9013898741706573847, guid: 72ae7a0ce370a9347b77ec27eaec1246, type: 3}
+      propertyPath: m_Mass
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20583,7 +20587,7 @@ Transform:
   m_GameObject: {fileID: 927882357}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.17346905, w: 0.9848393}
-  m_LocalPosition: {x: -976.4, y: -237.07716, z: 0}
+  m_LocalPosition: {x: -975.9, y: -243.4, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -45234,7 +45238,7 @@ PrefabInstance:
       objectReference: {fileID: 176294563}
     - target: {fileID: 3717330832604123361, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4569055277502917693, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -45254,7 +45258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5101939993777417449, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5178565946314510581, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_Name
@@ -45330,11 +45334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8518086778057577707, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 8518086778057577707, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810763853715850543, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_IsActive
@@ -45721,7 +45725,7 @@ Transform:
   m_GameObject: {fileID: 1723778977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 269.43304, y: -56.1, z: 0}
+  m_LocalPosition: {x: 269.93304, y: -62.42283, z: 0}
   m_LocalScale: {x: 2.0077393, y: 2.0077393, z: 2.0077393}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55967,7 +55971,7 @@ HingeJoint2D:
   m_UseConnectedAnchor: 1
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -30
+    m_MotorSpeed: 0
     m_MaximumMotorForce: 30
   m_UseLimits: 1
   m_AngleLimits:
@@ -55985,9 +55989,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDamping: 0
-  m_AngularDamping: 2
+  m_AngularDamping: 1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -58113,7 +58117,7 @@ Transform:
   m_GameObject: {fileID: 2085840297}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 253.7, y: -46.3, z: 0}
+  m_LocalPosition: {x: 253.7, y: -49.1, z: 0}
   m_LocalScale: {x: 2.0077393, y: 2.0077393, z: 2.0077393}
   m_ConstrainProportionsScale: 0
   m_Children: []
