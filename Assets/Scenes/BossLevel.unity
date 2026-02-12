@@ -11818,6 +11818,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 486497616638880902, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 708498354828297681, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11893,6 +11897,10 @@ PrefabInstance:
     - target: {fileID: 5178565946314510581, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_Name
       value: UI-ToolsBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5525270433034435699, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5562024795550350321, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12186,6 +12194,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1744150071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 486497616638880902, guid: 22ec1e7f8d1122449b64b50daa8e2b04, type: 3}
+  m_PrefabInstance: {fileID: 1708873653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1778696072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14105,6 +14118,10 @@ PrefabInstance:
       propertyPath: movementController
       value: 
       objectReference: {fileID: 652030371}
+    - target: {fileID: 7334914913219569158, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
+      propertyPath: uiObjectToActivateOnArrival
+      value: 
+      objectReference: {fileID: 1744150071}
     - target: {fileID: 7936662589250320921, guid: 75c1ccf5fa9e05445ba1bcf678ec1ffb, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.889083

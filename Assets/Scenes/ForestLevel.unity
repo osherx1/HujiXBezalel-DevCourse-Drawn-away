@@ -6535,7 +6535,7 @@ PrefabInstance:
     - target: {fileID: 1385597742685431495, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: progress
       value: 
-      objectReference: {fileID: 1428338408}
+      objectReference: {fileID: 604245112}
     - target: {fileID: 1385597742685431495, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: glowObject
       value: 
@@ -6772,6 +6772,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -9
       objectReference: {fileID: 0}
+    - target: {fileID: 3191889134512181825, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: progress
+      value: 
+      objectReference: {fileID: 604245112}
     - target: {fileID: 3191889134512181825, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: glowObject
       value: 
@@ -7735,9 +7739,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2364937750154510183, guid: 5789adfefa3204116860a00997096618, type: 3}
       insertIndex: 38
       addedObject: {fileID: 794042221}
-    - targetCorrespondingSourceObject: {fileID: 2364937750154510183, guid: 5789adfefa3204116860a00997096618, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1428338407}
     - targetCorrespondingSourceObject: {fileID: 2364937750154510183, guid: 5789adfefa3204116860a00997096618, type: 3}
       insertIndex: -1
       addedObject: {fileID: 819394542}
@@ -9838,6 +9839,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwordProgress
       objectReference: {fileID: 0}
+    - target: {fileID: 222389097043976483, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
       propertyPath: m_LocalPosition.x
       value: 264.80576
@@ -9877,6 +9882,10 @@ PrefabInstance:
     - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498826405907921466, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
+      propertyPath: usePlayerPrefs
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12850,6 +12859,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3191889134512181825, guid: 5789adfefa3204116860a00997096618, type: 3}
+      propertyPath: progress
+      value: 
+      objectReference: {fileID: 604245112}
     - target: {fileID: 3191889134512181825, guid: 5789adfefa3204116860a00997096618, type: 3}
       propertyPath: moveLimiter
       value: 
@@ -17217,63 +17230,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1235677685
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1630961841}
-    m_Modifications:
-    - target: {fileID: 222389097043976483, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_Name
-      value: SwordProgress
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 264.80576
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -256.0956
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
 --- !u!1 &1240544440
 GameObject:
   m_ObjectHideFlags: 0
@@ -20750,22 +20706,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1428338407 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1447352049830800256, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-  m_PrefabInstance: {fileID: 1235677685}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1428338408 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7498826405907921466, guid: de5ddf1572789fc40a3065902ec88040, type: 3}
-  m_PrefabInstance: {fileID: 1235677685}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba85de985b45acf47864c0e7fcb82c43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Prototype1.SwordProgressManager
 --- !u!1 &1429554856 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3906528482801053026, guid: 90de2b69cad684da5a10b765686143c2, type: 3}
