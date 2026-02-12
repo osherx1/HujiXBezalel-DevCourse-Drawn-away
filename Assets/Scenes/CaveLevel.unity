@@ -11647,6 +11647,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8974072648017261484, guid: 0ff33393ee570364a80dd6ba2335267e, type: 3}
   m_PrefabInstance: {fileID: 465657033}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &472787702 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8632020275021160312, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
+  m_PrefabInstance: {fileID: 1250955285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &475977019
 GameObject:
   m_ObjectHideFlags: 0
@@ -27705,7 +27710,7 @@ PrefabInstance:
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: sparkEffectInWorld
       value: 
-      objectReference: {fileID: 1721283985}
+      objectReference: {fileID: 472787702}
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: uiObjectToActivate
       value: 
@@ -27717,7 +27722,7 @@ PrefabInstance:
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: sparkDetachFromPickup
       value: 
-      objectReference: {fileID: 1721283985}
+      objectReference: {fileID: 472787702}
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: flyEase.m_Curve.Array.size
       value: 2
@@ -38793,7 +38798,7 @@ PrefabInstance:
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: sparkEffectInWorld
       value: 
-      objectReference: {fileID: 2129117788}
+      objectReference: {fileID: 1792320132}
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: uiObjectToActivate
       value: 
@@ -38805,7 +38810,7 @@ PrefabInstance:
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: sparkDetachFromPickup
       value: 
-      objectReference: {fileID: 2129117788}
+      objectReference: {fileID: 1792320132}
     - target: {fileID: 7686032741357259407, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
       propertyPath: flyEase.m_Curve.Array.size
       value: 2
@@ -45598,6 +45603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFX4 Aura Brush
       objectReference: {fileID: 0}
+    - target: {fileID: 1195607234229761712, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1197515432805034448, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -45683,11 +45692,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
---- !u!198 &1721283985 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1320495832498181834, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
-  m_PrefabInstance: {fileID: 1721283984}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1721283986 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1195607234229761712, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
@@ -47168,6 +47172,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 272774195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1792320132 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8632020275021160312, guid: 2c1e8620f33c63b488f25fd493bf92cf, type: 3}
+  m_PrefabInstance: {fileID: 1626943794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1792548552
 GameObject:
   m_ObjectHideFlags: 0
@@ -59117,6 +59126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CFX4 Aura Brush
       objectReference: {fileID: 0}
+    - target: {fileID: 1195607234229761712, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1197515432805034448, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -59202,11 +59215,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
---- !u!198 &2129117788 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1320495832498181834, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
-  m_PrefabInstance: {fileID: 2129117787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2129117789 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1195607234229761712, guid: a77c593b6744288419852cf9adf9bec5, type: 3}
