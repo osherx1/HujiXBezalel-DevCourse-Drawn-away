@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Drawing.Data;
+using Drawing.Managers.Core.Managers;
 
 namespace Prototype1
 {
@@ -196,6 +198,13 @@ namespace Prototype1
             }
 
             _pickedUp = true;
+
+            var audio = AudioManager.Instance;
+            if (audio != null)
+            {
+                audio.PlaySoundByAudioType(GameSoundsSo.AudioType.Swordpickup);
+            }
+
             StartCoroutine(PickupRoutine());
         }
 
@@ -359,6 +368,12 @@ namespace Prototype1
             Destroy(flyingVisual);
 
             onArrivedAtUi?.Invoke();
+
+            var audio = AudioManager.Instance;
+            if (audio != null)
+            {
+                audio.PlaySoundByAudioType(GameSoundsSo.AudioType.SwordUI);
+            }
 
             if (uiObjectToActivateOnArrival != null)
             {
