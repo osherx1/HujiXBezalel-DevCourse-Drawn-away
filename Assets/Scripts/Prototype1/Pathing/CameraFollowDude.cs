@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraFollowDude : MonoBehaviour
@@ -109,8 +111,27 @@ public class CameraFollowDude : MonoBehaviour
         
         if (lockCursor)
         {
+            // Set to None first to "break" the lock properly
+            Cursor.lockState = CursorLockMode.None; 
+        
+            // Then set it to your desired mode (usually None or Confined)
             Cursor.lockState = _previousLockMode;
-            Cursor.visible = _previousCursorVisible;
+        
+            // Explicitly force visibility to true
+            Cursor.visible = true; 
+
+            // This is a "Force Refresh" trick: 
+            // Sometimes toggling visibility off and on in one frame forces the OS to redraw it.
+            StartCoroutine(RefreshCursor());
         }
+    }
+    
+    private IEnumerator RefreshCursor()
+    {
+        // Wait for the very end of the frame when rendering is done
+        yield return new WaitForEndOfFrame();
+        Cursor.visible = false;
+        yield return null; // Wait one more frame
+        Cursor.visible = true;
     }
 }

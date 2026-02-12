@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Drawing.Buttons;
 using Drawing.LineControl;
+using UnityEngine.EventSystems;
 
 public class BossIntroCinemachineTrigger : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class BossIntroCinemachineTrigger : MonoBehaviour
     [SerializeField] private MonoBehaviour jumpController;     
     [SerializeField] private LineManager lineManager;          
     [SerializeField] private MenuController menuController;    
+    
+    [Header("Material Override")]
+    [SerializeField] private Button pencilButton; // Drag the Pencil UI Button here
 
     [System.Serializable]
     public struct ScatteredMaterial
@@ -148,6 +152,14 @@ public class BossIntroCinemachineTrigger : MonoBehaviour
     {
         if (isLocked)
         {
+            // 1. DIRECTLY FIRE THE BUTTON LOGIC
+            if (pencilButton != null)
+            {
+                Debug.Log("Forcing Pencil Selection...");
+                pencilButton.onClick.Invoke();
+            }
+
+            // 2. BACKUPS AND DISABLING
             if (movementController != null) _wasMovementEnabled = movementController.enabled;
             if (jumpController != null) _wasJumpEnabled = jumpController.enabled;
             if (lineManager != null) _wasDrawingEnabled = lineManager.enabled;
