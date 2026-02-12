@@ -44,6 +44,8 @@ namespace Drawing.LineControl
 
         private void Start()
         {
+            _lastCursorVisibleState = true;
+            Cursor.visible = true;
             InitializeCamera();
             UpdateAudioClipFromConfig();
             
