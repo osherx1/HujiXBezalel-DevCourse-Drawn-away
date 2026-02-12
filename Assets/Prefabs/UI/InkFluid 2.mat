@@ -45,16 +45,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Contrast: 1.4
+    - _Contrast: 1.21
     - _Distortion: 0.706
     - _EnableExternalAlpha: 0
     - _NoiseScale: 0.81
-    - _Speed: 0.73
+    - _Speed: 0.19
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _HighlightColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InkColor: {r: 0.19073936, g: 0.12486649, b: 0.4339623, a: 1}
+    - _HighlightColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    - _InkColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
