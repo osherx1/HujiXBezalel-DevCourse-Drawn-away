@@ -226,8 +226,8 @@ Team 1 brought together programmers and artists to create a game that showcases 
 ## 👥 Credits
 
 - **Development**: Team 1 — Huji × Bezalel Dev Course 2026
-- **Art & Design**: Bezalel Academy students
-- **Programming**: Hebrew University students
+- **Art & Design**: Daniele, Adel
+- **Programming**: Osher Abuhazira, David Nadelsticher, Itai Muntner
 - **Engine**: Unity
 
 ---
